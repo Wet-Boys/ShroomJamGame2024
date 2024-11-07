@@ -42,6 +42,8 @@ public partial class Controls : Node
     private StringName _primaryAction = "player.primary_action";
     [Export]
     private StringName _secondaryAction = "player.secondary_action";
+    [Export]
+    private StringName _pause = "game.pause";
 
     private Vector2 _movement;
 
@@ -53,17 +55,32 @@ public partial class Controls : Node
     public readonly ControlButton Interact = new();
     public readonly ControlButton PrimaryAction = new();
     public readonly ControlButton SecondaryAction = new();
+    public readonly ControlButton Pause = new();
 
     public override void _Ready()
     {
         _instance = this;
 
         Jump.Action = _jump;
+        Jump.SetControlsInstance(this);
+        
         Crouch.Action = _crouch;
+        Crouch.SetControlsInstance(this);
+        
         Sprint.Action = _sprint;
+        Sprint.SetControlsInstance(this);
+        
         Interact.Action = _interact;
+        Interact.SetControlsInstance(this);
+        
         PrimaryAction.Action = _primaryAction;
+        PrimaryAction.SetControlsInstance(this);
+        
         SecondaryAction.Action = _secondaryAction;
+        SecondaryAction.SetControlsInstance(this);
+        
+        Pause.Action = _pause;
+        Pause.SetControlsInstance(this);
     }
 
     public override void _Input(InputEvent inputEvent)
@@ -122,9 +139,9 @@ public partial class Controls : Node
     {
         public StringName Action = "";
 
-        public ControlButton()
+        public void SetControlsInstance(Controls instance)
         {
-            Instance._buttons.Add(this);
+            instance._buttons.Add(this);
         }
 
         ~ControlButton()
