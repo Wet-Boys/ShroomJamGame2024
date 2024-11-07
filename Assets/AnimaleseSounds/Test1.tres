@@ -1,0 +1,68 @@
+[gd_resource type="Resource" script_class="AnimaleseSoundSet" load_steps=32 format=3 uid="uid://bpivqdl8ksfdj"]
+
+[ext_resource type="Script" path="res://Animalese/AnimaleseSoundSet.cs" id="1_0guji"]
+[ext_resource type="AudioStream" uid="uid://b08bpkeoxyupm" path="res://Assets/AnimaleseSounds/Test1/Sounds/a.wav" id="1_1g0vq"]
+[ext_resource type="AudioStream" uid="uid://dfyegwowhwp51" path="res://Assets/AnimaleseSounds/Test1/Sounds/b.wav" id="2_p0d65"]
+[ext_resource type="AudioStream" uid="uid://b1jaqk6s1p1gx" path="res://Assets/AnimaleseSounds/Test1/Sounds/c.wav" id="3_kumpk"]
+[ext_resource type="AudioStream" uid="uid://dmxupmj5ievlc" path="res://Assets/AnimaleseSounds/Test1/Sounds/d.wav" id="4_bjjrf"]
+[ext_resource type="AudioStream" uid="uid://l6lpupvm0brp" path="res://Assets/AnimaleseSounds/Test1/Sounds/e.wav" id="5_ddwol"]
+[ext_resource type="AudioStream" uid="uid://cmyd4lcuo7nfc" path="res://Assets/AnimaleseSounds/Test1/Sounds/f.wav" id="6_h2o75"]
+[ext_resource type="AudioStream" uid="uid://c6pvo5hnfxil" path="res://Assets/AnimaleseSounds/Test1/Sounds/g.wav" id="7_p8ast"]
+[ext_resource type="AudioStream" uid="uid://c4byt4r3ae8ok" path="res://Assets/AnimaleseSounds/Test1/Sounds/h.wav" id="8_s1ss2"]
+[ext_resource type="AudioStream" uid="uid://dj0ba4he1h7tc" path="res://Assets/AnimaleseSounds/Test1/Sounds/i.wav" id="9_p2rdp"]
+[ext_resource type="AudioStream" uid="uid://bhfnmmjdiyin2" path="res://Assets/AnimaleseSounds/Test1/Sounds/j.wav" id="10_nxl17"]
+[ext_resource type="AudioStream" uid="uid://ce0n7fica1g28" path="res://Assets/AnimaleseSounds/Test1/Sounds/k.wav" id="11_qn74x"]
+[ext_resource type="AudioStream" uid="uid://dagybfqf4ap4h" path="res://Assets/AnimaleseSounds/Test1/Sounds/l.wav" id="12_bajgv"]
+[ext_resource type="AudioStream" uid="uid://c5upe487kqkn8" path="res://Assets/AnimaleseSounds/Test1/Sounds/m.wav" id="13_e8602"]
+[ext_resource type="AudioStream" uid="uid://b53tfpwnxix4p" path="res://Assets/AnimaleseSounds/Test1/Sounds/n.wav" id="14_6pvk2"]
+[ext_resource type="AudioStream" uid="uid://cui8hvttp43v4" path="res://Assets/AnimaleseSounds/Test1/Sounds/o.wav" id="15_rmmdb"]
+[ext_resource type="AudioStream" uid="uid://c47s7xj4wk7b3" path="res://Assets/AnimaleseSounds/Test1/Sounds/p.wav" id="16_2qamu"]
+[ext_resource type="AudioStream" uid="uid://cuebkglb7v3yo" path="res://Assets/AnimaleseSounds/Test1/Sounds/q.wav" id="17_p5q5c"]
+[ext_resource type="AudioStream" uid="uid://b4hp4iaw07kwh" path="res://Assets/AnimaleseSounds/Test1/Sounds/r.wav" id="18_3hxrf"]
+[ext_resource type="AudioStream" uid="uid://8gxqoaexkud1" path="res://Assets/AnimaleseSounds/Test1/Sounds/s.wav" id="19_0mymc"]
+[ext_resource type="AudioStream" uid="uid://c2cxbr3sobeom" path="res://Assets/AnimaleseSounds/Test1/Sounds/t.wav" id="20_lnabk"]
+[ext_resource type="AudioStream" uid="uid://cbv6vvul21ifu" path="res://Assets/AnimaleseSounds/Test1/Sounds/u.wav" id="21_x1ort"]
+[ext_resource type="AudioStream" uid="uid://cp8r0hr32pnly" path="res://Assets/AnimaleseSounds/Test1/Sounds/v.wav" id="22_v72py"]
+[ext_resource type="AudioStream" uid="uid://b2ycx6phpc8p5" path="res://Assets/AnimaleseSounds/Test1/Sounds/w.wav" id="23_orb6j"]
+[ext_resource type="AudioStream" uid="uid://d07tvjsqq0q2b" path="res://Assets/AnimaleseSounds/Test1/Sounds/x.wav" id="24_oe5fy"]
+[ext_resource type="AudioStream" uid="uid://b0d7fi60nfg7e" path="res://Assets/AnimaleseSounds/Test1/Sounds/y.wav" id="25_oxweu"]
+[ext_resource type="AudioStream" uid="uid://bc5sar24m2lkm" path="res://Assets/AnimaleseSounds/Test1/Sounds/z.wav" id="26_g5bpl"]
+[ext_resource type="AudioStream" uid="uid://t3r7qb3jdiox" path="res://Assets/AnimaleseSounds/Test1/Sounds/th.wav" id="27_kcsjm"]
+[ext_resource type="AudioStream" uid="uid://dtn0d2vjhbaho" path="res://Assets/AnimaleseSounds/Test1/Sounds/sh.wav" id="28_tuwgf"]
+[ext_resource type="AudioStream" uid="uid://cin47c1bm74vj" path="res://Assets/AnimaleseSounds/Test1/Sounds/blank.wav" id="29_2pgjw"]
+[ext_resource type="AudioStream" uid="uid://cvoehesaypm2q" path="res://Assets/AnimaleseSounds/Test1/Sounds/longblank.wav" id="30_ch81o"]
+
+[resource]
+script = ExtResource("1_0guji")
+_sounds = {
+" ": ExtResource("29_2pgjw"),
+".": ExtResource("30_ch81o"),
+"a": ExtResource("1_1g0vq"),
+"b": ExtResource("2_p0d65"),
+"c": ExtResource("3_kumpk"),
+"d": ExtResource("4_bjjrf"),
+"e": ExtResource("5_ddwol"),
+"f": ExtResource("6_h2o75"),
+"g": ExtResource("7_p8ast"),
+"h": ExtResource("8_s1ss2"),
+"i": ExtResource("9_p2rdp"),
+"j": ExtResource("10_nxl17"),
+"k": ExtResource("11_qn74x"),
+"l": ExtResource("12_bajgv"),
+"m": ExtResource("13_e8602"),
+"n": ExtResource("14_6pvk2"),
+"o": ExtResource("15_rmmdb"),
+"p": ExtResource("16_2qamu"),
+"q": ExtResource("17_p5q5c"),
+"r": ExtResource("18_3hxrf"),
+"s": ExtResource("19_0mymc"),
+"sh": ExtResource("28_tuwgf"),
+"t": ExtResource("20_lnabk"),
+"th": ExtResource("27_kcsjm"),
+"u": ExtResource("21_x1ort"),
+"v": ExtResource("22_v72py"),
+"w": ExtResource("23_orb6j"),
+"x": ExtResource("24_oe5fy"),
+"y": ExtResource("25_oxweu"),
+"z": ExtResource("26_g5bpl")
+}
