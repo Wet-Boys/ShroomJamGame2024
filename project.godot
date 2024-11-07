@@ -21,3 +21,46 @@ project/assembly_name="ShroomJamGame"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/renderdoc_launcher/plugin.cfg")
+
+[input]
+
+player.move_forward={
+"deadzone": 0.5,
+"events": []
+}
+player.move_backward={
+"deadzone": 0.5,
+"events": []
+}
+player.move_left={
+"deadzone": 0.5,
+"events": []
+}
+player.move_right={
+"deadzone": 0.5,
+"events": []
+}
+player.jump={
+"deadzone": 0.5,
+"events": []
+}
+player.crouch={
+"deadzone": 0.5,
+"events": []
+}
+player.sprint={
+"deadzone": 0.5,
+"events": []
+}
+player.interact={
+"deadzone": 0.5,
+"events": []
+}
+player.primary_action={
+"deadzone": 0.5,
+"events": []
+}
+player.secondary_action={
+"deadzone": 0.5,
+"events": []
+}

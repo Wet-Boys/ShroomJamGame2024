@@ -3,3 +3,6 @@
 /android/
 .idea/
 .vs/
+
+# User files
+ShroomJamGame.sln.DotSettings.user
