@@ -3,9 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://bv7hgobt87i0x" path="res://Assets/Prefabs/Player.tscn" id="1_f5xs7"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_5f2ps"]
 
-[sub_resource type="Environment" id="Environment_7peud"]
+[sub_resource type="Environment" id="Environment_0kp4h"]
 
-[sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_4gpjp"]
+[sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_xrwh1"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_n1tod"]
 
@@ -19,8 +19,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.17029, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0, 5.42029, 0)
-environment = SubResource("Environment_7peud")
-attributes = SubResource("CameraAttributesPhysical_4gpjp")
+environment = SubResource("Environment_0kp4h")
+attributes = SubResource("CameraAttributesPhysical_xrwh1")
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D"]
 process_priority = 300
