@@ -14,13 +14,17 @@ config/name="ShroomJamGame"
 config/features=PackedStringArray("4.3", "C#", "Forward Plus")
 config/icon="res://Assets/icon.svg"
 
+[autoload]
+
+PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
+
 [dotnet]
 
 project/assembly_name="ShroomJamGame"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/renderdoc_launcher/plugin.cfg")
+enabled=PackedStringArray("res://addons/phantom_camera/plugin.cfg", "res://addons/renderdoc_launcher/plugin.cfg")
 
 [input]
 
