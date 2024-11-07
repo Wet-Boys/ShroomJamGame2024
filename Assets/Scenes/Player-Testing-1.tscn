@@ -1,0 +1,95 @@
+[gd_scene load_steps=7 format=3 uid="uid://c10b6t4qqwe1r"]
+
+[ext_resource type="PackedScene" uid="uid://bv7hgobt87i0x" path="res://Assets/Prefabs/Player.tscn" id="1_f5xs7"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_5f2ps"]
+
+[sub_resource type="Environment" id="Environment_7peud"]
+
+[sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_4gpjp"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_n1tod"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_c6yec"]
+data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[node name="Player-testing-1" type="Node3D"]
+
+[node name="Player" parent="." instance=ExtResource("1_f5xs7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.17029, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0, 5.42029, 0)
+environment = SubResource("Environment_7peud")
+attributes = SubResource("CameraAttributesPhysical_4gpjp")
+
+[node name="PhantomCameraHost" type="Node" parent="Camera3D"]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("2_5f2ps")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.859246, 0.511563, 0, -0.511563, 0.859246, 0, 5.01521, 3.99083)
+
+[node name="World" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="World"]
+transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, 0, 0)
+mesh = SubResource("PlaneMesh_n1tod")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_c6yec")
+
+[node name="Stairs" type="CSGCombiner3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.52479, 0, 0)
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World/Stairs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0.25, -0.5)
+size = Vector3(0.5, 0.5, 2)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="World/Stairs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0.5, -0.5)
+size = Vector3(0.5, 1, 2)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="World/Stairs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0.75, -0.5)
+size = Vector3(0.5, 1.5, 2)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="World/Stairs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25, 1, -0.5)
+size = Vector3(0.5, 2, 2)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="World/Stairs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75, 1.25, -0.5)
+size = Vector3(0.5, 2.5, 2)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="World/Stairs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.25, 1.5, -0.5)
+size = Vector3(0.5, 3, 2)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="World/Stairs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.75, 1.75, -0.5)
+size = Vector3(0.5, 3.5, 2)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="World/Stairs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.25, 2, -0.5)
+size = Vector3(0.5, 4, 2)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="World/Stairs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.75, 2.25, -0.5)
+size = Vector3(0.5, 4.5, 2)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="World/Stairs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.25, 2.5, -0.5)
+size = Vector3(0.5, 5, 2)
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="World/Stairs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.75, 2.75, -0.5)
+size = Vector3(0.5, 5.5, 2)
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="World/Stairs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.25, 3, -0.5)
+size = Vector3(0.5, 6, 2)
