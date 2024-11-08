@@ -20,18 +20,34 @@ namespace ShroomJamGame.NPC
         private CharacterBody3D? characterBody3D;
         [Export]
         private NavigationAgent3D? _navigationAgent;
+        [Export]
+        NpcVisualController? _visualController;
 
-        public void _SetTargetPosition(Vector3 position)
+        public void _SetTargetNode(Node3D node)
+        {
+            targetNode = node;
+        }
+        private void _SetTargetPosition(Vector3 position)
         {
             _navigationAgent.TargetPosition = position;
         }
-        private Vector3 oldPlayerPos = Vector3.Zero;
+        private Vector3 oldTargetPos = Vector3.Zero;
+        public override void _Process(double delta)
+        {
+            _visualController.SetAnimationTreeState(characterBody3D.Velocity.Normalized().Length());
+        }
         public override void _PhysicsProcess(double delta)
         {
-            if (oldPlayerPos != targetNode.GlobalPosition)
+            if (!IsInstanceValid(targetNode))
             {
-                oldPlayerPos = targetNode.GlobalPosition;
-                _SetTargetPosition(oldPlayerPos);
+                _characterMovementController.InputMovement = new Vector2(0, 0);
+                return;
+            }
+            if (oldTargetPos != targetNode.GlobalPosition)
+            {
+                _visualController.RandomizeOutfit();
+                oldTargetPos = targetNode.GlobalPosition;
+                _SetTargetPosition(oldTargetPos);
             }
             if (_navigationAgent.IsNavigationFinished())
             {
