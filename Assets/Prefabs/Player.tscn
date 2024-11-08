@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bv7hgobt87i0x"]
+[gd_scene load_steps=16 format=3 uid="uid://bv7hgobt87i0x"]
 
 [ext_resource type="Script" path="res://Player/PlayerHeadController.cs" id="1_74oir"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="1_rdmxy"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Player/StepHelper.cs" id="3_0rjoo"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="3_d01j2"]
 [ext_resource type="Script" path="res://Player/PlayerMovementController.cs" id="4_i8tv5"]
+[ext_resource type="Script" path="res://Player/PlayerInteractor.cs" id="6_rta4b"]
 
 [sub_resource type="Resource" id="Resource_1d3f1"]
 script = ExtResource("2_ahif8")
@@ -73,6 +74,14 @@ attributes = SubResource("CameraAttributesPhysical_m0xws")
 script = ExtResource("1_74oir")
 _playerBody = NodePath("../..")
 _playerHead = NodePath("..")
+
+[node name="PlayerInteractor" type="Node3D" parent="Head" node_paths=PackedStringArray("PlayerBodyCollision", "InteractorRay")]
+script = ExtResource("6_rta4b")
+PlayerBodyCollision = NodePath("../..")
+InteractorRay = NodePath("RayCast3D")
+
+[node name="RayCast3D" type="RayCast3D" parent="Head/PlayerInteractor"]
+target_position = Vector3(0, 0, -4)
 
 [node name="StepHelper" type="Node3D" parent="." node_paths=PackedStringArray("PlayerBody", "_stepShapeCast", "_clearanceShapeCast")]
 script = ExtResource("3_0rjoo")

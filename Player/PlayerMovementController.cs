@@ -181,7 +181,7 @@ public partial class PlayerMovementController : Node
 
     private void OnStopCrouching()
     {
-        if (_playerCollisionShape is null || _playerHead is null || _stepHelper is null)
+        if (_playerCollisionShape is null || _playerHead is null || _playerBody is null || _stepHelper is null)
             return;
         
         _playerCollisionShape.Shape = new BoxShape3D
@@ -192,6 +192,11 @@ public partial class PlayerMovementController : Node
         
         _stepHelper.MinClearance = _stepHelper.MinClearance with { Y = _characterHeight };
         _playerHead.Position = new Vector3(0, _characterHeight / 2f, 0);
+
+        if (_playerBody.IsOnFloor())
+            return;
+        
+        // Todo: Uncrouching handling in air
     }
 
     private void RotatePlayerOnMove()

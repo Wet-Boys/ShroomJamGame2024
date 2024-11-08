@@ -6,3 +6,4 @@
 
 [node name="Controls" type="Node" parent="."]
 script = ExtResource("1_cit4r")
+JoystickDeadzone = 0.2
