@@ -1,0 +1,26 @@
+[remap]
+
+importer="2d_array_texture"
+type="CompressedTexture2DArray"
+uid="uid://cjb8vfl1iq5eb"
+path="res://.godot/imported/Player-Testing-1.exr-1d40d8d0a9fe6d4aba519d39c2c3886d.ctexarray"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Assets/Scenes/Player-Testing-1.exr"
+dest_files=["res://.godot/imported/Player-Testing-1.exr-1d40d8d0a9fe6d4aba519d39c2c3886d.ctexarray"]
+
+[params]
+
+compress/mode=3
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/channel_pack=1
+mipmaps/generate=false
+mipmaps/limit=-1
+slices/horizontal=1
+slices/vertical=24

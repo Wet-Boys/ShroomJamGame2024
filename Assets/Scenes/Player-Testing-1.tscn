@@ -9,10 +9,10 @@
 [ext_resource type="Script" path="res://Animalese/AnimaleseDialogTest.cs" id="5_mac5d"]
 [ext_resource type="Script" path="res://Interaction/Interactable.cs" id="6_j7hjj"]
 
-[sub_resource type="Environment" id="Environment_4mha1"]
+[sub_resource type="Environment" id="Environment_1i5hg"]
 ambient_light_source = 1
 
-[sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_0s7v2"]
+[sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_h208l"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_n1tod"]
 
@@ -30,8 +30,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.522051, 7.80016, 5.45681)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, -0.522051, 8.67516, 5.45681)
-environment = SubResource("Environment_4mha1")
-attributes = SubResource("CameraAttributesPhysical_0s7v2")
+environment = SubResource("Environment_1i5hg")
+attributes = SubResource("CameraAttributesPhysical_h208l")
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D"]
 process_priority = 300
