@@ -4,7 +4,7 @@ namespace ShroomJamGame.Interaction;
 
 [Tool]
 [GlobalClass]
-public partial class Interactable : Node
+public abstract partial class Interactable : Node, IInteractableObject
 {
     private CollisionObject3D? _collisionObject;
 
@@ -39,9 +39,7 @@ public partial class Interactable : Node
             _collisionObject.SetMeta("InteractableChildIndex", idx);
         }
     }
-
-    [Signal]
-    public delegate void OnInteractEventHandler();
+    
 
     public override void _Ready()
     {
@@ -55,9 +53,7 @@ public partial class Interactable : Node
         }
     }
 
-    public void Interact()
-    {
-        GD.Print("Interacted");
-        EmitSignal(SignalName.OnInteract);
-    }
+    public abstract void Interact();
+
+    public abstract string GetOnHoverText();
 }

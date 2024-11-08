@@ -23,15 +23,15 @@ public partial class PlayerInteractor : Node3D
         }
     }
     
-    private CollisionObject3D? _playerBodyCollision;
+    private CharacterBody3D? _playerBody;
 
     [Export]
-    public CollisionObject3D? PlayerBodyCollision
+    public CharacterBody3D? PlayerBody
     {
-        get => _playerBodyCollision;
+        get => _playerBody;
         set
         {
-            _playerBodyCollision = value;
+            _playerBody = value;
             EnsureExceptions();
         }
     }
@@ -49,7 +49,22 @@ public partial class PlayerInteractor : Node3D
         }
     }
 
-    private Interactable? _currentTarget;
+    [Export]
+    private Node3D? _playerHead;
+    [Export]
+    private StepHelper? _stepHelper;
+    [Export]
+    private RichTextLabel? _tooltipLabel;
+
+    [Export]
+    private float _maxPhysicsDistance = 2.5f;
+
+    private IInteractableObject? _currentTarget;
+    private PhysicsInteractable? _heldObject;
+    private CollisionShape3D? _heldObjectShape;
+    [Export]
+    private ShapeCast3D? _heldObjectCast;
+    private Vector3 _lastObjectPosition;
 
     public override void _Ready()
     {
@@ -74,18 +89,34 @@ public partial class PlayerInteractor : Node3D
 
     public override void _Process(double delta)
     {
-        _currentTarget = null;
-        
         if (Engine.IsEditorHint())
             return;
         
-        if (_interactorRay is null)
+        HandleInteractRayCast();
+        UpdateTooltip();
+    }
+
+    public override void _PhysicsProcess(double delta)
+    {
+        if (Engine.IsEditorHint())
             return;
-
-        var hit = _interactorRay.GetCollider();
-
+        
+        UpdatePhysicsInteractablePosition(delta);
+    }
+    
+    private void HandleInteractRayCast()
+    {
+        _currentTarget = null;
+        
+        var hit = _interactorRay?.GetCollider();
         if (hit is not CollisionObject3D targetCollision)
             return;
+
+        if (targetCollision is PhysicsInteractable physicsInteractable)
+        {
+            _currentTarget = physicsInteractable;
+            return;
+        }
 
         if (!targetCollision.HasMeta("InteractableChildIndex"))
             return;
@@ -94,19 +125,131 @@ public partial class PlayerInteractor : Node3D
         
         _currentTarget = targetCollision.GetChildOrNull<Interactable>(interactableIndex.AsInt32());
     }
+
+    private void UpdatePhysicsInteractablePosition(double delta)
+    {
+        if (_playerHead is null || _playerBody is null || _interactorRay is null || _stepHelper is null)
+            return;
+
+        if (_heldObject is null || _heldObjectShape is null || _heldObjectCast is null)
+            return;
+        
+        _heldObject.AddCollisionExceptionWith(_playerBody);
+        _interactorRay.AddException(_heldObject);
+        _stepHelper.AddException(_heldObject);
+
+        var dir = _interactorRay.IsColliding()
+            ? (_interactorRay.GetCollisionPoint() - _playerHead.GlobalPosition).Normalized()
+            : -_playerHead!.GlobalBasis.Z;
+        
+        var dist = _maxPhysicsDistance;
+
+        if (_heldObjectCast.IsColliding())
+        {
+            var minDist = float.MaxValue;
+            
+            for (int i = 0; i < _heldObjectCast.GetCollisionCount(); i++)
+            {
+                var point = _heldObjectCast.GetCollisionPoint(i);
+                minDist = Mathf.Min(minDist, Mathf.Abs(point.DistanceTo(_playerHead.GlobalPosition)));
+            }
+            
+            dist = Mathf.Min(dist, minDist);
+        }
+        
+        var globalPos = _playerHead.GlobalPosition + (dir * dist);
+        
+        var velocity = globalPos - _lastObjectPosition;
+        _lastObjectPosition = _heldObject.GlobalPosition;
+        
+        _heldObject.LinearVelocity = velocity + _playerBody.Velocity;
+        _heldObject.GlobalPosition = globalPos;
+    }
     
     private void OnInteractPressed()
     {
-        if (_currentTarget is null)
+        if (_playerHead is null || _interactorRay is null)
+            return;
+
+        if (_heldObject is not null)
+        {
+            DropHeldObject();
+            return;
+        }
+        
+        if (_currentTarget is PhysicsInteractable physicsObject)
+        {
+            _heldObject = physicsObject;
+            
+            foreach (var child in _heldObject.GetChildren())
+            {
+                if (child is not CollisionShape3D shape)
+                    continue;
+                
+                _heldObjectShape = shape;
+                break;
+            }
+
+            _heldObjectCast = new ShapeCast3D
+            {
+                Shape = _heldObjectShape?.Shape,
+                TargetPosition = _interactorRay.TargetPosition
+            };
+            
+            _heldObjectCast.AddException(_playerBody);
+            _heldObjectCast.AddException(_heldObject);
+            
+            AddChild(_heldObjectCast);
+            
+            return;
+        }
+        
+        _currentTarget?.Interact();
+    }
+
+    private void DropHeldObject()
+    {
+        _heldObject?.RemoveCollisionExceptionWith(_playerBody);
+        _interactorRay?.RemoveException(_heldObject);
+        _stepHelper?.RemoveException(_heldObject);
+
+        if (_heldObjectCast is not null)
+        {
+            _heldObjectCast.QueueFree();
+            _heldObjectCast = null;
+        }
+
+        _heldObjectShape = null;
+        _heldObject = null;
+    }
+
+    private void UpdateTooltip()
+    {
+        if (_tooltipLabel is null)
             return;
         
-        _currentTarget.Interact();
+        if (_currentTarget is null && _heldObject is null)
+        {
+            _tooltipLabel.Text = "";
+            return;
+        }
+
+        if (_currentTarget is not null)
+        {
+            _tooltipLabel.Text = _currentTarget.GetOnHoverText();
+            return;
+        }
+
+        if (_heldObject is not null)
+        {
+            _tooltipLabel.Text = _heldObject.GetHeldHoverText();
+        }
     }
 
     private void EnsureExceptions()
     {
         _interactorRay?.ClearExceptions();
         
-        _interactorRay?.AddException(_playerBodyCollision);
+        _interactorRay?.AddException(_playerBody);
     }
 }

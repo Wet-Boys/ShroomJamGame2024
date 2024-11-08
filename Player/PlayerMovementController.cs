@@ -47,6 +47,7 @@ public partial class PlayerMovementController : Node
         if (_characterMovementController is null)
             return;
 
+        _characterMovementController.IsSprinting = Controls.Instance.Sprint;
         _characterMovementController.InputMovement = Controls.Instance.Movement;
     }
 }

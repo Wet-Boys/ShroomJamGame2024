@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bv7hgobt87i0x"]
+[gd_scene load_steps=13 format=3 uid="uid://bv7hgobt87i0x"]
 
 [ext_resource type="Script" path="res://Player/PlayerHeadController.cs" id="1_74oir"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="1_rdmxy"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="3_d01j2"]
 [ext_resource type="Script" path="res://Player/PlayerMovementController.cs" id="4_i8tv5"]
 [ext_resource type="Script" path="res://Player/PlayerInteractor.cs" id="6_rta4b"]
+[ext_resource type="PackedScene" uid="uid://bos5qjgi60df2" path="res://Assets/UI/GeneralHUD.tscn" id="8_i06ww"]
 
 [sub_resource type="Resource" id="Resource_4oitb"]
 script = ExtResource("2_ahif8")
@@ -37,6 +38,10 @@ ambient_light_source = 1
 script = ExtResource("4_i8tv5")
 _characterMovementController = NodePath("../CharacterMovementController")
 
+[node name="CharacterMovementController" parent="." index="1"]
+_moveSpeed = 40.0
+_maxSpeed = 600.0
+
 [node name="AudioListener3D" type="AudioListener3D" parent="Head" index="0"]
 
 [node name="PhantomCamera3D" type="Node3D" parent="Head" index="1"]
@@ -48,12 +53,20 @@ camera_3d_resource = SubResource("Resource_i8i7e")
 environment = SubResource("Environment_122bg")
 attributes = SubResource("CameraAttributesPhysical_qqvq2")
 
-[node name="PlayerInteractor" type="Node3D" parent="Head" index="3" node_paths=PackedStringArray("PlayerBodyCollision", "InteractorRay")]
+[node name="PlayerInteractor" type="Node3D" parent="Head" index="3" node_paths=PackedStringArray("PlayerBody", "InteractorRay", "_playerHead", "_stepHelper", "_tooltipLabel")]
 script = ExtResource("6_rta4b")
-PlayerBodyCollision = NodePath("../..")
+PlayerBody = NodePath("../..")
 InteractorRay = NodePath("../RayCast3D")
+_playerHead = NodePath("..")
+_stepHelper = NodePath("../../StepHelper")
+_tooltipLabel = NodePath("../../GeneralHud/Tooltip Container/Tooltip")
+_maxPhysicsDistance = 1.5
 
 [node name="PlayerHeadController" type="Node" parent="Head" index="4" node_paths=PackedStringArray("_playerBody", "_playerHead")]
 script = ExtResource("1_74oir")
 _playerBody = NodePath("../..")
 _playerHead = NodePath("..")
+
+[node name="GeneralHud" parent="." index="6" instance=ExtResource("8_i06ww")]
+
+[editable path="GeneralHud"]
