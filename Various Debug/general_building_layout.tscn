@@ -2765,6 +2765,9 @@ material_override = ExtResource("3_jdp7g")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_121/StaticBody3D" index="0"]
 shape = SubResource("ConcavePolygonShape3D_7o42o")
 
+[node name="Floor1_006" parent="." index="251"]
+material_override = ExtResource("5_j87hw")
+
 [node name="StaticBody3D" type="StaticBody3D" parent="Floor1_006" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor1_006/StaticBody3D" index="0"]
@@ -2774,6 +2777,9 @@ shape = SubResource("ConcavePolygonShape3D_5v5fc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor1_007/StaticBody3D" index="0"]
 shape = SubResource("ConcavePolygonShape3D_dtmix")
+
+[node name="Cube_378" parent="." index="253"]
+material_override = ExtResource("3_jdp7g")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Cube_378" index="0"]
 
@@ -3297,6 +3303,9 @@ material_override = ExtResource("7_hetoh")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_263/StaticBody3D" index="0"]
 shape = SubResource("ConcavePolygonShape3D_2xmm2")
+
+[node name="Cube_264" parent="." index="345"]
+material_override = ExtResource("7_hetoh")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Cube_264" index="0"]
 
