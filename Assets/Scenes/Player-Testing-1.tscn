@@ -1,19 +1,24 @@
-[gd_scene load_steps=10 format=3 uid="uid://c10b6t4qqwe1r"]
+[gd_scene load_steps=13 format=3 uid="uid://c10b6t4qqwe1r"]
 
 [ext_resource type="PackedScene" uid="uid://bv7hgobt87i0x" path="res://Assets/Prefabs/Player.tscn" id="1_f5xs7"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_5f2ps"]
 [ext_resource type="Script" path="res://Animalese/AnimalesePlayer3D.cs" id="3_1hc3e"]
 [ext_resource type="Resource" uid="uid://bpivqdl8ksfdj" path="res://Assets/AnimaleseSounds/Test1.tres" id="4_nagxe"]
 [ext_resource type="Script" path="res://Animalese/AnimaleseDialogTest.cs" id="5_mac5d"]
+[ext_resource type="Script" path="res://Interaction/Interactable.cs" id="6_j7hjj"]
 
-[sub_resource type="Environment" id="Environment_6dgrj"]
+[sub_resource type="Environment" id="Environment_yry3l"]
 
-[sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_inalr"]
+[sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_rbjlq"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_n1tod"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_c6yec"]
 data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_73njy"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_3r6af"]
 
 [node name="Player-testing-1" type="Node3D"]
 
@@ -22,8 +27,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.17029, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0, 5.42029, 0)
-environment = SubResource("Environment_6dgrj")
-attributes = SubResource("CameraAttributesPhysical_inalr")
+environment = SubResource("Environment_yry3l")
+attributes = SubResource("CameraAttributesPhysical_rbjlq")
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D"]
 process_priority = 300
@@ -100,7 +105,7 @@ size = Vector3(0.5, 6, 2)
 [node name="AnimalesePlayer3D" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.18721, 4.11217)
 unit_size = 4.35
-max_distance = 10.0
+max_distance = 5.0
 panning_strength = 0.26
 bus = &"Animalese Bus"
 script = ExtResource("3_1hc3e")
@@ -115,6 +120,20 @@ script = ExtResource("5_mac5d")
 Text = "Ligma balls idiot!                            Amongus"
 AnimalesePlayer = NodePath("..")
 TextLabel = NodePath("../Label3D")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.26513, 1.87672)
+metadata/InteractableChildIndex = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("SphereShape3D_73njy")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+mesh = SubResource("SphereMesh_3r6af")
+
+[node name="Interactable" type="Node" parent="RigidBody3D" node_paths=PackedStringArray("CollisionShape")]
+script = ExtResource("6_j7hjj")
+CollisionShape = NodePath("..")
 
 [connection signal="CharactersPlayed" from="AnimalesePlayer3D" to="AnimalesePlayer3D/AnimaleseDialogTest" method="OnCharacterPlayed"]
 [connection signal="FinishedPlaying" from="AnimalesePlayer3D" to="AnimalesePlayer3D/AnimaleseDialogTest" method="PlayNext"]

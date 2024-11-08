@@ -21,6 +21,9 @@ public partial class Controls : Node
     
     private readonly List<ControlButton> _buttons = [];
     
+    [Export]
+    public float JoystickDeadzone = 0.1f;
+    
     [ExportGroup("Events")]
     [Export]
     private StringName _moveForward = "player.move_forward";
@@ -97,11 +100,25 @@ public partial class Controls : Node
         {
             if (joystickEvent.IsAction(_moveLeft) || joystickEvent.IsAction(_moveRight))
             {
-                axis.X = joystickEvent.AxisValue;
+                if (Mathf.Abs(joystickEvent.AxisValue) > JoystickDeadzone)
+                {
+                    axis.X = joystickEvent.AxisValue;
+                }
+                else
+                {
+                    axis.X = 0;
+                }
             }
             else if (joystickEvent.IsAction(_moveForward) || joystickEvent.IsAction(_moveBackward))
             {
-                axis.Y = joystickEvent.AxisValue;
+                if (Mathf.Abs(joystickEvent.AxisValue) > JoystickDeadzone)
+                {
+                    axis.Y = joystickEvent.AxisValue;
+                }
+                else
+                {
+                    axis.Y = 0;
+                }
             }
         }
         else if (inputEvent is InputEventKey keyEvent)
