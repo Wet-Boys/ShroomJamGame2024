@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ct5gfq2sqqps7"]
+[gd_scene load_steps=7 format=3 uid="uid://cy8c1p22wrnpt"]
 
 [ext_resource type="Script" path="res://CharacterBody/CharacterMovementController.cs" id="1_2vn36"]
 [ext_resource type="Script" path="res://Player/StepHelper.cs" id="2_7fi1s"]

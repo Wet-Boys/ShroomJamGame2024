@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://lkw7ko7kkqpk"]
+
+[ext_resource type="PackedScene" uid="uid://cy8c1p22wrnpt" path="res://Assets/Prefabs/GenericCharacterBody.tscn" id="1_qxxhq"]
+[ext_resource type="Script" path="res://NPC/NpcMovementController.cs" id="2_272a2"]
+[ext_resource type="Material" uid="uid://bf3sis0lgcb2f" path="res://Various Debug/wall.tres" id="2_glad6"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_qiwba"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_3fuua"]
+material = ExtResource("2_glad6")
+
+[node name="GenericCharacterBody" instance=ExtResource("1_qxxhq")]
+
+[node name="CharacterMovementController" parent="." index="0"]
+_moveSpeed = 20.0
+_maxSpeed = 200.0
+
+[node name="NpcMovementController" type="Node" parent="." index="1" node_paths=PackedStringArray("_characterMovementController", "characterBody3D", "_navigationAgent")]
+script = ExtResource("2_272a2")
+_characterMovementController = NodePath("../CharacterMovementController")
+characterBody3D = NodePath("..")
+_navigationAgent = NodePath("../Node3D/NavigationAgent3D")
+
+[node name="Placeholder Mesh" parent="." index="5"]
+cast_shadow = 1
+mesh = SubResource("CapsuleMesh_qiwba")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Placeholder Mesh" index="0"]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, 0, 0.262601, 0.5544)
+mesh = SubResource("PrismMesh_3fuua")
+
+[node name="Node3D" type="Node3D" parent="." index="6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.75, 0)
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="Node3D" index="0"]
+path_desired_distance = 0.25
+debug_enabled = true
+debug_path_custom_color = Color(0.867005, 0, 0.137486, 1)
