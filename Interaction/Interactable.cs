@@ -4,7 +4,7 @@ namespace ShroomJamGame.Interaction;
 
 [Tool]
 [GlobalClass]
-public partial class Interactable : Node
+public partial class Interactable : Node, IInteractableObject
 {
     private CollisionObject3D? _collisionObject;
 

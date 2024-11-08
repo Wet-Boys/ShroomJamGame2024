@@ -23,15 +23,15 @@ public partial class PlayerInteractor : Node3D
         }
     }
     
-    private CollisionObject3D? _playerBodyCollision;
+    private CharacterBody3D? _playerBody;
 
     [Export]
-    public CollisionObject3D? PlayerBodyCollision
+    public CharacterBody3D? PlayerBody
     {
-        get => _playerBodyCollision;
+        get => _playerBody;
         set
         {
-            _playerBodyCollision = value;
+            _playerBody = value;
             EnsureExceptions();
         }
     }
@@ -49,7 +49,14 @@ public partial class PlayerInteractor : Node3D
         }
     }
 
-    private Interactable? _currentTarget;
+    [Export]
+    private Node3D? _playerHead;
+    [Export]
+    private StepHelper? _stepHelper;
+
+    private IInteractableObject? _currentTarget;
+    private PhysicsInteractable? _heldObject;
+    private Vector3 _lastObjectPosition;
 
     public override void _Ready()
     {
@@ -74,18 +81,20 @@ public partial class PlayerInteractor : Node3D
 
     public override void _Process(double delta)
     {
-        _currentTarget = null;
-        
         if (Engine.IsEditorHint())
             return;
+
+        _currentTarget = null;
         
-        if (_interactorRay is null)
-            return;
-
-        var hit = _interactorRay.GetCollider();
-
+        var hit = _interactorRay?.GetCollider();
         if (hit is not CollisionObject3D targetCollision)
             return;
+
+        if (targetCollision is PhysicsInteractable physicsInteractable)
+        {
+            _currentTarget = physicsInteractable;
+            return;
+        }
 
         if (!targetCollision.HasMeta("InteractableChildIndex"))
             return;
@@ -94,19 +103,72 @@ public partial class PlayerInteractor : Node3D
         
         _currentTarget = targetCollision.GetChildOrNull<Interactable>(interactableIndex.AsInt32());
     }
+
+    public override void _PhysicsProcess(double delta)
+    {
+        if (Engine.IsEditorHint())
+            return;
+        
+        UpdatePhysicsInteractablePosition(delta);
+    }
+
+    private void UpdatePhysicsInteractablePosition(double delta)
+    {
+        if (_playerHead is null || _playerBody is null || _interactorRay is null || _stepHelper is null)
+            return;
+
+        if (_heldObject is null)
+            return;
+        
+        _heldObject.AddCollisionExceptionWith(_playerBody);
+        _interactorRay.AddException(_heldObject);
+        _stepHelper.AddException(_heldObject);
+
+        var globalPos = _interactorRay.IsColliding()
+            ? _interactorRay.GetCollisionPoint()
+            : _playerHead.GlobalPosition + (-_playerHead!.GlobalBasis.Z * Mathf.Abs(_interactorRay.TargetPosition.DistanceTo(Vector3.Zero)));
+        
+        var velocity = globalPos - _lastObjectPosition;
+        _lastObjectPosition = _heldObject.GlobalPosition;
+
+        _heldObject.GlobalPosition = globalPos;
+        _heldObject.LinearVelocity = velocity + _playerBody.Velocity;
+    }
     
     private void OnInteractPressed()
     {
-        if (_currentTarget is null)
+        if (_playerHead is null || _interactorRay is null)
             return;
+
+        if (_heldObject is not null)
+        {
+            DropHeldObject();
+            return;
+        }
         
-        _currentTarget.Interact();
+        if (_currentTarget is PhysicsInteractable physicsObject)
+        {
+            _heldObject = physicsObject;
+            return;
+        }
+        
+        _currentTarget?.Interact();
     }
+
+    private void DropHeldObject()
+    {
+        _heldObject?.RemoveCollisionExceptionWith(_playerBody);
+        _interactorRay?.RemoveException(_heldObject);
+        _stepHelper?.RemoveException(_heldObject);
+        
+        _heldObject = null;
+    }
+    
 
     private void EnsureExceptions()
     {
         _interactorRay?.ClearExceptions();
         
-        _interactorRay?.AddException(_playerBodyCollision);
+        _interactorRay?.AddException(_playerBody);
     }
 }
