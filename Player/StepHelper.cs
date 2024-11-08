@@ -150,6 +150,17 @@ public partial class StepHelper : Node3D
 
         _stepShapeCast?.AddException(_playerBody);
         _clearanceShapeCast?.AddException(_playerBody);
+    }
 
+    public void AddException(CollisionObject3D? collisionObject)
+    {
+        _stepShapeCast?.AddException(collisionObject);
+        _clearanceShapeCast?.AddException(collisionObject);
+    }
+    
+    public void RemoveException(CollisionObject3D? collisionObject)
+    {
+        _stepShapeCast?.RemoveException(collisionObject);
+        _clearanceShapeCast?.RemoveException(collisionObject);
     }
 }

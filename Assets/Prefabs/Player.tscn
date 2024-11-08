@@ -37,6 +37,10 @@ ambient_light_source = 1
 script = ExtResource("4_i8tv5")
 _characterMovementController = NodePath("../CharacterMovementController")
 
+[node name="CharacterMovementController" parent="." index="1"]
+_moveSpeed = 40.0
+_maxSpeed = 600.0
+
 [node name="AudioListener3D" type="AudioListener3D" parent="Head" index="0"]
 
 [node name="PhantomCamera3D" type="Node3D" parent="Head" index="1"]
@@ -48,10 +52,12 @@ camera_3d_resource = SubResource("Resource_i8i7e")
 environment = SubResource("Environment_122bg")
 attributes = SubResource("CameraAttributesPhysical_qqvq2")
 
-[node name="PlayerInteractor" type="Node3D" parent="Head" index="3" node_paths=PackedStringArray("PlayerBodyCollision", "InteractorRay")]
+[node name="PlayerInteractor" type="Node3D" parent="Head" index="3" node_paths=PackedStringArray("PlayerBody", "InteractorRay", "_playerHead", "_stepHelper")]
 script = ExtResource("6_rta4b")
-PlayerBodyCollision = NodePath("../..")
+PlayerBody = NodePath("../..")
 InteractorRay = NodePath("../RayCast3D")
+_playerHead = NodePath("..")
+_stepHelper = NodePath("../../StepHelper")
 
 [node name="PlayerHeadController" type="Node" parent="Head" index="4" node_paths=PackedStringArray("_playerBody", "_playerHead")]
 script = ExtResource("1_74oir")
