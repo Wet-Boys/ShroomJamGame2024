@@ -3,32 +3,50 @@ using ShroomJamGame.CharacterBody;
 
 namespace ShroomJamGame.Player;
 
-public partial class PlayerMovementController : CharacterMovementController
+[Tool]
+[GlobalClass]
+public partial class PlayerMovementController : Node
 {
-    protected override bool IsCrouching => Controls.Instance.Crouch;
-    protected override bool IsSprinting => Controls.Instance.Sprint;
-    protected override Vector2 GetMovementInput() => Controls.Instance.Movement;
+    [Export]
+    private CharacterMovementController? _characterMovementController;
     
     public override void _Ready()
     {
         if (Engine.IsEditorHint())
             return;
+
+        if (_characterMovementController is null)
+            return;
         
-        Controls.Instance.Jump.OnPress += BufferJump;
-        Controls.Instance.Crouch.OnPress += OnStartCrouching;
-        Controls.Instance.Crouch.OnRelease += OnStopCrouching;
+        Controls.Instance.Jump.OnPress += _characterMovementController.BufferJump;
+        Controls.Instance.Crouch.OnPress += _characterMovementController.StartCrouching;
+        Controls.Instance.Crouch.OnRelease += _characterMovementController.StopCrouching;
     }
-    
+
     public override void _Notification(int notification)
     {
         if (Engine.IsEditorHint())
             return;
+        
+        if (_characterMovementController is null)
+            return;
 
         if (notification == NotificationPredelete)
         {
-            Controls.Instance.Jump.OnPress -= BufferJump;
-            Controls.Instance.Crouch.OnPress -= OnStartCrouching;
-            Controls.Instance.Crouch.OnRelease -= OnStopCrouching;
+            Controls.Instance.Jump.OnPress -= _characterMovementController.BufferJump;
+            Controls.Instance.Crouch.OnPress -= _characterMovementController.StartCrouching;
+            Controls.Instance.Crouch.OnRelease -= _characterMovementController.StopCrouching;
         }
+    }
+    
+    public override void _PhysicsProcess(double delta)
+    {
+        if (Engine.IsEditorHint())
+            return;
+        
+        if (_characterMovementController is null)
+            return;
+
+        _characterMovementController.InputMovement = Controls.Instance.Movement;
     }
 }

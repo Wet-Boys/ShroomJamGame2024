@@ -3,7 +3,9 @@ using ShroomJamGame.Player;
 
 namespace ShroomJamGame.CharacterBody;
 
-public abstract partial class CharacterMovementController : Node
+[Tool]
+[GlobalClass]
+public partial class CharacterMovementController : Node
 {
     [Export]
     private float _moveSpeed = 100f;
@@ -79,9 +81,12 @@ public abstract partial class CharacterMovementController : Node
     private Vector3 PlayerRight => _characterBody!.GlobalBasis.X;
     private float MoveSpeed => _moveSpeed * (IsCrouching ? _crouchMultiplier : IsSprinting ? _sprintMultiplier : 1);
 
-    protected abstract bool IsCrouching { get; }
-    protected abstract bool IsSprinting { get; }
-    protected abstract Vector2 GetMovementInput();
+    [Export]
+    public bool IsCrouching;
+    [Export]
+    public bool IsSprinting;
+    [Export]
+    public Vector2 InputMovement;
 
     public override void _PhysicsProcess(double delta)
     {
@@ -115,12 +120,10 @@ public abstract partial class CharacterMovementController : Node
             if (_coyoteJumpTimer > 0)
                 _coyoteJumpTimer -= delta;
         }
-
-        var movement = GetMovementInput();
         
         // Add movement forces to velocity
-        _characterBody.Velocity += PlayerForward * movement.Y * MoveSpeed * (float)delta;
-        _characterBody.Velocity += PlayerRight * movement.X * MoveSpeed * (float)delta;
+        _characterBody.Velocity += PlayerForward * InputMovement.Y * MoveSpeed * (float)delta;
+        _characterBody.Velocity += PlayerRight * InputMovement.X * MoveSpeed * (float)delta;
 
         // Check if we are colliding with a step
         RotateStepHelper();
@@ -148,7 +151,7 @@ public abstract partial class CharacterMovementController : Node
         _characterHead.Position = new Vector3(0, (_characterHeight / 2f) - _eyeOffsetFromTop, 0);
     }
     
-    protected void OnStartCrouching()
+    public void StartCrouching()
     {
         if (_characterCollisionShape is null || _characterHead is null || _characterBody is null || _stepHelper is null)
             return;
@@ -168,7 +171,7 @@ public abstract partial class CharacterMovementController : Node
             _characterBody.GlobalPosition += new Vector3(0, heightDiff, 0);
     }
 
-    protected void OnStopCrouching()
+    public void StopCrouching()
     {
         if (_characterCollisionShape is null || _characterHead is null || _characterBody is null || _stepHelper is null)
             return;
@@ -193,13 +196,12 @@ public abstract partial class CharacterMovementController : Node
     {
         if (_characterBody is null)
             return;
-
-        var moveAxis = GetMovementInput();
         
-        if (Mathf.Abs(moveAxis.X) < 0.001f && Mathf.Abs(moveAxis.Y) < 0.001f)
+        
+        if (Mathf.Abs(InputMovement.X) < 0.001f && Mathf.Abs(InputMovement.Y) < 0.001f)
             return;
         
-        var dir = (PlayerForward * moveAxis.Y + PlayerRight * moveAxis.X).Normalized();
+        var dir = (PlayerForward * InputMovement.Y + PlayerRight * InputMovement.X).Normalized();
         
         _characterBody.LookAt(_characterBody.GlobalPosition - dir, Vector3.Up);
     }
@@ -243,7 +245,7 @@ public abstract partial class CharacterMovementController : Node
         return true;
     }
     
-    protected void BufferJump()
+    public void BufferJump()
     {
         if (_characterBody is null)
             return;

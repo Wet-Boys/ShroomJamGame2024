@@ -1,20 +1,20 @@
-[gd_scene load_steps=16 format=3 uid="uid://bv7hgobt87i0x"]
+[gd_scene load_steps=12 format=3 uid="uid://c3lpolna7ygtf"]
 
 [ext_resource type="Script" path="res://Player/PlayerHeadController.cs" id="1_74oir"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="1_rdmxy"]
+[ext_resource type="PackedScene" uid="uid://ct5gfq2sqqps7" path="res://Assets/Prefabs/GenericCharacterBody.tscn" id="1_w0a4a"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="2_ahif8"]
-[ext_resource type="Script" path="res://Player/StepHelper.cs" id="3_0rjoo"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="3_d01j2"]
 [ext_resource type="Script" path="res://Player/PlayerMovementController.cs" id="4_i8tv5"]
 [ext_resource type="Script" path="res://Player/PlayerInteractor.cs" id="6_rta4b"]
 
-[sub_resource type="Resource" id="Resource_1d3f1"]
+[sub_resource type="Resource" id="Resource_4oitb"]
 script = ExtResource("2_ahif8")
 duration = 1.0
 transition = 0
 ease = 2
 
-[sub_resource type="Resource" id="Resource_sr1vm"]
+[sub_resource type="Resource" id="Resource_i8i7e"]
 script = ExtResource("3_d01j2")
 cull_mask = 1048575
 h_offset = 0.0
@@ -26,82 +26,34 @@ frustum_offset = Vector2(0, 0)
 near = 0.05
 far = 4000.0
 
-[sub_resource type="Environment" id="Environment_pdj8f"]
+[sub_resource type="Environment" id="Environment_122bg"]
 ambient_light_source = 1
 
-[sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_m0xws"]
+[sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_qqvq2"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_mglpe"]
-size = Vector3(1, 0.475, 0.35)
+[node name="Player" instance=ExtResource("1_w0a4a")]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_t7rgh"]
-size = Vector3(1, 2.25, 0.35)
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_mva81"]
-height = 2.25
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_7e70w"]
-
-[node name="Player" type="CharacterBody3D"]
-
-[node name="PlayerMovementController" type="Node" parent="." node_paths=PackedStringArray("_characterBody", "_characterHead", "_characterCollisionShape", "_stepHelper")]
+[node name="PlayerMovementController" type="Node" parent="." index="0" node_paths=PackedStringArray("_characterMovementController")]
 script = ExtResource("4_i8tv5")
-_characterBody = NodePath("..")
-_characterHead = NodePath("../Head")
-_characterCollisionShape = NodePath("../CollisionShape3D")
-_stepHelper = NodePath("../StepHelper")
+_characterMovementController = NodePath("../CharacterMovementController")
 
-[node name="Head" type="Node3D" parent="."]
-transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0, 0.875, 0)
+[node name="AudioListener3D" type="AudioListener3D" parent="Head" index="0"]
 
-[node name="AudioListener3D" type="AudioListener3D" parent="Head"]
-
-[node name="PhantomCamera3D" type="Node3D" parent="Head"]
+[node name="PhantomCamera3D" type="Node3D" parent="Head" index="1"]
 transform = Transform3D(0.999995, 0, 0, 0, 1, 0, 0, 0, 0.999995, 0, 0, 0)
 script = ExtResource("1_rdmxy")
-tween_resource = SubResource("Resource_1d3f1")
+tween_resource = SubResource("Resource_4oitb")
 tween_on_load = false
-camera_3d_resource = SubResource("Resource_sr1vm")
-environment = SubResource("Environment_pdj8f")
-attributes = SubResource("CameraAttributesPhysical_m0xws")
+camera_3d_resource = SubResource("Resource_i8i7e")
+environment = SubResource("Environment_122bg")
+attributes = SubResource("CameraAttributesPhysical_qqvq2")
 
-[node name="PlayerHeadController" type="Node" parent="Head" node_paths=PackedStringArray("_playerBody", "_playerHead")]
+[node name="PlayerInteractor" type="Node3D" parent="Head" index="3" node_paths=PackedStringArray("PlayerBodyCollision", "InteractorRay")]
+script = ExtResource("6_rta4b")
+PlayerBodyCollision = NodePath("../..")
+InteractorRay = NodePath("../RayCast3D")
+
+[node name="PlayerHeadController" type="Node" parent="Head" index="4" node_paths=PackedStringArray("_playerBody", "_playerHead")]
 script = ExtResource("1_74oir")
 _playerBody = NodePath("../..")
 _playerHead = NodePath("..")
-
-[node name="PlayerInteractor" type="Node3D" parent="Head" node_paths=PackedStringArray("PlayerBodyCollision", "InteractorRay")]
-script = ExtResource("6_rta4b")
-PlayerBodyCollision = NodePath("../..")
-InteractorRay = NodePath("RayCast3D")
-
-[node name="RayCast3D" type="RayCast3D" parent="Head/PlayerInteractor"]
-target_position = Vector3(0, 0, -4)
-
-[node name="StepHelper" type="Node3D" parent="." node_paths=PackedStringArray("PlayerBody", "_stepShapeCast", "_clearanceShapeCast")]
-script = ExtResource("3_0rjoo")
-MaxStepHeight = 0.525
-StepTolerance = 0.1
-FloorTolerance = 0.1
-MinClearance = Vector3(1, 2.25, 0.5)
-PlayerBody = NodePath("..")
-_stepShapeCast = NodePath("StepShapeCast")
-_clearanceShapeCast = NodePath("ClearanceShapeCast")
-
-[node name="StepShapeCast" type="ShapeCast3D" parent="StepHelper"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1, 0.5)
-shape = SubResource("BoxShape3D_mglpe")
-target_position = Vector3(0, 0.2625, 0.175)
-
-[node name="ClearanceShapeCast" type="ShapeCast3D" parent="StepHelper"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.625, 0.5)
-shape = SubResource("BoxShape3D_t7rgh")
-target_position = Vector3(0, 0, 0.175)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("CylinderShape3D_mva81")
-
-[node name="Placeholder Mesh" type="MeshInstance3D" parent="."]
-cast_shadow = 3
-gi_mode = 2
-mesh = SubResource("CapsuleMesh_7e70w")

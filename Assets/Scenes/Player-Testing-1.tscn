@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://c10b6t4qqwe1r"]
 
-[ext_resource type="PackedScene" uid="uid://bv7hgobt87i0x" path="res://Assets/Prefabs/Player.tscn" id="1_f5xs7"]
+[ext_resource type="PackedScene" uid="uid://c3lpolna7ygtf" path="res://Assets/Prefabs/Player.tscn" id="1_f5xs7"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_5f2ps"]
 [ext_resource type="Script" path="res://Animalese/AnimalesePlayer3D.cs" id="3_1hc3e"]
 [ext_resource type="PackedScene" uid="uid://divklmgsu47f" path="res://Various Debug/general_building_layout.tscn" id="3_w4nai"]
@@ -9,10 +9,10 @@
 [ext_resource type="Script" path="res://Animalese/AnimaleseDialogTest.cs" id="5_mac5d"]
 [ext_resource type="Script" path="res://Interaction/Interactable.cs" id="6_j7hjj"]
 
-[sub_resource type="Environment" id="Environment_ws8xi"]
+[sub_resource type="Environment" id="Environment_4mha1"]
 ambient_light_source = 1
 
-[sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_eb3yv"]
+[sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_0s7v2"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_n1tod"]
 
@@ -30,8 +30,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.522051, 7.80016, 5.45681)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, -0.522051, 8.67516, 5.45681)
-environment = SubResource("Environment_ws8xi")
-attributes = SubResource("CameraAttributesPhysical_eb3yv")
+environment = SubResource("Environment_4mha1")
+attributes = SubResource("CameraAttributesPhysical_0s7v2")
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D"]
 process_priority = 300

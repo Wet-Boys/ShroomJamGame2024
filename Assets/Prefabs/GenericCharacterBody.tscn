@@ -1,35 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://cy8c1p22wrnpt"]
+[gd_scene load_steps=7 format=3 uid="uid://ct5gfq2sqqps7"]
 
-[ext_resource type="Script" path="res://Player/PlayerMovementController.cs" id="1_wj3iw"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="2_sq64n"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_b81t3"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="4_6601y"]
-[ext_resource type="Script" path="res://Player/PlayerHeadController.cs" id="5_m1eyi"]
-[ext_resource type="Script" path="res://Player/PlayerInteractor.cs" id="6_7gsy6"]
-[ext_resource type="Script" path="res://Player/StepHelper.cs" id="7_g8t2e"]
-
-[sub_resource type="Resource" id="Resource_1d3f1"]
-script = ExtResource("3_b81t3")
-duration = 1.0
-transition = 0
-ease = 2
-
-[sub_resource type="Resource" id="Resource_sr1vm"]
-script = ExtResource("4_6601y")
-cull_mask = 1048575
-h_offset = 0.0
-v_offset = 0.0
-projection = 0
-fov = 90.0
-size = 1.0
-frustum_offset = Vector2(0, 0)
-near = 0.05
-far = 4000.0
-
-[sub_resource type="Environment" id="Environment_pdj8f"]
-ambient_light_source = 1
-
-[sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_m0xws"]
+[ext_resource type="Script" path="res://CharacterBody/CharacterMovementController.cs" id="1_2vn36"]
+[ext_resource type="Script" path="res://Player/StepHelper.cs" id="2_7fi1s"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mglpe"]
 size = Vector3(1, 0.475, 0.35)
@@ -42,10 +14,10 @@ height = 2.25
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_7e70w"]
 
-[node name="Player" type="CharacterBody3D"]
+[node name="GenericCharacterBody" type="CharacterBody3D"]
 
-[node name="PlayerMovementController" type="Node" parent="." node_paths=PackedStringArray("_characterBody", "_characterHead", "_characterCollisionShape", "_stepHelper")]
-script = ExtResource("1_wj3iw")
+[node name="CharacterMovementController" type="Node" parent="." node_paths=PackedStringArray("_characterBody", "_characterHead", "_characterCollisionShape", "_stepHelper")]
+script = ExtResource("1_2vn36")
 _characterBody = NodePath("..")
 _characterHead = NodePath("../Head")
 _characterCollisionShape = NodePath("../CollisionShape3D")
@@ -54,32 +26,11 @@ _stepHelper = NodePath("../StepHelper")
 [node name="Head" type="Node3D" parent="."]
 transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0, 0.875, 0)
 
-[node name="AudioListener3D" type="AudioListener3D" parent="Head"]
-
-[node name="PhantomCamera3D" type="Node3D" parent="Head"]
-transform = Transform3D(0.999995, 0, 0, 0, 1, 0, 0, 0, 0.999995, 0, 0, 0)
-script = ExtResource("2_sq64n")
-tween_resource = SubResource("Resource_1d3f1")
-tween_on_load = false
-camera_3d_resource = SubResource("Resource_sr1vm")
-environment = SubResource("Environment_pdj8f")
-attributes = SubResource("CameraAttributesPhysical_m0xws")
-
-[node name="PlayerHeadController" type="Node" parent="Head" node_paths=PackedStringArray("_playerBody", "_playerHead")]
-script = ExtResource("5_m1eyi")
-_playerBody = NodePath("../..")
-_playerHead = NodePath("..")
-
-[node name="PlayerInteractor" type="Node3D" parent="Head" node_paths=PackedStringArray("PlayerBodyCollision", "InteractorRay")]
-script = ExtResource("6_7gsy6")
-PlayerBodyCollision = NodePath("../..")
-InteractorRay = NodePath("RayCast3D")
-
-[node name="RayCast3D" type="RayCast3D" parent="Head/PlayerInteractor"]
+[node name="RayCast3D" type="RayCast3D" parent="Head"]
 target_position = Vector3(0, 0, -4)
 
 [node name="StepHelper" type="Node3D" parent="." node_paths=PackedStringArray("PlayerBody", "_stepShapeCast", "_clearanceShapeCast")]
-script = ExtResource("7_g8t2e")
+script = ExtResource("2_7fi1s")
 MaxStepHeight = 0.525
 StepTolerance = 0.1
 FloorTolerance = 0.1
