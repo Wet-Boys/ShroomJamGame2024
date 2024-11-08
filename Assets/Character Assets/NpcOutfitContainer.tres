@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="NpcOutfits" load_steps=21 format=3 uid="uid://bqxo4lggu8vrn"]
+
+[ext_resource type="ArrayMesh" uid="uid://cb270pawy0ixc" path="res://Assets/Character Assets/Body Parts/boots.res" id="1_c8y0e"]
+[ext_resource type="ArrayMesh" uid="uid://ccb824y0pjsep" path="res://Assets/Character Assets/Body Parts/crocs.res" id="2_qt7vh"]
+[ext_resource type="ArrayMesh" uid="uid://bx8c4jhlrpgw2" path="res://Assets/Character Assets/Body Parts/heel.res" id="3_65qkw"]
+[ext_resource type="ArrayMesh" uid="uid://b67utniq6l6us" path="res://Assets/Character Assets/Body Parts/plappers.res" id="4_bsa1o"]
+[ext_resource type="ArrayMesh" uid="uid://bfdwo5w4t4vrk" path="res://Assets/Character Assets/Body Parts/ballHands.res" id="5_ja6wa"]
+[ext_resource type="ArrayMesh" uid="uid://c6aayjao1r8jl" path="res://Assets/Character Assets/Body Parts/balloon.res" id="6_cmqy3"]
+[ext_resource type="ArrayMesh" uid="uid://cf473oyxdlmgk" path="res://Assets/Character Assets/Body Parts/blockHead.res" id="7_jfcsx"]
+[ext_resource type="ArrayMesh" uid="uid://c5hfj62xkqixy" path="res://Assets/Character Assets/Body Parts/bow.res" id="8_yjedm"]
+[ext_resource type="ArrayMesh" uid="uid://bvnhvt5u23wjs" path="res://Assets/Character Assets/Body Parts/coffee.res" id="9_8q6ur"]
+[ext_resource type="ArrayMesh" uid="uid://bfvovgywqbi57" path="res://Assets/Character Assets/Body Parts/cylinder.res" id="10_x22rd"]
+[ext_resource type="ArrayMesh" uid="uid://bqgnll05koc3r" path="res://Assets/Character Assets/Body Parts/gear.res" id="11_1il77"]
+[ext_resource type="ArrayMesh" uid="uid://drbfep4nsbfdf" path="res://Assets/Character Assets/Body Parts/gem.res" id="12_1vgus"]
+[ext_resource type="ArrayMesh" uid="uid://b4icwpa1iggsf" path="res://Assets/Character Assets/Body Parts/mushroom.res" id="13_apuqg"]
+[ext_resource type="ArrayMesh" uid="uid://ddemvq2kyeh5i" path="res://Assets/Character Assets/Body Parts/sphere.res" id="14_vudpp"]
+[ext_resource type="ArrayMesh" uid="uid://47kbleeu5bdm" path="res://Assets/Character Assets/Body Parts/star.res" id="15_s8ihv"]
+[ext_resource type="ArrayMesh" uid="uid://tr7w1fsvy0m8" path="res://Assets/Character Assets/Body Parts/cone.res" id="17_24e20"]
+[ext_resource type="ArrayMesh" uid="uid://lo5ifp3km0kw" path="res://Assets/Character Assets/Body Parts/egg.res" id="18_h73bk"]
+[ext_resource type="ArrayMesh" uid="uid://d2cqtyj74cb6c" path="res://Assets/Character Assets/Body Parts/jetsons.res" id="19_e7dva"]
+[ext_resource type="Script" path="res://NPC/NpcOutfits.cs" id="20_c7gsa"]
+[ext_resource type="ArrayMesh" uid="uid://dyyc5tunxkltk" path="res://Assets/Character Assets/Body Parts/roundCube.res" id="20_e175t"]
+
+[resource]
+script = ExtResource("20_c7gsa")
+feetMeshes = Array[Mesh]([ExtResource("1_c8y0e"), ExtResource("2_qt7vh"), ExtResource("3_65qkw"), ExtResource("4_bsa1o")])
+handMeshes = Array[Mesh]([ExtResource("5_ja6wa")])
+headMeshes = Array[Mesh]([ExtResource("6_cmqy3"), ExtResource("7_jfcsx"), ExtResource("8_yjedm"), ExtResource("9_8q6ur"), ExtResource("10_x22rd"), ExtResource("11_1il77"), ExtResource("12_1vgus"), ExtResource("13_apuqg"), ExtResource("14_vudpp"), ExtResource("15_s8ihv")])
+torsoMeshes = Array[Mesh]([ExtResource("17_24e20"), ExtResource("18_h73bk"), ExtResource("19_e7dva"), ExtResource("20_e175t")])
+allMeshes = Array[Mesh]([ExtResource("5_ja6wa"), ExtResource("6_cmqy3"), ExtResource("7_jfcsx"), ExtResource("1_c8y0e"), ExtResource("8_yjedm"), ExtResource("9_8q6ur"), ExtResource("17_24e20"), ExtResource("2_qt7vh"), ExtResource("10_x22rd"), ExtResource("18_h73bk"), ExtResource("11_1il77"), ExtResource("12_1vgus"), ExtResource("3_65qkw"), ExtResource("19_e7dva"), ExtResource("13_apuqg"), ExtResource("4_bsa1o"), ExtResource("20_e175t"), ExtResource("14_vudpp"), ExtResource("15_s8ihv")])
