@@ -1,15 +1,16 @@
-[gd_scene load_steps=13 format=3 uid="uid://c10b6t4qqwe1r"]
+[gd_scene load_steps=14 format=3 uid="uid://c10b6t4qqwe1r"]
 
 [ext_resource type="PackedScene" uid="uid://bv7hgobt87i0x" path="res://Assets/Prefabs/Player.tscn" id="1_f5xs7"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_5f2ps"]
 [ext_resource type="Script" path="res://Animalese/AnimalesePlayer3D.cs" id="3_1hc3e"]
+[ext_resource type="PackedScene" uid="uid://divklmgsu47f" path="res://Various Debug/general_building_layout.tscn" id="3_w4nai"]
 [ext_resource type="Resource" uid="uid://bpivqdl8ksfdj" path="res://Assets/AnimaleseSounds/Test1.tres" id="4_nagxe"]
 [ext_resource type="Script" path="res://Animalese/AnimaleseDialogTest.cs" id="5_mac5d"]
 [ext_resource type="Script" path="res://Interaction/Interactable.cs" id="6_j7hjj"]
 
-[sub_resource type="Environment" id="Environment_yry3l"]
+[sub_resource type="Environment" id="Environment_xtspm"]
 
-[sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_rbjlq"]
+[sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_nsk8r"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_n1tod"]
 
@@ -23,12 +24,12 @@ data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0
 [node name="Player-testing-1" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("1_f5xs7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.17029, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9884, 7.29641, 7.26038)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0, 5.42029, 0)
-environment = SubResource("Environment_yry3l")
-attributes = SubResource("CameraAttributesPhysical_rbjlq")
+transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 12.9884, 8.29641, 7.26038)
+environment = SubResource("Environment_xtspm")
+attributes = SubResource("CameraAttributesPhysical_nsk8r")
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D"]
 process_priority = 300
@@ -41,7 +42,8 @@ transform = Transform3D(1, 0, 0, 0, 0.859246, 0.511563, 0, -0.511563, 0.859246, 
 [node name="World" type="Node3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="World"]
-transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, 0, 0)
+transform = Transform3D(93.2457, 0, 0, 0, 1.86491, 0, 0, 0, 93.2457, 0, 0, 0)
+visible = false
 mesh = SubResource("PlaneMesh_n1tod")
 skeleton = NodePath("../..")
 
@@ -52,6 +54,7 @@ shape = SubResource("ConcavePolygonShape3D_c6yec")
 
 [node name="Stairs" type="CSGCombiner3D" parent="World"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.52479, 0, 0)
+visible = false
 use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="World/Stairs"]
@@ -102,6 +105,9 @@ size = Vector3(0.5, 5.5, 2)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.25, 3, -0.5)
 size = Vector3(0.5, 6, 2)
 
+[node name="General Building Layout" parent="World" instance=ExtResource("3_w4nai")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+
 [node name="AnimalesePlayer3D" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.18721, 4.11217)
 unit_size = 4.35
@@ -123,6 +129,7 @@ TextLabel = NodePath("../Label3D")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.26513, 1.87672)
+visible = false
 metadata/InteractableChildIndex = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]

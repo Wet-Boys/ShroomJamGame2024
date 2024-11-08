@@ -50,7 +50,18 @@ public partial class PlayerMovementController : Node
             UpdateCharacterSize();
         }
     }
-    
+
+    private float _eyeOffsetFromTop = 0.25f;
+    [Export]
+    public float EyeOffsetFromTop
+    {
+        get => _eyeOffsetFromTop;
+        set
+        {
+            _eyeOffsetFromTop = value;
+            UpdateCharacterSize();
+        }
+    }
     
     [ExportGroup("Node References")]
     [Export]
@@ -151,13 +162,13 @@ public partial class PlayerMovementController : Node
         if (!Engine.IsEditorHint())
             return;
         
-        _playerCollisionShape.Shape = new BoxShape3D
+        _playerCollisionShape.Shape = new CylinderShape3D
         {
-            Size = new Vector3(1f, _characterHeight, 1f)
+            Height = _characterHeight,
         };
 
         _stepHelper.MinClearance = _stepHelper.MinClearance with { Y = _characterHeight };
-        _playerHead.Position = new Vector3(0, _characterHeight / 2f, 0);
+        _playerHead.Position = new Vector3(0, (_characterHeight / 2f) - _eyeOffsetFromTop, 0);
     }
     
     private void OnStartCrouching()
@@ -165,15 +176,16 @@ public partial class PlayerMovementController : Node
         if (_playerCollisionShape is null || _playerHead is null || _playerBody is null || _stepHelper is null)
             return;
         
-        _playerCollisionShape.Shape = new BoxShape3D
+        _playerCollisionShape.Shape = new CylinderShape3D
         {
-            Size = new Vector3(1f, _crouchCharacterHeight, 1f)
+            Height = _crouchCharacterHeight,
         };
+        
         var heightDiff = _characterHeight - _crouchCharacterHeight;
         _playerCollisionShape.Position = _playerCollisionShape.Position with { Y = -heightDiff / 2f };
         
         _stepHelper.MinClearance = _stepHelper.MinClearance with { Y = _crouchCharacterHeight };
-        _playerHead.Position = new Vector3(0, (_crouchCharacterHeight / 2f) - (heightDiff / 2f) , 0);
+        _playerHead.Position = new Vector3(0, (_crouchCharacterHeight / 2f) - (heightDiff / 2f + _eyeOffsetFromTop) , 0);
 
         if (!_playerBody.IsOnFloor())
             _playerBody.GlobalPosition += new Vector3(0, heightDiff, 0);
@@ -184,14 +196,15 @@ public partial class PlayerMovementController : Node
         if (_playerCollisionShape is null || _playerHead is null || _playerBody is null || _stepHelper is null)
             return;
         
-        _playerCollisionShape.Shape = new BoxShape3D
+        _playerCollisionShape.Shape = new CylinderShape3D
         {
-            Size = new Vector3(1f, _characterHeight, 1f)
+            Height = _characterHeight,
         };
+        
         _playerCollisionShape.Position = _playerCollisionShape.Position with { Y = 0 };
         
         _stepHelper.MinClearance = _stepHelper.MinClearance with { Y = _characterHeight };
-        _playerHead.Position = new Vector3(0, _characterHeight / 2f, 0);
+        _playerHead.Position = new Vector3(0, (_characterHeight / 2f) - _eyeOffsetFromTop, 0);
 
         if (_playerBody.IsOnFloor())
             return;

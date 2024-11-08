@@ -36,8 +36,8 @@ size = Vector3(1, 0.475, 0.35)
 [sub_resource type="BoxShape3D" id="BoxShape3D_t7rgh"]
 size = Vector3(1, 2.5, 0.35)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_a48lw"]
-size = Vector3(1, 2.5, 1)
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_7qqw7"]
+height = 2.5
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_7e70w"]
 
@@ -55,7 +55,7 @@ _playerCollisionShape = NodePath("../CollisionShape3D")
 _stepHelper = NodePath("../StepHelper")
 
 [node name="Head" type="Node3D" parent="."]
-transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0, 1.25, 0)
+transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0, 1, 0)
 
 [node name="AudioListener3D" type="AudioListener3D" parent="Head"]
 
@@ -104,7 +104,7 @@ shape = SubResource("BoxShape3D_t7rgh")
 target_position = Vector3(0, 0, 0.175)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_a48lw")
+shape = SubResource("CylinderShape3D_7qqw7")
 
 [node name="Placeholder Mesh" type="MeshInstance3D" parent="."]
 visible = false
