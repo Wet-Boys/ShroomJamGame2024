@@ -35,12 +35,15 @@ namespace ShroomJamGame.NPC
             }
             if (_navigationAgent.IsNavigationFinished())
             {
+                _characterMovementController.InputMovement = new Vector2(0, 0);
                 return;
             }
+            Quaternion currentYRot = characterBody3D.Quaternion;
             Vector3 nextPathPosition = _navigationAgent.GetNextPathPosition();
-            Vector3 movementDirection = characterBody3D.GlobalPosition.DirectionTo(nextPathPosition);
             characterBody3D.LookAt(nextPathPosition);
             characterBody3D.RotationDegrees = new Vector3(0, characterBody3D.RotationDegrees.Y + 180, 0);
+            Quaternion newYRot = characterBody3D.Quaternion;
+            characterBody3D.Quaternion = currentYRot.Slerp(newYRot, (float)delta * 8);
             _characterMovementController.InputMovement = new Vector2(0,1);
         }
     }
