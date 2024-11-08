@@ -27,6 +27,7 @@ near = 0.05
 far = 4000.0
 
 [sub_resource type="Environment" id="Environment_pdj8f"]
+ambient_light_source = 1
 
 [sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_m0xws"]
 
@@ -43,15 +44,12 @@ height = 2.25
 
 [node name="Player" type="CharacterBody3D"]
 
-[node name="PlayerMovementController" type="Node" parent="." node_paths=PackedStringArray("_playerBody", "_playerHead", "_playerCollisionShape", "_stepHelper")]
+[node name="PlayerMovementController" type="Node" parent="." node_paths=PackedStringArray("_characterBody", "_characterHead", "_characterCollisionShape", "_stepHelper")]
 script = ExtResource("4_i8tv5")
-_jumpForce = 600.0
-_airFriction = 7.5
-CharacterHeight = 2.25
-CrouchCharacterHeight = 1.25
-_playerBody = NodePath("..")
-_playerHead = NodePath("../Head")
-_playerCollisionShape = NodePath("../CollisionShape3D")
+_jumpForce = 500.0
+_characterBody = NodePath("..")
+_characterHead = NodePath("../Head")
+_characterCollisionShape = NodePath("../CollisionShape3D")
 _stepHelper = NodePath("../StepHelper")
 
 [node name="Head" type="Node3D" parent="."]
@@ -59,11 +57,9 @@ transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0, 0.8
 
 [node name="AudioListener3D" type="AudioListener3D" parent="Head"]
 
-[node name="PhantomCamera3D" type="Node3D" parent="Head" node_paths=PackedStringArray("follow_target", "look_at_target")]
+[node name="PhantomCamera3D" type="Node3D" parent="Head"]
 transform = Transform3D(0.999995, 0, 0, 0, 1, 0, 0, 0, 0.999995, 0, 0, 0)
 script = ExtResource("1_rdmxy")
-follow_target = NodePath("..")
-look_at_target = NodePath("..")
 tween_resource = SubResource("Resource_1d3f1")
 tween_on_load = false
 camera_3d_resource = SubResource("Resource_sr1vm")
@@ -107,5 +103,6 @@ target_position = Vector3(0, 0, 0.175)
 shape = SubResource("CylinderShape3D_mva81")
 
 [node name="Placeholder Mesh" type="MeshInstance3D" parent="."]
-visible = false
+cast_shadow = 3
+gi_mode = 2
 mesh = SubResource("CapsuleMesh_7e70w")
