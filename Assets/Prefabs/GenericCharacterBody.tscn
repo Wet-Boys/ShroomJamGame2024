@@ -14,7 +14,7 @@ height = 2.25
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_7e70w"]
 
-[node name="GenericCharacterBody" type="CharacterBody3D"]
+[node name="GenericCharacterBody2" type="CharacterBody3D"]
 
 [node name="CharacterMovementController" type="Node" parent="." node_paths=PackedStringArray("_characterBody", "_characterHead", "_characterCollisionShape", "_stepHelper")]
 script = ExtResource("1_2vn36")

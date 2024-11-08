@@ -53,19 +53,17 @@ camera_3d_resource = SubResource("Resource_i8i7e")
 environment = SubResource("Environment_122bg")
 attributes = SubResource("CameraAttributesPhysical_qqvq2")
 
-[node name="PlayerInteractor" type="Node3D" parent="Head" index="3" node_paths=PackedStringArray("PlayerBody", "InteractorRay", "_playerHead", "_stepHelper", "_tooltipLabel")]
+[node name="PlayerInteractor" type="Node3D" parent="Head" index="3" node_paths=PackedStringArray("InteractorRay")]
 script = ExtResource("6_rta4b")
-PlayerBody = NodePath("../..")
 InteractorRay = NodePath("../RayCast3D")
-_playerHead = NodePath("..")
-_stepHelper = NodePath("../../StepHelper")
-_tooltipLabel = NodePath("../../GeneralHud/Tooltip Container/Tooltip")
-_maxPhysicsDistance = 1.5
 
 [node name="PlayerHeadController" type="Node" parent="Head" index="4" node_paths=PackedStringArray("_playerBody", "_playerHead")]
 script = ExtResource("1_74oir")
 _playerBody = NodePath("../..")
 _playerHead = NodePath("..")
+
+[node name="StepHelper" parent="." index="3"]
+MinClearance = Vector3(1, 2.25, 0.5)
 
 [node name="GeneralHud" parent="." index="6" instance=ExtResource("8_i06ww")]
 

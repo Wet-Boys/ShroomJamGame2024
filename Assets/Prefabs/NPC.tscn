@@ -23,6 +23,9 @@ characterBody3D = NodePath("..")
 _navigationAgent = NodePath("../Node3D/NavigationAgent3D")
 _visualController = NodePath("../BodyHolder/BasePerson")
 
+[node name="StepHelper" parent="." index="3"]
+MinClearance = Vector3(1, 2.25, 0.5)
+
 [node name="Placeholder Mesh" parent="." index="5"]
 visible = false
 cast_shadow = 1
