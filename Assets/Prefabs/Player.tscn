@@ -34,10 +34,10 @@ far = 4000.0
 size = Vector3(1, 0.475, 0.35)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t7rgh"]
-size = Vector3(1, 2.5, 0.35)
+size = Vector3(1, 2.25, 0.35)
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_7qqw7"]
-height = 2.5
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_mva81"]
+height = 2.25
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_7e70w"]
 
@@ -47,15 +47,15 @@ height = 2.5
 script = ExtResource("4_i8tv5")
 _jumpForce = 600.0
 _airFriction = 7.5
-CharacterHeight = 2.5
-CrouchCharacterHeight = 1.5
+CharacterHeight = 2.25
+CrouchCharacterHeight = 1.25
 _playerBody = NodePath("..")
 _playerHead = NodePath("../Head")
 _playerCollisionShape = NodePath("../CollisionShape3D")
 _stepHelper = NodePath("../StepHelper")
 
 [node name="Head" type="Node3D" parent="."]
-transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0, 1, 0)
+transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0, 0.875, 0)
 
 [node name="AudioListener3D" type="AudioListener3D" parent="Head"]
 
@@ -88,13 +88,13 @@ script = ExtResource("3_0rjoo")
 MaxStepHeight = 0.525
 StepTolerance = 0.1
 FloorTolerance = 0.1
-MinClearance = Vector3(1, 2.5, 0.5)
+MinClearance = Vector3(1, 2.25, 0.5)
 PlayerBody = NodePath("..")
 _stepShapeCast = NodePath("StepShapeCast")
 _clearanceShapeCast = NodePath("ClearanceShapeCast")
 
 [node name="StepShapeCast" type="ShapeCast3D" parent="StepHelper"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.225, 0.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1, 0.5)
 shape = SubResource("BoxShape3D_mglpe")
 target_position = Vector3(0, 0.2625, 0.175)
 
@@ -104,7 +104,7 @@ shape = SubResource("BoxShape3D_t7rgh")
 target_position = Vector3(0, 0, 0.175)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("CylinderShape3D_7qqw7")
+shape = SubResource("CylinderShape3D_mva81")
 
 [node name="Placeholder Mesh" type="MeshInstance3D" parent="."]
 visible = false
