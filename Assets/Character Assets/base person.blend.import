@@ -33,176 +33,176 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "meshes": {
-"base person_Cube_001": {
+"base person_ballHands": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
 "lods/normal_split_angle": 25.0,
 "save_to_file/enabled": true,
-"save_to_file/path": "res://Assets/Character Assets/Body Parts/base person_Cube_001.res"
+"save_to_file/path": "res://Assets/Character Assets/Body Parts/base person_ballHands.res"
 },
-"base person_Cube_002": {
+"base person_balloon": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
 "lods/normal_split_angle": 25.0,
 "save_to_file/enabled": true,
-"save_to_file/path": "res://Assets/Character Assets/Body Parts/base person_Cube_002.res"
+"save_to_file/path": "res://Assets/Character Assets/Body Parts/base person_balloon.res"
 },
-"base person_Cube_003": {
+"base person_blockHead": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
 "lods/normal_split_angle": 25.0,
 "save_to_file/enabled": true,
-"save_to_file/path": "res://Assets/Character Assets/Body Parts/base person_Cube_003.res"
+"save_to_file/path": "res://Assets/Character Assets/Body Parts/base person_blockHead.res"
 },
-"base person_Cube_004": {
+"base person_boots": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
 "lods/normal_split_angle": 25.0,
 "save_to_file/enabled": true,
-"save_to_file/path": "res://Assets/Character Assets/Body Parts/base person_Cube_004.res"
+"save_to_file/path": "res://Assets/Character Assets/Body Parts/base person_boots.res"
 },
-"base person_Cube_005": {
+"base person_bow": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
 "lods/normal_split_angle": 25.0,
 "save_to_file/enabled": true,
-"save_to_file/path": "res://Assets/Character Assets/Body Parts/base person_Cube_005.res"
+"save_to_file/path": "res://Assets/Character Assets/Body Parts/base person_bow.res"
 },
-"base person_Cylinder": {
+"base person_coffee": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
 "lods/normal_split_angle": 25.0,
 "save_to_file/enabled": true,
-"save_to_file/path": "res://Assets/Character Assets/Body Parts/base person_Cylinder.res"
+"save_to_file/path": "res://Assets/Character Assets/Body Parts/base person_coffee.res"
 },
-"base person_Cylinder_001": {
+"base person_cone": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
 "lods/normal_split_angle": 25.0,
 "save_to_file/enabled": true,
-"save_to_file/path": "res://Assets/Character Assets/Body Parts/base person_Cylinder_001.res"
+"save_to_file/path": "res://Assets/Character Assets/Body Parts/base person_cone.res"
 },
-"base person_Cylinder_002": {
+"base person_crocs": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
 "lods/normal_split_angle": 25.0,
 "save_to_file/enabled": true,
-"save_to_file/path": "res://Assets/Character Assets/Body Parts/base person_Cylinder_002.res"
+"save_to_file/path": "res://Assets/Character Assets/Body Parts/base person_crocs.res"
 },
-"base person_Cylinder_003": {
+"base person_cylinder": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
 "lods/normal_split_angle": 25.0,
 "save_to_file/enabled": true,
-"save_to_file/path": "res://Assets/Character Assets/Body Parts/base person_Cylinder_003.res"
+"save_to_file/path": "res://Assets/Character Assets/Body Parts/base person_cylinder.res"
 },
-"base person_Cylinder_004": {
+"base person_egg": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
 "lods/normal_split_angle": 25.0,
 "save_to_file/enabled": true,
-"save_to_file/path": "res://Assets/Character Assets/Body Parts/base person_Cylinder_004.res"
+"save_to_file/path": "res://Assets/Character Assets/Body Parts/base person_egg.res"
 },
-"base person_Gear": {
+"base person_gear": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
 "lods/normal_split_angle": 25.0,
 "save_to_file/enabled": true,
-"save_to_file/path": "res://Assets/Character Assets/Body Parts/base person_Gear.res"
+"save_to_file/path": "res://Assets/Character Assets/Body Parts/base person_gear.res"
 },
-"base person_Gem": {
+"base person_gem": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
 "lods/normal_split_angle": 25.0,
 "save_to_file/enabled": true,
-"save_to_file/path": "res://Assets/Character Assets/Body Parts/base person_Gem.res"
+"save_to_file/path": "res://Assets/Character Assets/Body Parts/base person_gem.res"
 },
-"base person_Icosphere_001": {
+"base person_heel": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
 "lods/normal_split_angle": 25.0,
 "save_to_file/enabled": true,
-"save_to_file/path": "res://Assets/Character Assets/Body Parts/base person_Icosphere_001.res"
+"save_to_file/path": "res://Assets/Character Assets/Body Parts/base person_heel.res"
 },
-"base person_Icosphere_002": {
+"base person_jetsons": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
 "lods/normal_split_angle": 25.0,
 "save_to_file/enabled": true,
-"save_to_file/path": "res://Assets/Character Assets/Body Parts/base person_Icosphere_002.res"
+"save_to_file/path": "res://Assets/Character Assets/Body Parts/base person_jetsons.res"
 },
-"base person_Icosphere_003": {
+"base person_mushroom": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
 "lods/normal_split_angle": 25.0,
 "save_to_file/enabled": true,
-"save_to_file/path": "res://Assets/Character Assets/Body Parts/base person_Icosphere_003.res"
+"save_to_file/path": "res://Assets/Character Assets/Body Parts/base person_mushroom.res"
 },
-"base person_Roundcube": {
+"base person_plappers": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
 "lods/normal_split_angle": 25.0,
 "save_to_file/enabled": true,
-"save_to_file/path": "res://Assets/Character Assets/Body Parts/base person_Roundcube.res"
+"save_to_file/path": "res://Assets/Character Assets/Body Parts/base person_plappers.res"
 },
-"base person_Roundcube_001": {
+"base person_roundCube": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
 "lods/normal_split_angle": 25.0,
 "save_to_file/enabled": true,
-"save_to_file/path": "res://Assets/Character Assets/Body Parts/base person_Roundcube_001.res"
+"save_to_file/path": "res://Assets/Character Assets/Body Parts/base person_roundCube.res"
 },
-"base person_Sphere": {
+"base person_sphere": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
 "lods/normal_split_angle": 25.0,
 "save_to_file/enabled": true,
-"save_to_file/path": "res://Assets/Character Assets/Body Parts/base person_Sphere.res"
+"save_to_file/path": "res://Assets/Character Assets/Body Parts/base person_sphere.res"
 },
-"base person_Star": {
+"base person_star": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
 "lods/normal_split_angle": 25.0,
 "save_to_file/enabled": true,
-"save_to_file/path": "res://Assets/Character Assets/Body Parts/base person_Star.res"
+"save_to_file/path": "res://Assets/Character Assets/Body Parts/base person_star.res"
 }
 }
 }
