@@ -9,4 +9,14 @@ public partial class PhysicsInteractable : RigidBody3D, IInteractableObject
     {
         
     }
+
+    public string GetOnHoverText()
+    {
+        return $"Press `{Controls.Instance.Interact.GetOsHumanReadableKeyLabel()}` to pick up";
+    }
+
+    public string GetHeldHoverText()
+    {
+        return $"Press `{Controls.Instance.Interact.GetOsHumanReadableKeyLabel()}` to drop";
+    }
 }

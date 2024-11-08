@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Godot;
 
 namespace ShroomJamGame;
@@ -26,27 +27,27 @@ public partial class Controls : Node
     
     [ExportGroup("Events")]
     [Export]
-    private StringName _moveForward = "player.move_forward";
+    public StringName MoveForwardName = "player.move_forward";
     [Export]
-    private StringName _moveBackward = "player.move_backward";
+    public StringName MoveBackwardName = "player.move_backward";
     [Export]
-    private StringName _moveLeft = "player.move_left";
+    public StringName MoveLeftName = "player.move_left";
     [Export]
-    private StringName _moveRight = "player.move_right";
+    public StringName MoveRightName = "player.move_right";
     [Export]
-    private StringName _jump = "player.jump";
+    public StringName JumpName = "player.jump";
     [Export]
-    private StringName _crouch = "player.crouch";
+    public StringName CrouchName = "player.crouch";
     [Export]
-    private StringName _sprint = "player.sprint";
+    public StringName SprintName = "player.sprint";
     [Export]
-    private StringName _interact = "player.interact";
+    public StringName InteractName = "player.interact";
     [Export]
-    private StringName _primaryAction = "player.primary_action";
+    public StringName PrimaryActionName = "player.primary_action";
     [Export]
-    private StringName _secondaryAction = "player.secondary_action";
+    public StringName SecondaryActionName = "player.secondary_action";
     [Export]
-    private StringName _pause = "game.pause";
+    public StringName PauseName = "game.pause";
 
     private Vector2 _movement;
 
@@ -64,25 +65,25 @@ public partial class Controls : Node
     {
         _instance = this;
 
-        Jump.Action = _jump;
+        Jump.Action = JumpName;
         Jump.SetControlsInstance(this);
         
-        Crouch.Action = _crouch;
+        Crouch.Action = CrouchName;
         Crouch.SetControlsInstance(this);
         
-        Sprint.Action = _sprint;
+        Sprint.Action = SprintName;
         Sprint.SetControlsInstance(this);
         
-        Interact.Action = _interact;
+        Interact.Action = InteractName;
         Interact.SetControlsInstance(this);
         
-        PrimaryAction.Action = _primaryAction;
+        PrimaryAction.Action = PrimaryActionName;
         PrimaryAction.SetControlsInstance(this);
         
-        SecondaryAction.Action = _secondaryAction;
+        SecondaryAction.Action = SecondaryActionName;
         SecondaryAction.SetControlsInstance(this);
         
-        Pause.Action = _pause;
+        Pause.Action = PauseName;
         Pause.SetControlsInstance(this);
     }
 
@@ -98,7 +99,7 @@ public partial class Controls : Node
         
         if (inputEvent is InputEventJoypadMotion joystickEvent)
         {
-            if (joystickEvent.IsAction(_moveLeft) || joystickEvent.IsAction(_moveRight))
+            if (joystickEvent.IsAction(MoveLeftName) || joystickEvent.IsAction(MoveRightName))
             {
                 if (Mathf.Abs(joystickEvent.AxisValue) > JoystickDeadzone)
                 {
@@ -109,7 +110,7 @@ public partial class Controls : Node
                     axis.X = 0;
                 }
             }
-            else if (joystickEvent.IsAction(_moveForward) || joystickEvent.IsAction(_moveBackward))
+            else if (joystickEvent.IsAction(MoveForwardName) || joystickEvent.IsAction(MoveBackwardName))
             {
                 if (Mathf.Abs(joystickEvent.AxisValue) > JoystickDeadzone)
                 {
@@ -123,19 +124,19 @@ public partial class Controls : Node
         }
         else if (inputEvent is InputEventKey keyEvent)
         {
-            if (keyEvent.IsAction(_moveLeft))
+            if (keyEvent.IsAction(MoveLeftName))
             {
                 axis.X += keyEvent.IsPressed() ? -1 : 1;
             }
-            else if (keyEvent.IsAction(_moveRight))
+            else if (keyEvent.IsAction(MoveRightName))
             {
                 axis.X += keyEvent.IsPressed() ? 1 : -1;
             }
-            else if (keyEvent.IsAction(_moveForward))
+            else if (keyEvent.IsAction(MoveForwardName))
             {
                 axis.Y += keyEvent.IsPressed() ? -1 : 1;
             }
-            else if (keyEvent.IsAction(_moveBackward))
+            else if (keyEvent.IsAction(MoveBackwardName))
             {
                 axis.Y += keyEvent.IsPressed() ? 1 : -1;
             }
@@ -164,6 +165,26 @@ public partial class Controls : Node
         ~ControlButton()
         {
             Instance._buttons.Remove(this);
+        }
+
+        public string GetOsHumanReadableKeyLabel()
+        {
+            var events = InputMap.Singleton.ActionGetEvents(Action);
+
+            foreach (var inputEvent in events)
+            {
+                if (inputEvent is not InputEventKey keyEvent)
+                    continue;
+
+                var keycode = keyEvent.Keycode;
+
+                if (keycode == Key.None)
+                    keycode = keyEvent.PhysicalKeycode;
+
+                return OS.GetKeycodeString(keycode);
+            }
+
+            return "";
         }
 
         public bool IsHeld { get; private set; }
