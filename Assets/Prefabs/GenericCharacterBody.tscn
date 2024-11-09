@@ -1,10 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cy8c1p22wrnpt"]
+[gd_scene load_steps=8 format=3 uid="uid://cy8c1p22wrnpt"]
 
 [ext_resource type="Script" path="res://CharacterBody/CharacterMovementController.cs" id="1_2vn36"]
 [ext_resource type="Script" path="res://Player/StepHelper.cs" id="2_7fi1s"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mglpe"]
-size = Vector3(1, 0.425, 0.35)
+size = Vector3(1, 0.475, 0.35)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t7rgh"]
 size = Vector3(1, 2.25, 0.35)
@@ -13,13 +13,17 @@ size = Vector3(1, 2.25, 0.35)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_7e70w"]
 
-[node name="GenericCharacterBody2" type="CharacterBody3D"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_osxsl"]
 
-[node name="CharacterMovementController" type="Node" parent="." node_paths=PackedStringArray("_characterBody", "_characterHead", "_characterCollisionShape", "_stepHelper")]
+[node name="GenericCharacterBody2" type="CharacterBody3D"]
+collision_layer = 4
+
+[node name="CharacterMovementController" type="Node" parent="." node_paths=PackedStringArray("_characterBody", "_characterHead", "_characterCollisionShape", "_bodyCollisionChecker", "_stepHelper")]
 script = ExtResource("1_2vn36")
 _characterBody = NodePath("..")
 _characterHead = NodePath("../Head")
 _characterCollisionShape = NodePath("../CollisionShape3D")
+_bodyCollisionChecker = NodePath("../BodyCollisionChecker")
 _stepHelper = NodePath("../StepHelper")
 
 [node name="Head" type="Node3D" parent="."]
@@ -55,3 +59,8 @@ shape = SubResource("CylinderShape3D_s1uhv")
 cast_shadow = 3
 gi_mode = 2
 mesh = SubResource("CapsuleMesh_7e70w")
+
+[node name="BodyCollisionChecker" type="ShapeCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.99615, 0)
+shape = SubResource("CylinderShape3D_osxsl")
+collision_mask = 4

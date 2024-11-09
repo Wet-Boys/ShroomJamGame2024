@@ -68,7 +68,7 @@ namespace ShroomJamGame.NPC
             characterBody3D.Quaternion = currentYRot.Slerp(newYRot, (float)delta * 8);
             _characterMovementController.InputMovement = new Vector2(0,1);
 
-            if (interactionRay.IsColliding() && interactionRay.GetCollisionPoint().DistanceTo(characterBody3D.GlobalPosition) < 3)
+            if (interactionRay.IsColliding() && interactionRay.GetCollisionPoint().DistanceTo(characterBody3D.GlobalPosition) < 1.3)
             {
                 var hit = interactionRay?.GetCollider();
                 if (hit is not CollisionObject3D targetCollision)

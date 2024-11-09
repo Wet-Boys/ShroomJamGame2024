@@ -72,6 +72,8 @@ public partial class CharacterMovementController : Node
     [Export]
     private CollisionShape3D? _characterCollisionShape;
     [Export]
+    private ShapeCast3D? _bodyCollisionChecker;
+    [Export]
     private StepHelper? _stepHelper;
     
     private bool _jumpBuffered;
@@ -124,6 +126,11 @@ public partial class CharacterMovementController : Node
         // Add movement forces to velocity
         _characterBody.Velocity += PlayerForward * InputMovement.Y * MoveSpeed * (float)delta;
         _characterBody.Velocity += PlayerRight * InputMovement.X * MoveSpeed * (float)delta;
+        if (_bodyCollisionChecker.IsColliding())
+        {
+            Vector3 yeet = (_characterBody.Position - ((Node3D)_bodyCollisionChecker.GetCollider(0)).Position).Normalized()  * .15f;
+            _characterBody.Velocity += new Vector3(yeet.X, 0, yeet.Z);
+        }
 
         // Check if we are colliding with a step
         RotateStepHelper();
