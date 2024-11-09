@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static ShroomJamGame.NPC.NpcOutfitController;
 
 namespace ShroomJamGame.NPC
 {
@@ -14,20 +15,44 @@ namespace ShroomJamGame.NPC
         NpcOutfitController outfitController;
         [Export]
         AnimationTree animationTree;
-        Tween tween;
 
-        public void SetAnimationTreeState(float walkState)
+        public void Interact()
         {
-            if (tween is not null)
-            {
-                tween.Kill();
-            }
-            tween = CreateTween();
-            tween.TweenProperty(animationTree, "parameters/movement_blend/blend_position", walkState, .25f);
+            animationTree.Set("parameters/OneShot/request", "Fire");
+        }
+        public void SetAnimationTreeState(float velocity, bool holding)
+        {
+            animationTree.Set("parameters/Transition/transition_request", velocity == 0 ? "Idle" : "Walk");
+            animationTree.Set("parameters/HoldWalk/blend_amount", holding ? "1" : "0");
+            animationTree.Set("parameters/currentWalkingSpeed/scale", velocity * 4);
         }
         public void RandomizeOutfit()
         {
             outfitController.RandomizeParts();
+        }
+        public void SetEyes(Eyes eyeID)
+        {
+            outfitController.SetEyes(eyeID);
+        }
+        public void SetMouth(Mouths mouthID)
+        {
+            outfitController.SetMouth(mouthID);
+        }
+        public void SetFeet(Feets feetID)
+        {
+            outfitController.SetFeet(feetID);
+        }
+        public void SetHands(Hands handID)
+        {
+            outfitController.SetHands(handID);
+        }
+        public void SetTorsos(Torsos torsoID)
+        {
+            outfitController.SetTorsos(torsoID);
+        }
+        public void SetHead(Heads headID)
+        {
+            outfitController.SetHead(headID);
         }
     }
 }

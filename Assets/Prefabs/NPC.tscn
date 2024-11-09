@@ -16,12 +16,16 @@ material = ExtResource("2_glad6")
 _moveSpeed = 40.0
 _maxSpeed = 400.0
 
-[node name="NpcMovementController" type="Node" parent="." index="1" node_paths=PackedStringArray("_characterMovementController", "characterBody3D", "_navigationAgent", "_visualController")]
+[node name="NpcMovementController" type="Node" parent="." index="1" node_paths=PackedStringArray("_characterMovementController", "characterBody3D", "_navigationAgent", "_visualController", "interactionRay")]
 script = ExtResource("2_272a2")
 _characterMovementController = NodePath("../CharacterMovementController")
 characterBody3D = NodePath("..")
 _navigationAgent = NodePath("../Node3D/NavigationAgent3D")
 _visualController = NodePath("../BodyHolder/BasePerson")
+interactionRay = NodePath("../Head/RayCast3D")
+
+[node name="RayCast3D" parent="Head" index="0"]
+collision_mask = 2
 
 [node name="StepHelper" parent="." index="3"]
 MinClearance = Vector3(1, 2.25, 0.5)

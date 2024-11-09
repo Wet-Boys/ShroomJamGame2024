@@ -1,5 +1,6 @@
 ﻿using Godot;
 using ShroomJamGame.CharacterBody;
+using ShroomJamGame.Interaction;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,8 @@ namespace ShroomJamGame.NPC
         private NavigationAgent3D? _navigationAgent;
         [Export]
         NpcVisualController? _visualController;
+        [Export]
+        RayCast3D? interactionRay;
 
         public void _SetTargetNode(Node3D node)
         {
@@ -38,7 +41,7 @@ namespace ShroomJamGame.NPC
         }
         public override void _Process(double delta)
         {
-            _visualController.SetAnimationTreeState(characterBody3D.Velocity.Normalized().Length());
+            _visualController.SetAnimationTreeState(characterBody3D.Velocity.Normalized().Length(), false);
         }
         public override void _PhysicsProcess(double delta)
         {
@@ -64,6 +67,18 @@ namespace ShroomJamGame.NPC
             Quaternion newYRot = characterBody3D.Quaternion;
             characterBody3D.Quaternion = currentYRot.Slerp(newYRot, (float)delta * 8);
             _characterMovementController.InputMovement = new Vector2(0,1);
+
+            if (interactionRay.IsColliding() && interactionRay.GetCollisionPoint().DistanceTo(characterBody3D.GlobalPosition) < 3)
+            {
+                var hit = interactionRay?.GetCollider();
+                if (hit is not CollisionObject3D targetCollision)
+                    return;
+                DoorInteractable door = targetCollision.GetChildOrNull<DoorInteractable>(3);
+                if (door is not null && !door.IsOpen)
+                {
+                    door.Interact();
+                }
+            }
         }
     }
 }
