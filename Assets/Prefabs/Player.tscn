@@ -61,7 +61,8 @@ InteractorRay = NodePath("../RayCast3D")
 _playerHead = NodePath("..")
 _stepHelper = NodePath("../../StepHelper")
 _tooltipLabel = NodePath("../../GeneralHud/Tooltip Container/Tooltip")
-_throwStrength = 5.0
+_maxPhysicsDistance = 1.5
+_throwStrength = 15.0
 
 [node name="PlayerHeadController" type="Node" parent="Head" index="4" node_paths=PackedStringArray("_playerBody", "_playerHead")]
 script = ExtResource("1_74oir")
