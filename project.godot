@@ -20,13 +20,17 @@ config/icon="res://Assets/icon.svg"
 PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
 ControlSystems="*res://Assets/Prefabs/Autoloads/ControlSystems.tscn"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [dotnet]
 
 project/assembly_name="ShroomJamGame"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/phantom_camera/plugin.cfg", "res://addons/renderdoc_launcher/plugin.cfg")
+enabled=PackedStringArray("res://addons/Mirror/plugin.cfg", "res://addons/phantom_camera/plugin.cfg", "res://addons/renderdoc_launcher/plugin.cfg")
 
 [input]
 
@@ -96,6 +100,10 @@ game.pause={
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":6,"pressure":0.0,"pressed":true,"script":null)
 ]
 }
+
+[physics]
+
+3d/default_gravity=25.0
 
 [rendering]
 

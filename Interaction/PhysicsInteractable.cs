@@ -17,6 +17,6 @@ public partial class PhysicsInteractable : RigidBody3D, IInteractableObject
 
     public string GetHeldHoverText()
     {
-        return $"Press `{Controls.Instance.Interact.GetOsHumanReadableKeyLabel()}` to drop";
+        return $"Press `{Controls.Instance.Interact.GetOsHumanReadableKeyLabel()}` to drop\nPress `{Controls.Instance.PrimaryAction.GetOsHumanReadableKeyLabel()}` to throw";
     }
 }

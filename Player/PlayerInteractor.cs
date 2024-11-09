@@ -59,6 +59,9 @@ public partial class PlayerInteractor : Node3D
     [Export]
     private float _maxPhysicsDistance = 2.5f;
 
+    [Export]
+    private float _throwStrength = 25f;
+
     private IInteractableObject? _currentTarget;
     private PhysicsInteractable? _heldObject;
     private CollisionShape3D? _heldObjectShape;
@@ -72,10 +75,13 @@ public partial class PlayerInteractor : Node3D
             return;
         
         Controls.Instance.Interact.OnPress += OnInteractPressed;
+        Controls.Instance.PrimaryAction.OnPress += OnPrimaryPressed;
         
         EnsureExceptions();
     }
+
     
+
     public override void _Notification(int notification)
     {
         if (Engine.IsEditorHint())
@@ -84,12 +90,13 @@ public partial class PlayerInteractor : Node3D
         if (notification == NotificationPredelete)
         {
             Controls.Instance.Interact.OnPress -= OnInteractPressed;
+            Controls.Instance.PrimaryAction.OnPress -= OnPrimaryPressed;
         }
     }
 
     public override void _Process(double delta)
     {
-        if (Engine.IsEditorHint())
+        if (GameState.Paused || Engine.IsEditorHint())
             return;
         
         HandleInteractRayCast();
@@ -98,7 +105,7 @@ public partial class PlayerInteractor : Node3D
 
     public override void _PhysicsProcess(double delta)
     {
-        if (Engine.IsEditorHint())
+        if (GameState.Paused || Engine.IsEditorHint())
             return;
         
         UpdatePhysicsInteractablePosition(delta);
@@ -205,6 +212,22 @@ public partial class PlayerInteractor : Node3D
         }
         
         _currentTarget?.Interact();
+    }
+    
+    private void OnPrimaryPressed()
+    {
+        if (_playerHead is null || _playerBody is null || _interactorRay is null || _stepHelper is null)
+            return;
+
+        if (_heldObject is null || _heldObjectShape is null || _heldObjectCast is null)
+            return;
+        
+        var dir = _interactorRay.IsColliding()
+            ? (_interactorRay.GetCollisionPoint() - _playerHead.GlobalPosition).Normalized()
+            : -_playerHead!.GlobalBasis.Z;
+        
+        _heldObject.ApplyCentralImpulse(dir * _throwStrength);
+        DropHeldObject();
     }
 
     private void DropHeldObject()
