@@ -1,0 +1,14 @@
+[gd_scene load_steps=5 format=3 uid="uid://bq3k0yehnxuo5"]
+
+[ext_resource type="Script" path="res://GameSettings.cs" id="1_2drfp"]
+[ext_resource type="Resource" uid="uid://cdbg2yxvlk1t5" path="res://Assets/Input Prompts/kbm_prompt_set.tres" id="2_yhikt"]
+[ext_resource type="Resource" uid="uid://0g5pvwf0un12" path="res://Assets/Input Prompts/xbox_prompt_set.tres" id="3_lyw4u"]
+[ext_resource type="Resource" uid="uid://ht3sn2fs4st1" path="res://Assets/Input Prompts/dualsense_prompt_set.tres" id="4_hbjgo"]
+
+[node name="SettingsSingleton" type="Node"]
+
+[node name="GameSettings" type="Node" parent="."]
+script = ExtResource("1_2drfp")
+KbmPromptSet = ExtResource("2_yhikt")
+_xbox = ExtResource("3_lyw4u")
+_dualsense = ExtResource("4_hbjgo")

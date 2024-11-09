@@ -1,0 +1,134 @@
+[gd_resource type="Resource" script_class="ControllerPromptSet" load_steps=44 format=3 uid="uid://0g5pvwf0un12"]
+
+[ext_resource type="Texture2D" uid="uid://c023k2k43ar7n" path="res://Assets/Input Prompts/Textures/Xbox/xbox_button_color_a_outline.svg" id="1_faqtm"]
+[ext_resource type="Script" path="res://InputPrompts/ControllerPromptSet.cs" id="1_m68ka"]
+[ext_resource type="Texture2D" uid="uid://brglhfi4drnbb" path="res://Assets/Input Prompts/Textures/Xbox/xbox_stick_l.svg" id="1_rx71r"]
+[ext_resource type="Script" path="res://InputPrompts/JoyButtonPromptPair.cs" id="2_joijl"]
+[ext_resource type="Script" path="res://InputPrompts/JoyAxisPromptPair.cs" id="2_rdp7h"]
+[ext_resource type="Texture2D" uid="uid://b10khtycllapx" path="res://Assets/Input Prompts/Textures/Xbox/xbox_button_color_b_outline.svg" id="3_d6s34"]
+[ext_resource type="Texture2D" uid="uid://bhg60wi8ytpxt" path="res://Assets/Input Prompts/Textures/Xbox/xbox_stick_r.svg" id="3_to8sc"]
+[ext_resource type="Texture2D" uid="uid://bxlvf3ot8tof0" path="res://Assets/Input Prompts/Textures/Xbox/xbox_button_color_x_outline.svg" id="4_3qt7a"]
+[ext_resource type="Texture2D" uid="uid://7pcno2cyeo7b" path="res://Assets/Input Prompts/Textures/Xbox/xbox_lt_outline.svg" id="4_pbrih"]
+[ext_resource type="Texture2D" uid="uid://cll20ckeah606" path="res://Assets/Input Prompts/Textures/Xbox/xbox_rt_outline.svg" id="5_4xrm4"]
+[ext_resource type="Texture2D" uid="uid://d03sr6yjlu0m7" path="res://Assets/Input Prompts/Textures/Xbox/xbox_button_color_y_outline.svg" id="5_sg18e"]
+[ext_resource type="Texture2D" uid="uid://m2iaihhp10ex" path="res://Assets/Input Prompts/Textures/Xbox/xbox_button_view_outline.svg" id="6_rt847"]
+[ext_resource type="Texture2D" uid="uid://cwta17q2ud7df" path="res://Assets/Input Prompts/Textures/Xbox/xbox_guide_outline.svg" id="7_n3yhq"]
+[ext_resource type="Texture2D" uid="uid://bcbm5aqqrqhbx" path="res://Assets/Input Prompts/Textures/Xbox/xbox_button_menu_outline.svg" id="8_2fl2b"]
+[ext_resource type="Texture2D" uid="uid://bfv3qu8jrvh6b" path="res://Assets/Input Prompts/Textures/Xbox/xbox_stick_side_l.svg" id="9_n33uh"]
+[ext_resource type="Texture2D" uid="uid://cga65lg3tc2kk" path="res://Assets/Input Prompts/Textures/Xbox/xbox_stick_side_r.svg" id="10_h12a7"]
+[ext_resource type="Texture2D" uid="uid://cp3mgmrgatmtj" path="res://Assets/Input Prompts/Textures/Xbox/xbox_lb_outline.svg" id="11_ufigs"]
+[ext_resource type="Texture2D" uid="uid://du22553fbf8ri" path="res://Assets/Input Prompts/Textures/Xbox/xbox_rb_outline.svg" id="12_0hjad"]
+[ext_resource type="Texture2D" uid="uid://dip80xdwg30xl" path="res://Assets/Input Prompts/Textures/Xbox/xbox_dpad_up_outline.svg" id="13_ea2en"]
+[ext_resource type="Texture2D" uid="uid://j6y2jxsyb530" path="res://Assets/Input Prompts/Textures/Xbox/xbox_dpad_down_outline.svg" id="14_xogu5"]
+[ext_resource type="Texture2D" uid="uid://bdjwncfktip2u" path="res://Assets/Input Prompts/Textures/Xbox/xbox_dpad_left_outline.svg" id="15_uuorf"]
+[ext_resource type="Texture2D" uid="uid://jwcy3y4xepm5" path="res://Assets/Input Prompts/Textures/Xbox/xbox_dpad_right_outline.svg" id="16_l8i0p"]
+
+[sub_resource type="Resource" id="Resource_gqwfg"]
+script = ExtResource("2_rdp7h")
+_axis = 0
+_promptTexture = ExtResource("1_rx71r")
+
+[sub_resource type="Resource" id="Resource_txd1y"]
+script = ExtResource("2_rdp7h")
+_axis = 1
+_promptTexture = ExtResource("1_rx71r")
+
+[sub_resource type="Resource" id="Resource_vu1iq"]
+script = ExtResource("2_rdp7h")
+_axis = 2
+_promptTexture = ExtResource("3_to8sc")
+
+[sub_resource type="Resource" id="Resource_p18cx"]
+script = ExtResource("2_rdp7h")
+_axis = 3
+_promptTexture = ExtResource("3_to8sc")
+
+[sub_resource type="Resource" id="Resource_bi8f3"]
+script = ExtResource("2_rdp7h")
+_axis = 4
+_promptTexture = ExtResource("4_pbrih")
+
+[sub_resource type="Resource" id="Resource_56x3o"]
+script = ExtResource("2_rdp7h")
+_axis = 5
+_promptTexture = ExtResource("5_4xrm4")
+
+[sub_resource type="Resource" id="Resource_otppc"]
+script = ExtResource("2_joijl")
+_button = 0
+_promptTexture = ExtResource("1_faqtm")
+
+[sub_resource type="Resource" id="Resource_opslf"]
+script = ExtResource("2_joijl")
+_button = 1
+_promptTexture = ExtResource("3_d6s34")
+
+[sub_resource type="Resource" id="Resource_w266o"]
+script = ExtResource("2_joijl")
+_button = 2
+_promptTexture = ExtResource("4_3qt7a")
+
+[sub_resource type="Resource" id="Resource_loi8t"]
+script = ExtResource("2_joijl")
+_button = 3
+_promptTexture = ExtResource("5_sg18e")
+
+[sub_resource type="Resource" id="Resource_6ji14"]
+script = ExtResource("2_joijl")
+_button = 4
+_promptTexture = ExtResource("6_rt847")
+
+[sub_resource type="Resource" id="Resource_a036j"]
+script = ExtResource("2_joijl")
+_button = 5
+_promptTexture = ExtResource("7_n3yhq")
+
+[sub_resource type="Resource" id="Resource_upesk"]
+script = ExtResource("2_joijl")
+_button = 6
+_promptTexture = ExtResource("8_2fl2b")
+
+[sub_resource type="Resource" id="Resource_2m8v7"]
+script = ExtResource("2_joijl")
+_button = 7
+_promptTexture = ExtResource("9_n33uh")
+
+[sub_resource type="Resource" id="Resource_xf4mk"]
+script = ExtResource("2_joijl")
+_button = 8
+_promptTexture = ExtResource("10_h12a7")
+
+[sub_resource type="Resource" id="Resource_ws5le"]
+script = ExtResource("2_joijl")
+_button = 9
+_promptTexture = ExtResource("11_ufigs")
+
+[sub_resource type="Resource" id="Resource_y5bhv"]
+script = ExtResource("2_joijl")
+_button = 10
+_promptTexture = ExtResource("12_0hjad")
+
+[sub_resource type="Resource" id="Resource_yvwkm"]
+script = ExtResource("2_joijl")
+_button = 11
+_promptTexture = ExtResource("13_ea2en")
+
+[sub_resource type="Resource" id="Resource_8dulv"]
+script = ExtResource("2_joijl")
+_button = 12
+_promptTexture = ExtResource("14_xogu5")
+
+[sub_resource type="Resource" id="Resource_xxtrp"]
+script = ExtResource("2_joijl")
+_button = 13
+_promptTexture = ExtResource("15_uuorf")
+
+[sub_resource type="Resource" id="Resource_cpfdi"]
+script = ExtResource("2_joijl")
+_button = 14
+_promptTexture = ExtResource("16_l8i0p")
+
+[resource]
+script = ExtResource("1_m68ka")
+_buttonPrompts = [SubResource("Resource_otppc"), SubResource("Resource_opslf"), SubResource("Resource_w266o"), SubResource("Resource_loi8t"), SubResource("Resource_6ji14"), SubResource("Resource_a036j"), SubResource("Resource_upesk"), SubResource("Resource_2m8v7"), SubResource("Resource_xf4mk"), SubResource("Resource_ws5le"), SubResource("Resource_y5bhv"), SubResource("Resource_yvwkm"), SubResource("Resource_8dulv"), SubResource("Resource_xxtrp"), SubResource("Resource_cpfdi")]
+_axisPrompts = [SubResource("Resource_gqwfg"), SubResource("Resource_txd1y"), SubResource("Resource_vu1iq"), SubResource("Resource_p18cx"), SubResource("Resource_bi8f3"), SubResource("Resource_56x3o")]
