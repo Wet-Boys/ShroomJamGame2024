@@ -43,14 +43,14 @@ public partial class PlayerHeadController : Node
             _yRotDegrees = _playerHead.RotationDegrees.Y;
         }
 
-        Controls.Instance.Pause.OnPress += ToggleMouseLock;
+        // Controls.Instance.Pause.OnPress += ToggleMouseLock;
     }
     
-    public override void _Notification(int notification)
-    {
-        if (notification == NotificationPredelete)
-            Controls.Instance.Pause.OnPress -= ToggleMouseLock;
-    }
+    // public override void _Notification(int notification)
+    // {
+    //     if (notification == NotificationPredelete)
+    //         Controls.Instance.Pause.OnPress -= ToggleMouseLock;
+    // }
     
     public override void _Input(InputEvent inputEvent)
     {

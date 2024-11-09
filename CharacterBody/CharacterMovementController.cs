@@ -90,7 +90,7 @@ public partial class CharacterMovementController : Node
 
     public override void _PhysicsProcess(double delta)
     {
-        if (_characterHead is null || _characterBody is null || _stepHelper is null || Engine.IsEditorHint())
+        if (_characterHead is null || _characterBody is null || _stepHelper is null || GameState.Paused || Engine.IsEditorHint())
             return;
 
         var onFloor = _characterBody.IsOnFloor();
