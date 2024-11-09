@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cy8c1p22wrnpt" path="res://Assets/Prefabs/GenericCharacterBody.tscn" id="1_qxxhq"]
 [ext_resource type="Script" path="res://NPC/NpcMovementController.cs" id="2_272a2"]
 [ext_resource type="Material" uid="uid://bf3sis0lgcb2f" path="res://Various Debug/wall.tres" id="2_glad6"]
-[ext_resource type="PackedScene" uid="uid://ceb786quhxbuv" path="res://Assets/Character Assets/base_person.tscn" id="4_d4pih"]
+[ext_resource type="PackedScene" path="res://Assets/Character Assets/base_person.tscn" id="4_d4pih"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_qiwba"]
 
@@ -29,6 +29,9 @@ collision_mask = 2
 
 [node name="StepHelper" parent="." index="3"]
 MinClearance = Vector3(1, 2.25, 0.5)
+
+[node name="StepShapeCast" parent="StepHelper" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.075, 0.5)
 
 [node name="Placeholder Mesh" parent="." index="5"]
 visible = false

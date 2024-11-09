@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=3 uid="uid://850tnty6q4cv"]
+
+[ext_resource type="Script" path="res://Player/PauseMenuController.cs" id="1_4c2y3"]
+
+[node name="PauseMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_right = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 7
+alignment = 1
+
+[node name="Resume Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Resume"
+
+[node name="Unstuck Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Unstuck"
+
+[node name="Settings Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Settings"
+
+[node name="Exit to Desktop Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Exit to Desktop"
+
+[node name="PauseMenuController" type="Node" parent="." node_paths=PackedStringArray("_pauseMenu")]
+script = ExtResource("1_4c2y3")
+_pauseMenu = NodePath("..")
+
+[connection signal="pressed" from="VBoxContainer/Resume Button" to="PauseMenuController" method="TogglePause"]
+[connection signal="pressed" from="VBoxContainer/Exit to Desktop Button" to="PauseMenuController" method="ExitToDesktop"]

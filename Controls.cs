@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Godot;
+using ShroomJamGame.Player;
 
 namespace ShroomJamGame;
 
@@ -59,7 +60,7 @@ public partial class Controls : Node
     public readonly ControlButton Interact = new();
     public readonly ControlButton PrimaryAction = new();
     public readonly ControlButton SecondaryAction = new();
-    public readonly ControlButton Pause = new();
+    public readonly ControlButton Pause = new(true);
 
     public override void _Ready()
     {
@@ -153,7 +154,7 @@ public partial class Controls : Node
             controlButton.ProcessEvent(inputEvent);
     }
 
-    public class ControlButton
+    public class ControlButton(bool unscaled = false)
     {
         public StringName Action = "";
 
@@ -173,15 +174,20 @@ public partial class Controls : Node
 
             foreach (var inputEvent in events)
             {
-                if (inputEvent is not InputEventKey keyEvent)
-                    continue;
+                if (inputEvent is InputEventKey keyEvent)
+                {
+                    var keycode = keyEvent.Keycode;
 
-                var keycode = keyEvent.Keycode;
+                    if (keycode == Key.None)
+                        keycode = keyEvent.PhysicalKeycode;
 
-                if (keycode == Key.None)
-                    keycode = keyEvent.PhysicalKeycode;
-
-                return OS.GetKeycodeString(keycode);
+                    return OS.GetKeycodeString(keycode);
+                }
+                
+                if (inputEvent is InputEventMouseButton mouseEvent)
+                {
+                    return mouseEvent.ButtonIndex.ToString();
+                }
             }
 
             return "";
@@ -195,6 +201,9 @@ public partial class Controls : Node
         public void ProcessEvent(InputEvent inputEvent)
         {
             if (!inputEvent.IsAction(Action))
+                return;
+
+            if (GameState.Paused && !unscaled)
                 return;
 
             if (inputEvent.IsPressed())
