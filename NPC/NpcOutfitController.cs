@@ -27,6 +27,11 @@ namespace ShroomJamGame.NPC
             hands.Mesh = outfitList.handMeshes.PickRandom();
             torso.Mesh = outfitList.torsoMeshes.PickRandom();
             head.Mesh = outfitList.headMeshes.PickRandom();
+
+            //feet.MaterialOverride = outfitList.allMeshes.PickRandom().SurfaceGetMaterial(0);
+            //hands.MaterialOverride = outfitList.allMeshes.PickRandom().SurfaceGetMaterial(0);
+            //torso.MaterialOverride = outfitList.allMeshes.PickRandom().SurfaceGetMaterial(0);
+            //head.MaterialOverride = outfitList.allMeshes.PickRandom().SurfaceGetMaterial(0);
         }
     }
 }

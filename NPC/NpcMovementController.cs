@@ -32,6 +32,10 @@ namespace ShroomJamGame.NPC
             _navigationAgent.TargetPosition = position;
         }
         private Vector3 oldTargetPos = Vector3.Zero;
+        public override void _Ready()
+        {
+            _visualController.RandomizeOutfit();
+        }
         public override void _Process(double delta)
         {
             _visualController.SetAnimationTreeState(characterBody3D.Velocity.Normalized().Length());
@@ -45,7 +49,6 @@ namespace ShroomJamGame.NPC
             }
             if (oldTargetPos != targetNode.GlobalPosition)
             {
-                _visualController.RandomizeOutfit();
                 oldTargetPos = targetNode.GlobalPosition;
                 _SetTargetPosition(oldTargetPos);
             }

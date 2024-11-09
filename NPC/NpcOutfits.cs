@@ -18,6 +18,8 @@ namespace ShroomJamGame.NPC
         public Godot.Collections.Array<Mesh> headMeshes;
         [Export]
         public Godot.Collections.Array<Mesh> torsoMeshes;
+        [Export]
+        public Godot.Collections.Array<Mesh> allMeshes;
         //[Export]
         //public Godot.Collections.Array<Material> FeetMaterials;
         //[Export]
