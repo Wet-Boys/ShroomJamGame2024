@@ -166,7 +166,9 @@ public partial class CharacterMovementController : Node
         var heightDiff = _characterHeight - _crouchCharacterHeight;
         _characterCollisionShape.Position = _characterCollisionShape.Position with { Y = -heightDiff / 2f };
         
-        _stepHelper.MinClearance = _stepHelper.MinClearance with { Y = _crouchCharacterHeight };
+        
+        // BUG: modifying the min clearance causes the player to longer be able to enter doorways
+        // _stepHelper.MinClearance = _stepHelper.MinClearance with { Y = _crouchCharacterHeight };
         _characterHead.Position = new Vector3(0, (_crouchCharacterHeight / 2f) - (heightDiff / 2f + _eyeOffsetFromTop) , 0);
 
         if (!_characterBody.IsOnFloor())
@@ -187,7 +189,7 @@ public partial class CharacterMovementController : Node
         
         _characterCollisionShape.Position = _characterCollisionShape.Position with { Y = 0 };
         
-        _stepHelper.MinClearance = _stepHelper.MinClearance with { Y = _characterHeight };
+        // _stepHelper.MinClearance = _stepHelper.MinClearance with { Y = _characterHeight };
         _characterHead.Position = new Vector3(0, (_characterHeight / 2f) - _eyeOffsetFromTop, 0);
 
         if (_characterBody.IsOnFloor())
