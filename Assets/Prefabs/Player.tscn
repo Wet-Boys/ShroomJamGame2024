@@ -66,9 +66,6 @@ script = ExtResource("1_74oir")
 _playerBody = NodePath("../..")
 _playerHead = NodePath("..")
 
-[node name="StepHelper" parent="." index="3"]
-MinClearance = Vector3(1, 2.25, 0.5)
-
 [node name="GeneralHud" parent="." index="6" instance=ExtResource("8_i06ww")]
 
 [editable path="GeneralHud"]

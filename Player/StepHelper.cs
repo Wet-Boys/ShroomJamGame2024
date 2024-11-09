@@ -47,7 +47,7 @@ public partial class StepHelper : Node3D
     
     private float _floorTolerance = 0.01f;
 
-    [Export(PropertyHint.Range, "0, 0.1")]
+    [Export(PropertyHint.Range, "0, 1")]
     public float FloorTolerance
     {
         get => _floorTolerance;
@@ -121,7 +121,7 @@ public partial class StepHelper : Node3D
             return;
 
         var stepShape = (BoxShape3D)_stepShapeCast.Shape;
-        stepShape.Size = new Vector3(1, _maxStepHeight - (_floorTolerance / 2f), _minStepDepth);
+        stepShape.Size = new Vector3(_minClearance.X, _maxStepHeight - (_floorTolerance / 2f), _minStepDepth);
         
         _stepShapeCast.Shape = stepShape;
         _stepShapeCast.TargetPosition = new Vector3(0, _maxStepHeight / 2f, _minStepDepth / 2f);
