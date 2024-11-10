@@ -1,20 +1,17 @@
-[gd_scene load_steps=18 format=3 uid="uid://bqidnw2pcckwn"]
+[gd_scene load_steps=15 format=3 uid="uid://bqidnw2pcckwn"]
 
 [ext_resource type="PackedScene" uid="uid://bv7hgobt87i0x" path="res://Assets/Prefabs/Player.tscn" id="1_y5cu4"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_u2jix"]
-[ext_resource type="Script" path="res://Animalese/AnimalesePlayer3D.cs" id="3_evqnw"]
-[ext_resource type="Resource" uid="uid://bpivqdl8ksfdj" path="res://Assets/AnimaleseSounds/Test1.tres" id="4_4c86u"]
-[ext_resource type="Script" path="res://Animalese/AnimaleseDialogTest.cs" id="5_kilq1"]
 [ext_resource type="PackedScene" uid="uid://lkw7ko7kkqpk" path="res://Assets/Prefabs/NPC.tscn" id="6_orrfj"]
 [ext_resource type="PackedScene" uid="uid://bkh80lrmoy5cs" path="res://Assets/Scenes/Office/de_office.tscn" id="7_qe2q5"]
 [ext_resource type="Script" path="res://Interaction/PhysicsInteractable.cs" id="9_xhtj6"]
 [ext_resource type="PackedScene" uid="uid://4swu3uur8oxc" path="res://Assets/Prefabs/Door.tscn" id="10_hqynx"]
 [ext_resource type="AudioStream" uid="uid://dy8nabc8e6dxv" path="res://Assets/Sfx/Door/Door Close.ogg" id="11_80tci"]
 
-[sub_resource type="Environment" id="Environment_pcwo3"]
+[sub_resource type="Environment" id="Environment_dpim6"]
 ambient_light_source = 1
 
-[sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_tdduc"]
+[sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_yt8s1"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_kbavx"]
 vertices = PackedVector3Array(-19, 6.49349, -0.75, -18.75, 6.49349, 0, -18.5, 6.49349, 0, -18.5, 6.49349, -5.5, -4.5, 6.49349, -7.25, -3.5, 6.49349, -7.5, -3.5, 6.49349, -7.75, -4.5, 6.49349, -8, -9.75, 6.49349, -5.75, -9.5, 6.49349, -6.25, -9.75, 6.49349, -6.75, -4.75, 6.49349, -5.5, -4.75, 6.49349, -4.25, -4.5, 6.49349, -4.25, -14.75, 6.49349, -7, -15.75, 6.49349, -8, -16, 6.49349, -6.75, -2, 6.49349, -12.25, -2, 6.49349, -13.75, -2.75, 6.49349, -13.75, -3.25, 6.49349, -12.25, -3, 6.49349, -12, -8.25, 6.49349, -6.75, -5.75, 6.49349, -6.25, -4.5, 6.49349, -11.75, -6, 6.49349, -12.5, -6.5, 6.49349, -11.75, -4.25, 6.49349, -12.25, -6.75, 6.49349, -10, -6.75, 6.49349, -8.25, -18, 6.49349, -14.5, -18.75, 6.49349, -14.5, -19.5, 6.49349, -13.75, -19, 6.49349, -10, -17.5, 6.49349, -11.25, -19.5, 6.99349, -0.75, -19, 6.49349, -8.25, -8.5, 6.49349, -11.5, -7.75, 6.49349, -10.25, -12, 6.49349, -7, -17.75, 6.49349, -6, -17.75, 6.49349, -6.75, -18, 6.49349, -8, -10.25, 6.49349, -8, -11.5, 6.49349, -8.25, -7.75, 6.49349, -8, -19.5, 6.49349, -6.52778, -19.5, 6.99349, -5.08333, -4.5, 6.99349, -14.5, -6, 6.99349, -14.5, 13, 6.49349, -6, 13, 6.49349, -7, 9, 6.49349, -7, 5.25, 6.49349, -6, 5.25, 6.49349, -13.75, 9, 6.49349, -13.75, -2.75, 6.49349, -7.25, -2.75, 6.49349, -8.25, -1.75, 6.49349, -11, -2.75, 6.49349, -6, -2, 6.49349, -6, -1.75, 6.49349, -6.75, 2.25, 6.49349, -6.75, 3.5, 6.49349, -11, 2.5, 6.49349, -6, 3.5, 6.49349, -6, -6, 6.49349, 10.5, -5.25, 6.49349, 10.5, -5.25, 6.49349, 9.75, -6, 6.49349, 9.25, -4.5, 6.49349, 1.5, -4.75, 6.49349, -3, -5.25, 6.49349, -2.5, -4.5, 6.49349, 2.25, -3.5, 6.49349, 2, -3.5, 6.49349, 1.75, -10.5, 6.49349, 6.25, -9.5, 6.49349, 7.5, -7.5, 6.49349, 7.5, -11.75, 6.49349, 6.5, -11.75, 6.49349, 7.5, -10.75, 6.49349, 7.5, -10.5, 6.49349, -2.5, -4.25, 6.49349, 9.25, -4.25, 6.49349, 7.75, -7.25, 6.49349, 9, -4.25, 6.49349, 3.75, -2.75, 6.49349, 1.25, 3.5, 6.49349, 2, 3.5, 6.49349, 0.75, 2, 6.49349, 0.5, 2, 6.49349, -4.25, -1.75, 6.49349, -2.75, -1.75, 6.49349, -3.75, -2.75, 6.49349, -2.5, 4.5, 6.49349, 5.75, 4.5, 6.49349, 6, 5.25, 6.49349, 6.25, 5.25, 6.49349, 5.25, 8.5, 6.49349, 8, 8.5, 6.49349, 10, 19.5, 6.49349, 10, 5.25, 6.49349, 9, 5.75, 6.49349, 9, 6, 6.49349, 7.75, 8, 6.49349, 7.5, 5.25, 6.49349, -4.25, 19.5, 6.49349, -4.25, -18.75, 6.49349, 18.75, -18.75, 6.49349, 19.5, -18.5, 6.49349, 19.5, -18.25, 6.49349, 18.5, -14.25, 6.49349, 9, -13, 6.49349, 8.5, -12.75, 6.49349, 7.5, -14, 6.49349, 3.25, -14.75, 6.49349, 3.25, -14.75, 6.49349, 4.25, -14, 6.49349, 4.5, -18.5, 6.49349, 7.75, -19.5, 6.99349, 1, -19.5, 6.99349, 18.5, -18.5, 6.49349, 17, -19.1, 6.49349, 3.7, -15.25, 6.49349, 5, -13, 6.49349, 6.25, -13, 6.49349, 5, -14.75, 6.49349, 9.5, -14.75, 6.49349, 10.5, -13.75, 6.49349, 10.5, -16.25, 6.49349, 6.5, -16.25, 6.49349, 7.5, -18.25, 6.49349, 6.5, -16, 6.49349, 9, -16, 6.49349, 5, -16, 6.49349, 18.5, -16, 6.49349, 17, 3.5, 6.49349, 6.25, 3.5, 6.49349, 5.5, -0.25, 6.49349, 8, 3.5, 6.49349, 3.75, -2, 6.49349, 7.5, -1.75, 6.49349, 8, 3.5, 6.49349, 8, -5.25, 6.49349, 14.5, -4.75, 6.49349, 14, -6.5, 6.49349, 14, -6, 6.49349, 14.5, -5.25, 6.49349, 15.75, -6, 6.49349, 15.75, -7.25, 6.49349, 16.25, -7.5, 6.49349, 17.25, -4.25, 6.49349, 18.5, -4.25, 6.49349, 17, -9.75, 6.49349, 17, -10.5, 6.49349, 17, -4.25, 6.49349, 16.25, -14, 6.49349, 14, -15.25, 6.49349, 14, -14.75, 6.49349, 15.5, -14, 6.49349, 15.25, -12.75, 6.49349, 17.25, -13, 6.49349, 15.5, -16, 6.49349, 16, 3.75, 6.49349, 18, 4.75, 6.49349, 18, 4.75, 6.49349, 17.75, -0.5, 6.49349, 17, -3, 6.49349, 18.5, -2.75, 6.49349, 19.75, -2.5, 6.49349, 19.75, -2.25, 6.49349, 18.5, -0.25, 6.49349, 15.5, -0.25, 6.49349, 15.25, -1.75, 6.49349, 17, 3.5, 6.49349, 15.5, 1.25, 6.49349, 14.75, 3.75, 4.24349, 11.5, 3.75, 1.24349, 8.5, 0.75, 1.24349, 8.5, 3.58333, 6.49349, 14.1667, 1.15, 6.24349, 13.5, 3.5, 6.49349, 18.5, 6.5, 6.49349, 12.25, 5.25, 6.49349, 11.25, 5.25, 6.49349, 16, 8, 6.49349, 12.25, 8.5, 6.49349, 11.75, 19.5, 6.49349, 16, 5.25, 6.49349, 18.25, 9, 6.49349, 17.75, 5.25, 6.99349, 24.5, 9, 6.99349, 24.5, 5.25, 6.49349, 23.25, 9, 6.49349, 23.15, -18.25, 6.49349, 20.25, -19.5, 6.99349, 20.25, -19.5, 6.99349, 24, -19.0833, 6.49349, 22.75, -8.25, 6.99349, 24.5, -8, 6.49349, 24, -8, 6.49349, 23.75, -4.5, 6.49349, 20.25, -6.5, 6.49349, 20.25, -6.5, 6.49349, 23.25, -4.5, 6.99349, 24.5, -4.5, 6.49349, 23.0833, -8.25, 6.49349, 20.25, -18.75, 6.99349, 24.5, -14.005, 6.49349, 22.497, -5.66667, 6.49349, 24.3333, -2.25, 6.49349, 20.25, -2.75, 6.99349, 24.5, -2.58333, 6.49349, 23.0833, -2.75, 6.49349, 23.3125, 3.5, 6.99349, 24.5, 3.5, 6.49349, 20.25, 3.5, 6.49349, 23.0833)
@@ -45,8 +42,8 @@ omni_range = 14.2688
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, -0.522051, 8.55016, 5.45681)
-environment = SubResource("Environment_pcwo3")
-attributes = SubResource("CameraAttributesPhysical_tdduc")
+environment = SubResource("Environment_dpim6")
+attributes = SubResource("CameraAttributesPhysical_yt8s1")
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D"]
 process_priority = 300
@@ -57,25 +54,6 @@ script = ExtResource("2_u2jix")
 transform = Transform3D(0.866177, -0.322474, -0.38177, 0.00457364, -0.758793, 0.651316, -0.499717, -0.565901, -0.655774, -18.8688, 13.9035, -23.3223)
 visible = false
 shadow_enabled = true
-
-[node name="AnimalesePlayer3D" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.18721, 4.11217)
-unit_size = 4.35
-max_distance = 5.0
-panning_strength = 0.26
-bus = &"Animalese Bus"
-script = ExtResource("3_evqnw")
-SoundSet = ExtResource("4_4c86u")
-BasePitch = 5.845
-
-[node name="Label3D" type="Label3D" parent="AnimalesePlayer3D"]
-billboard = 2
-
-[node name="AnimaleseDialogTest" type="Node" parent="AnimalesePlayer3D" node_paths=PackedStringArray("AnimalesePlayer", "TextLabel")]
-script = ExtResource("5_kilq1")
-Text = "Ligma balls idiot!                            Amongus"
-AnimalesePlayer = NodePath("..")
-TextLabel = NodePath("../Label3D")
 
 [node name="GenericCharacterBody" parent="." instance=ExtResource("6_orrfj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 7.35448, 5)
@@ -239,10 +217,6 @@ ownedItems = [NodePath("../../NavigationRegion3D/World/DeOffice2/Asset Complete 
 
 [node name="Sprite3D" parent="GenericCharacterBody2/SpeechBubble" index="1"]
 texture = SubResource("ViewportTexture_avbx4")
-
-[connection signal="CharactersPlayed" from="AnimalesePlayer3D" to="AnimalesePlayer3D/AnimaleseDialogTest" method="OnCharacterPlayed"]
-[connection signal="FinishedPlaying" from="AnimalesePlayer3D" to="AnimalesePlayer3D/AnimaleseDialogTest" method="PlayNext"]
-[connection signal="finished" from="AnimalesePlayer3D" to="AnimalesePlayer3D" method="PlayNextSound"]
 
 [editable path="GenericCharacterBody"]
 [editable path="GenericCharacterBody/SpeechBubble"]
