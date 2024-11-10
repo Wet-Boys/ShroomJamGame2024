@@ -1,4 +1,5 @@
 ﻿using Godot;
+using ShroomJamGame.Animalese;
 using ShroomJamGame.CharacterBody;
 using ShroomJamGame.Interaction;
 using ShroomJamGame.Tasks;
@@ -7,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace ShroomJamGame.NPC
 {
@@ -48,8 +50,22 @@ namespace ShroomJamGame.NPC
         Sprite3D speechBubbleSprite;
         [Export]
         SubViewport speechBubbleViewPort;
+        [Export]
+        private AnimalesePlayer3D? AnimalesePlayer;
+        public void SayWords(string whatToSay)
+        {
+            if (AnimalesePlayer is null || speechBubbleText is null)
+                return;
 
-        public void SetSpeechBubble(string content)
+            AnimalesePlayer.StopSpeaking();
+            SetSpeechBubble("");
+            if (string.IsNullOrEmpty(whatToSay))
+                return;
+
+            AnimalesePlayer.PlayText(whatToSay);
+        }
+
+        private void SetSpeechBubble(string content)
         {
             speechBubbleText.Text = content;
             speechBubbleNode.Visible = content != "";
@@ -73,8 +89,15 @@ namespace ShroomJamGame.NPC
             speechBubbleSprite.Texture = speechBubbleViewPort.GetTexture();
 
             DecideTime();
-            SetSpeechBubble("");
+            AnimalesePlayer.CharactersPlayed += AnimalesePlayer_CharactersPlayed;
+            SayWords("");
         }
+
+        private void AnimalesePlayer_CharactersPlayed(string chars)
+        {
+            SetSpeechBubble(speechBubbleText.Text + chars);
+        }
+
         public override void _Process(double delta)
         {
             _visualController.SetAnimationTreeState(characterBody3D.Velocity.Normalized().Length(), false);
@@ -96,7 +119,7 @@ namespace ShroomJamGame.NPC
                 if (ownedItems[i].GlobalPosition.DistanceTo(ownedItemsStartingPositions[i]) > 1)
                 {
                     targetNode = ownedItems[i];
-                    SetSpeechBubble($"Why did you throw my {targetNode.Name}");
+                    SayWords($"Why did you throw my {targetNode.Name}");
                     grabbingObject = true;
                     return;
                 }
@@ -116,7 +139,7 @@ namespace ShroomJamGame.NPC
                 (heldObject as PhysicsInteractable).isHeld = true;
                 heldObject = null;
                 _visualController.Interact();
-                SetSpeechBubble($"");
+                SayWords($"");
             }
             if (grabbingObject && IsInstanceValid(targetNode) && !(targetNode as PhysicsInteractable).isHeld)
             {
@@ -129,7 +152,7 @@ namespace ShroomJamGame.NPC
                 (heldObject as PhysicsInteractable).isHeld = false;
                 targetNode = null;
                 _visualController.Interact();
-                SetSpeechBubble($"Let me put it pack");
+                SayWords($"Let me put it back");
             }
         }
 

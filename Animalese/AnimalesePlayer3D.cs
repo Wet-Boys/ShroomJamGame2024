@@ -123,6 +123,10 @@ public partial class AnimalesePlayer3D : AudioStreamPlayer3D
             Inflective = inflective
         });
     }
+    public void StopSpeaking()
+    {
+        _remainingSounds.Clear();
+    }
 
     private struct SoundSymbol
     {
