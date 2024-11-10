@@ -1,4 +1,4 @@
-[gd_resource type="ArrayMesh" load_steps=9 format=4 uid="uid://v6hcmj7w0ec4"]
+[gd_resource type="ArrayMesh" load_steps=9 format=4 uid="uid://r6tvx7udcb1a"]
 
 [ext_resource type="Texture2D" uid="uid://dkyy8qo3xgjqr" path="res://Assets/Scenes/Office/textures/Plastic_01_basecolor.jpg" id="1_0u26s"]
 [ext_resource type="Texture2D" uid="uid://bm8d0x7e4h40a" path="res://Assets/Scenes/Office/textures/Plastic_01_roughness.jpg" id="2_jygy0"]
