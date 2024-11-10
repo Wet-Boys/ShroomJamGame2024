@@ -69,7 +69,7 @@ public partial class Controls : Node
 
     private Vector2 _movement;
 
-    public Vector2 Movement => _movement;
+    public Vector2 Movement => Input.GetVector(MoveLeftName, MoveRightName, MoveForwardName, MoveBackwardName);
 
     public readonly ControlButton Jump = new();
     public readonly ControlButton Crouch = new();
@@ -109,7 +109,7 @@ public partial class Controls : Node
 
     public override void _Input(InputEvent inputEvent)
     {
-        HandleMovementAxisState(inputEvent);
+        // HandleMovementAxisState(inputEvent);
         HandleButtonActions(inputEvent);
         UpdateActivePromptSet(inputEvent);
     }
