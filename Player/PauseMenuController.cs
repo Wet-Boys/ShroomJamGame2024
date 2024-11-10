@@ -1,4 +1,5 @@
 using Godot;
+using ShroomJamGame.UI;
 
 namespace ShroomJamGame.Player;
 
@@ -9,6 +10,12 @@ public partial class PauseMenuController : Node
 
     [Export]
     private Control? _pauseMenu;
+    
+    [Export]
+    private Control? _settingsMenu;
+    
+    [Export]
+    private SettingsUiController? _settingsUiController;
 
     public override void _Ready()
     {
@@ -23,9 +30,19 @@ public partial class PauseMenuController : Node
 
     public void TogglePause()
     {
+        if (_settingsMenu is null || _settingsUiController is null)
+            return;
+        
         if (GamePaused)
         {
-            Resume();
+            if (_settingsMenu.Visible)
+            {
+                _settingsUiController.CloseSettingsPanel();
+            }
+            else
+            {
+                Resume();
+            }
         }
         else
         {

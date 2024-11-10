@@ -28,3 +28,5 @@ handMeshes = Array[Mesh]([ExtResource("1_kpsft")])
 headMeshes = Array[Mesh]([ExtResource("2_h7so4"), ExtResource("3_8ls8f"), ExtResource("5_to55c"), ExtResource("6_fkl13"), ExtResource("9_vs6vk"), ExtResource("11_ef51v"), ExtResource("12_22vc3"), ExtResource("15_b6s2m"), ExtResource("18_yvrjq"), ExtResource("19_kda0k")])
 torsoMeshes = Array[Mesh]([ExtResource("10_ihh3l"), ExtResource("14_c8cts"), ExtResource("7_weyud"), ExtResource("17_5cpiy")])
 allMeshes = Array[Mesh]([ExtResource("1_kpsft"), ExtResource("2_h7so4"), ExtResource("3_8ls8f"), ExtResource("4_6i14e"), ExtResource("5_to55c"), ExtResource("6_fkl13"), ExtResource("7_weyud"), ExtResource("8_t6ogx"), ExtResource("9_vs6vk"), ExtResource("10_ihh3l"), ExtResource("11_ef51v"), ExtResource("12_22vc3"), ExtResource("13_4o67m"), ExtResource("14_c8cts"), ExtResource("15_b6s2m"), ExtResource("16_uf6is"), ExtResource("17_5cpiy"), ExtResource("18_yvrjq"), ExtResource("19_kda0k")])
+eyeTextures = null
+mouthTextures = null

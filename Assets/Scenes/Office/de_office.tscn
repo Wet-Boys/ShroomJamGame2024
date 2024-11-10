@@ -7253,9 +7253,6 @@ transform = Transform3D(6.06113, 7.78098, 1.7179, 0, 2.15841, -9.77617, -7.96837
 [node name="Screen2_014" parent="Asset Complete Office2/Cubicle2" index="20"]
 transform = Transform3D(-1.28173, -9.69572, -2.14065, 8.95107e-07, 2.15841, -9.77617, 9.92921, -1.25159, -0.276327, 11.5031, 1.93732, -9.51572)
 
-[node name="Gigabyte Computer_012" parent="Asset Complete Office2/Cubicle2" index="21"]
-transform = Transform3D(-7.65633, 0, -0.68934, 0, 7.68729, 0, 0.689341, 0, -7.65632, 12.1244, -0.485514, -1.58116)
-
 [node name="Gigabyte Computer_013" parent="Asset Complete Office2/Cubicle2" index="22"]
 transform = Transform3D(6.01433, 0, 4.78773, 0, 7.68729, 0, -4.78774, 0, 6.01432, -10.5605, -0.485514, -1.73039)
 
