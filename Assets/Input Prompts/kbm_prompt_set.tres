@@ -1,0 +1,407 @@
+[gd_resource type="Resource" load_steps=117 format=3 uid="uid://cdbg2yxvlk1t5"]
+
+[ext_resource type="Script" path="res://InputPrompts/KbmPromptSet.cs" id="1_xlque"]
+[ext_resource type="Script" path="res://InputPrompts/KeyPromptPair.cs" id="2_g5py7"]
+[ext_resource type="Script" path="res://InputPrompts/KeyRangePromptPair.cs" id="36_8ih3d"]
+
+[sub_resource type="Resource" id="Resource_h6jhm"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_escape.svg"
+
+[sub_resource type="Resource" id="Resource_s4aen"]
+script = ExtResource("2_g5py7")
+_key = 4194305
+_promptTexture = SubResource("Resource_h6jhm")
+
+[sub_resource type="Resource" id="Resource_bgovo"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_tab.svg"
+
+[sub_resource type="Resource" id="Resource_rpttf"]
+script = ExtResource("2_g5py7")
+_key = 4194306
+_promptTexture = SubResource("Resource_bgovo")
+
+[sub_resource type="Resource" id="Resource_3t1fl"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_backspace_icon.svg"
+
+[sub_resource type="Resource" id="Resource_t8axo"]
+script = ExtResource("2_g5py7")
+_key = 4194308
+_promptTexture = SubResource("Resource_3t1fl")
+
+[sub_resource type="Resource" id="Resource_dcfur"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_enter.svg"
+
+[sub_resource type="Resource" id="Resource_nu87k"]
+script = ExtResource("2_g5py7")
+_key = 4194309
+_promptTexture = SubResource("Resource_dcfur")
+
+[sub_resource type="Resource" id="Resource_dt406"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_numpad_enter.svg"
+
+[sub_resource type="Resource" id="Resource_g0bnr"]
+script = ExtResource("2_g5py7")
+_key = 4194310
+_promptTexture = SubResource("Resource_dt406")
+
+[sub_resource type="Resource" id="Resource_urn8w"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_insert.svg"
+
+[sub_resource type="Resource" id="Resource_3v1gj"]
+script = ExtResource("2_g5py7")
+_key = 4194311
+_promptTexture = SubResource("Resource_urn8w")
+
+[sub_resource type="Resource" id="Resource_t7vrb"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_delete.svg"
+
+[sub_resource type="Resource" id="Resource_uddpx"]
+script = ExtResource("2_g5py7")
+_key = 4194312
+_promptTexture = SubResource("Resource_t7vrb")
+
+[sub_resource type="Resource" id="Resource_umy5s"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_printscreen.svg"
+
+[sub_resource type="Resource" id="Resource_ljay1"]
+script = ExtResource("2_g5py7")
+_key = 4194314
+_promptTexture = SubResource("Resource_umy5s")
+
+[sub_resource type="Resource" id="Resource_i4ogt"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_home.svg"
+
+[sub_resource type="Resource" id="Resource_1nwkm"]
+script = ExtResource("2_g5py7")
+_key = 4194317
+_promptTexture = SubResource("Resource_i4ogt")
+
+[sub_resource type="Resource" id="Resource_vmxjm"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_end.svg"
+
+[sub_resource type="Resource" id="Resource_n37ce"]
+script = ExtResource("2_g5py7")
+_key = 4194318
+_promptTexture = SubResource("Resource_vmxjm")
+
+[sub_resource type="Resource" id="Resource_cfvmy"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_arrow_left.svg"
+
+[sub_resource type="Resource" id="Resource_bmcb6"]
+script = ExtResource("2_g5py7")
+_key = 4194319
+_promptTexture = SubResource("Resource_cfvmy")
+
+[sub_resource type="Resource" id="Resource_jd3j3"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_arrow_up.svg"
+
+[sub_resource type="Resource" id="Resource_uvrlk"]
+script = ExtResource("2_g5py7")
+_key = 4194320
+_promptTexture = SubResource("Resource_jd3j3")
+
+[sub_resource type="Resource" id="Resource_ysi7c"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_arrow_right.svg"
+
+[sub_resource type="Resource" id="Resource_lcg70"]
+script = ExtResource("2_g5py7")
+_key = 4194321
+_promptTexture = SubResource("Resource_ysi7c")
+
+[sub_resource type="Resource" id="Resource_vujpm"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_arrow_down.svg"
+
+[sub_resource type="Resource" id="Resource_j7sx4"]
+script = ExtResource("2_g5py7")
+_key = 4194322
+_promptTexture = SubResource("Resource_vujpm")
+
+[sub_resource type="Resource" id="Resource_fd6xn"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_page_up.svg"
+
+[sub_resource type="Resource" id="Resource_icbob"]
+script = ExtResource("2_g5py7")
+_key = 4194323
+_promptTexture = SubResource("Resource_fd6xn")
+
+[sub_resource type="Resource" id="Resource_q2fn3"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_page_down.svg"
+
+[sub_resource type="Resource" id="Resource_t3plx"]
+script = ExtResource("2_g5py7")
+_key = 4194324
+_promptTexture = SubResource("Resource_q2fn3")
+
+[sub_resource type="Resource" id="Resource_u2in8"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_shift.svg"
+
+[sub_resource type="Resource" id="Resource_tjitp"]
+script = ExtResource("2_g5py7")
+_key = 4194325
+_promptTexture = SubResource("Resource_u2in8")
+
+[sub_resource type="Resource" id="Resource_7ssok"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_ctrl.svg"
+
+[sub_resource type="Resource" id="Resource_7dg4y"]
+script = ExtResource("2_g5py7")
+_key = 4194326
+_promptTexture = SubResource("Resource_7ssok")
+
+[sub_resource type="Resource" id="Resource_eoigi"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_win.svg"
+
+[sub_resource type="Resource" id="Resource_4d5e4"]
+script = ExtResource("2_g5py7")
+_key = 4194327
+_promptTexture = SubResource("Resource_eoigi")
+
+[sub_resource type="Resource" id="Resource_ic482"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_alt.svg"
+
+[sub_resource type="Resource" id="Resource_hbuhp"]
+script = ExtResource("2_g5py7")
+_key = 4194328
+_promptTexture = SubResource("Resource_ic482")
+
+[sub_resource type="Resource" id="Resource_5p01x"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_capslock.svg"
+
+[sub_resource type="Resource" id="Resource_jws1d"]
+script = ExtResource("2_g5py7")
+_key = 4194329
+_promptTexture = SubResource("Resource_5p01x")
+
+[sub_resource type="Resource" id="Resource_cbai1"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_numlock.svg"
+
+[sub_resource type="Resource" id="Resource_4gwca"]
+script = ExtResource("2_g5py7")
+_key = 4194330
+_promptTexture = SubResource("Resource_cbai1")
+
+[sub_resource type="Resource" id="Resource_k123k"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_space_icon.svg"
+
+[sub_resource type="Resource" id="Resource_p2nwy"]
+script = ExtResource("2_g5py7")
+_key = 32
+_promptTexture = SubResource("Resource_k123k")
+
+[sub_resource type="Resource" id="Resource_jtdof"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_f1.svg"
+
+[sub_resource type="Resource" id="Resource_fymvb"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_f2.svg"
+
+[sub_resource type="Resource" id="Resource_0vuf3"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_f3.svg"
+
+[sub_resource type="Resource" id="Resource_u8mfs"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_f4.svg"
+
+[sub_resource type="Resource" id="Resource_p0i1f"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_f5.svg"
+
+[sub_resource type="Resource" id="Resource_rqjxu"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_f6.svg"
+
+[sub_resource type="Resource" id="Resource_0h0le"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_f7.svg"
+
+[sub_resource type="Resource" id="Resource_hjphs"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_f8.svg"
+
+[sub_resource type="Resource" id="Resource_hpu8r"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_f9.svg"
+
+[sub_resource type="Resource" id="Resource_encx3"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_f10.svg"
+
+[sub_resource type="Resource" id="Resource_kcw42"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_f11.svg"
+
+[sub_resource type="Resource" id="Resource_fbbi3"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_f12.svg"
+
+[sub_resource type="Resource" id="Resource_vej46"]
+script = ExtResource("36_8ih3d")
+_startKey = 4194332
+_endKey = 4194343
+_keyPrompts = [SubResource("Resource_jtdof"), SubResource("Resource_fymvb"), SubResource("Resource_0vuf3"), SubResource("Resource_u8mfs"), SubResource("Resource_p0i1f"), SubResource("Resource_rqjxu"), SubResource("Resource_0h0le"), SubResource("Resource_hjphs"), SubResource("Resource_hpu8r"), SubResource("Resource_encx3"), SubResource("Resource_kcw42"), SubResource("Resource_fbbi3")]
+
+[sub_resource type="Resource" id="Resource_sbbxb"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_a.svg"
+
+[sub_resource type="Resource" id="Resource_vxjmb"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_b.svg"
+
+[sub_resource type="Resource" id="Resource_6jpn1"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_c.svg"
+
+[sub_resource type="Resource" id="Resource_3mp2w"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_d.svg"
+
+[sub_resource type="Resource" id="Resource_e2ocw"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_e.svg"
+
+[sub_resource type="Resource" id="Resource_qy5pm"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_f.svg"
+
+[sub_resource type="Resource" id="Resource_mql54"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_g.svg"
+
+[sub_resource type="Resource" id="Resource_it4o0"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_h.svg"
+
+[sub_resource type="Resource" id="Resource_wdjh2"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_i.svg"
+
+[sub_resource type="Resource" id="Resource_pa242"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_j.svg"
+
+[sub_resource type="Resource" id="Resource_vjerh"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_k.svg"
+
+[sub_resource type="Resource" id="Resource_yvxtx"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_l.svg"
+
+[sub_resource type="Resource" id="Resource_siiqm"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_m.svg"
+
+[sub_resource type="Resource" id="Resource_cfjer"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_n.svg"
+
+[sub_resource type="Resource" id="Resource_e17ab"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_o.svg"
+
+[sub_resource type="Resource" id="Resource_gn444"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_p.svg"
+
+[sub_resource type="Resource" id="Resource_hha3e"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_q.svg"
+
+[sub_resource type="Resource" id="Resource_y6gc2"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_r.svg"
+
+[sub_resource type="Resource" id="Resource_gwrbb"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_s.svg"
+
+[sub_resource type="Resource" id="Resource_vhqfx"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_t.svg"
+
+[sub_resource type="Resource" id="Resource_4w3lj"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_u.svg"
+
+[sub_resource type="Resource" id="Resource_a6v0v"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_v.svg"
+
+[sub_resource type="Resource" id="Resource_sbxn8"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_w.svg"
+
+[sub_resource type="Resource" id="Resource_mnkat"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_x.svg"
+
+[sub_resource type="Resource" id="Resource_n174q"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_y.svg"
+
+[sub_resource type="Resource" id="Resource_c57oc"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_z.svg"
+
+[sub_resource type="Resource" id="Resource_ko2o5"]
+script = ExtResource("36_8ih3d")
+_startKey = 65
+_endKey = 90
+_keyPrompts = [SubResource("Resource_sbbxb"), SubResource("Resource_vxjmb"), SubResource("Resource_6jpn1"), SubResource("Resource_3mp2w"), SubResource("Resource_e2ocw"), SubResource("Resource_qy5pm"), SubResource("Resource_mql54"), SubResource("Resource_it4o0"), SubResource("Resource_wdjh2"), SubResource("Resource_pa242"), SubResource("Resource_vjerh"), SubResource("Resource_yvxtx"), SubResource("Resource_siiqm"), SubResource("Resource_cfjer"), SubResource("Resource_e17ab"), SubResource("Resource_gn444"), SubResource("Resource_hha3e"), SubResource("Resource_y6gc2"), SubResource("Resource_gwrbb"), SubResource("Resource_vhqfx"), SubResource("Resource_4w3lj"), SubResource("Resource_a6v0v"), SubResource("Resource_sbxn8"), SubResource("Resource_mnkat"), SubResource("Resource_n174q"), SubResource("Resource_c57oc")]
+
+[sub_resource type="Resource" id="Resource_huawv"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_0.svg"
+
+[sub_resource type="Resource" id="Resource_07mp6"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_1.svg"
+
+[sub_resource type="Resource" id="Resource_osnfn"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_2.svg"
+
+[sub_resource type="Resource" id="Resource_vd42d"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_3.svg"
+
+[sub_resource type="Resource" id="Resource_31i8t"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_4.svg"
+
+[sub_resource type="Resource" id="Resource_gkphb"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_5.svg"
+
+[sub_resource type="Resource" id="Resource_yfh12"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_6.svg"
+
+[sub_resource type="Resource" id="Resource_2eoxh"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_7.svg"
+
+[sub_resource type="Resource" id="Resource_o3a3k"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_8.svg"
+
+[sub_resource type="Resource" id="Resource_1g2ox"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_9.svg"
+
+[sub_resource type="Resource" id="Resource_qiyup"]
+script = ExtResource("36_8ih3d")
+_startKey = 48
+_endKey = 57
+_keyPrompts = [SubResource("Resource_huawv"), SubResource("Resource_07mp6"), SubResource("Resource_osnfn"), SubResource("Resource_vd42d"), SubResource("Resource_31i8t"), SubResource("Resource_gkphb"), SubResource("Resource_yfh12"), SubResource("Resource_2eoxh"), SubResource("Resource_o3a3k"), SubResource("Resource_1g2ox")]
+
+[sub_resource type="Resource" id="Resource_o4g2d"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_asterisk.svg"
+
+[sub_resource type="Resource" id="Resource_b00ac"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_slash_forward.svg"
+
+[sub_resource type="Resource" id="Resource_h54hp"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_minus.svg"
+
+[sub_resource type="Resource" id="Resource_44cgu"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_period.svg"
+
+[sub_resource type="Resource" id="Resource_85rta"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_numpad_plus.svg"
+
+[sub_resource type="Resource" id="Resource_gykea"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_0.svg"
+
+[sub_resource type="Resource" id="Resource_1dxga"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_1.svg"
+
+[sub_resource type="Resource" id="Resource_0kc34"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_2.svg"
+
+[sub_resource type="Resource" id="Resource_pmus2"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_3.svg"
+
+[sub_resource type="Resource" id="Resource_u6t6w"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_4.svg"
+
+[sub_resource type="Resource" id="Resource_lg2ae"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_5.svg"
+
+[sub_resource type="Resource" id="Resource_8ff0c"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_6.svg"
+
+[sub_resource type="Resource" id="Resource_m8vsw"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_7.svg"
+
+[sub_resource type="Resource" id="Resource_w4v5u"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_8.svg"
+
+[sub_resource type="Resource" id="Resource_j5t41"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Kbm/keyboard_9.svg"
+
+[sub_resource type="Resource" id="Resource_qiwma"]
+script = ExtResource("36_8ih3d")
+_startKey = 4194433
+_endKey = 4194447
+_keyPrompts = [SubResource("Resource_o4g2d"), SubResource("Resource_b00ac"), SubResource("Resource_h54hp"), SubResource("Resource_44cgu"), SubResource("Resource_85rta"), SubResource("Resource_gykea"), SubResource("Resource_1dxga"), SubResource("Resource_0kc34"), SubResource("Resource_pmus2"), SubResource("Resource_u6t6w"), SubResource("Resource_lg2ae"), SubResource("Resource_8ff0c"), SubResource("Resource_m8vsw"), SubResource("Resource_w4v5u"), SubResource("Resource_j5t41")]
+
+[resource]
+script = ExtResource("1_xlque")
+_keyPrompts = [SubResource("Resource_s4aen"), SubResource("Resource_rpttf"), SubResource("Resource_t8axo"), SubResource("Resource_nu87k"), SubResource("Resource_g0bnr"), SubResource("Resource_3v1gj"), SubResource("Resource_uddpx"), SubResource("Resource_ljay1"), SubResource("Resource_1nwkm"), SubResource("Resource_n37ce"), SubResource("Resource_bmcb6"), SubResource("Resource_uvrlk"), SubResource("Resource_lcg70"), SubResource("Resource_j7sx4"), SubResource("Resource_icbob"), SubResource("Resource_t3plx"), SubResource("Resource_tjitp"), SubResource("Resource_7dg4y"), SubResource("Resource_4d5e4"), SubResource("Resource_hbuhp"), SubResource("Resource_jws1d"), SubResource("Resource_4gwca"), SubResource("Resource_p2nwy")]
+_keyRangePrompts = [SubResource("Resource_vej46"), SubResource("Resource_ko2o5"), SubResource("Resource_qiyup"), SubResource("Resource_qiwma")]

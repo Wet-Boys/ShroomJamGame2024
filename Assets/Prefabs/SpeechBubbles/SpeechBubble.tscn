@@ -1,0 +1,65 @@
+[gd_scene load_steps=4 format=3 uid="uid://ljehdkywvla2"]
+
+[ext_resource type="Texture2D" uid="uid://34oukyn4hfbn" path="res://Assets/Prefabs/SpeechBubbles/SpeechBubble.png" id="1_hisnb"]
+[ext_resource type="Texture2D" uid="uid://5g8oiucee17q" path="res://Assets/Prefabs/SpeechBubbles/SpeechBubbleArrow.png" id="2_d8eux"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_dqcwe"]
+viewport_path = NodePath("SubViewport")
+
+[node name="SpeechBubble" type="Node3D"]
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+gui_disable_input = true
+size = Vector2i(620, 427)
+render_target_update_mode = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="SubViewport"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.9
+anchor_right = 0.5
+anchor_bottom = 0.9
+offset_left = -53.0
+offset_top = -48.0
+offset_right = 53.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="SubViewport/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("1_hisnb")
+region_rect = Rect2(0, 0, 64, 64)
+patch_margin_left = 24
+patch_margin_top = 24
+patch_margin_right = 24
+patch_margin_bottom = 24
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="SubViewport/MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Label" type="Label" parent="SubViewport/MarginContainer/MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Hello mario"
+vertical_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="SubViewport"]
+offset_left = 257.0
+offset_top = 341.84
+offset_right = 363.0
+offset_bottom = 389.84
+
+[node name="Sprite2D" type="Sprite2D" parent="SubViewport/MarginContainer2"]
+position = Vector2(52.355, 27.605)
+texture = ExtResource("2_d8eux")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+billboard = 2
+texture = SubResource("ViewportTexture_dqcwe")

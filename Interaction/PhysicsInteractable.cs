@@ -5,6 +5,7 @@ namespace ShroomJamGame.Interaction;
 [GlobalClass]
 public partial class PhysicsInteractable : RigidBody3D, IInteractableObject
 {
+    public bool isHeld = false;
     public void Interact()
     {
         

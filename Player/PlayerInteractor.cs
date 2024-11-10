@@ -187,7 +187,8 @@ public partial class PlayerInteractor : Node3D
         if (_currentTarget is PhysicsInteractable physicsObject)
         {
             _heldObject = physicsObject;
-            
+            _heldObject.isHeld = true;
+
             foreach (var child in _heldObject.GetChildren())
             {
                 if (child is not CollisionShape3D shape)
@@ -243,6 +244,7 @@ public partial class PlayerInteractor : Node3D
         }
 
         _heldObjectShape = null;
+        _heldObject.isHeld = false;
         _heldObject = null;
     }
 

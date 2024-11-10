@@ -1,0 +1,80 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbrra87fnw6ab"]
+
+[ext_resource type="Script" path="res://UI/SettingsUiController.cs" id="1_0l7xl"]
+
+[node name="SettingsUi" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabBar" type="TabBar" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 56.0
+grow_horizontal = 2
+theme_override_constants/h_separation = 25
+theme_override_font_sizes/font_size = 30
+current_tab = 0
+tab_alignment = 1
+scrolling_enabled = false
+tab_count = 3
+tab_0/title = "Audio"
+tab_1/title = "Graphics"
+tab_2/title = "Controls"
+
+[node name="Margin Container" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 56.0
+offset_bottom = -70.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Audio Panel" type="PanelContainer" parent="Margin Container"]
+layout_mode = 2
+
+[node name="Graphics Panel" type="PanelContainer" parent="Margin Container"]
+visible = false
+layout_mode = 2
+
+[node name="Controls Panel" type="PanelContainer" parent="Margin Container"]
+visible = false
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -50.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Close"
+
+[node name="SettingsUiController" type="Node" parent="." node_paths=PackedStringArray("_settingsUi", "_audioPanel", "_graphicsPanel", "_controlsPanel")]
+script = ExtResource("1_0l7xl")
+_settingsUi = NodePath("..")
+_audioPanel = NodePath("../Margin Container/Audio Panel")
+_graphicsPanel = NodePath("../Margin Container/Graphics Panel")
+_controlsPanel = NodePath("../Margin Container/Controls Panel")
+
+[connection signal="tab_changed" from="TabBar" to="SettingsUiController" method="OnTabChanged"]

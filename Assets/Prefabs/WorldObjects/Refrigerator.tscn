@@ -1,4 +1,6 @@
-[gd_scene load_steps=23 format=4 uid="uid://drnlc7orum6rr"]
+[gd_scene load_steps=26 format=4 uid="uid://drnlc7orum6rr"]
+
+[ext_resource type="Script" path="res://Interaction/DoorInteractable.cs" id="1_3ju5n"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1hhie"]
 resource_name = "Purple Body Paint"
@@ -90,6 +92,9 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_t1qcj")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2gye1"]
+size = Vector3(0.633423, 0.928711, 0.0876465)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gh5mm"]
 resource_name = "Purple Plastic Door"
@@ -187,6 +192,9 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_46vol")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yi1ys"]
+size = Vector3(0.633423, 0.50531, 0.0876465)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_4x7kr"]
 _surfaces = [{
@@ -309,22 +317,54 @@ transform = Transform3D(10.8087, 0, 0, 0, 10.8087, 0, 0, 0, 10.8087, 0, 0, 0)
 mesh = SubResource("ArrayMesh_6ufc8")
 skeleton = NodePath("")
 
-[node name="Bottom Door" type="MeshInstance3D" parent="."]
+[node name="Fridge Door" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.309564, 0.462123, 0.578885)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Fridge Door"]
+metadata/InteractableChildIndex = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fridge Door/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.307312, 0.00146478, 0.0394287)
+shape = SubResource("BoxShape3D_2gye1")
+
+[node name="DoorInteractable" type="Node" parent="Fridge Door/StaticBody3D" node_paths=PackedStringArray("_doorNode", "_soundEmitter", "CollisionShape")]
+script = ExtResource("1_3ju5n")
+OpenDegrees = Vector3(0, 125, 0)
+_doorNode = NodePath("../..")
+_soundEmitter = NodePath("../../../AudioStreamPlayer3D")
+CollisionShape = NodePath("..")
+
+[node name="Bottom Door" type="MeshInstance3D" parent="Fridge Door"]
 mesh = SubResource("ArrayMesh_p7rfr")
 skeleton = NodePath("")
 
-[node name="Bottom Door Handle" type="MeshInstance3D" parent="Bottom Door"]
+[node name="Bottom Door Handle" type="MeshInstance3D" parent="Fridge Door/Bottom Door"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.566667, 0.273013, 0.0606804)
 mesh = SubResource("ArrayMesh_vmrxe")
 skeleton = NodePath("")
 
-[node name="Top Door" type="MeshInstance3D" parent="."]
+[node name="Freezer Door" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.309559, 1.1788, 0.578805)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Freezer Door"]
+metadata/InteractableChildIndex = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Freezer Door/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.307312, 0.0055846, 0.0394287)
+shape = SubResource("BoxShape3D_yi1ys")
+
+[node name="DoorInteractable" type="Node" parent="Freezer Door/StaticBody3D" node_paths=PackedStringArray("_doorNode", "_soundEmitter", "CollisionShape")]
+script = ExtResource("1_3ju5n")
+OpenDegrees = Vector3(0, 125, 0)
+_doorNode = NodePath("../..")
+_soundEmitter = NodePath("../../../AudioStreamPlayer3D")
+CollisionShape = NodePath("..")
+
+[node name="Top Door" type="MeshInstance3D" parent="Freezer Door"]
 mesh = SubResource("ArrayMesh_ptkjg")
 skeleton = NodePath("")
 
-[node name="Top Door Handle" type="MeshInstance3D" parent="Top Door"]
+[node name="Top Door Handle" type="MeshInstance3D" parent="Freezer Door/Top Door"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.567432, -0.0566715, 0.0695334)
 mesh = SubResource("ArrayMesh_cnvl2")
 skeleton = NodePath("")
@@ -374,3 +414,32 @@ shape = SubResource("BoxShape3D_3e3of")
 [node name="CollisionShape3D11" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00130463, 0.152161, 0.257492)
 shape = SubResource("BoxShape3D_1uast")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+
+[node name="Lights" type="Node3D" parent="."]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(0.0925181, 0, 0, 0, 0.0925181, 0, 0, 0, 0.0925181, 0, 0.835532, 0.0753185)
+shadow_enabled = true
+omni_range = 10.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(0.0925181, 0, 0, 0, 0.0925181, 0, 0, 0, 0.0925181, 0, 0.650496, 0.0753185)
+shadow_enabled = true
+omni_range = 10.0
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(0.0925181, 0, 0, 0, 0.0925181, 0, 0, 0, 0.0925181, 0, 0.46546, 0.0753185)
+shadow_enabled = true
+omni_range = 10.0
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(0.0925181, 0, 0, 0, 0.0925181, 0, 0, 0, 0.0925181, 0, 1.34438, 0.0753185)
+shadow_enabled = true
+omni_range = 10.0
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(0.0925181, 0, 0, 0, 0.0925181, 0, 0, 0, 0.0925181, 0, 1.11309, 0.0753185)
+shadow_enabled = true
+omni_range = 10.0

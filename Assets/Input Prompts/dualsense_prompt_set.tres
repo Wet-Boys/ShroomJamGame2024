@@ -1,0 +1,182 @@
+[gd_resource type="Resource" load_steps=47 format=3 uid="uid://ht3sn2fs4st1"]
+
+[ext_resource type="Script" path="res://InputPrompts/ControllerPromptSet.cs" id="1_kv86c"]
+[ext_resource type="Script" path="res://InputPrompts/JoyAxisPromptPair.cs" id="2_2yufc"]
+[ext_resource type="Script" path="res://InputPrompts/JoyButtonPromptPair.cs" id="2_fqxa7"]
+
+[sub_resource type="Resource" id="Resource_lgg4r"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Dualsense/playstation_stick_l.svg"
+
+[sub_resource type="Resource" id="Resource_mup85"]
+script = ExtResource("2_2yufc")
+_axis = 0
+_promptTexture = SubResource("Resource_lgg4r")
+
+[sub_resource type="Resource" id="Resource_w6cq8"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Dualsense/playstation_stick_l.svg"
+
+[sub_resource type="Resource" id="Resource_8wivt"]
+script = ExtResource("2_2yufc")
+_axis = 1
+_promptTexture = SubResource("Resource_w6cq8")
+
+[sub_resource type="Resource" id="Resource_yy5k6"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Dualsense/playstation_stick_r.svg"
+
+[sub_resource type="Resource" id="Resource_nrv2v"]
+script = ExtResource("2_2yufc")
+_axis = 2
+_promptTexture = SubResource("Resource_yy5k6")
+
+[sub_resource type="Resource" id="Resource_gdcwo"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Dualsense/playstation_stick_r.svg"
+
+[sub_resource type="Resource" id="Resource_2ry7j"]
+script = ExtResource("2_2yufc")
+_axis = 3
+_promptTexture = SubResource("Resource_gdcwo")
+
+[sub_resource type="Resource" id="Resource_3iw8o"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Dualsense/playstation_trigger_l2_outline.svg"
+
+[sub_resource type="Resource" id="Resource_l6bgd"]
+script = ExtResource("2_2yufc")
+_axis = 4
+_promptTexture = SubResource("Resource_3iw8o")
+
+[sub_resource type="Resource" id="Resource_yjnjd"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Dualsense/playstation_trigger_r2_outline.svg"
+
+[sub_resource type="Resource" id="Resource_jadec"]
+script = ExtResource("2_2yufc")
+_axis = 5
+_promptTexture = SubResource("Resource_yjnjd")
+
+[sub_resource type="Resource" id="Resource_27eqj"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Dualsense/playstation_button_color_cross_outline.svg"
+
+[sub_resource type="Resource" id="Resource_l1mcc"]
+script = ExtResource("2_fqxa7")
+_button = 0
+_promptTexture = SubResource("Resource_27eqj")
+
+[sub_resource type="Resource" id="Resource_kf1l5"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Dualsense/playstation_button_color_circle_outline.svg"
+
+[sub_resource type="Resource" id="Resource_63sii"]
+script = ExtResource("2_fqxa7")
+_button = 1
+_promptTexture = SubResource("Resource_kf1l5")
+
+[sub_resource type="Resource" id="Resource_8efyd"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Dualsense/playstation_button_color_square_outline.svg"
+
+[sub_resource type="Resource" id="Resource_nfm0x"]
+script = ExtResource("2_fqxa7")
+_button = 2
+_promptTexture = SubResource("Resource_8efyd")
+
+[sub_resource type="Resource" id="Resource_5shb3"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Dualsense/playstation_button_color_triangle_outline.svg"
+
+[sub_resource type="Resource" id="Resource_syqyn"]
+script = ExtResource("2_fqxa7")
+_button = 3
+_promptTexture = SubResource("Resource_5shb3")
+
+[sub_resource type="Resource" id="Resource_enwca"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Dualsense/playstation5_button_create_outline.svg"
+
+[sub_resource type="Resource" id="Resource_ofn1d"]
+script = ExtResource("2_fqxa7")
+_button = 4
+_promptTexture = SubResource("Resource_enwca")
+
+[sub_resource type="Resource" id="Resource_827te"]
+script = ExtResource("2_fqxa7")
+_button = 5
+
+[sub_resource type="Resource" id="Resource_w8ln7"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Dualsense/playstation5_button_options_outline.svg"
+
+[sub_resource type="Resource" id="Resource_afwyx"]
+script = ExtResource("2_fqxa7")
+_button = 6
+_promptTexture = SubResource("Resource_w8ln7")
+
+[sub_resource type="Resource" id="Resource_48em8"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Dualsense/playstation_stick_side_l.svg"
+
+[sub_resource type="Resource" id="Resource_s22jl"]
+script = ExtResource("2_fqxa7")
+_button = 7
+_promptTexture = SubResource("Resource_48em8")
+
+[sub_resource type="Resource" id="Resource_wf8f4"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Dualsense/playstation_stick_side_r.svg"
+
+[sub_resource type="Resource" id="Resource_8ry26"]
+script = ExtResource("2_fqxa7")
+_button = 8
+_promptTexture = SubResource("Resource_wf8f4")
+
+[sub_resource type="Resource" id="Resource_mkn0l"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Dualsense/playstation_trigger_l1_alternative_outline.svg"
+
+[sub_resource type="Resource" id="Resource_fgngt"]
+script = ExtResource("2_fqxa7")
+_button = 9
+_promptTexture = SubResource("Resource_mkn0l")
+
+[sub_resource type="Resource" id="Resource_p73l8"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Dualsense/playstation_trigger_r1_alternative_outline.svg"
+
+[sub_resource type="Resource" id="Resource_bn52o"]
+script = ExtResource("2_fqxa7")
+_button = 10
+_promptTexture = SubResource("Resource_p73l8")
+
+[sub_resource type="Resource" id="Resource_8k3k4"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Dualsense/playstation_dpad_up_outline.svg"
+
+[sub_resource type="Resource" id="Resource_iq7aa"]
+script = ExtResource("2_fqxa7")
+_button = 11
+_promptTexture = SubResource("Resource_8k3k4")
+
+[sub_resource type="Resource" id="Resource_iktyk"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Dualsense/playstation_dpad_down_outline.svg"
+
+[sub_resource type="Resource" id="Resource_cci3s"]
+script = ExtResource("2_fqxa7")
+_button = 12
+_promptTexture = SubResource("Resource_iktyk")
+
+[sub_resource type="Resource" id="Resource_0a6e6"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Dualsense/playstation_dpad_left_outline.svg"
+
+[sub_resource type="Resource" id="Resource_cnu1o"]
+script = ExtResource("2_fqxa7")
+_button = 13
+_promptTexture = SubResource("Resource_0a6e6")
+
+[sub_resource type="Resource" id="Resource_oqfdt"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Dualsense/playstation_dpad_right_outline.svg"
+
+[sub_resource type="Resource" id="Resource_mug53"]
+script = ExtResource("2_fqxa7")
+_button = 14
+_promptTexture = SubResource("Resource_oqfdt")
+
+[sub_resource type="Resource" id="Resource_ah43b"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Dualsense/playstation5_touchpad_outline.svg"
+
+[sub_resource type="Resource" id="Resource_u5abf"]
+script = ExtResource("2_fqxa7")
+_button = 20
+_promptTexture = SubResource("Resource_ah43b")
+
+[resource]
+script = ExtResource("1_kv86c")
+_buttonPrompts = [SubResource("Resource_l1mcc"), SubResource("Resource_63sii"), SubResource("Resource_nfm0x"), SubResource("Resource_syqyn"), SubResource("Resource_ofn1d"), SubResource("Resource_827te"), SubResource("Resource_afwyx"), SubResource("Resource_s22jl"), SubResource("Resource_8ry26"), SubResource("Resource_fgngt"), SubResource("Resource_bn52o"), SubResource("Resource_iq7aa"), SubResource("Resource_cci3s"), SubResource("Resource_cnu1o"), SubResource("Resource_mug53"), SubResource("Resource_u5abf")]
+_axisPrompts = [SubResource("Resource_mup85"), SubResource("Resource_8wivt"), SubResource("Resource_nrv2v"), SubResource("Resource_2ry7j"), SubResource("Resource_l6bgd"), SubResource("Resource_jadec")]

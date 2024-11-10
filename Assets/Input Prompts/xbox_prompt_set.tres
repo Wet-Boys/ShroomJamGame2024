@@ -1,0 +1,178 @@
+[gd_resource type="Resource" load_steps=46 format=3 uid="uid://0g5pvwf0un12"]
+
+[ext_resource type="Script" path="res://InputPrompts/ControllerPromptSet.cs" id="1_m68ka"]
+[ext_resource type="Script" path="res://InputPrompts/JoyButtonPromptPair.cs" id="2_joijl"]
+[ext_resource type="Script" path="res://InputPrompts/JoyAxisPromptPair.cs" id="2_rdp7h"]
+
+[sub_resource type="Resource" id="Resource_sy0m3"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Xbox/xbox_stick_l.svg"
+
+[sub_resource type="Resource" id="Resource_gqwfg"]
+script = ExtResource("2_rdp7h")
+_axis = 0
+_promptTexture = SubResource("Resource_sy0m3")
+
+[sub_resource type="Resource" id="Resource_nb1us"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Xbox/xbox_stick_l.svg"
+
+[sub_resource type="Resource" id="Resource_txd1y"]
+script = ExtResource("2_rdp7h")
+_axis = 1
+_promptTexture = SubResource("Resource_nb1us")
+
+[sub_resource type="Resource" id="Resource_lu0v6"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Xbox/xbox_stick_r.svg"
+
+[sub_resource type="Resource" id="Resource_vu1iq"]
+script = ExtResource("2_rdp7h")
+_axis = 2
+_promptTexture = SubResource("Resource_lu0v6")
+
+[sub_resource type="Resource" id="Resource_bu5vr"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Xbox/xbox_stick_r.svg"
+
+[sub_resource type="Resource" id="Resource_p18cx"]
+script = ExtResource("2_rdp7h")
+_axis = 3
+_promptTexture = SubResource("Resource_bu5vr")
+
+[sub_resource type="Resource" id="Resource_aa0qm"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Xbox/xbox_lt_outline.svg"
+
+[sub_resource type="Resource" id="Resource_bi8f3"]
+script = ExtResource("2_rdp7h")
+_axis = 4
+_promptTexture = SubResource("Resource_aa0qm")
+
+[sub_resource type="Resource" id="Resource_yppvn"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Xbox/xbox_rt_outline.svg"
+
+[sub_resource type="Resource" id="Resource_56x3o"]
+script = ExtResource("2_rdp7h")
+_axis = 5
+_promptTexture = SubResource("Resource_yppvn")
+
+[sub_resource type="Resource" id="Resource_l7m8s"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Xbox/xbox_button_color_a_outline.svg"
+
+[sub_resource type="Resource" id="Resource_otppc"]
+script = ExtResource("2_joijl")
+_button = 0
+_promptTexture = SubResource("Resource_l7m8s")
+
+[sub_resource type="Resource" id="Resource_wx8qj"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Xbox/xbox_button_color_b_outline.svg"
+
+[sub_resource type="Resource" id="Resource_opslf"]
+script = ExtResource("2_joijl")
+_button = 1
+_promptTexture = SubResource("Resource_wx8qj")
+
+[sub_resource type="Resource" id="Resource_d2813"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Xbox/xbox_button_color_x_outline.svg"
+
+[sub_resource type="Resource" id="Resource_w266o"]
+script = ExtResource("2_joijl")
+_button = 2
+_promptTexture = SubResource("Resource_d2813")
+
+[sub_resource type="Resource" id="Resource_r4dic"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Xbox/xbox_button_color_y_outline.svg"
+
+[sub_resource type="Resource" id="Resource_loi8t"]
+script = ExtResource("2_joijl")
+_button = 3
+_promptTexture = SubResource("Resource_r4dic")
+
+[sub_resource type="Resource" id="Resource_fkehf"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Xbox/xbox_button_view_outline.svg"
+
+[sub_resource type="Resource" id="Resource_6ji14"]
+script = ExtResource("2_joijl")
+_button = 4
+_promptTexture = SubResource("Resource_fkehf")
+
+[sub_resource type="Resource" id="Resource_rlj7h"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Xbox/xbox_guide_outline.svg"
+
+[sub_resource type="Resource" id="Resource_a036j"]
+script = ExtResource("2_joijl")
+_button = 5
+_promptTexture = SubResource("Resource_rlj7h")
+
+[sub_resource type="Resource" id="Resource_ihwu0"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Xbox/xbox_button_menu_outline.svg"
+
+[sub_resource type="Resource" id="Resource_upesk"]
+script = ExtResource("2_joijl")
+_button = 6
+_promptTexture = SubResource("Resource_ihwu0")
+
+[sub_resource type="Resource" id="Resource_5au30"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Xbox/xbox_stick_side_l.svg"
+
+[sub_resource type="Resource" id="Resource_2m8v7"]
+script = ExtResource("2_joijl")
+_button = 7
+_promptTexture = SubResource("Resource_5au30")
+
+[sub_resource type="Resource" id="Resource_j7wsw"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Xbox/xbox_stick_side_r.svg"
+
+[sub_resource type="Resource" id="Resource_xf4mk"]
+script = ExtResource("2_joijl")
+_button = 8
+_promptTexture = SubResource("Resource_j7wsw")
+
+[sub_resource type="Resource" id="Resource_fa3y7"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Xbox/xbox_lb_outline.svg"
+
+[sub_resource type="Resource" id="Resource_ws5le"]
+script = ExtResource("2_joijl")
+_button = 9
+_promptTexture = SubResource("Resource_fa3y7")
+
+[sub_resource type="Resource" id="Resource_84a8t"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Xbox/xbox_rb_outline.svg"
+
+[sub_resource type="Resource" id="Resource_y5bhv"]
+script = ExtResource("2_joijl")
+_button = 10
+_promptTexture = SubResource("Resource_84a8t")
+
+[sub_resource type="Resource" id="Resource_4n2nj"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Xbox/xbox_dpad_up_outline.svg"
+
+[sub_resource type="Resource" id="Resource_yvwkm"]
+script = ExtResource("2_joijl")
+_button = 11
+_promptTexture = SubResource("Resource_4n2nj")
+
+[sub_resource type="Resource" id="Resource_44h5s"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Xbox/xbox_dpad_down_outline.svg"
+
+[sub_resource type="Resource" id="Resource_8dulv"]
+script = ExtResource("2_joijl")
+_button = 12
+_promptTexture = SubResource("Resource_44h5s")
+
+[sub_resource type="Resource" id="Resource_bf8nh"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Xbox/xbox_dpad_left_outline.svg"
+
+[sub_resource type="Resource" id="Resource_xxtrp"]
+script = ExtResource("2_joijl")
+_button = 13
+_promptTexture = SubResource("Resource_bf8nh")
+
+[sub_resource type="Resource" id="Resource_vy1w3"]
+metadata/__load_path__ = "res://Assets/Input Prompts/Textures/Xbox/xbox_dpad_right_outline.svg"
+
+[sub_resource type="Resource" id="Resource_cpfdi"]
+script = ExtResource("2_joijl")
+_button = 14
+_promptTexture = SubResource("Resource_vy1w3")
+
+[resource]
+script = ExtResource("1_m68ka")
+_buttonPrompts = [SubResource("Resource_otppc"), SubResource("Resource_opslf"), SubResource("Resource_w266o"), SubResource("Resource_loi8t"), SubResource("Resource_6ji14"), SubResource("Resource_a036j"), SubResource("Resource_upesk"), SubResource("Resource_2m8v7"), SubResource("Resource_xf4mk"), SubResource("Resource_ws5le"), SubResource("Resource_y5bhv"), SubResource("Resource_yvwkm"), SubResource("Resource_8dulv"), SubResource("Resource_xxtrp"), SubResource("Resource_cpfdi")]
+_axisPrompts = [SubResource("Resource_gqwfg"), SubResource("Resource_txd1y"), SubResource("Resource_vu1iq"), SubResource("Resource_p18cx"), SubResource("Resource_bi8f3"), SubResource("Resource_56x3o")]
