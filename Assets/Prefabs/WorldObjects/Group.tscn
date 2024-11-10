@@ -1,4 +1,4 @@
-[gd_scene load_steps=88 format=4 uid="uid://b4ehpusowenrb"]
+[gd_scene load_steps=95 format=4 uid="uid://6d18cgcfmxb"]
 
 [ext_resource type="PackedScene" uid="uid://mfys02xva10s" path="res://Assets/Prefabs/WorldObjects/dining_table.tscn" id="1_sgy7h"]
 [ext_resource type="PackedScene" uid="uid://hf2rsb2864f0" path="res://Assets/Prefabs/WorldObjects/kitchen_chair.tscn" id="2_janrp"]
@@ -665,6 +665,27 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_l570m")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_4bjpq"]
+size = Vector3(3.10728, 0.102692, 0.794006)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3646e"]
+size = Vector3(1.07561, 0.0952454, 1.19954)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_32sgp"]
+size = Vector3(0.0964007, 1.16706, 1.90922)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t6wo2"]
+size = Vector3(2.83031, 1.16706, 0.0570168)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pdn75"]
+size = Vector3(0.0660357, 1.16706, 0.694036)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_expyo"]
+size = Vector3(0.428921, 0.0157013, 1.3171)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fraid"]
+size = Vector3(0.428921, 0.0157013, 1.3171)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ef15q"]
 resource_name = "Allu"
 cull_mode = 2
@@ -1197,6 +1218,36 @@ shape = SubResource("ConvexPolygonShape3D_074tu")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.14, -5.532, -4.069)
 mesh = SubResource("ArrayMesh_3fv1w")
 skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="LDesk_Supports"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LDesk_Supports/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.58717, 1.16743, 0.398529)
+shape = SubResource("BoxShape3D_4bjpq")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="LDesk_Supports/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.571331, 1.17116, 1.39165)
+shape = SubResource("BoxShape3D_3646e")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="LDesk_Supports/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.27742, 0.583787, 0.995027)
+shape = SubResource("BoxShape3D_32sgp")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="LDesk_Supports/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.64438, 0.583787, 0.0689249)
+shape = SubResource("BoxShape3D_t6wo2")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="LDesk_Supports/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.02652, 0.583787, 0.387434)
+shape = SubResource("BoxShape3D_pdn75")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="LDesk_Supports/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.247984, 1.71664, 1.30509)
+shape = SubResource("BoxShape3D_expyo")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="LDesk_Supports/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.247984, 1.49032, 1.30509)
+shape = SubResource("BoxShape3D_fraid")
 
 [node name="Electronic Junk Motor" parent="." instance=ExtResource("34_thuaa")]
 transform = Transform3D(2.80435, 0, 0, 0, 2.80435, 0, 0, 0, 2.80435, 4.96909, -4.32163, -3.34662)
