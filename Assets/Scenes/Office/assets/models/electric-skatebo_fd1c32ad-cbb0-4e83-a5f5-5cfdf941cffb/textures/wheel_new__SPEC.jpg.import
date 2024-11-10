@@ -3,25 +3,26 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dsf4i7aowrh1u"
-path="res://.godot/imported/wheel_new__SPEC.jpg-39552c0af70b67c940298d62c871d483.ctex"
+path.s3tc="res://.godot/imported/wheel_new__SPEC.jpg-39552c0af70b67c940298d62c871d483.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/Scenes/Office/assets/models/electric-skatebo_fd1c32ad-cbb0-4e83-a5f5-5cfdf941cffb/textures/wheel_new__SPEC.jpg"
-dest_files=["res://.godot/imported/wheel_new__SPEC.jpg-39552c0af70b67c940298d62c871d483.ctex"]
+dest_files=["res://.godot/imported/wheel_new__SPEC.jpg-39552c0af70b67c940298d62c871d483.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -31,4 +32,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

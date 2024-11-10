@@ -1,8 +1,7 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using Godot;
-using ShroomJamGame.Player;
+using ShroomJamGame.InputPrompts;
 
 namespace ShroomJamGame;
 
@@ -22,6 +21,24 @@ public partial class Controls : Node
     }
     
     private readonly List<ControlButton> _buttons = [];
+
+    private InputPromptSet _activePromptSet;
+
+    [Export]
+    public InputPromptSet ActivePromptSet
+    {
+        get => _activePromptSet;
+        set
+        {
+            if (value != _activePromptSet)
+                EmitSignal(SignalName.ActivePromptSetChanged, value); 
+            
+            _activePromptSet = value;
+        }
+    }
+    
+    [Signal]
+    public delegate void ActivePromptSetChangedEventHandler(InputPromptSet activePromptSet);
     
     [Export]
     public float JoystickDeadzone = 0.1f;
@@ -66,6 +83,8 @@ public partial class Controls : Node
     {
         _instance = this;
 
+        _activePromptSet = GameSettings.Instance.KbmPromptSet;
+
         Jump.Action = JumpName;
         Jump.SetControlsInstance(this);
         
@@ -92,6 +111,7 @@ public partial class Controls : Node
     {
         HandleMovementAxisState(inputEvent);
         HandleButtonActions(inputEvent);
+        UpdateActivePromptSet(inputEvent);
     }
 
     private void HandleMovementAxisState(InputEvent inputEvent)
@@ -152,6 +172,18 @@ public partial class Controls : Node
     {
         foreach (var controlButton in _buttons)
             controlButton.ProcessEvent(inputEvent);
+    }
+
+    private void UpdateActivePromptSet(InputEvent inputEvent)
+    {
+        if (inputEvent is InputEventKey or InputEventMouse)
+        {
+            ActivePromptSet = GameSettings.Instance.KbmPromptSet;
+        }
+        else if (inputEvent is InputEventJoypadButton or InputEventJoypadMotion)
+        {
+            ActivePromptSet = GameSettings.Instance.GetControllerPromptSet();
+        }
     }
 
     public class ControlButton(bool unscaled = false)
