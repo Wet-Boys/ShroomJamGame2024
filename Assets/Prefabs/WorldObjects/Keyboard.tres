@@ -1,4 +1,4 @@
-[gd_resource type="ArrayMesh" load_steps=6 format=4 uid="uid://qsh0amh20nkw"]
+[gd_resource type="ArrayMesh" load_steps=6 format=4 uid="uid://isp28bmosqwe"]
 
 [ext_resource type="Texture2D" uid="uid://dvrqtn4cbli0k" path="res://Assets/Scenes/Office/textures/KB-color.png" id="1_e01nx"]
 [ext_resource type="Texture2D" uid="uid://fclhji7pnmqd" path="res://Assets/Scenes/Office/textures/KB-Roughness.png" id="2_8a0ig"]

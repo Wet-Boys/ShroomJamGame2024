@@ -1,4 +1,4 @@
-[gd_resource type="ArrayMesh" load_steps=6 format=4 uid="uid://cujpo5ek635eh"]
+[gd_resource type="ArrayMesh" load_steps=6 format=4 uid="uid://os24rdssjt46"]
 
 [ext_resource type="Texture2D" uid="uid://doyx4frjvlama" path="res://Assets/Scenes/Office/textures/ComputerCase_Diffuse.jpg" id="1_yhswo"]
 [ext_resource type="Texture2D" uid="uid://demk6ufe3gavx" path="res://Assets/Scenes/Office/textures/ComputerCase_Roughness.jpg" id="2_ric7i"]
