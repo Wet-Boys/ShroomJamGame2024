@@ -44,6 +44,10 @@ namespace ShroomJamGame.NPC
         Node3D speechBubbleNode;
         [Export]
         Label speechBubbleText;
+        [Export]
+        Sprite3D speechBubbleSprite;
+        [Export]
+        SubViewport speechBubbleViewPort;
 
         public void SetSpeechBubble(string content)
         {
@@ -66,6 +70,8 @@ namespace ShroomJamGame.NPC
                 ownedItemsStartingRotations.Add(item.Rotation);
             }
             this.ReachedDestination += NpcMovementController_ReachedDestination;
+            speechBubbleSprite.Texture = speechBubbleViewPort.GetTexture();
+
             DecideTime();
             SetSpeechBubble("");
         }
@@ -89,9 +95,9 @@ namespace ShroomJamGame.NPC
             {
                 if (ownedItems[i].GlobalPosition.DistanceTo(ownedItemsStartingPositions[i]) > 1)
                 {
+                    targetNode = ownedItems[i];
                     SetSpeechBubble($"Why did you throw my {targetNode.Name}");
                     grabbingObject = true;
-                    targetNode = ownedItems[i];
                     return;
                 }
             }

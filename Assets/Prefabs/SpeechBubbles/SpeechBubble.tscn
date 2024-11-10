@@ -21,7 +21,7 @@ anchor_top = 0.9
 anchor_right = 0.5
 anchor_bottom = 0.9
 offset_left = -53.0
-offset_top = -40.0
+offset_top = -48.0
 offset_right = 53.0
 grow_horizontal = 2
 grow_vertical = 0
@@ -37,13 +37,6 @@ patch_margin_bottom = 24
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
-[node name="MarginContainer2" type="MarginContainer" parent="SubViewport/MarginContainer"]
-layout_mode = 2
-
-[node name="Sprite2D" type="Sprite2D" parent="SubViewport/MarginContainer/MarginContainer2"]
-position = Vector2(52.355, 27.605)
-texture = ExtResource("2_d8eux")
-
 [node name="MarginContainer" type="MarginContainer" parent="SubViewport/MarginContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 8
@@ -56,6 +49,16 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Hello mario"
 vertical_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="SubViewport"]
+offset_left = 257.0
+offset_top = 341.84
+offset_right = 363.0
+offset_bottom = 389.84
+
+[node name="Sprite2D" type="Sprite2D" parent="SubViewport/MarginContainer2"]
+position = Vector2(52.355, 27.605)
+texture = ExtResource("2_d8eux")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 billboard = 2

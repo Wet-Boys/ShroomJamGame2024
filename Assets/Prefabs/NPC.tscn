@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://lkw7ko7kkqpk"]
+[gd_scene load_steps=10 format=3 uid="uid://lkw7ko7kkqpk"]
 
 [ext_resource type="PackedScene" uid="uid://cy8c1p22wrnpt" path="res://Assets/Prefabs/GenericCharacterBody.tscn" id="1_qxxhq"]
 [ext_resource type="Script" path="res://NPC/NpcMovementController.cs" id="2_272a2"]
@@ -14,13 +14,16 @@ height = 2.25
 [sub_resource type="PrismMesh" id="PrismMesh_3fuua"]
 material = ExtResource("2_glad6")
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_5xsnv"]
+viewport_path = NodePath("SubViewport")
+
 [node name="GenericCharacterBody" instance=ExtResource("1_qxxhq")]
 
 [node name="CharacterMovementController" parent="." index="0"]
 _moveSpeed = 40.0
 _maxSpeed = 400.0
 
-[node name="NpcMovementController" type="Node" parent="." index="1" node_paths=PackedStringArray("_characterMovementController", "characterBody3D", "_navigationAgent", "_visualController", "interactionRay", "ownedItems", "speechBubbleNode", "speechBubbleText")]
+[node name="NpcMovementController" type="Node" parent="." index="1" node_paths=PackedStringArray("_characterMovementController", "characterBody3D", "_navigationAgent", "_visualController", "interactionRay", "ownedItems", "speechBubbleNode", "speechBubbleText", "speechBubbleSprite", "speechBubbleViewPort")]
 script = ExtResource("2_272a2")
 _characterMovementController = NodePath("../CharacterMovementController")
 characterBody3D = NodePath("..")
@@ -30,6 +33,8 @@ interactionRay = NodePath("../Head/RayCast3D")
 ownedItems = []
 speechBubbleNode = NodePath("../SpeechBubble/Sprite3D")
 speechBubbleText = NodePath("../SpeechBubble/SubViewport/MarginContainer/MarginContainer/Label")
+speechBubbleSprite = NodePath("../SpeechBubble/Sprite3D")
+speechBubbleViewPort = NodePath("../SpeechBubble/SubViewport")
 
 [node name="Head" parent="." index="2"]
 transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0, 0.875, 0)
@@ -71,5 +76,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.125, 0)
 
 [node name="SpeechBubble" parent="." index="9" instance=ExtResource("5_nuck4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.99116, 0)
+
+[node name="Sprite3D" parent="SpeechBubble" index="1"]
+texture = SubResource("ViewportTexture_5xsnv")
 
 [editable path="SpeechBubble"]
