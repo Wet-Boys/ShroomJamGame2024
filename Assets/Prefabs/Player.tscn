@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bv7hgobt87i0x"]
+[gd_scene load_steps=15 format=3 uid="uid://bv7hgobt87i0x"]
 
 [ext_resource type="Script" path="res://Player/PlayerHeadController.cs" id="1_74oir"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="1_rdmxy"]
@@ -8,7 +8,8 @@
 [ext_resource type="Script" path="res://Player/PlayerMovementController.cs" id="4_i8tv5"]
 [ext_resource type="Script" path="res://Player/PlayerInteractor.cs" id="6_rta4b"]
 [ext_resource type="PackedScene" uid="uid://bos5qjgi60df2" path="res://Assets/UI/GeneralHUD.tscn" id="8_i06ww"]
-[ext_resource type="PackedScene" uid="uid://850tnty6q4cv" path="res://Assets/UI/PauseMenu.tscn" id="9_syifq"]
+[ext_resource type="PackedScene" path="res://Assets/UI/PauseMenu.tscn" id="9_syifq"]
+[ext_resource type="Script" path="res://Tasks/TaskTracker.cs" id="10_sul16"]
 
 [sub_resource type="Resource" id="Resource_4oitb"]
 script = ExtResource("2_ahif8")
@@ -73,5 +74,9 @@ _playerHead = NodePath("..")
 
 [node name="PauseMenu" parent="." index="7" instance=ExtResource("9_syifq")]
 visible = false
+
+[node name="TaskTracker" type="Node" parent="." index="9" node_paths=PackedStringArray("player")]
+script = ExtResource("10_sul16")
+player = NodePath("..")
 
 [editable path="GeneralHud"]
