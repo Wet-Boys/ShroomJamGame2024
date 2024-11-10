@@ -51,7 +51,7 @@ text = "Exit to Desktop"
 
 [node name="PauseMenuController" type="Node" parent="." node_paths=PackedStringArray("_pauseMenu", "_settingsMenu", "_settingsUiController")]
 script = ExtResource("1_4c2y3")
-_pauseMenu = NodePath("..")
+_pauseMenu = NodePath("../PauseUi")
 _settingsMenu = NodePath("../SettingsUi")
 _settingsUiController = NodePath("../SettingsUi/SettingsUiController")
 
