@@ -18,7 +18,7 @@ namespace ShroomJamGame.NPC
 
         public void Interact()
         {
-            animationTree.Set("parameters/OneShot/request", "Fire");
+            animationTree.Set("parameters/OneShot/request", (int)AnimationNodeOneShot.OneShotRequest.Fire);
         }
         public void SetAnimationTreeState(float velocity, bool holding)
         {

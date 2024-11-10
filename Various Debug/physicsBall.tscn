@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://beplhd2r5u3qk"]
+
+[ext_resource type="Script" path="res://Interaction/PhysicsInteractable.cs" id="1_aian2"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_73njy"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_3r6af"]
+
+[node name="PhysicsInteractable" type="RigidBody3D"]
+script = ExtResource("1_aian2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_73njy")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 5
+mesh = SubResource("SphereMesh_3r6af")
