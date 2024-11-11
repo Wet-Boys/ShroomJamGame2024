@@ -6,6 +6,7 @@ namespace ShroomJamGame.Interaction;
 [GlobalClass]
 public abstract partial class Interactable : Node, IInteractableObject
 {
+    public static Godot.Collections.Array<Interactable> interactables = new Godot.Collections.Array<Interactable>();
     private CollisionObject3D? _collisionObject;
 
     [Export]
@@ -43,6 +44,7 @@ public abstract partial class Interactable : Node, IInteractableObject
 
     public override void _Ready()
     {
+        interactables.Add(this);
         if (_collisionObject is null)
         {
             var parent = GetParentOrNull<CollisionObject3D>();
@@ -51,6 +53,11 @@ public abstract partial class Interactable : Node, IInteractableObject
 
             CollisionShape = parent;
         }
+    }
+    public override void _ExitTree()
+    {
+        interactables.Remove(this);
+        base._ExitTree();
     }
 
     public abstract void Interact();

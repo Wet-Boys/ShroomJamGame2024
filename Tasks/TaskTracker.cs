@@ -12,13 +12,15 @@ namespace ShroomJamGame.Tasks
     public partial class TaskTracker : Node
     {
         public Godot.Collections.Array<BaseTask> Tasks = new Godot.Collections.Array<BaseTask>();
+        public static TaskTracker instance;
         [Export]
-        private CharacterBody3D player;
+        public CharacterBody3D player;
         double timer = 0;
         Node rootNode;
 
         public override void _Ready()
         {
+            instance = this;
             rootNode = GetTree().Root.GetChild(0);
             BroadCastHandler.instance.CreateFixQuest += BroadCastHandler_CreateFixQuest;
 
@@ -30,6 +32,8 @@ namespace ShroomJamGame.Tasks
         {
             await ToSignal(rootNode.GetTree().CreateTimer(1.0), SceneTreeTimer.SignalName.Timeout);
             BroadCastHandler.instance.CreateFixQuestBroadcast();
+            Tasks.Add(new FixVendingMachineTask());
+            Tasks.Last().Setup(rootNode).TaskFinished += TaskTracker_TaskFinished;
         }
 
         private void BroadCastHandler_CreateFixQuest()

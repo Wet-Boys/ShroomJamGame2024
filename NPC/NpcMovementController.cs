@@ -16,6 +16,7 @@ namespace ShroomJamGame.NPC
     [GlobalClass]
     public partial class NpcMovementController : Node
     {
+        public static Godot.Collections.Array<NpcMovementController> npcs = new Godot.Collections.Array<NpcMovementController>();
         [Export]
         private CharacterMovementController? _characterMovementController;
         [Export]
@@ -34,7 +35,9 @@ namespace ShroomJamGame.NPC
         Godot.Collections.Array<Node3D> ownedItems;
         Godot.Collections.Array<Vector3> ownedItemsStartingPositions = new Godot.Collections.Array<Vector3>();
         Godot.Collections.Array<Vector3> ownedItemsStartingRotations = new Godot.Collections.Array<Vector3>();
-        public bool busy = false;
+        public bool freezeUntilDoneSpeaking = false;
+        public Godot.Collections.Array<Vector3> needToGoTo = new Godot.Collections.Array<Vector3>();
+        public Godot.Collections.Array<string> needToSay = new Godot.Collections.Array<string>();
         private bool grabbingObject = false;
         private bool placingObject = false;
         private bool reachedTarget = false;
@@ -82,6 +85,7 @@ namespace ShroomJamGame.NPC
         private Vector3 oldTargetPos = Vector3.Zero;
         public override void _Ready()
         {
+            npcs.Add(this);
             _visualController.RandomizeOutfit();
             this.ReachedDestination += NpcMovementController_ReachedDestination;
             speechBubbleSprite.Texture = speechBubbleViewPort.GetTexture();
@@ -91,6 +95,7 @@ namespace ShroomJamGame.NPC
                 ownedItemsStartingPositions.Add(item.GlobalPosition);
                 ownedItemsStartingRotations.Add(item.Rotation);
             }
+            AnimalesePlayer.FinishedPlaying += AnimalesePlayer_FinishedPlaying;
             DecideTime();
             AnimalesePlayer.CharactersPlayed += AnimalesePlayer_CharactersPlayed;
             SayWords("");
@@ -98,6 +103,22 @@ namespace ShroomJamGame.NPC
                 SetupJanitor();
         }
 
+        private void AnimalesePlayer_FinishedPlaying()
+        {
+            DoneTalking();
+        }
+        private async void DoneTalking()
+        {
+            await ToSignal(this.GetTree().CreateTimer(3.0), SceneTreeTimer.SignalName.Timeout);
+            freezeUntilDoneSpeaking = false;
+            SayWords("");
+        }
+
+        public override void _ExitTree()
+        {
+            npcs.Remove(this);
+            base._ExitTree();
+        }
         private async void SetupJanitor()
         {
 
@@ -131,22 +152,29 @@ namespace ShroomJamGame.NPC
         }
         private void DecideTime()
         {
-            if (busy || grabbingObject || placingObject)
+            if (!reachedTarget || grabbingObject || placingObject || freezeUntilDoneSpeaking)
             {
                 return;
             }
-            for (int i = 0; i < ownedItems.Count; i++)
+            if (needToGoTo.Count() != 0)
             {
-                if (ownedItems[i].GlobalPosition.DistanceTo(ownedItemsStartingPositions[i]) > 1)
-                {
-                    targetNode = ownedItems[i];
-                    SayWords($"Why did you throw my {targetNode.Name}");
-                    grabbingObject = true;
-                    return;
-                }
+                _SetTargetPosition(needToGoTo.First());
+                targetNode = null;
             }
-            targetNode = ownedItems.PickRandom();
-
+            else
+            {
+                for (int i = 0; i < ownedItems.Count; i++)
+                {
+                    if (ownedItems[i].GlobalPosition.DistanceTo(ownedItemsStartingPositions[i]) > 1)
+                    {
+                        targetNode = ownedItems[i];
+                        SayWords($"Why did you throw my {targetNode.Name}");
+                        grabbingObject = true;
+                        return;
+                    }
+                }
+                targetNode = ownedItems.PickRandom();
+            }
         }
 
         private void NpcMovementController_ReachedDestination()
@@ -175,52 +203,70 @@ namespace ShroomJamGame.NPC
                 _visualController.Interact();
                 SayWords($"Let me put it back");
             }
+            if (needToGoTo.Count() != 0 && needToGoTo.Count() == needToSay.Count())
+            {
+                _SetTargetPosition(needToGoTo.First());
+                needToGoTo.RemoveAt(0);
+                targetNode = null;
+            }
+            else if (needToSay.Count() != 0)
+            {
+                freezeUntilDoneSpeaking = true;
+                SayWords(needToSay.First());
+                needToSay.RemoveAt(0);
+            }
         }
 
         public override void _PhysicsProcess(double delta)
         {
-            if (IsInstanceValid(targetNode) && oldTargetPos != targetNode.GlobalPosition)
+            if (!freezeUntilDoneSpeaking)
             {
-                oldTargetPos = targetNode.GlobalPosition;
-                _SetTargetPosition(oldTargetPos);
-            }
-            float distanceToTarget = _navigationAgent.DistanceToTarget();
-            Vector3 nextPathPosition = _navigationAgent.GetNextPathPosition();
-            if (distanceToTarget < 2)
-            {
-                ReachTarget();
-            }
-            if (_navigationAgent.IsNavigationFinished())
-            {
-                ReachTarget();
-                _characterMovementController.InputMovement = new Vector2(0, 0);
-                return;
-            }
-            else if (nextPathPosition == prevPathPosition)
-            {
-                stuckTimer += delta;
-                if (stuckTimer > 1)
+                if (IsInstanceValid(targetNode) && oldTargetPos != targetNode.GlobalPosition)
                 {
-                    stuckTimer = 0;
-                    stuckCount++;
-                    if (IsInstanceValid(targetNode))
-                    {
-                        _SetTargetPosition(targetNode.GlobalPosition);
-                    }
+                    oldTargetPos = targetNode.GlobalPosition;
+                    _SetTargetPosition(oldTargetPos);
                 }
-                if (stuckCount > 5)
+                float distanceToTarget = _navigationAgent.DistanceToTarget();
+                Vector3 nextPathPosition = _navigationAgent.GetNextPathPosition();
+                if (distanceToTarget < 2)
                 {
                     ReachTarget();
                 }
+                if (_navigationAgent.IsNavigationFinished())
+                {
+                    ReachTarget();
+                    _characterMovementController.InputMovement = new Vector2(0, 0);
+                    return;
+                }
+                else if (nextPathPosition == prevPathPosition)
+                {
+                    stuckTimer += delta;
+                    if (stuckTimer > 1)
+                    {
+                        stuckTimer = 0;
+                        stuckCount++;
+                        if (IsInstanceValid(targetNode))
+                        {
+                            _SetTargetPosition(targetNode.GlobalPosition);
+                        }
+                    }
+                    if (stuckCount > 5)
+                    {
+                        ReachTarget();
+                    }
+                }
+                prevPathPosition = nextPathPosition;
+                Quaternion currentYRot = characterBody3D.Quaternion;
+                characterBody3D.LookAt(nextPathPosition);
+                characterBody3D.RotationDegrees = new Vector3(0, characterBody3D.RotationDegrees.Y + 180, 0);
+                Quaternion newYRot = characterBody3D.Quaternion;
+                characterBody3D.Quaternion = currentYRot.Slerp(newYRot, (float)delta * 8);
+                _characterMovementController.InputMovement = new Vector2(0, 1);
             }
-            prevPathPosition = nextPathPosition;
-            Quaternion currentYRot = characterBody3D.Quaternion;
-            characterBody3D.LookAt(nextPathPosition);
-            characterBody3D.RotationDegrees = new Vector3(0, characterBody3D.RotationDegrees.Y + 180, 0);
-            Quaternion newYRot = characterBody3D.Quaternion;
-            characterBody3D.Quaternion = currentYRot.Slerp(newYRot, (float)delta * 8);
-            _characterMovementController.InputMovement = new Vector2(0, 1);
-
+            if (freezeUntilDoneSpeaking)
+            {
+                _characterMovementController.InputMovement = new Vector2(0, 0);
+            }
             if (interactionRay.IsColliding() && interactionRay.GetCollisionPoint().DistanceTo(characterBody3D.GlobalPosition) < 1.3)
             {
                 var hit = interactionRay?.GetCollider();
@@ -242,6 +288,17 @@ namespace ShroomJamGame.NPC
                 reachedTarget = true;
                 EmitSignal(SignalName.ReachedDestination);
             }
+        }
+        public void GoToPositionAndSayWords(Vector3 position, string words)
+        {
+            needToGoTo.Add(position);
+            needToSay.Add(words);
+        }
+        public void LookAtPosition(Vector3 position)
+        {
+            Quaternion currentYRot = characterBody3D.Quaternion;
+            characterBody3D.LookAt(position);
+            characterBody3D.RotationDegrees = new Vector3(0, characterBody3D.RotationDegrees.Y + 180, 0);
         }
     }
 }
