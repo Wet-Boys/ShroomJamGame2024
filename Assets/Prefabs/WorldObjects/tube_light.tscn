@@ -3,3 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://bbjohvc431qso" path="res://Assets/Scenes/Office/assets/models/Tube lights/tube light.gltf" id="1_q6ei3"]
 
 [node name="tube light" instance=ExtResource("1_q6ei3")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13694, 0)
+shadow_enabled = true
+omni_range = 21.5531

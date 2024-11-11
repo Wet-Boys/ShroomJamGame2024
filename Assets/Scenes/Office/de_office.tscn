@@ -2729,6 +2729,90 @@ transform = Transform3D(195.318, 5.61169e-14, 0, 0, -3.45221e-07, 7.89775, 5.376
 [node name="tube light" parent="Asset Complete Office2" instance=ExtResource("21_6iria")]
 transform = Transform3D(8, 0, 0, 0, -8, 6.99382e-07, 0, -6.99382e-07, -8, -68.5988, 44, -29.1206)
 
+[node name="tube light2" parent="Asset Complete Office2" instance=ExtResource("21_6iria")]
+transform = Transform3D(8, 0, 0, 0, -8, 6.99382e-07, 0, -6.99382e-07, -8, -26.5988, 44, -29.1206)
+
+[node name="tube light3" parent="Asset Complete Office2" instance=ExtResource("21_6iria")]
+transform = Transform3D(8, 0, 0, 0, -8, 6.99382e-07, 0, -6.99382e-07, -8, -68.5988, 44, -51.1206)
+
+[node name="tube light4" parent="Asset Complete Office2" instance=ExtResource("21_6iria")]
+transform = Transform3D(8, 0, 0, 0, -8, 6.99382e-07, 0, -6.99382e-07, -8, -26.5988, 44, -51.1206)
+
+[node name="tube light5" parent="Asset Complete Office2" instance=ExtResource("21_6iria")]
+transform = Transform3D(8, 0, 0, 0, -8, 6.99382e-07, 0, -6.99382e-07, -8, -68.5988, 44, 11.8794)
+
+[node name="tube light6" parent="Asset Complete Office2" instance=ExtResource("21_6iria")]
+transform = Transform3D(8, 0, 0, 0, -8, 6.99382e-07, 0, -6.99382e-07, -8, -26.5988, 44, 11.8794)
+
+[node name="tube light7" parent="Asset Complete Office2" instance=ExtResource("21_6iria")]
+transform = Transform3D(8, 0, 0, 0, -8, 6.99382e-07, 0, -6.99382e-07, -8, -68.5988, 44, -10.1206)
+
+[node name="tube light8" parent="Asset Complete Office2" instance=ExtResource("21_6iria")]
+transform = Transform3D(8, 0, 0, 0, -8, 6.99382e-07, 0, -6.99382e-07, -8, -26.5988, 44, -10.1206)
+
+[node name="tube light9" parent="Asset Complete Office2" instance=ExtResource("21_6iria")]
+transform = Transform3D(8, 0, 0, 0, -8, 6.99382e-07, 0, -6.99382e-07, -8, -68.5988, 44, 53.8794)
+
+[node name="tube light10" parent="Asset Complete Office2" instance=ExtResource("21_6iria")]
+transform = Transform3D(8, 0, 0, 0, -8, 6.99382e-07, 0, -6.99382e-07, -8, -26.5988, 44, 53.8794)
+
+[node name="tube light13" parent="Asset Complete Office2" instance=ExtResource("21_6iria")]
+transform = Transform3D(8, 0, 0, 0, -8, 6.99382e-07, 0, -6.99382e-07, -8, -68.5988, 44, 73.8794)
+
+[node name="tube light14" parent="Asset Complete Office2" instance=ExtResource("21_6iria")]
+transform = Transform3D(8, 0, 0, 0, -8, 6.99382e-07, 0, -6.99382e-07, -8, -26.5988, 44, 73.8794)
+
+[node name="tube light11" parent="Asset Complete Office2" instance=ExtResource("21_6iria")]
+transform = Transform3D(8, 0, 0, 0, -8, 6.99382e-07, 0, -6.99382e-07, -8, -68.5988, 44, 31.8794)
+
+[node name="tube light12" parent="Asset Complete Office2" instance=ExtResource("21_6iria")]
+transform = Transform3D(8, 0, 0, 0, -8, 6.99382e-07, 0, -6.99382e-07, -8, -26.5988, 44, 31.8794)
+
+[node name="tube light15" parent="Asset Complete Office2" instance=ExtResource("21_6iria")]
+transform = Transform3D(8, 0, 0, 0, -8, 6.99382e-07, 0, -6.99382e-07, -8, 9.4012, 44, 53.8794)
+
+[node name="tube light16" parent="Asset Complete Office2" instance=ExtResource("21_6iria")]
+transform = Transform3D(8, 0, 0, 0, -8, 6.99382e-07, 0, -6.99382e-07, -8, 9.4012, 44, 73.8794)
+
+[node name="tube light17" parent="Asset Complete Office2" instance=ExtResource("21_6iria")]
+transform = Transform3D(8, 0, 0, 0, -8, 6.99382e-07, 0, -6.99382e-07, -8, 9.4012, 44, 31.8794)
+
+[node name="tube light18" parent="Asset Complete Office2" instance=ExtResource("21_6iria")]
+transform = Transform3D(8, 0, 0, 0, -8, 6.99382e-07, 0, -6.99382e-07, -8, 28.4012, 44, 53.8794)
+
+[node name="tube light19" parent="Asset Complete Office2" instance=ExtResource("21_6iria")]
+transform = Transform3D(8, 0, 0, 0, -8, 6.99382e-07, 0, -6.99382e-07, -8, 28.4012, 44, 73.8794)
+
+[node name="tube light25" parent="Asset Complete Office2" instance=ExtResource("21_6iria")]
+transform = Transform3D(8, 0, 0, 0, -8, 6.99382e-07, 0, -6.99382e-07, -8, 28.4012, 44, 87.8794)
+
+[node name="tube light26" parent="Asset Complete Office2" instance=ExtResource("21_6iria")]
+transform = Transform3D(8, 0, 0, 0, -8, 6.99382e-07, 0, -6.99382e-07, -8, 2.4012, 44, 87.8794)
+
+[node name="tube light27" parent="Asset Complete Office2" instance=ExtResource("21_6iria")]
+transform = Transform3D(8, 0, 0, 0, -8, 6.99382e-07, 0, -6.99382e-07, -8, -22.5988, 44, 87.8794)
+
+[node name="tube light28" parent="Asset Complete Office2" instance=ExtResource("21_6iria")]
+transform = Transform3D(8, 0, 0, 0, -8, 6.99382e-07, 0, -6.99382e-07, -8, -40.5988, 44, 87.8794)
+
+[node name="tube light29" parent="Asset Complete Office2" instance=ExtResource("21_6iria")]
+transform = Transform3D(8, 0, 0, 0, -8, 6.99382e-07, 0, -6.99382e-07, -8, -66.5988, 44, 87.8794)
+
+[node name="tube light20" parent="Asset Complete Office2" instance=ExtResource("21_6iria")]
+transform = Transform3D(8, 0, 0, 0, -8, 6.99382e-07, 0, -6.99382e-07, -8, 28.4012, 44, 31.8794)
+
+[node name="tube light21" parent="Asset Complete Office2" instance=ExtResource("21_6iria")]
+transform = Transform3D(8, 0, 0, 0, -8, 6.99382e-07, 0, -6.99382e-07, -8, 28.4012, 44, 12.8794)
+
+[node name="tube light22" parent="Asset Complete Office2" instance=ExtResource("21_6iria")]
+transform = Transform3D(8, 0, 0, 0, -8, 6.99382e-07, 0, -6.99382e-07, -8, 28.4012, 44, -9.1206)
+
+[node name="tube light23" parent="Asset Complete Office2" instance=ExtResource("21_6iria")]
+transform = Transform3D(8, 0, 0, 0, -8, 6.99382e-07, 0, -6.99382e-07, -8, 28.4012, 44, -29.8516)
+
+[node name="tube light24" parent="Asset Complete Office2" instance=ExtResource("21_6iria")]
+transform = Transform3D(8, 0, 0, 0, -8, 6.99382e-07, 0, -6.99382e-07, -8, 28.4012, 44, -51.8516)
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(34, 0, 0, 0, 2, 0, 0, 0, 22, 1, 23, 89)
 material_override = ExtResource("12_phc8k")
