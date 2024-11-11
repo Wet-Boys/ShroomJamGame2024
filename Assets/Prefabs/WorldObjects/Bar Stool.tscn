@@ -1,16 +1,25 @@
-[gd_scene load_steps=6 format=4 uid="uid://2b6b2jkgvubg"]
+[gd_scene load_steps=9 format=4 uid="uid://2b6b2jkgvubg"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y8txd"]
-resource_name = "LaminatedBoard_black"
-cull_mode = 2
-albedo_color = Color(0.140859, 0.140859, 0.140859, 1)
-roughness = 0.5
+[ext_resource type="Texture2D" uid="uid://chf6flm6bpxjj" path="res://Assets/Scenes/Office/assets/materials/light-iron_e5a409e8-17b0-4dd3-8ab5-02ec4f258db4/textures/tiled_plane_DefaultMaterial_BaseColor.jpg" id="1_hoas3"]
+[ext_resource type="Texture2D" uid="uid://dqa1yrfbaf82q" path="res://Assets/Scenes/Office/assets/materials/light-iron_e5a409e8-17b0-4dd3-8ab5-02ec4f258db4/textures/tiled_plane_DefaultMaterial_Normal.jpg" id="2_qw2xh"]
+[ext_resource type="Texture2D" uid="uid://djlcj5x2wh2l5" path="res://Assets/Scenes/Office/assets/materials/light-iron_e5a409e8-17b0-4dd3-8ab5-02ec4f258db4/textures/tiled_plane_DefaultMaterial_Roughness.jpg" id="3_of8e2"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r6jpg"]
-resource_name = "LaminatedBoard_white"
-cull_mode = 2
-albedo_color = Color(0.775566, 0.775566, 0.775566, 1)
-roughness = 0.5
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qksj7"]
+albedo_color = Color(0, 0, 0, 1)
+albedo_texture = ExtResource("1_hoas3")
+roughness_texture = ExtResource("3_of8e2")
+normal_enabled = true
+normal_texture = ExtResource("2_qw2xh")
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jlxew"]
+albedo_texture = ExtResource("1_hoas3")
+roughness_texture = ExtResource("3_of8e2")
+normal_enabled = true
+normal_texture = ExtResource("2_qw2xh")
+uv1_triplanar = true
+uv1_world_triplanar = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_dbxud"]
 _surfaces = [{
@@ -44,7 +53,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 84,
 "index_data": PackedByteArray("CwABAAYACwAPAAEACgACAAQACgAMAAIACQAEAAUACQAKAAQADgAFAAAADgAJAAUADQAHAAMADQAIAAcAFQAGABsAFQALAAYACAAeAAcACAAXAB4AHwARACMAHwAYABEAHQASACAAHQAUABIAHAAUAB0AHAAWABQAIgAWABwAIgAQABYAIQAZABoAIQATABkAFQAYAB8AFQAbABgAGgAeABcAGgAZAB4A"),
-"material": SubResource("StandardMaterial3D_y8txd"),
+"material": SubResource("StandardMaterial3D_qksj7"),
 "name": "LaminatedBoard_black",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -56,7 +65,7 @@ _surfaces = [{
 "format": 34359742487,
 "index_count": 1050,
 "index_data": PackedByteArray("CgCFAIcACgADAIUAEwCTAJYAEwACAJMAAACKAJIAAAANAIoAAQAiAA4AAQASACIAjgAPACMADwChAIsADwCOAKEABQCRAIYABQAXAJEAJAAQACUAJAAUABAACwAWAAQACwAfABYA9gAUACQA9gDvABQAEgEkADAAEgH2ACQAMAAlACwAMAAkACUAgwAVAB4AFQCXAI8AFQCDAJcATQAsAFAATQAwACwAiAAgAAwAIACdAIQAIACIAJ0AKQEwAE0AKQESATAAlAAhABEAIQClAI0AIQCUAKUAKQFNAFAAYgAdATsAYgBLAR0BJwBaABgAJwBWAFoACQAaADMACQAoABoABgApAEQABgBBACkAQwBAACsAQwBrAEAANAAxAFEANAAIADEAHQBGAC8AHQAHAEYASQBPAEoASQBOAE8ASABOAEkASABMAE4ASgBLAEcASgBPAEsATwAvAUsATwAzAS8BTAAxAU4ATAAwATEBTgAzAU8ATgAxATMBNwFZAFQANwE9AVkAWwAyABkAMgBtAFIAbQBbAFQAMgBbAG0APQFeAFkAPQFNAV4AVAA/AG0AVABZAD8AXgA/AFkAPwBFACoARQBeAC4APwBeAEUAPAAeATgAPAAdAR4BWABAAVwAWAAGAUABWwA3AVQAWwA/ATcBOAAFAVcAOAAeAQUBTAFfAE4BTAFjAF8ALQBhABwALQBdAGEAUwBnADYAUwBuAGcAaABsAD4AaABkAGwAZQA8ADgAZQBpADwAnwBCAHkAagB3AD0AnwBqAEIAagCfAHcAmQAmAHEAVQBvADcAmQBVACYAVQCZAG8AggAHAB0AggB/AAcAowA6AHYAOgAbAGAAGwCjAIAAOgCjABsAdQAoAAkAdQBzACgAfgBBAAYAfgB4AEEAmwA5AHAAZgB8ADUAmwBmADkAZgCbAHwAewAIADQAewB0AAgAiQCcAJ4AiQB9AJwAsQC4AaIBsQC9ALgBlgB/AIIAlgCTAH8AvgC3AbkBvgC7ALcBhgBzAHUAhgCRAHMAkgB4AH4AkgCKAHgAhwB0AHsAhwCFAHQAnQBwAIQAnQCbAHAAcgCYAJoAcgCQAJgAlwBvAJkAlwCDAG8AlQCkAKYAlQCBAKQAqACuAaABqAC3AK4BuACtAa8BuAC1AK0BrACjAaUBrACyAKMBegCiAKAAegCMAKIAtACeAawBtACuAJ4BugCkAbYBugCrAKQBrwChAZ8BrwCpAKEBswCnAK0AswC2AKcAuQCwAKoAuQC8ALAA1QDGAM8A1QDJAMYAwwDMAMAAwwDSAMwA0QDOAMsA0QDUAM4AyAC/AMUAyADCAL8AzQDHAMEAzQDQAMcA1gDEAMoA1gDTAMQAjgCgAKEAjgB3AKAAjQCkAHYAjQClAKQA4QBwAdoA4QByAXAB6gB+AdkA6gCBAX4B1wB1AeQA1wB9AXUB2AD7AOkA2ADlAPsA5gB5AfwAeQF2AYwBeQHmAHYB3AB8Ae4A3ABxAXwB/QDnAOsA/QD+AOcA4gDtAPgA4gDbAO0A9gDrAO8A9gD9AOsAEgH9APYAEgELAf0ACwH+AP0ACwEHAf4A7ABuAfcAggHsAHoBbgHsAIIBLAEHAQsBLAEyAQcB+QBzAeMAcwFvAYgBcwH5AG8BKQELARIBKQEsAQsB+gB/AegAkAH6AHgBfwH6AJABKQEyASwBSQEdAUsBSQEXAR0BAAFBAToBAAHwAEEB4ADyAAEB4AAOAfIA3QACAR8B3QAiAQIBIQEcAVYBIQEEARwBDwEMAd8ADwE0AQwB9QAkAd4A9QAKASQBJwEuAS0BJwEoAS4BJgEtASsBJgEnAS0BKAEqAS4BKAElASoBLgEvATMBLgEqAS8BKwExATABKwEtATEBLQEzATEBLQEuATMBNwE+AT0BNwE4AT4BDQFCAfEAQgFYATgBWAENATUBQgENAVgBPQFFAU0BPQE+AUUBOAEbAT4BOAFYARsBGwFFAT4BRQEjAQkBIwEbAQMBRQEbASMBGAEeAR0BGAEUAR4BPAFAAQYBPAFDAUABQgE3AT8BQgE4ATcBFAEFAR4BFAE7AQUBTAFGAUoBTAFOAUYBCAFIAUQBCAH0AEgBNgFSAVkBNgERAVIBUwFXAU8BUwEaAVcBUAEYAVQBUAEUARgBIAGKAWQBigEZAWIBVQGKASABigFVARkB/wCEAVwBhAETAVoBOQGEAf8AhAE5ARMBbQHeAGoBbQH1AN4AFgGOAWEBjgHzAGsB8wAWAUcBjgEWAfMAYAEBAV4BYAHgAAEBaQEfAWMBaQHdAB8BFQGGAVsBhgEQAWcBUQGGARUBhgFRARABZgHfAF8BZgEPAd8AdAGHAWgBdAGJAYcBnAG4AbQBnAGiAbgBgQFqAX4BgQFtAWoBtQG3AbIBtQG5AbcBcQFeAXwBcQFgAV4BfQFjAXUBfQFpAWMBcgFfAXABcgFmAV8BiAFbAYYBiAFvAVsBXQGDAXsBXQGFAYMBggFaAW4BggGEAVoBgAGPAWwBgAGRAY8BkwGuAaoBkwGgAa4BqwGtAagBqwGvAa0BlwGjAZ0BlwGlAaMBZQGNAXcBZQGLAY0BpwGeAZkBpwGsAZ4BsQGkAZYBsQG2AaQBmgGhAZQBmgGfAaEBpgGSAakBpgGYAZIBsAGbAbMBsAGVAZsB0AHBAcQB0AHKAcEBvgHHAc0BvgG7AccBzAHJAc8BzAHGAckBwwG6Ab0BwwHAAboByAHCAcsByAG8AcIB0QG/Ac4B0QHFAb8BeQGLAWIBeQGMAYsBeAGPAZABeAFhAY8B"),
-"material": SubResource("StandardMaterial3D_r6jpg"),
+"material": SubResource("StandardMaterial3D_jlxew"),
 "name": "LaminatedBoard_white",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
