@@ -1,4 +1,4 @@
-[gd_scene load_steps=245 format=4 uid="uid://bkh80lrmoy5cs"]
+[gd_scene load_steps=246 format=4 uid="uid://bkh80lrmoy5cs"]
 
 [ext_resource type="Material" uid="uid://ce3wou354fqct" path="res://Assets/Scenes/Office/assets/materials/kitchen wall.tres" id="1_42koi"]
 [ext_resource type="Material" uid="uid://bm4mtepbl3aav" path="res://Assets/Scenes/Office/assets/materials/Backrooms Wallpaper.tres" id="1_giika"]
@@ -41,6 +41,7 @@
 [ext_resource type="Texture2D" uid="uid://br7jfrgijf8ik" path="res://Assets/Scenes/Office/assets/materials/ceiling tile/tiles_0013_metallic_1k.jpg" id="25_pbofh"]
 [ext_resource type="Texture2D" uid="uid://dj1sw4r5obi7e" path="res://Assets/Scenes/Office/assets/materials/ceiling tile/tiles_0013_normal_directx_1k.png" id="26_yc5bu"]
 [ext_resource type="Texture2D" uid="uid://36w5t8834hb7" path="res://Assets/Scenes/Office/assets/materials/ceiling tile/tiles_0013_roughness_1k.jpg" id="27_4bp2x"]
+[ext_resource type="Environment" uid="uid://dwti8rciemlf5" path="res://Assets/environment.tres" id="42_glwae"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mt4ui"]
 
@@ -3217,6 +3218,9 @@ transform = Transform3D(2.07055, 0, -7.72741, 0, 8, 0, 7.72741, 0, 2.07055, 13.9
 
 [node name="Ablution Wall Units" parent="." instance=ExtResource("14_s2s3k")]
 transform = Transform3D(-8, 0, -1.20797e-06, 0, 8, 0, 1.20797e-06, 0, -8, -9.54204, 24, -58.0042)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("42_glwae")
 
 [editable path="Asset Complete Office2/Cubicle2"]
 [editable path="Asset Complete Office2/Cubicle3"]

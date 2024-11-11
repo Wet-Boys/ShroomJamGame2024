@@ -1,6 +1,9 @@
-[gd_scene load_steps=26 format=4 uid="uid://drnlc7orum6rr"]
+[gd_scene load_steps=29 format=4 uid="uid://drnlc7orum6rr"]
 
 [ext_resource type="Script" path="res://Interaction/DoorInteractable.cs" id="1_3ju5n"]
+[ext_resource type="AudioStream" uid="uid://e0d1dijc774a" path="res://Assets/Sfx/Fridge/Firdge-Door-Open.ogg" id="2_ldwwn"]
+[ext_resource type="AudioStream" uid="uid://quig7g1npgrr" path="res://Assets/Sfx/Fridge/Fridge-Door-Close.ogg" id="3_pj8p3"]
+[ext_resource type="AudioStream" uid="uid://p0m83k55n08" path="res://Assets/Sfx/Fridge/Firdge-Hum.ogg" id="4_dgpbl"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1hhie"]
 resource_name = "Purple Body Paint"
@@ -331,7 +334,9 @@ shape = SubResource("BoxShape3D_2gye1")
 script = ExtResource("1_3ju5n")
 OpenDegrees = Vector3(0, 125, 0)
 _doorNode = NodePath("../..")
-_soundEmitter = NodePath("../../../AudioStreamPlayer3D")
+_soundEmitter = NodePath("../../../Fridge Door Emitter")
+_openSound = ExtResource("2_ldwwn")
+_closeSound = ExtResource("3_pj8p3")
 CollisionShape = NodePath("..")
 
 [node name="Bottom Door" type="MeshInstance3D" parent="Fridge Door"]
@@ -357,7 +362,9 @@ shape = SubResource("BoxShape3D_yi1ys")
 script = ExtResource("1_3ju5n")
 OpenDegrees = Vector3(0, 125, 0)
 _doorNode = NodePath("../..")
-_soundEmitter = NodePath("../../../AudioStreamPlayer3D")
+_soundEmitter = NodePath("../../../Freezer Door Emitter")
+_openSound = ExtResource("2_ldwwn")
+_closeSound = ExtResource("3_pj8p3")
 CollisionShape = NodePath("..")
 
 [node name="Top Door" type="MeshInstance3D" parent="Freezer Door"]
@@ -415,9 +422,21 @@ shape = SubResource("BoxShape3D_3e3of")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00130463, 0.152161, 0.257492)
 shape = SubResource("BoxShape3D_1uast")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+[node name="Fridge Door Emitter" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(0.0925181, 0, 0, 0, 0.0925181, 0, 0, 0, 0.0925181, -0.228313, 0.647626, 0.583062)
+
+[node name="Freezer Door Emitter" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(0.0925181, 0, 0, 0, 0.0925181, 0, 0, 0, 0.0925181, -0.228313, 1.11022, 0.583062)
+
+[node name="Fridge Hum" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(0.0925181, 0, 0, 0, 0.0925181, 0, 0, 0, 0.0925181, 0, 0.740145, 0.46259)
+stream = ExtResource("4_dgpbl")
+autoplay = true
+max_distance = 7.0
+bus = &"Sound Effects"
 
 [node name="Lights" type="Node3D" parent="."]
+visible = false
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(0.0925181, 0, 0, 0, 0.0925181, 0, 0, 0, 0.0925181, 0, 0.835532, 0.0753185)

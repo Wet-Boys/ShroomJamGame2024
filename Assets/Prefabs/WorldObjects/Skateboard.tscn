@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://2je0o58yvwht"]
 
 [ext_resource type="Script" path="res://Interaction/PhysicsInteractable.cs" id="1_l5t6f"]
-[ext_resource type="ArrayMesh" uid="uid://dvwnbtc2rwn85" path="res://Assets/Prefabs/WorldObjects/Skateboard.tres" id="2_fj21n"]
+[ext_resource type="ArrayMesh" uid="uid://dbbg6dtfgsbaq" path="res://Assets/Prefabs/WorldObjects/Skateboard.tres" id="2_fj21n"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y2yo6"]
 size = Vector3(4.92799, 1.61273, 0.420959)
@@ -18,6 +18,7 @@ transform = Transform3D(0.940132, 0.00125564, 0.340808, -0.00127546, 0.999999, -
 shape = SubResource("BoxShape3D_y2yo6")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+gi_mode = 2
 mesh = ExtResource("2_fj21n")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
