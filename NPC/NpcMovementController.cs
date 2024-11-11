@@ -151,7 +151,7 @@ namespace ShroomJamGame.NPC
 
         private void NpcMovementController_ReachedDestination()
         {
-            if (placingObject && IsInstanceValid(heldObject) && (heldObject is PhysicsInteractable physicsObject) && !physicsObject.isHeld)
+            if (placingObject && IsInstanceValid(heldObject) && (heldObject is PhysicsInteractable physicsObject))
             {
                 placingObject = false;
                 heldObject.GlobalPosition = ownedItemsStartingPositions[ownedItems.IndexOf(heldObject)];
