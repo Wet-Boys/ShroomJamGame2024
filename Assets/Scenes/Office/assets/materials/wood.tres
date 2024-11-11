@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://br0xp8d6dbejt"]
+
+[ext_resource type="Texture2D" uid="uid://cd48kbsuon1oc" path="res://Assets/Scenes/Office/assets/models/pool-table_b3dc2076-1924-42e6-ba84-d8a1b97e8fbc/textures/WoodFineDark004_COL_3K.jpg" id="1_cpjd3"]
+[ext_resource type="Texture2D" uid="uid://ccak3dg0n38a0" path="res://Assets/Scenes/Office/textures/WoodFineDark004_NRM_3K.jpg" id="2_d2bpn"]
+[ext_resource type="Texture2D" uid="uid://c1tbdmhfqj7dt" path="res://Assets/Scenes/Office/assets/models/pool-table_b3dc2076-1924-42e6-ba84-d8a1b97e8fbc/textures/WoodFineDark004_REFL_3K.jpg" id="3_0170g"]
+
+[resource]
+albedo_texture = ExtResource("1_cpjd3")
+roughness_texture = ExtResource("3_0170g")
+roughness_texture_channel = 4
+normal_enabled = true
+normal_texture = ExtResource("2_d2bpn")
+uv1_scale = Vector3(0.065, 0.065, 0.065)
+uv1_triplanar = true
+uv1_world_triplanar = true

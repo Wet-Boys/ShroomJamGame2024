@@ -1,9 +1,5 @@
-[gd_scene load_steps=95 format=4 uid="uid://b4ehpusowenrb"]
+[gd_scene load_steps=91 format=4 uid="uid://6d18cgcfmxb"]
 
-[ext_resource type="PackedScene" uid="uid://mfys02xva10s" path="res://Assets/Prefabs/WorldObjects/dining_table.tscn" id="1_sgy7h"]
-[ext_resource type="PackedScene" uid="uid://hf2rsb2864f0" path="res://Assets/Prefabs/WorldObjects/kitchen_chair.tscn" id="2_janrp"]
-[ext_resource type="PackedScene" uid="uid://2b6b2jkgvubg" path="res://Assets/Prefabs/WorldObjects/Bar Stool.tscn" id="3_hu2yc"]
-[ext_resource type="PackedScene" uid="uid://cwxtmbs7jipbu" path="res://Assets/Prefabs/WorldObjects/Bar table.tscn" id="4_he5c3"]
 [ext_resource type="Texture2D" uid="uid://b8ik45ofcgcgo" path="res://Assets/Scenes/Office/textures/ServerFrame_BaseColor.jpg" id="5_arcgk"]
 [ext_resource type="Texture2D" uid="uid://b4hgu7ihgi2vg" path="res://Assets/Scenes/Office/textures/ServerFrame_Roughness.jpg" id="6_j4dre"]
 [ext_resource type="Texture2D" uid="uid://d4iyl21w4tcjl" path="res://Assets/Scenes/Office/textures/ServerFrame_Normal.jpg" id="7_nldp8"]
@@ -1133,76 +1129,8 @@ shadow_mesh = SubResource("ArrayMesh_1pdx7")
 [node name="Asset database" type="Node3D"]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -30.5176, 24.0489, -3.68085)
 
-[node name="Dining table" parent="." instance=ExtResource("1_sgy7h")]
-transform = Transform3D(2.09048, 0, 0, 0, 2.09048, 0, 0, 0, 2.09048, -1.29777, -5.51656, -8.26765)
-
-[node name="Kitchen Chair" parent="." instance=ExtResource("2_janrp")]
-transform = Transform3D(-1.02739e-07, 0, -2.3504, 0, 2.3504, 0, 2.3504, 0, -1.02739e-07, -0.297571, -5.53203, -8.18681)
-
-[node name="Kitchen Chair2" parent="." instance=ExtResource("2_janrp")]
-transform = Transform3D(2.33033, 0, 0.306504, 0, 2.3504, 0, -0.306504, 0, 2.33033, -1.51206, -5.53203, -9.24598)
-
-[node name="Kitchen Chair3" parent="." instance=ExtResource("2_janrp")]
-transform = Transform3D(-1.02739e-07, 0, 2.3504, 0, 2.3504, 0, -2.3504, 0, -1.02739e-07, -2.61672, -5.53203, -8.20472)
-
-[node name="Kitchen Chair4" parent="." instance=ExtResource("2_janrp")]
-transform = Transform3D(-2.33033, 0, -0.306504, 0, 2.3504, 0, 0.306504, 0, -2.33033, -1.33364, -5.53203, -6.9746)
-
-[node name="Dining table2" parent="." instance=ExtResource("1_sgy7h")]
-transform = Transform3D(1.26184, 0, -1.66669, 0, 2.09048, 0, 1.66669, 0, 1.26184, -5.53973, -5.51656, -8.14059)
-
-[node name="Kitchen Chair5" parent="." instance=ExtResource("2_janrp")]
-transform = Transform3D(-1.87393, 0, -1.41873, 0, 2.3504, 0, 1.41873, 0, -1.87393, -5.00044, -5.53203, -7.29436)
-
-[node name="Kitchen Chair6" parent="." instance=ExtResource("2_janrp")]
-transform = Transform3D(1.65098, 0, -1.67291, 0, 2.3504, 0, 1.67291, 0, 1.65098, -4.88907, -5.53203, -8.90196)
-
-[node name="Kitchen Chair7" parent="." instance=ExtResource("2_janrp")]
-transform = Transform3D(1.87393, 0, 1.41873, 0, 2.3504, 0, -1.41873, 0, 1.87393, -6.38603, -5.53203, -9.15417)
-
-[node name="Kitchen Chair8" parent="." instance=ExtResource("2_janrp")]
-transform = Transform3D(-1.65098, 0, 1.67291, 0, 2.3504, 0, -1.67291, 0, -1.65098, -6.59229, -5.53203, -7.38869)
-
-[node name="Dining table3" parent="." instance=ExtResource("1_sgy7h")]
-transform = Transform3D(0.197348, 0, 2.08114, 0, 2.09048, 0, -2.08114, 0, 0.197348, -9.14329, -5.51656, -8.29788)
-
-[node name="Kitchen Chair9" parent="." instance=ExtResource("2_janrp")]
-transform = Transform3D(2.33991, 0, -0.221887, 0, 2.3504, 0, 0.221887, 0, 2.33991, -8.96839, -5.53203, -9.28598)
-
-[node name="Kitchen Chair10" parent="." instance=ExtResource("2_janrp")]
-transform = Transform3D(-0.0851438, 0, 2.34886, 0, 2.3504, 0, -2.34886, 0, -0.0851438, -10.1375, -5.53203, -8.17691)
-
-[node name="Kitchen Chair11" parent="." instance=ExtResource("2_janrp")]
-transform = Transform3D(-2.33991, 0, 0.221886, 0, 2.3504, 0, -0.221886, 0, -2.33991, -9.20515, -5.53203, -6.97888)
-
-[node name="Kitchen Chair12" parent="." instance=ExtResource("2_janrp")]
-transform = Transform3D(0.0851438, 0, -2.34886, 0, 2.3504, 0, 2.34886, 0, 0.0851438, -7.8594, -5.53203, -8.14011)
-
 [node name="Counter Table CAMP - laminated" type="Node3D" parent="."]
 transform = Transform3D(-1.27011e-07, 0, 2.55469, 0, 1.52591, 0, -2.90567, 0, -1.11669e-07, -4.38456, -5.48531, -12.6725)
-
-[node name="Bar Stool CAMP_006" parent="Counter Table CAMP - laminated" instance=ExtResource("3_hu2yc")]
-transform = Transform3D(0.751765, 0, 7.10543e-15, 0, 0.751765, 0, 3.55271e-15, 0, 0.751765, -0.373339, 0, 0)
-
-[node name="Bar Stool CAMP_007" parent="Counter Table CAMP - laminated" instance=ExtResource("3_hu2yc")]
-transform = Transform3D(0.751765, 0, 1.24345e-14, 0, 0.751765, 0, 3.55271e-15, 0, 0.751765, -0.373339, 0, -0.607366)
-
-[node name="Bar Stool CAMP_008" parent="Counter Table CAMP - laminated" instance=ExtResource("3_hu2yc")]
-transform = Transform3D(0.751765, 0, 1.59872e-14, 0, 0.751765, 0, 3.55271e-15, 0, 0.751765, -0.373339, 0, -1.2299)
-
-[node name="Bar Stool CAMP_010" parent="Counter Table CAMP - laminated" instance=ExtResource("3_hu2yc")]
-transform = Transform3D(0.751765, 0, 1.06581e-14, 0, 0.751765, 0, 3.55271e-15, 0, 0.751765, -0.373339, 0, 1.82072)
-
-[node name="Bar Stool CAMP_011" parent="Counter Table CAMP - laminated" instance=ExtResource("3_hu2yc")]
-transform = Transform3D(0.751765, 0, 1.59872e-14, 0, 0.751765, 0, 3.55271e-15, 0, 0.751765, -0.373339, 0, 1.21336)
-
-[node name="Bar Stool CAMP_012" parent="Counter Table CAMP - laminated" instance=ExtResource("3_hu2yc")]
-transform = Transform3D(0.751765, 0, 1.95399e-14, 0, 0.751765, 0, 3.55271e-15, 0, 0.751765, -0.373339, 0, 0.590819)
-
-[node name="Bar Stool CAMP_009" parent="Counter Table CAMP - laminated" instance=ExtResource("3_hu2yc")]
-transform = Transform3D(0.751765, 0, 1.59872e-14, 0, 0.751765, 0, 3.55271e-15, 0, 0.751765, -0.373338, 0, -1.83771)
-
-[node name="Counter Table CAMP" parent="Counter Table CAMP - laminated" instance=ExtResource("4_he5c3")]
 
 [node name="Futuristic Server Room with Displays" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.42205, 0, 0, 0, 1.42205, 0, 0, 0, 1.42205, 10.99, -5.532, -1.304)

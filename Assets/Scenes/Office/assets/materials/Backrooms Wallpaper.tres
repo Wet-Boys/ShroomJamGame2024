@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bm4mtepbl3aav"]
+
+[ext_resource type="Texture2D" uid="uid://b7h016dfxwcr8" path="res://Assets/Scenes/Office/assets/materials/backrooms-wallpa_4322f764-d3ee-4433-be4e-ce232c8cdfb6/textures/z3r799qmmgr91.jpg" id="1_jxacm"]
+
+[resource]
+albedo_texture = ExtResource("1_jxacm")
+uv1_scale = Vector3(1.025, 1.025, 1.025)
+uv1_triplanar = true
+uv1_world_triplanar = true
