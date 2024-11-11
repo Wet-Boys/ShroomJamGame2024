@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dletgdb3ldyhl"]
+[gd_scene load_steps=3 format=3 uid="uid://dletgdb3ldyhl"]
 
 [ext_resource type="PackedScene" uid="uid://bbjohvc431qso" path="res://Assets/Scenes/Office/assets/models/Tube lights/tube light.gltf" id="1_q6ei3"]
+[ext_resource type="AudioStream" uid="uid://dhekguko6sa4p" path="res://Assets/Sfx/Lights/Flourescent-light-hum-637543_612689-hq.ogg" id="2_5eckl"]
 
 [node name="tube light" instance=ExtResource("1_q6ei3")]
 
@@ -8,3 +9,10 @@
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13694, 0)
 shadow_enabled = true
 omni_range = 21.5531
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="2"]
+stream = ExtResource("2_5eckl")
+volume_db = -5.0
+autoplay = true
+max_distance = 5.0
+bus = &"Lights Ambient"

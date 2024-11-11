@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bv7hgobt87i0x"]
+[gd_scene load_steps=13 format=3 uid="uid://bv7hgobt87i0x"]
 
 [ext_resource type="Script" path="res://Player/PlayerHeadController.cs" id="1_74oir"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="1_rdmxy"]
@@ -29,11 +29,6 @@ frustum_offset = Vector2(0, 0)
 near = 0.05
 far = 4000.0
 
-[sub_resource type="Environment" id="Environment_122bg"]
-ambient_light_source = 1
-
-[sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_qqvq2"]
-
 [node name="Player" instance=ExtResource("1_w0a4a")]
 
 [node name="PlayerMovementController" type="Node" parent="." index="0" node_paths=PackedStringArray("_characterMovementController")]
@@ -52,8 +47,6 @@ script = ExtResource("1_rdmxy")
 tween_resource = SubResource("Resource_4oitb")
 tween_on_load = false
 camera_3d_resource = SubResource("Resource_i8i7e")
-environment = SubResource("Environment_122bg")
-attributes = SubResource("CameraAttributesPhysical_qqvq2")
 
 [node name="PlayerInteractor" type="Node3D" parent="Head" index="3" node_paths=PackedStringArray("PlayerBody", "InteractorRay", "_playerHead", "_stepHelper", "_tooltipLabel")]
 script = ExtResource("6_rta4b")
