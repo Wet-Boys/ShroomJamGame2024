@@ -89,6 +89,8 @@ public partial class CharacterMovementController : Node
     public bool IsSprinting;
     [Export]
     public Vector2 InputMovement;
+    [Export]
+    private float _pushForce = 2f;
 
     public override void _PhysicsProcess(double delta)
     {
@@ -139,6 +141,14 @@ public partial class CharacterMovementController : Node
         
         // Execute physics of player body
         _characterBody.MoveAndSlide();
+        for (int i = 0; i < _characterBody.GetSlideCollisionCount(); i++)
+        {
+            KinematicCollision3D collision = _characterBody.GetSlideCollision(i);
+            if (collision.GetCollider() is RigidBody3D rigidBody)
+            {
+                rigidBody.ApplyCentralImpulse(-collision.GetNormal() * _pushForce);
+            }
+        }
     }
 
     private void UpdateCharacterSize()

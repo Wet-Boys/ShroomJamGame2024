@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bkmv0iayckotg"]
 
 [ext_resource type="Script" path="res://Interaction/PhysicsInteractable.cs" id="1_73m0m"]
-[ext_resource type="ArrayMesh" uid="uid://nthagdir84yt" path="res://Assets/Prefabs/WorldObjects/tape.tres" id="2_yeqiv"]
+[ext_resource type="ArrayMesh" uid="uid://cyj07i2b6frqv" path="res://Assets/Prefabs/WorldObjects/tape.tres" id="2_yeqiv"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_hd2l0"]
 height = 0.033061

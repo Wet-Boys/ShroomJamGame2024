@@ -55,10 +55,10 @@ namespace ShroomJamGame.Tasks
                 {
                     taskName = "Take object back";
                     placementPosition = originalPosition;
-                    circle.QueueFree();
+                    circle.Free();
+                    circle = ((PackedScene)GD.Load("res://Assets/Prefabs/WorldObjects/ClickbaitCheck.tscn")).Instantiate<Node3D>();
                     target.AddChild(circle);
                     circle.Position = Vector3.Zero;
-                    circle = ((PackedScene)GD.Load("res://Assets/Prefabs/WorldObjects/ClickbaitCheck.tscn")).Instantiate<Node3D>();
                 }
                 else
                 {

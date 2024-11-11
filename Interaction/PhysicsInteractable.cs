@@ -1,4 +1,5 @@
 using Godot;
+using ShroomJamGame.NPC;
 
 namespace ShroomJamGame.Interaction;
 
@@ -6,11 +7,17 @@ namespace ShroomJamGame.Interaction;
 public partial class PhysicsInteractable : RigidBody3D, IInteractableObject
 {
     public bool isHeld = false;
+    public NpcMovementController owner;
     public static Godot.Collections.Array<PhysicsInteractable> physicsObjects = new Godot.Collections.Array<PhysicsInteractable>();
     public override void _Ready()
     {
         base._Ready();
         physicsObjects.Add(this);
+    }
+    public override void _ExitTree()
+    {
+        physicsObjects.Remove(this);
+        base._ExitTree();
     }
     public void Interact()
     {

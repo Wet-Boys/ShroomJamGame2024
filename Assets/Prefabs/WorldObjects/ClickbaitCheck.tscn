@@ -6,4 +6,5 @@
 transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, 0, 0, 0)
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
+billboard = 1
 texture = ExtResource("1_1j7kx")
