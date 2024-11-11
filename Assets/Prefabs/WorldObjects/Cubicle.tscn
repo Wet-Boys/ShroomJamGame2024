@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://sucmon0cf6k8" path="res://Assets/Prefabs/WorldObjects/OfficeChair.tscn" id="2_n8ypg"]
 [ext_resource type="PackedScene" uid="uid://cieljfy51ui4s" path="res://Assets/Prefabs/WorldObjects/Keyboard.tscn" id="4_btyns"]
 [ext_resource type="PackedScene" uid="uid://bkiu2ffi882dw" path="res://Assets/Prefabs/WorldObjects/Mouse.tscn" id="6_2p2c0"]
-[ext_resource type="PackedScene" uid="uid://bqhln5nafgh43" path="res://Assets/Prefabs/WorldObjects/cubicle.tscn" id="6_ibgeb"]
+[ext_resource type="PackedScene" uid="uid://bqhln5nafgh43" path="res://Assets/Prefabs/WorldObjects/cubicle wall.tscn" id="6_ibgeb"]
 [ext_resource type="PackedScene" uid="uid://bw57vxw8aglf7" path="res://Assets/Prefabs/WorldObjects/Computer.tscn" id="12_axl02"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lt4fy"]
