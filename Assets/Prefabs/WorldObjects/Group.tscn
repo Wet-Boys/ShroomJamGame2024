@@ -1143,7 +1143,7 @@ skeleton = NodePath("")
 shape = SubResource("ConvexPolygonShape3D_074tu")
 
 [node name="LDesk_Supports" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.14, -5.532, -4.069)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.20815, -5.532, -3.93826)
 mesh = SubResource("ArrayMesh_3fv1w")
 skeleton = NodePath("")
 
@@ -1178,45 +1178,45 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.247984, 1.49032, 1.30509)
 shape = SubResource("BoxShape3D_fraid")
 
 [node name="Electronic Junk Motor" parent="." instance=ExtResource("34_thuaa")]
-transform = Transform3D(2.80435, 0, 0, 0, 2.80435, 0, 0, 0, 2.80435, 4.96909, -4.32163, -3.34662)
+transform = Transform3D(2.80435, 0, 0, 0, 2.80435, 0, 0, 0, 2.80435, 5.03724, -4.32163, -3.21588)
 
 [node name="Electronic Junk Motor2" parent="." instance=ExtResource("34_thuaa")]
-transform = Transform3D(1.68825, 2.23924, 0, 9.78803e-08, -7.37956e-08, -2.80435, -2.23924, 1.68825, -1.22582e-07, 5.01165, -4.27743, -3.46012)
+transform = Transform3D(1.68825, 2.23924, 0, 9.78803e-08, -7.37956e-08, -2.80435, -2.23924, 1.68825, -1.22582e-07, 5.0798, -4.27743, -3.32938)
 
 [node name="SSD samsung 850 Pro" type="Node3D" parent="."]
 
 [node name="SSD 850 PRO circuit Bolt" type="MeshInstance3D" parent="SSD samsung 850 Pro"]
-transform = Transform3D(1.6579, 0, -1.3815, 0, 2.15805, 0, 1.3815, 0, 1.6579, 6.84628, -4.27022, -3.68842)
+transform = Transform3D(1.6579, 0, -1.3815, 0, 2.15805, 0, 1.3815, 0, 1.6579, 6.91443, -4.27022, -3.55768)
 mesh = SubResource("ArrayMesh_22hbp")
 skeleton = NodePath("")
 
 [node name="A small industrial PC with motherboard and memory inside_" type="Node3D" parent="."]
 
 [node name="Electronic Junk" parent="A small industrial PC with motherboard and memory inside_" instance=ExtResource("44_t0mew")]
-transform = Transform3D(0.776454, 0, -0.630175, 0, 1, 0, 0.630175, 0, 0.776454, 6.53968, -4.27373, -3.41557)
+transform = Transform3D(0.776454, 0, -0.630175, 0, 1, 0, 0.630175, 0, 0.776454, 6.60783, -4.27373, -3.28483)
 
 [node name="Motherboard" parent="A small industrial PC with motherboard and memory inside_" instance=ExtResource("45_r3obd")]
-transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 5.86612, -4.30719, -3.54982)
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 5.93427, -4.30719, -3.41908)
 
 [node name="Electric skateboard OneWheel" type="Node3D" parent="."]
 transform = Transform3D(0.0399886, 0, 0, 0, 0.0399886, 0, 0, 0, 0.0399886, 0, 0, 0)
 
 [node name="Skateboard" parent="Electric skateboard OneWheel" instance=ExtResource("46_j3cm0")]
-transform = Transform3D(5.62939, 0, 0, 0, 5.62939, 0, 0, 0, 5.62939, 129.05, -103.671, -92.1852)
+transform = Transform3D(5.62939, 0, 0, 0, 5.62939, 0, 0, 0, 5.62939, 130.754, -103.671, -88.9157)
 
 [node name="Electrical Tape" type="Node3D" parent="."]
 transform = Transform3D(0.131199, 0, 0, 0, 0.131199, 0, 0, 0, 0.131199, 0, 0, 0)
 
 [node name="Tape" parent="Electrical Tape" instance=ExtResource("47_5tor5")]
-transform = Transform3D(6.91807, 0, 0, 0, 6.91807, 0, 0, 0, 6.91807, 48.4462, -32.8452, -29.3884)
+transform = Transform3D(6.91808, 0, 0, 0, 6.91808, 0, 0, 0, 6.91808, 48.9657, -32.8452, -28.3919)
 
 [node name="Tape2" parent="Electrical Tape" instance=ExtResource("47_5tor5")]
-transform = Transform3D(6.53048, -2.2831, 0, 2.2831, 6.53048, 0, 0, 0, 6.91807, 47.9554, -32.6887, -29.5455)
+transform = Transform3D(6.53049, -2.2831, 0, 2.2831, 6.53049, 0, 0, 0, 6.91808, 48.4748, -32.6887, -28.549)
 
 [node name="Tape3" parent="Electrical Tape" instance=ExtResource("47_5tor5")]
-transform = Transform3D(-4.9331, 1.72465, 4.53927, 2.28442, 6.53424, -3.40766e-09, -4.28496, 1.49805, -5.22589, 48.8548, -32.6887, -29.1438)
+transform = Transform3D(-4.9331, 1.72465, 4.53927, 2.28442, 6.53425, -3.40766e-09, -4.28496, 1.49805, -5.22589, 49.3743, -32.6887, -28.1473)
 
 [node name="Electric Lighter" type="Node3D" parent="."]
 
 [node name="Lighter" parent="Electric Lighter" instance=ExtResource("48_ynq7l")]
-transform = Transform3D(0.66434, 0.747712, -3.26835e-08, 0, -4.37206e-08, -1.00021, -0.747712, 0.66434, -2.90392e-08, 6.16575, -4.30719, -3.54982)
+transform = Transform3D(0.66434, 0.747712, -3.26835e-08, 0, -4.37206e-08, -1.00021, -0.747712, 0.66434, -2.90392e-08, 6.2339, -4.30719, -3.41908)

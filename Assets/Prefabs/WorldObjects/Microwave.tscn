@@ -1,9 +1,10 @@
-[gd_scene load_steps=17 format=4 uid="uid://dccf0fsjpamoc"]
+[gd_scene load_steps=22 format=4 uid="uid://dccf0fsjpamoc"]
 
 [ext_resource type="Texture2D" uid="uid://bcktkr1inuy07" path="res://Assets/Scenes/Office/textures/Fingerprints003_2K_Color.jpg" id="1_gntmr"]
 [ext_resource type="Texture2D" uid="uid://0v721ac8wbvx" path="res://Assets/Scenes/Office/textures/Scratches05_var2.jpg" id="2_y43jm"]
 [ext_resource type="Texture2D" uid="uid://djrudnxj42m1m" path="res://Assets/Scenes/Office/textures/Panel.jpg" id="3_b35jr"]
 [ext_resource type="Texture2D" uid="uid://tj3bko74rffr" path="res://Assets/Scenes/Office/textures/Panel_emission.jpg" id="4_0kwdy"]
+[ext_resource type="Script" path="res://Interaction/DoorInteractable.cs" id="5_j8y7g"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2rh3f"]
 resource_name = "Metal"
@@ -113,8 +114,17 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_k7l7b")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_5mawm"]
-points = PackedVector3Array(-0.419921, -0.20939, -0.154916, 0.210517, -0.210296, 0.234147, -0.420168, -0.209761, 0.233644, -0.420168, 0.209632, 0.233644, -0.419839, 0.209385, -0.154916, 0.419731, -0.209431, -0.154916, 0.210517, -0.209761, 0.272605, 0.420307, -0.209843, 0.234105, 0.210764, -0.146813, 0.273023, 0.210517, 0.210291, 0.234147, 0.210764, 0.146767, 0.273023, 0.210517, 0.209797, 0.272353, 0.419813, 0.209344, -0.154916, 0.247128, -0.194281, 0.272856, 0.419567, -0.209226, 0.272605, 0.348896, -0.194281, 0.272856, 0.420225, 0.209797, 0.234105, 0.420142, 0.209138, 0.272102, 0.38526, -0.146813, 0.273023, 0.38526, 0.146767, 0.273023)
+[sub_resource type="BoxShape3D" id="BoxShape3D_iv81w"]
+size = Vector3(0.837158, 0.0292969, 0.39325)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wof8g"]
+size = Vector3(0.215515, 0.408203, 0.430206)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ore8j"]
+size = Vector3(0.0363159, 0.408203, 0.397522)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nbfnn"]
+size = Vector3(0.843994, 0.432968, 0.0216064)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lhhlu"]
 resource_name = "Glass"
@@ -179,6 +189,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_hmmo2")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_qyl31"]
+size = Vector3(0.633026, 0.435425, 0.0371704)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_esh8a"]
 resource_name = "Metal"
 cull_mode = 2
@@ -233,15 +246,49 @@ skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Body"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Body/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_5mawm")
+[node name="Floor" type="CollisionShape3D" parent="Body/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00476074, -0.209961, 0.0418396)
+shape = SubResource("BoxShape3D_iv81w")
+
+[node name="Top" type="CollisionShape3D" parent="Body/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00476074, 0.195561, 0.0418396)
+shape = SubResource("BoxShape3D_iv81w")
+
+[node name="Body" type="CollisionShape3D" parent="Body/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.317719, 0.00683594, 0.0579376)
+shape = SubResource("BoxShape3D_wof8g")
+
+[node name="Side" type="CollisionShape3D" parent="Body/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.402265, 0.00683594, 0.0415954)
+shape = SubResource("BoxShape3D_ore8j")
+
+[node name="Back" type="CollisionShape3D" parent="Body/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00134277, -0.00612646, -0.144958)
+shape = SubResource("BoxShape3D_nbfnn")
 
 [node name="Door" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.401485, 0.227613, 0.195826)
 mesh = SubResource("ArrayMesh_55er6")
 skeleton = NodePath("")
 
+[node name="StaticBody3D" type="StaticBody3D" parent="Door"]
+metadata/InteractableChildIndex = 1
+
+[node name="Door Collisions" type="CollisionShape3D" parent="Door/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.296646, -0.00836182, 0.00204468)
+shape = SubResource("BoxShape3D_qyl31")
+
+[node name="DoorInteractable" type="Node" parent="Door/StaticBody3D" node_paths=PackedStringArray("_doorNode", "_soundEmitter", "CollisionShape")]
+script = ExtResource("5_j8y7g")
+OpenDegrees = Vector3(0, -90, 0)
+_doorNode = NodePath("../..")
+_soundEmitter = NodePath("../../../AudioStreamPlayer3D")
+CollisionShape = NodePath("..")
+
 [node name="legs" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000283718, 0.0143764, -0.00966263)
 mesh = SubResource("ArrayMesh_c4rsc")
 skeleton = NodePath("")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(0.126077, 0, 0, 0, 0.126077, 0, 0, 0, 0.126077, 0, 0.226938, 0)

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bw57vxw8aglf7"]
+[gd_scene load_steps=5 format=3 uid="uid://bw57vxw8aglf7"]
 
 [ext_resource type="Script" path="res://Interaction/PhysicsInteractable.cs" id="1_iv1sb"]
 [ext_resource type="ArrayMesh" uid="uid://os24rdssjt46" path="res://Assets/Prefabs/WorldObjects/Computer.tres" id="1_v4kw8"]
+[ext_resource type="AudioStream" uid="uid://b6d4hihrleouc" path="res://Assets/Sfx/Computer/Noisy Computer.ogg" id="3_61oc2"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7sdpq"]
 points = PackedVector3Array(0.0925, 0.443345, 0.2025, 0.0924819, 0.443345, -0.2025, -0.0925, 0.443345, 0.2025, 0.0925, 0.0133229, 0.2025, -0.0925, 0.443345, -0.2025, 0.0924819, 0.0133229, -0.2025, -0.0925, 0.0133229, 0.2025, 0.0777051, 0, 0.189338, 0.0777051, 0, -0.189418, -0.0925, 0.0133229, -0.2025, -0.0777232, 0, 0.189338, -0.0777232, 0, -0.189418)
@@ -14,3 +15,11 @@ shape = SubResource("ConvexPolygonShape3D_7sdpq")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = ExtResource("1_v4kw8")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
+stream = ExtResource("3_61oc2")
+attenuation_model = 2
+unit_size = 1.0
+autoplay = true
+bus = &"Sound Effects"
