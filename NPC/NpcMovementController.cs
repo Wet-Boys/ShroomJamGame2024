@@ -53,7 +53,8 @@ namespace ShroomJamGame.NPC
         [Export]
         private AnimalesePlayer3D? AnimalesePlayer;
         private double stuckTimer = 0;
-        private float prevDistanceToTarget = 0;
+        private int stuckCount = 0;
+        private Vector3 prevPathPosition = Vector3.Zero;
         public void SayWords(string whatToSay)
         {
             if (AnimalesePlayer is null || speechBubbleText is null)
@@ -150,26 +151,26 @@ namespace ShroomJamGame.NPC
 
         private void NpcMovementController_ReachedDestination()
         {
-            if (placingObject)
+            if (placingObject && IsInstanceValid(heldObject) && (heldObject is PhysicsInteractable physicsObject) && !physicsObject.isHeld)
             {
                 placingObject = false;
                 heldObject.GlobalPosition = ownedItemsStartingPositions[ownedItems.IndexOf(heldObject)];
                 heldObject.Rotation = ownedItemsStartingRotations[ownedItems.IndexOf(heldObject)];
-                (heldObject as PhysicsInteractable).Freeze = false;
-                (heldObject as PhysicsInteractable).isHeld = true;
+                physicsObject.Freeze = false;
+                physicsObject.isHeld = false;
                 heldObject = null;
                 _visualController.Interact();
                 SayWords($"");
             }
-            if (grabbingObject && IsInstanceValid(targetNode) && !(targetNode as PhysicsInteractable).isHeld)
+            if (grabbingObject && IsInstanceValid(targetNode) && (targetNode is PhysicsInteractable physicsObject2) && !physicsObject2.isHeld)
             {
                 grabbingObject = false;
                 placingObject = true;
                 _SetTargetPosition(ownedItemsStartingPositions[ownedItems.IndexOf(targetNode)]);
                 heldObject = targetNode;
                 heldObject.GlobalPosition = new Vector3(-9999, -9999, -9999);
-                (heldObject as PhysicsInteractable).Freeze = true;
-                (heldObject as PhysicsInteractable).isHeld = false;
+                physicsObject2.Freeze = true;
+                physicsObject2.isHeld = true;
                 targetNode = null;
                 _visualController.Interact();
                 SayWords($"Let me put it back");
@@ -184,41 +185,41 @@ namespace ShroomJamGame.NPC
                 _SetTargetPosition(oldTargetPos);
             }
             float distanceToTarget = _navigationAgent.DistanceToTarget();
+            Vector3 nextPathPosition = _navigationAgent.GetNextPathPosition();
             if (distanceToTarget < 2)
             {
-                if (!reachedTarget)
-                {
-                    reachedTarget = true;
-                    EmitSignal(SignalName.ReachedDestination);
-                }
+                ReachTarget();
             }
             if (_navigationAgent.IsNavigationFinished())
             {
-                if (!reachedTarget)
-                {
-                    reachedTarget = true;
-                    EmitSignal(SignalName.ReachedDestination);
-                }
+                ReachTarget();
                 _characterMovementController.InputMovement = new Vector2(0, 0);
                 return;
             }
-            else if (distanceToTarget == prevDistanceToTarget)
+            else if (nextPathPosition == prevPathPosition)
             {
                 stuckTimer += delta;
                 if (stuckTimer > 1)
                 {
                     stuckTimer = 0;
-                    _SetTargetPosition(targetNode.GlobalPosition);
+                    stuckCount++;
+                    if (IsInstanceValid(targetNode))
+                    {
+                        _SetTargetPosition(targetNode.GlobalPosition);
+                    }
+                }
+                if (stuckCount > 5)
+                {
+                    ReachTarget();
                 }
             }
-            prevDistanceToTarget = distanceToTarget;
+            prevPathPosition = nextPathPosition;
             Quaternion currentYRot = characterBody3D.Quaternion;
-            Vector3 nextPathPosition = _navigationAgent.GetNextPathPosition();
             characterBody3D.LookAt(nextPathPosition);
             characterBody3D.RotationDegrees = new Vector3(0, characterBody3D.RotationDegrees.Y + 180, 0);
             Quaternion newYRot = characterBody3D.Quaternion;
             characterBody3D.Quaternion = currentYRot.Slerp(newYRot, (float)delta * 8);
-            _characterMovementController.InputMovement = new Vector2(0,1);
+            _characterMovementController.InputMovement = new Vector2(0, 1);
 
             if (interactionRay.IsColliding() && interactionRay.GetCollisionPoint().DistanceTo(characterBody3D.GlobalPosition) < 1.3)
             {
@@ -231,6 +232,15 @@ namespace ShroomJamGame.NPC
                     door.Interact();
                     _visualController.Interact();
                 }
+            }
+        }
+        private void ReachTarget()
+        {
+            if (!reachedTarget)
+            {
+                stuckCount = 0;
+                reachedTarget = true;
+                EmitSignal(SignalName.ReachedDestination);
             }
         }
     }
