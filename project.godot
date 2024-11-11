@@ -20,6 +20,7 @@ config/icon="res://Assets/icon.svg"
 PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
 SettingsSingleton="*res://Assets/Prefabs/Autoloads/SettingsSingleton.tscn"
 ControlSystems="*res://Assets/Prefabs/Autoloads/ControlSystems.tscn"
+Broadcaster="*res://Assets/Prefabs/Autoloads/Broadcaster.tscn"
 
 [display]
 

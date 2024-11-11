@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cieljfy51ui4s"]
 
 [ext_resource type="Script" path="res://Interaction/PhysicsInteractable.cs" id="1_h72ub"]
-[ext_resource type="ArrayMesh" uid="uid://qsh0amh20nkw" path="res://Assets/Prefabs/WorldObjects/Keyboard.tres" id="2_afome"]
+[ext_resource type="ArrayMesh" uid="uid://isp28bmosqwe" path="res://Assets/Prefabs/WorldObjects/Keyboard.tres" id="2_afome"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e23oe"]
 size = Vector3(0.360413, 0.0195313, 0.113037)

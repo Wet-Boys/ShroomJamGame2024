@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://blq4ueurcflkt"]
+
+[ext_resource type="Texture2D" uid="uid://dyunfc6anugmj" path="res://Assets/Prefabs/WorldObjects/ClickbaitCheck.png" id="1_1j7kx"]
+
+[node name="ClickbaitCheck" type="Node3D"]
+transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+texture = ExtResource("1_1j7kx")

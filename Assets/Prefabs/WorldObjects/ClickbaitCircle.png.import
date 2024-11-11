@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://daw5sd8rh0r3x"
-path.s3tc="res://.godot/imported/Info_Display.jpg-2a412ca63dd978b558ec5068d6d0662f.s3tc.ctex"
+uid="uid://4bupfsbtq65"
+path.s3tc="res://.godot/imported/ClickbaitCircle.png-06cc5d0e5725940d9b36eda493d6e91c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Scenes/Office/assets/models/vendingmachine-o_15cbfbd2-99a4-47cb-a614-b62e7d4b3aa8/textures/Info_Display.jpg"
-dest_files=["res://.godot/imported/Info_Display.jpg-2a412ca63dd978b558ec5068d6d0662f.s3tc.ctex"]
+source_file="res://Assets/Prefabs/WorldObjects/ClickbaitCircle.png"
+dest_files=["res://.godot/imported/ClickbaitCircle.png-06cc5d0e5725940d9b36eda493d6e91c.s3tc.ctex"]
 
 [params]
 
