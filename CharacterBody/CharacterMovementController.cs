@@ -170,6 +170,8 @@ public partial class CharacterMovementController : Node
     
     public void StartCrouching()
     {
+        if (IsCrouching)
+            return;
         IsCrouching = true;
         
         if (_characterCollisionShape is null || _characterHead is null || _characterBody is null || _stepHelper is null)
