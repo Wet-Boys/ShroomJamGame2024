@@ -1,4 +1,4 @@
-[gd_resource type="ArrayMesh" load_steps=11 format=4 uid="uid://dvwnbtc2rwn85"]
+[gd_resource type="ArrayMesh" load_steps=11 format=4 uid="uid://dbbg6dtfgsbaq"]
 
 [ext_resource type="Texture2D" uid="uid://cdw6a6s4o6yyp" path="res://Assets/Scenes/Office/textures/wheel_new__COLOR.jpg" id="1_q21sa"]
 [ext_resource type="Texture2D" uid="uid://cbjkvcw33c5sa" path="res://Assets/Scenes/Office/textures/wheel_new__SPEC.jpg" id="2_h5a60"]

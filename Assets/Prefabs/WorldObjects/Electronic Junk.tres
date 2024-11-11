@@ -1,4 +1,4 @@
-[gd_resource type="ArrayMesh" load_steps=13 format=4 uid="uid://uqwjbuvoiu3x"]
+[gd_resource type="ArrayMesh" load_steps=13 format=4 uid="uid://c4d43qq4nr7a"]
 
 [ext_resource type="Texture2D" uid="uid://dnijuw7i8nfwg" path="res://Assets/Scenes/Office/textures/Steel_brushed.jpg" id="1_dxwra"]
 [ext_resource type="Texture2D" uid="uid://cdhux1ptprgbs" path="res://Assets/Scenes/Office/textures/Steel_brushed_Normal.jpg" id="2_nhj2r"]

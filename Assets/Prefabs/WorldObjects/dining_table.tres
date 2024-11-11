@@ -1,4 +1,4 @@
-[gd_resource type="ArrayMesh" load_steps=8 format=4 uid="uid://dqfxx2jlggvo8"]
+[gd_resource type="ArrayMesh" load_steps=8 format=4 uid="uid://dobocoovgx5b6"]
 
 [ext_resource type="Texture2D" uid="uid://jvyn8qx3ocym" path="res://Assets/Scenes/Office/textures/T_Set_Stairs_Mud_BaseColor.jpg" id="1_otbii"]
 [ext_resource type="Texture2D" uid="uid://lb5wv3afwiyj" path="res://Assets/Scenes/Office/textures/T_Set_Stairs_Mud_OcclusionRoughnessMetallic.jpg" id="2_qewj3"]

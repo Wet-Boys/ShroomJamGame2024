@@ -1,4 +1,4 @@
-[gd_resource type="ArrayMesh" load_steps=13 format=4 uid="uid://dxjg4qbg2h410"]
+[gd_resource type="ArrayMesh" load_steps=13 format=4 uid="uid://ctoybfpib3owv"]
 
 [ext_resource type="Texture2D" uid="uid://d133jlefsxpqi" path="res://Assets/Scenes/Office/textures/SurfaceImperfections008_2K_var2.jpg" id="1_kd5ch"]
 [ext_resource type="Texture2D" uid="uid://fi8xrbjg3fba" path="res://Assets/Scenes/Office/textures/Grau-Körnung_Normal.jpg" id="2_0br7j"]
