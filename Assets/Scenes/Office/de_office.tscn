@@ -2019,7 +2019,7 @@ skeleton = NodePath("")
 shape = SubResource("ConvexPolygonShape3D_uvpgm")
 
 [node name="Cube_022" type="MeshInstance3D" parent="Asset Complete Office2"]
-transform = Transform3D(0, 0, -25, 0, 10, 0, 1, 0, 0, -47, 34.0001, -15)
+transform = Transform3D(-2.18557e-08, 0, -25, 0, 10, 0, 0.5, 0, -1.09278e-06, -47, 34, -15.5)
 material_override = ExtResource("1_42koi")
 mesh = SubResource("ArrayMesh_vdmer")
 skeleton = NodePath("")
@@ -2027,6 +2027,61 @@ skeleton = NodePath("")
 [node name="StaticBody3D" type="StaticBody3D" parent="Asset Complete Office2/Cube_022"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Asset Complete Office2/Cube_022/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_m7ml7")
+
+[node name="Cube_025" type="MeshInstance3D" parent="Asset Complete Office2"]
+transform = Transform3D(-2.18557e-08, 0, -25, 0, 10, 0, 0.5, 0, -1.09278e-06, -47, 34, -14.5)
+material_override = ExtResource("1_giika")
+mesh = SubResource("ArrayMesh_vdmer")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Asset Complete Office2/Cube_025"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Asset Complete Office2/Cube_025/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_m7ml7")
+
+[node name="Cube_026" type="MeshInstance3D" parent="Asset Complete Office2"]
+transform = Transform3D(-2.18557e-08, 0, -3, 0, 4, 0, 0.5, 0, -1.31134e-07, -75, 40, -14.5)
+material_override = ExtResource("1_giika")
+mesh = SubResource("ArrayMesh_vdmer")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Asset Complete Office2/Cube_026"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Asset Complete Office2/Cube_026/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_m7ml7")
+
+[node name="Cube_028" type="MeshInstance3D" parent="Asset Complete Office2"]
+transform = Transform3D(-2.18557e-08, 0, -3, 0, 4, 0, 0.5, 0, -1.31134e-07, -75, 40, -15.5)
+material_override = ExtResource("1_42koi")
+mesh = SubResource("ArrayMesh_vdmer")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Asset Complete Office2/Cube_028"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Asset Complete Office2/Cube_028/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_m7ml7")
+
+[node name="Cube_027" type="MeshInstance3D" parent="Asset Complete Office2"]
+transform = Transform3D(-2.18557e-08, 0, -3, 0, 4, 0, 0.5, 0, -1.31134e-07, -19, 40, -14.5)
+material_override = ExtResource("1_giika")
+mesh = SubResource("ArrayMesh_vdmer")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Asset Complete Office2/Cube_027"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Asset Complete Office2/Cube_027/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_m7ml7")
+
+[node name="Cube_029" type="MeshInstance3D" parent="Asset Complete Office2"]
+transform = Transform3D(-2.18557e-08, 0, -3, 0, 4, 0, 0.5, 0, -1.31134e-07, -19, 40, -15.5)
+material_override = ExtResource("1_42koi")
+mesh = SubResource("ArrayMesh_vdmer")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Asset Complete Office2/Cube_029"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Asset Complete Office2/Cube_029/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_m7ml7")
 
 [node name="Cube_120" type="MeshInstance3D" parent="Asset Complete Office2"]
@@ -2116,14 +2171,25 @@ skeleton = NodePath("")
 shape = SubResource("ConvexPolygonShape3D_b35ha")
 
 [node name="Cube_128" type="MeshInstance3D" parent="Asset Complete Office2"]
-transform = Transform3D(0, 0, -1, 0, 10, 0, 20, 0, 0, 17, 34, -40)
-material_override = ExtResource("1_42koi")
+transform = Transform3D(-8.74228e-07, 0, -0.5, 0, 10, 0, 20, 0, -2.18557e-08, 17.5, 34, -40)
+material_override = ExtResource("1_giika")
 mesh = SubResource("ArrayMesh_4e80x")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Asset Complete Office2/Cube_128"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Asset Complete Office2/Cube_128/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_cktho")
+
+[node name="Cube_135" type="MeshInstance3D" parent="Asset Complete Office2"]
+transform = Transform3D(-8.74228e-07, 0, -0.5, 0, 10, 0, 20, 0, -2.18557e-08, 16.5, 34, -40)
+material_override = ExtResource("1_42koi")
+mesh = SubResource("ArrayMesh_4e80x")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Asset Complete Office2/Cube_135"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Asset Complete Office2/Cube_135/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_cktho")
 
 [node name="Cube_141" type="MeshInstance3D" parent="Asset Complete Office2"]
@@ -2158,7 +2224,7 @@ skeleton = NodePath("")
 shape = SubResource("ConvexPolygonShape3D_umwjd")
 
 [node name="Cube_131" type="MeshInstance3D" parent="Asset Complete Office2"]
-transform = Transform3D(0, 0, -1, 0, 1, 0, 37.5, 0, 0, -79, 25, 38.5)
+transform = Transform3D(-1.66103e-06, 0, -1, 0, 1, 0, 38, 0, -4.37114e-08, -79, 25, 37.5)
 mesh = SubResource("ArrayMesh_bysuk")
 skeleton = NodePath("")
 
@@ -2168,7 +2234,7 @@ skeleton = NodePath("")
 shape = SubResource("ConvexPolygonShape3D_ibf4l")
 
 [node name="Cube_132" type="MeshInstance3D" parent="Asset Complete Office2"]
-transform = Transform3D(0, 0, -1, 0, 10, 0, 1, 0, 0, -79, 34, 0)
+transform = Transform3D(0, 0, -1, 0, 10, 0, 1, 0, 0, -79, 34, -15)
 mesh = SubResource("ArrayMesh_jhxui")
 skeleton = NodePath("")
 
@@ -2196,6 +2262,17 @@ skeleton = NodePath("")
 [node name="StaticBody3D" type="StaticBody3D" parent="Asset Complete Office2/Cube_136"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Asset Complete Office2/Cube_136/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_bxura")
+
+[node name="Cube_140" type="MeshInstance3D" parent="Asset Complete Office2"]
+transform = Transform3D(-4.37114e-09, 0, -15, 0, 10, 0, 0.1, 0, -6.55671e-07, 1, 34, -19.9)
+material_override = ExtResource("1_giika")
+mesh = SubResource("ArrayMesh_sqhtn")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Asset Complete Office2/Cube_140"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Asset Complete Office2/Cube_140/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_bxura")
 
 [node name="Cube_137" type="MeshInstance3D" parent="Asset Complete Office2"]
@@ -2393,7 +2470,7 @@ skeleton = NodePath("")
 shape = SubResource("ConvexPolygonShape3D_l77tc")
 
 [node name="Cube_164" type="MeshInstance3D" parent="Asset Complete Office2"]
-transform = Transform3D(0, 0, -1, 0, 10, 0, 12, 0, 0, -15, 34, -8)
+transform = Transform3D(-5.24537e-07, 0, -0.5, 0, 10, 0, 12, 0, -2.18557e-08, -14.5, 34, -8)
 material_override = ExtResource("1_giika")
 mesh = SubResource("ArrayMesh_ftl0q")
 skeleton = NodePath("")
@@ -2401,6 +2478,28 @@ skeleton = NodePath("")
 [node name="StaticBody3D" type="StaticBody3D" parent="Asset Complete Office2/Cube_164"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Asset Complete Office2/Cube_164/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_wdbq4")
+
+[node name="Cube_169" type="MeshInstance3D" parent="Asset Complete Office2"]
+transform = Transform3D(-4.15258e-07, 0, -0.5, 0, 10, 0, 9.5, 0, -2.18557e-08, -15.5, 34, -5.5)
+material_override = ExtResource("1_giika")
+mesh = SubResource("ArrayMesh_ftl0q")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Asset Complete Office2/Cube_169"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Asset Complete Office2/Cube_169/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_wdbq4")
+
+[node name="Cube_170" type="MeshInstance3D" parent="Asset Complete Office2"]
+transform = Transform3D(-1.09278e-07, 0, -0.5, 0, 10, 0, 2.5, 0, -2.18557e-08, -15.5, 34, -17.5)
+material_override = ExtResource("1_42koi")
+mesh = SubResource("ArrayMesh_ftl0q")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Asset Complete Office2/Cube_170"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Asset Complete Office2/Cube_170/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_wdbq4")
 
 [node name="Cube_165" type="MeshInstance3D" parent="Asset Complete Office2"]
@@ -2434,6 +2533,17 @@ skeleton = NodePath("")
 [node name="StaticBody3D" type="StaticBody3D" parent="Asset Complete Office2/Cube_167"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Asset Complete Office2/Cube_167/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_2ehge")
+
+[node name="Cube_168" type="MeshInstance3D" parent="Asset Complete Office2"]
+transform = Transform3D(-1.31134e-07, 0, 1, 0, 4, 0, -3, 0, -4.37114e-08, 17, 40, 23)
+material_override = ExtResource("1_giika")
+mesh = SubResource("ArrayMesh_q8ky4")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Asset Complete Office2/Cube_168"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Asset Complete Office2/Cube_168/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_2ehge")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Asset Complete Office2"]
@@ -2482,7 +2592,7 @@ transform = Transform3D(0.751765, 0, -1.7053e-13, 0, 0.751765, 0, -1.42109e-13, 
 transform = Transform3D(0.751765, 0, -1.7053e-13, 0, 0.751765, 0, -1.42109e-13, 0, 0.751765, -0.37334, 0, -1.83771)
 
 [node name="Counter Desk CAMP" type="MeshInstance3D" parent="Asset Complete Office2"]
-transform = Transform3D(3.51989e-06, 0, 8.99248, 0, 5.19185, 0, 9.84238, 0, -3.21596e-06, -56.1445, 24.0001, -20.0677)
+transform = Transform3D(2.9019e-06, 0, 8.99248, 0, 5.19185, 0, 8.11434, 0, -3.21596e-06, -56.1445, 24.0001, -19.3291)
 mesh = SubResource("ArrayMesh_eoecn")
 skeleton = NodePath("")
 
@@ -2495,7 +2605,7 @@ shape = SubResource("ConvexPolygonShape3D_7mew0")
 transform = Transform3D(-9.0403, 0, -1.36505e-06, 0, 9.0403, 0, 1.36505e-06, 0, -9.0403, -63.3521, 8.02283, -16.0788)
 
 [node name="tube" type="MeshInstance3D" parent="Asset Complete Office2/Kitchen sink with faucet"]
-transform = Transform3D(1.23043, 0, 1.42109e-14, 0, 1, 0, -1.42109e-14, 0, 1, -0.115665, 2.54861, 0.165428)
+transform = Transform3D(1.23043, 0, 1.42109e-14, 0, 0.836699, 0, 4.26326e-14, 0, 0.875718, -0.115665, 2.50799, 0.12728)
 mesh = SubResource("ArrayMesh_2rewj")
 skeleton = NodePath("")
 
@@ -2708,6 +2818,21 @@ shape = SubResource("ConvexPolygonShape3D_p78yw")
 [node name="SMT_Straight" parent="Asset Complete Office2" instance=ExtResource("14_djbcu")]
 transform = Transform3D(-1.44414e-05, -8, -3.49691e-07, 0, -3.49691e-07, 8, -330.38, 3.49691e-07, 1.52855e-14, 16.02, 24, 46.9927)
 
+[node name="SMT_Straight20" parent="Asset Complete Office2" instance=ExtResource("14_djbcu")]
+transform = Transform3D(4.33241e-05, 8, 3.49691e-07, 5.13062e-20, -3.49691e-07, 8, 330.38, -1.04907e-06, -4.58565e-14, 17.9935, 24, 46.9927)
+
+[node name="SMT_Straight21" parent="Asset Complete Office2" instance=ExtResource("14_djbcu")]
+transform = Transform3D(8.24244e-05, 8, 3.49691e-07, 9.76102e-20, -3.49691e-07, 8, 628.55, -1.04907e-06, -4.58565e-14, 17.9935, 24, -19.9669)
+
+[node name="SMT_Straight22" parent="Asset Complete Office2" instance=ExtResource("14_djbcu")]
+transform = Transform3D(-6.34693e-05, -8, -3.49691e-07, 5.74008e-20, -3.49691e-07, 8, -290.401, 1.74846e-06, 7.64274e-14, 38.0065, 24, -40.1435)
+
+[node name="SMT_Straight23" parent="Asset Complete Office2" instance=ExtResource("14_djbcu")]
+transform = Transform3D(111.112, -1.39876e-06, -6.11419e-14, 2.19624e-20, -3.49691e-07, 8, -1.94274e-05, -8, -3.49691e-07, 31.0598, 24, -21.9857)
+
+[node name="SMT_Straight24" parent="Asset Complete Office2" instance=ExtResource("14_djbcu")]
+transform = Transform3D(-111.112, 2.09815e-06, 9.17129e-14, 2.19624e-20, -3.49691e-07, 8, 2.91411e-05, 8, 3.49691e-07, 31.0598, 24, -20.0278)
+
 [node name="SMT_Straight4" parent="Asset Complete Office2" instance=ExtResource("14_djbcu")]
 transform = Transform3D(-8.71378e-06, -8, -3.49691e-07, 0, -3.49691e-07, 8, -199.348, 3.49691e-07, 1.52855e-14, 16.02, 24, 86.6544)
 
@@ -2720,6 +2845,15 @@ transform = Transform3D(-5.03126e-06, -8, -3.49691e-07, 0, -3.49691e-07, 8, -115
 [node name="SMT_Straight14" parent="Asset Complete Office2" instance=ExtResource("14_djbcu")]
 transform = Transform3D(1.50938e-05, 8, 3.49691e-07, 0, -3.49691e-07, 8, 115.102, -1.04907e-06, -4.58565e-14, -29.0161, 24, 91.2906)
 
+[node name="SMT_Straight15" parent="Asset Complete Office2" instance=ExtResource("14_djbcu")]
+transform = Transform3D(2.33966e-05, 8, 3.49691e-07, 0, -3.49691e-07, 8, 178.417, -1.04907e-06, -4.58565e-14, -14.0161, 24, 87.3217)
+
+[node name="SMT_Straight17" parent="Asset Complete Office2" instance=ExtResource("14_djbcu")]
+transform = Transform3D(2.48635e-05, 8, 3.49691e-07, 0, -3.49691e-07, 8, 189.603, -1.04907e-06, -4.58565e-14, 17.9806, 24, 86.0746)
+
+[node name="SMT_Straight18" parent="Asset Complete Office2" instance=ExtResource("14_djbcu")]
+transform = Transform3D(-173.908, 2.09815e-06, 9.17129e-14, 1.89049e-19, -3.49691e-07, 8, 4.56107e-05, 8, 3.49691e-07, 27.0309, 24, 67.998)
+
 [node name="SMT_Straight11" parent="Asset Complete Office2" instance=ExtResource("14_djbcu")]
 transform = Transform3D(-1.07528e-05, -8, -3.49691e-07, 0, -3.49691e-07, 8, -245.995, 3.49691e-07, 1.52855e-14, 38.0089, 24, 83.2109)
 
@@ -2729,17 +2863,23 @@ transform = Transform3D(-2.70859e-06, -8, -3.49691e-07, 0, -3.49691e-07, 8, -61.
 [node name="SMT_Straight6" parent="Asset Complete Office2" instance=ExtResource("14_djbcu")]
 transform = Transform3D(-252.155, 6.99382e-07, 5.89927e-14, 0, -3.49691e-07, 8, 2.20441e-05, 8, 3.49691e-07, 0.0181179, 24, 11.994)
 
+[node name="SMT_Straight19" parent="Asset Complete Office2" instance=ExtResource("14_djbcu")]
+transform = Transform3D(252.155, -1.39876e-06, -8.95637e-14, 1.06792e-19, -3.49691e-07, 8, -4.40882e-05, -8, -3.49691e-07, 0.0181179, 24, 10.0196)
+
 [node name="SMT_Straight7" parent="Asset Complete Office2" instance=ExtResource("14_djbcu")]
 transform = Transform3D(-6.78024e-07, -8, -3.49691e-07, 0, -3.49691e-07, 8, -15.5114, 3.49691e-07, 1.52855e-14, -15.9736, 24, 11.0109)
 
 [node name="SMT_Straight8" parent="Asset Complete Office2" instance=ExtResource("14_djbcu")]
-transform = Transform3D(-1.10201e-05, -7.99999, -3.49691e-07, 0, -3.49691e-07, 8, -252.111, 3.49691e-07, 1.52855e-14, -15.9736, 24, -12.001)
+transform = Transform3D(-6.53999e-06, -9.74407, -3.49691e-07, 0, -4.25927e-07, 8, -149.618, 4.25927e-07, 1.52855e-14, -15.9736, 24, -5.49924)
 
-[node name="SMT_Straight9" parent="Asset Complete Office2" instance=ExtResource("14_djbcu")]
-transform = Transform3D(-8.2596e-06, -7.99999, -3.49691e-07, 0, -3.49691e-07, 8, -188.958, 3.49691e-07, 1.52855e-14, -15.9736, 24, -45.9907)
+[node name="SMT_Straight25" parent="Asset Complete Office2" instance=ExtResource("14_djbcu")]
+transform = Transform3D(-393.434, 6.99382e-07, 5.89927e-14, 0, -3.49691e-07, 8, 3.43951e-05, 7.99999, 3.49691e-07, -47.0035, 24, -14.0416)
 
 [node name="SMT_Straight2" parent="Asset Complete Office2" instance=ExtResource("14_djbcu")]
 transform = Transform3D(456.668, 5.68434e-14, 0, 0, -3.49691e-07, 8, 1.25715e-12, -8, -3.49691e-07, -43.0134, 24, 75.9958)
+
+[node name="SMT_Straight16" parent="Asset Complete Office2" instance=ExtResource("14_djbcu")]
+transform = Transform3D(-456.668, 6.99382e-07, 3.0571e-14, -4.46629e-27, -3.49691e-07, 8, 3.99232e-05, 8, 3.49691e-07, -43.0134, 24, 77.9884)
 
 [node name="SMT_Straight3" parent="Asset Complete Office2" instance=ExtResource("14_djbcu")]
 transform = Transform3D(195.318, 5.61169e-14, 0, 0, -3.45221e-07, 7.89775, 5.37687e-13, -7.89775, -3.45222e-07, 4.39952, 24, 75.9958)
@@ -2917,7 +3057,7 @@ mesh = SubResource("BoxMesh_c44qg")
 shape = SubResource("ConvexPolygonShape3D_h84xn")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
-transform = Transform3D(64, 0, 0, 0, 2, 0, 0, 0, 46, -48, 23, -37)
+transform = Transform3D(64, 0, 0, 0, 2, 0, 0, 0, 45, -48, 23, -37.5)
 material_override = SubResource("StandardMaterial3D_d5qkp")
 mesh = SubResource("BoxMesh_c44qg")
 
@@ -2927,7 +3067,7 @@ mesh = SubResource("BoxMesh_c44qg")
 shape = SubResource("ConvexPolygonShape3D_7o8gk")
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
-transform = Transform3D(64, 0, 0, 0, 2, 0, 0, 0, 26, -48, 23, -1)
+transform = Transform3D(64, 0, 0, 0, 2, 0, 0, 0, 27, -48, 23, -1.5)
 material_override = ExtResource("12_phc8k")
 mesh = SubResource("BoxMesh_c44qg")
 
