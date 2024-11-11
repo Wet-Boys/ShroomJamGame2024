@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://c4mdvbepyijfp"]
+
+[ext_resource type="Shader" uid="uid://jq5xbnovrww1" path="res://Assets/Shaders/GlowShader.tres" id="1_ofb3e"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_ofb3e")

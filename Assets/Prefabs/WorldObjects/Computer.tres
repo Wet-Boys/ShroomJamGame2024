@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://demk6ufe3gavx" path="res://Assets/Scenes/Office/textures/ComputerCase_Roughness.jpg" id="2_ric7i"]
 [ext_resource type="Texture2D" uid="uid://upvubowhd42" path="res://Assets/Scenes/Office/textures/ComputerCase_Height.jpg" id="3_lp1g6"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sk3m4"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ossy6"]
 resource_name = "ComputerCase"
 cull_mode = 2
 albedo_texture = ExtResource("1_yhswo")
@@ -37,7 +37,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 234,
 "index_data": PackedByteArray("CQAMABcAfAAkAC8AIgAfAEwANAAxAF4AGgAPAGgAHAAZAEYAGAANADoAcQB1AHcAaAA1AAQAMgBoAHwALwAyAHwAeAB+AG0AVwBaAGUAUQBUAF8APwBCAE0AOQA8AEcANwBqAGQACwAOADsALgA2AGYAIwAmAFMAFgAhAE4AaQArAFgAHgATAEAAEQAUAEEAKAAzAGAAKQAsAFkAEAAbAEgAMAAlAFIAEgAdAA8ADwAdACoAbwABAHsAJAAJABcAJAB8AAkAawAFAAMAdgAKAH0ABAAgAAIABAAtACAALQAEADUAIgBMAE8AJwBoADIANABeAGEALQAdACAALQAqAB0AJwAXABoAJwAkABcAGgBoACcAEgAJAAIAEgAPAAkAFQACACAAHABGAEkAGAA6AEUAAgAVABIACQAPAAwAcQB3AGwAVwBlAGIAUQBfAFwAPwBNAEoAOQBHAEQANwBkAGcACwA7ADgALgBmAFsAIwBTAFAAFgBOAEMAaQBYAGMAHgBAAEsAEQBBAD4AKABgAFUAKQBZAFYAEABIAD0AMABSAF0AbgB6AHMAaAAEAHwADwAqAGgAAAAIAHoAfgAGAG0AdAAKAHYAeQAHAHIAawADAHAA"),
-"material": SubResource("StandardMaterial3D_sk3m4"),
+"material": SubResource("StandardMaterial3D_ossy6"),
 "name": "ComputerCase",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),

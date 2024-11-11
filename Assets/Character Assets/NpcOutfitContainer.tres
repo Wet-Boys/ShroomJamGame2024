@@ -16,7 +16,7 @@
 [ext_resource type="ArrayMesh" uid="uid://dficiu6d836kj" path="res://Assets/Character Assets/Body Parts/base person_jetsons.res" id="14_c8cts"]
 [ext_resource type="ArrayMesh" uid="uid://cagua8gdmuvk0" path="res://Assets/Character Assets/Body Parts/base person_mushroom.res" id="15_b6s2m"]
 [ext_resource type="ArrayMesh" uid="uid://cuu788exy43so" path="res://Assets/Character Assets/Body Parts/base person_plappers.res" id="16_uf6is"]
-[ext_resource type="ArrayMesh" uid="uid://djtddxhtr7b1k" path="res://Assets/Character Assets/Body Parts/base person_Roundcube.res" id="17_5cpiy"]
+[ext_resource type="ArrayMesh" uid="uid://djtddxhtr7b1k" path="res://Assets/Character Assets/Body Parts/base person_roundCube.res" id="17_5cpiy"]
 [ext_resource type="ArrayMesh" uid="uid://febtx168b4ha" path="res://Assets/Character Assets/Body Parts/base person_Sphere.res" id="18_yvrjq"]
 [ext_resource type="ArrayMesh" uid="uid://vcwh2ayg7gyo" path="res://Assets/Character Assets/Body Parts/base person_Star.res" id="19_kda0k"]
 [ext_resource type="Script" path="res://NPC/NpcOutfits.cs" id="20_c7gsa"]

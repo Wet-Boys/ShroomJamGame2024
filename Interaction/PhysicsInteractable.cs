@@ -6,6 +6,12 @@ namespace ShroomJamGame.Interaction;
 public partial class PhysicsInteractable : RigidBody3D, IInteractableObject
 {
     public bool isHeld = false;
+    public static Godot.Collections.Array<PhysicsInteractable> physicsObjects = new Godot.Collections.Array<PhysicsInteractable>();
+    public override void _Ready()
+    {
+        base._Ready();
+        physicsObjects.Add(this);
+    }
     public void Interact()
     {
         

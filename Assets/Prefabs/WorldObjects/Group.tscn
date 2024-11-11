@@ -1,4 +1,4 @@
-[gd_scene load_steps=95 format=4 uid="uid://6d18cgcfmxb"]
+[gd_scene load_steps=95 format=4 uid="uid://b4ehpusowenrb"]
 
 [ext_resource type="PackedScene" uid="uid://mfys02xva10s" path="res://Assets/Prefabs/WorldObjects/dining_table.tscn" id="1_sgy7h"]
 [ext_resource type="PackedScene" uid="uid://hf2rsb2864f0" path="res://Assets/Prefabs/WorldObjects/kitchen_chair.tscn" id="2_janrp"]

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=46 format=3 uid="uid://0g5pvwf0un12"]
+[gd_resource type="Resource" script_class="ControllerPromptSet" load_steps=46 format=3 uid="uid://0g5pvwf0un12"]
 
 [ext_resource type="Script" path="res://InputPrompts/ControllerPromptSet.cs" id="1_m68ka"]
 [ext_resource type="Script" path="res://InputPrompts/JoyButtonPromptPair.cs" id="2_joijl"]

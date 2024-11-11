@@ -1,4 +1,5 @@
 ﻿using Godot;
+using ShroomJamGame.Events;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,19 +15,27 @@ namespace ShroomJamGame.Tasks
         [Export]
         private CharacterBody3D player;
         double timer = 0;
-        public virtual void AddFetchQuest()
+        Node rootNode;
+
+        public override void _Ready()
         {
-            Tasks.Add(new PlaceItemAtPositionTask());
-            Tasks[Tasks.Count - 1].Setup(player.GetTree().Root.GetChild(0)).TaskFinished += TaskTracker_TaskFinished;
+            rootNode = GetTree().Root.GetChild(0);
+            BroadCastHandler.instance.CreateFixQuest += BroadCastHandler_CreateFixQuest;
+
+
+            DebugCommand();
         }
 
-        private void TaskTracker_TaskFinished(BaseTask task)
+        private async void DebugCommand()
         {
-            Tasks.Remove(task);
-            if (Tasks.Count == 0)
-            {
-                AddFetchQuest();
-            }
+            await ToSignal(rootNode.GetTree().CreateTimer(1.0), SceneTreeTimer.SignalName.Timeout);
+            BroadCastHandler.instance.CreateFixQuestBroadcast();
+        }
+
+        private void BroadCastHandler_CreateFixQuest()
+        {
+            Tasks.Add(new FixObjectTask());
+            Tasks.Last().Setup(rootNode).TaskFinished += TaskTracker_TaskFinished;
         }
 
         public override void _Process(double delta)
@@ -43,6 +52,22 @@ namespace ShroomJamGame.Tasks
             for (int i = 0; i < Tasks.Count; i++)
             {
                 Tasks[i].PerformTask();
+            }
+        }
+
+        private void TaskTracker_TaskFinished(BaseTask task)
+        {
+            switch (task.taskName)
+            {
+                default:
+                    Tasks.Remove(task);
+                    task.TaskFinished -= TaskTracker_TaskFinished;
+                    BroadCastHandler.instance.FinishQuestBroadcast(task.taskName);
+                    if (Tasks.Count == 0)
+                    {
+                        BroadCastHandler.instance.CreateFixQuestBroadcast();
+                    }
+                    break;
             }
         }
     }

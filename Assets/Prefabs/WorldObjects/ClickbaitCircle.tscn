@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjls78hw3ha5f"]
+
+[ext_resource type="Texture2D" uid="uid://4bupfsbtq65" path="res://Assets/Prefabs/WorldObjects/ClickbaitCircle.png" id="1_x1g68"]
+
+[node name="ClickbaitCircle" type="Node3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, 0, 0, 0)
+billboard = 1
+texture = ExtResource("1_x1g68")

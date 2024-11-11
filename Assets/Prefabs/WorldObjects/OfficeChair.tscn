@@ -1,10 +1,10 @@
 [gd_scene load_steps=5 format=3 uid="uid://sucmon0cf6k8"]
 
 [ext_resource type="Script" path="res://Interaction/PhysicsInteractable.cs" id="1_5rh6m"]
-[ext_resource type="ArrayMesh" uid="uid://fcekcfbr746h" path="res://Assets/Prefabs/WorldObjects/OfficeChair.tres" id="2_8t2rp"]
+[ext_resource type="ArrayMesh" uid="uid://bq321lq3n1lkx" path="res://Assets/Prefabs/WorldObjects/OfficeChair.tres" id="2_8t2rp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1iw7t"]
-size = Vector3(0.541504, 0.5, 0.613068)
+size = Vector3(0.574585, 0.5, 0.613068)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_frivc"]
 size = Vector3(0.412781, 0.546387, 0.118057)
@@ -13,7 +13,7 @@ size = Vector3(0.412781, 0.546387, 0.118057)
 script = ExtResource("1_5rh6m")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 2.38419e-07, 0, 1, 0, -2.38419e-07, 0, 1, -0.0158687, 0.25, 0.0143285)
+transform = Transform3D(1, 0, 2.38419e-07, 0, 1, 0, -2.38419e-07, 0, 1, 0.000671798, 0.25, 0.0143285)
 shape = SubResource("BoxShape3D_1iw7t")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]

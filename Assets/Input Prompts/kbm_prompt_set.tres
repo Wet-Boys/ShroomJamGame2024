@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=117 format=3 uid="uid://cdbg2yxvlk1t5"]
+[gd_resource type="Resource" script_class="KbmPromptSet" load_steps=117 format=3 uid="uid://cdbg2yxvlk1t5"]
 
 [ext_resource type="Script" path="res://InputPrompts/KbmPromptSet.cs" id="1_xlque"]
 [ext_resource type="Script" path="res://InputPrompts/KeyPromptPair.cs" id="2_g5py7"]
