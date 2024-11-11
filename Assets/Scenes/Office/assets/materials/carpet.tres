@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://bx605yju7u21v"]
+
+[ext_resource type="Texture2D" uid="uid://c0gmusouo8ncn" path="res://Assets/Scenes/Office/assets/materials/carpet_8244553a-6220-41b2-8fcf-b89a6ba790ef/textures/carpet_Base Color.jpg" id="1_od0s8"]
+[ext_resource type="Texture2D" uid="uid://654dniocibab" path="res://Assets/Scenes/Office/textures/carpet_Metallic.jpg" id="2_hcsl4"]
+[ext_resource type="Texture2D" uid="uid://b2b03medmhk3c" path="res://Assets/Scenes/Office/textures/carpet_Normal.jpg" id="3_ixbaj"]
+[ext_resource type="Texture2D" uid="uid://b5ocxuan1diim" path="res://Assets/Scenes/Office/assets/materials/carpet_8244553a-6220-41b2-8fcf-b89a6ba790ef/textures/carpet_Roughness.jpg" id="4_1pgae"]
+
+[resource]
+albedo_texture = ExtResource("1_od0s8")
+metallic = 1.0
+metallic_texture = ExtResource("2_hcsl4")
+roughness_texture = ExtResource("4_1pgae")
+normal_enabled = true
+normal_texture = ExtResource("3_ixbaj")
+uv1_scale = Vector3(-0.255, -0.255, -0.255)
+uv1_triplanar = true
+uv1_world_triplanar = true

@@ -1,0 +1,35 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://b6cag5ye8x1oi"
+path.s3tc="res://.godot/imported/Wood055_2K_Normal.jpg-976ca2bc05a9ccdd1bfe7b1c7bf737e9.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+
+[deps]
+
+source_file="res://Assets/Scenes/Office/assets/materials/wood_a1186eb8-a4cd-4a02-bf72-5e71b8de2bab/textures/Wood055_2K_Normal.jpg"
+dest_files=["res://.godot/imported/Wood055_2K_Normal.jpg-976ca2bc05a9ccdd1bfe7b1c7bf737e9.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=1
+roughness/src_normal="res://Assets/Scenes/Office/assets/materials/wood_a1186eb8-a4cd-4a02-bf72-5e71b8de2bab/textures/Wood055_2K_Normal.jpg"
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0
