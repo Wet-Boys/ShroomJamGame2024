@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://doely3tqxg17o"]
+
+[ext_resource type="PackedScene" uid="uid://bf0v0rjjjwc3i" path="res://Assets/Scenes/Office/assets/models/pool cue/pool cue.gltf" id="1_3e0em"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7g66k"]
+radius = 0.023448
+height = 1.28523
+
+[node name="pool cue" instance=ExtResource("1_3e0em")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Pool Cue" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pool Cue/StaticBody3D" index="0"]
+transform = Transform3D(0.00832508, -0.999965, 0, 0.999965, 0.00832508, 0, 0, 0, 1, -0.0121262, 0.0149013, 0)
+shape = SubResource("CapsuleShape3D_7g66k")

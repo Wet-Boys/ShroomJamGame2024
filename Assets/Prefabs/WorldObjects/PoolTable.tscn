@@ -1,9 +1,12 @@
-[gd_scene load_steps=50 format=4 uid="uid://dcm8nmt78ymb0"]
+[gd_scene load_steps=53 format=4 uid="uid://dcm8nmt78ymb0"]
 
 [ext_resource type="Texture2D" uid="uid://cntkh37sbp6br" path="res://Assets/Scenes/Office/textures/WoodFineDark004_COL_3K.jpg" id="1_ko21m"]
 [ext_resource type="Texture2D" uid="uid://bucf7enjxcysh" path="res://Assets/Scenes/Office/textures/WoodFineDark004_REFL_3K.jpg" id="2_bm14y"]
 [ext_resource type="Texture2D" uid="uid://ccak3dg0n38a0" path="res://Assets/Scenes/Office/textures/WoodFineDark004_NRM_3K.jpg" id="3_6jo2j"]
+[ext_resource type="Texture2D" uid="uid://cd48kbsuon1oc" path="res://Assets/Scenes/Office/assets/models/pool-table_b3dc2076-1924-42e6-ba84-d8a1b97e8fbc/textures/WoodFineDark004_COL_3K.jpg" id="4_onjtr"]
 [ext_resource type="Texture2D" uid="uid://d0vhjxvm5yjf0" path="res://Assets/Scenes/Office/textures/skaiciai.jpg" id="4_v86br"]
+[ext_resource type="Texture2D" uid="uid://cq4qpcxnt4ypn" path="res://Assets/Scenes/Office/assets/models/pool-table_b3dc2076-1924-42e6-ba84-d8a1b97e8fbc/textures/WoodFineDark004_NRM_3K.jpg" id="5_d3rft"]
+[ext_resource type="Texture2D" uid="uid://c1tbdmhfqj7dt" path="res://Assets/Scenes/Office/assets/models/pool-table_b3dc2076-1924-42e6-ba84-d8a1b97e8fbc/textures/WoodFineDark004_REFL_3K.jpg" id="6_css1b"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yr7mk"]
 resource_name = "oak wood"
@@ -20,6 +23,7 @@ normal_texture = ExtResource("3_6jo2j")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fyyf6"]
 resource_name = "table to fabric"
 cull_mode = 2
+albedo_color = Color(0, 0.366688, 0.106619, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1058m"]
 resource_name = "plastic"
@@ -41,6 +45,10 @@ metallic = 1.0
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6iv1b"]
 resource_name = "wood chery"
 cull_mode = 2
+albedo_texture = ExtResource("4_onjtr")
+roughness_texture = ExtResource("6_css1b")
+normal_enabled = true
+normal_texture = ExtResource("5_d3rft")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_da2ey"]
 _surfaces = [{

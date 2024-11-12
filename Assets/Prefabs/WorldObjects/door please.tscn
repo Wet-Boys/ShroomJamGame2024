@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bcxqch57qbcfr"]
+
+[ext_resource type="PackedScene" uid="uid://dnwtwem6m7rop" path="res://Assets/Scenes/Office/assets/models/door/door.gltf" id="1_u1mev"]
+
+[node name="door" instance=ExtResource("1_u1mev")]

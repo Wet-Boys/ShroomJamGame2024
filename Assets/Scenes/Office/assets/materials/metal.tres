@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://buafrasshjqpi"]
+
+[ext_resource type="Texture2D" uid="uid://chf6flm6bpxjj" path="res://Assets/Scenes/Office/assets/materials/light-iron_e5a409e8-17b0-4dd3-8ab5-02ec4f258db4/textures/tiled_plane_DefaultMaterial_BaseColor.jpg" id="1_4eblm"]
+[ext_resource type="Texture2D" uid="uid://dqa1yrfbaf82q" path="res://Assets/Scenes/Office/assets/materials/light-iron_e5a409e8-17b0-4dd3-8ab5-02ec4f258db4/textures/tiled_plane_DefaultMaterial_Normal.jpg" id="2_t16ej"]
+[ext_resource type="Texture2D" uid="uid://djlcj5x2wh2l5" path="res://Assets/Scenes/Office/assets/materials/light-iron_e5a409e8-17b0-4dd3-8ab5-02ec4f258db4/textures/tiled_plane_DefaultMaterial_Roughness.jpg" id="3_dw1uj"]
+
+[resource]
+albedo_texture = ExtResource("1_4eblm")
+roughness_texture = ExtResource("3_dw1uj")
+normal_enabled = true
+normal_texture = ExtResource("2_t16ej")
+uv1_triplanar = true
+uv1_world_triplanar = true

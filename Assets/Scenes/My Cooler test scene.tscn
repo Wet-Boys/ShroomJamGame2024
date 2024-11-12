@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_u2jix"]
 [ext_resource type="PackedScene" uid="uid://lkw7ko7kkqpk" path="res://Assets/Prefabs/NPC.tscn" id="6_orrfj"]
 [ext_resource type="PackedScene" uid="uid://bkh80lrmoy5cs" path="res://Assets/Scenes/Office/de_office.tscn" id="7_qe2q5"]
-[ext_resource type="PackedScene" uid="uid://4swu3uur8oxc" path="res://Assets/Prefabs/Door.tscn" id="10_hqynx"]
+[ext_resource type="PackedScene" path="res://Assets/Prefabs/Door.tscn" id="10_hqynx"]
 [ext_resource type="AudioStream" uid="uid://dy8nabc8e6dxv" path="res://Assets/Sfx/Door/Door Close.ogg" id="11_80tci"]
 
 [sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_tph6i"]
