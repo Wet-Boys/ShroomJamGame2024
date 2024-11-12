@@ -1,0 +1,14 @@
+[remap]
+
+importer="glsl"
+type="RDShaderFile"
+uid="uid://dfc38df6pmiax"
+path="res://.godot/imported/capture-frame.glsl-7271fca9dbcaab62ac05e2eedefafe64.res"
+
+[deps]
+
+source_file="res://Assets/CompositorEffects/capture-frame.glsl"
+dest_files=["res://.godot/imported/capture-frame.glsl-7271fca9dbcaab62ac05e2eedefafe64.res"]
+
+[params]
+
