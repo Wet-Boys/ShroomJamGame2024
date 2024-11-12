@@ -11,7 +11,8 @@ layout(rgba16f, set = 0, binding = 3) uniform image2D uFragOut;
 
 layout(push_constant, std430) uniform Params {
 	vec2 raster_size;
-	vec2 reserved;
+	float enable_moshing;
+	float blend;
 } params;
 
 void main() {
@@ -22,11 +23,12 @@ void main() {
 		return;
 	}
 
-    vec2 velocity = imageLoad(uVelocityTexture, uv).rg;
+    vec2 velocity = imageLoad(uVelocityTexture, uv).rg * params.enable_moshing;
     ivec2 moshedUv = uv + ivec2(velocity * vec2(size));
 
+    vec4 sceneColor = imageLoad(uSceneColorTexture, uv);
+
     if (moshedUv.x >= size.x || moshedUv.x < 0 || moshedUv.y >= size.y || moshedUv.y < 0) {
-        vec4 sceneColor = imageLoad(uSceneColorTexture, uv);
         imageStore(uCapturedFrameTexture, uv, sceneColor);
         imageStore(uFragOut, uv, sceneColor);
         return;
@@ -35,5 +37,7 @@ void main() {
     vec4 capturedFrameColor = imageLoad(uCapturedFrameTexture, moshedUv);
     imageStore(uCapturedFrameTexture, uv, capturedFrameColor);
 
-	imageStore(uFragOut, uv, capturedFrameColor);
+    vec4 resultColor = mix(sceneColor, capturedFrameColor, params.blend);
+
+	imageStore(uFragOut, uv, resultColor);
 }

@@ -75,6 +75,12 @@ public partial class DataMoshEffect : BaseCompositorEffect
             }
         }
     }
+
+    [Export]
+    public bool EnableMoshingWithVelocity = true;
+    
+    [Export(PropertyHint.Range, "0, 1")]
+    public float Blend = 1f;
     
     public override void _RenderCallback(int effectCallbackType, RenderData renderData)
     {
@@ -99,7 +105,13 @@ public partial class DataMoshEffect : BaseCompositorEffect
         var yGroups = (uint)(renderSize.Y - 1) / 8 + 1;
         const uint zGroups = 1;
         
-        var copyTextureConstants = new float[] { renderSize.X, renderSize.Y, 0, 0 }.ToByteArray();
+        var copyTextureConstants = new[]
+        {
+            renderSize.X,
+            renderSize.Y,
+            EnableMoshingWithVelocity ? 1 : 0,
+            Blend
+        }.ToByteArray();
 
         if (!sceneBuffers.HasTexture(FrameCaptureEffect.Context, FrameCaptureEffect.SceneColorName))
             throw new InvalidOperationException($"{nameof(FrameCaptureEffect)} is required!");
