@@ -125,6 +125,10 @@ namespace ShroomJamGame.Tasks
                     break;
             }
             CleanupTask(task);
+            if (Tasks.Count == 0)
+            {
+                CreateTask(new FixVendingMachineTask());
+            }
         }
 
         private void LoadNewScene(Vector3 playerPosition)
