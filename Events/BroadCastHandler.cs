@@ -1,4 +1,5 @@
 ﻿using Godot;
+using ShroomJamGame.Interaction;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,6 +30,15 @@ namespace ShroomJamGame.Events
         public void CreateFixQuestBroadcast()
         {
             EmitSignal(SignalName.CreateFixQuest);
+        }
+
+        public ProgressBarRunner CreateLoadingBarAtLocation(Node3D parent, Vector3 position, float timeToDoTask)
+        {
+            Node3D bar = ((PackedScene)GD.Load("res://Assets/Prefabs/ProgressBar/ProgressBar.tscn")).Instantiate<Node3D>();
+            parent.AddChild(bar);
+            bar.Position = position;
+            (bar as ProgressBarRunner).timeToComplete = timeToDoTask;
+            return (bar as ProgressBarRunner);
         }
     }
 }

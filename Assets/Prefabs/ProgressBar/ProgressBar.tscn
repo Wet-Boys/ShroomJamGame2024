@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=3 uid="uid://nxspfqs2bp45"]
+
+[ext_resource type="Script" path="res://Assets/Prefabs/ProgressBar/ProgressBarRunner.cs" id="1_0jukw"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_du25f"]
+viewport_path = NodePath("SubViewport")
+
+[node name="ProgressBar" type="Node3D" node_paths=PackedStringArray("sprite", "viewport", "progressBar")]
+script = ExtResource("1_0jukw")
+sprite = NodePath("Sprite3D")
+viewport = NodePath("SubViewport")
+progressBar = NodePath("SubViewport/MarginContainer/ProgressBar")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+disable_3d = true
+transparent_bg = true
+gui_disable_input = true
+size = Vector2i(130, 130)
+render_target_update_mode = 4
+
+[node name="MarginContainer2" type="MarginContainer" parent="SubViewport"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -53.0
+offset_top = -24.0
+offset_right = 53.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="SubViewport/MarginContainer2"]
+layout_mode = 2
+text = "Working..."
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="SubViewport"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -53.0
+offset_top = -48.0
+offset_right = 53.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ProgressBar" type="ProgressBar" parent="SubViewport/MarginContainer"]
+layout_mode = 2
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+billboard = 2
+texture = SubResource("ViewportTexture_du25f")
