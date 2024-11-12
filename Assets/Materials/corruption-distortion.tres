@@ -1,0 +1,12 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://blydyffs1tf5p"]
+
+[ext_resource type="Shader" uid="uid://b8g6uua0sppbs" path="res://Assets/Shaders/corruption-displacement.tres" id="1_5n3la"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_5n3la")
+shader_parameter/Pixelization = true
+shader_parameter/Pixel_Size = 20
+shader_parameter/Abberation_R_Offset = 0.009
+shader_parameter/Abberation_G_Offset = 0.006
+shader_parameter/Abberation_B_Offset = -0.006
