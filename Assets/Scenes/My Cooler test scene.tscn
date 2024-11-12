@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bqidnw2pcckwn"]
+[gd_scene load_steps=9 format=3 uid="uid://bqidnw2pcckwn"]
 
 [ext_resource type="PackedScene" uid="uid://bv7hgobt87i0x" path="res://Assets/Prefabs/Player.tscn" id="1_y5cu4"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_u2jix"]
@@ -6,9 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://bkh80lrmoy5cs" path="res://Assets/Scenes/Office/de_office.tscn" id="7_qe2q5"]
 [ext_resource type="PackedScene" uid="uid://4swu3uur8oxc" path="res://Assets/Prefabs/Door.tscn" id="10_hqynx"]
 [ext_resource type="AudioStream" uid="uid://dy8nabc8e6dxv" path="res://Assets/Sfx/Door/Door Close.ogg" id="11_80tci"]
-
-[sub_resource type="Environment" id="Environment_56lo4"]
-ambient_light_source = 1
 
 [sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_tph6i"]
 
@@ -25,7 +22,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.522051, 7.80016, 5.45681)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, -0.522051, 8.55016, 5.45681)
-environment = SubResource("Environment_56lo4")
 attributes = SubResource("CameraAttributesPhysical_tph6i")
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D"]
