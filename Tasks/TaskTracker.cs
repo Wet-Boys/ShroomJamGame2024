@@ -129,7 +129,7 @@ namespace ShroomJamGame.Tasks
 
         private void LoadNewScene(Vector3 playerPosition)
         {
-            EventHandler.instance
+            //EventHandler.instance
         }
     }
 }
