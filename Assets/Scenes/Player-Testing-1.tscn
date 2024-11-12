@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://c10b6t4qqwe1r"]
+[gd_scene load_steps=21 format=3 uid="uid://c10b6t4qqwe1r"]
 
 [ext_resource type="PackedScene" uid="uid://bv7hgobt87i0x" path="res://Assets/Prefabs/Player.tscn" id="1_f5xs7"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_5f2ps"]
@@ -7,11 +7,10 @@
 [ext_resource type="Script" path="res://Animalese/AnimaleseDialogTest.cs" id="5_mac5d"]
 [ext_resource type="PackedScene" uid="uid://bkh80lrmoy5cs" path="res://Assets/Scenes/Office/de_office.tscn" id="9_nqsce"]
 [ext_resource type="PackedScene" uid="uid://lkw7ko7kkqpk" path="res://Assets/Prefabs/NPC.tscn" id="9_yfudu"]
-[ext_resource type="PackedScene" uid="uid://4swu3uur8oxc" path="res://Assets/Prefabs/Door.tscn" id="10_5kvxw"]
+[ext_resource type="PackedScene" uid="uid://c4ty2u3kw7126" path="res://Assets/Prefabs/Door.tscn" id="10_5kvxw"]
 [ext_resource type="Script" path="res://Interaction/PhysicsInteractable.cs" id="10_iqgul"]
 [ext_resource type="VoxelGIData" uid="uid://0plyd188t1iq" path="res://Assets/Scenes/Player-Testing-1.VoxelGI_data.res" id="11_02grs"]
 [ext_resource type="LightmapGIData" uid="uid://b5i07r4nt5y2" path="res://Assets/Scenes/Player-Testing-1.lmbake" id="11_j60g3"]
-[ext_resource type="AudioStream" uid="uid://dy8nabc8e6dxv" path="res://Assets/Sfx/Door/Door Close.ogg" id="11_uqg1i"]
 [ext_resource type="Material" uid="uid://blydyffs1tf5p" path="res://Assets/Materials/corruption-distortion.tres" id="13_1585j"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_mva81"]
@@ -176,50 +175,38 @@ mesh = SubResource("SphereMesh_3r6af")
 [node name="Door" parent="." instance=ExtResource("10_5kvxw")]
 transform = Transform3D(1.5, 0, 0, 0, 3, 0, 0, 0, 0.25, -3.5, 7.5, 19.25)
 
-[node name="StaticBody3D" parent="Door" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
+[node name="StaticBody3D" parent="Door/dvere" index="0"]
+metadata/InteractableChildIndex = 1
 
-[node name="AudioStreamPlayer3D" parent="Door/StaticBody3D" index="0"]
-stream = ExtResource("11_uqg1i")
-
-[node name="DoorInteractable" parent="Door/StaticBody3D" index="3"]
-OpenDegrees = Vector3(0, -90, 0)
+[node name="DoorInteractable" parent="Door/dvere/StaticBody3D" index="1" node_paths=PackedStringArray("CollisionShape")]
+CollisionShape = NodePath("..")
 
 [node name="Door3" parent="." instance=ExtResource("10_5kvxw")]
 transform = Transform3D(-6.55671e-08, 0, 0.25, 0, 3, 0, -1.5, 0, -1.09278e-08, 0.2, 7.5, 16)
 
-[node name="StaticBody3D" parent="Door3" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
+[node name="StaticBody3D" parent="Door3/dvere" index="0"]
+metadata/InteractableChildIndex = 1
 
-[node name="AudioStreamPlayer3D" parent="Door3/StaticBody3D" index="0"]
-stream = ExtResource("11_uqg1i")
-
-[node name="DoorInteractable" parent="Door3/StaticBody3D" index="3"]
-ClosedDegrees = Vector3(0, 90, 0)
+[node name="DoorInteractable" parent="Door3/dvere/StaticBody3D" index="1" node_paths=PackedStringArray("CollisionShape")]
+CollisionShape = NodePath("..")
 
 [node name="Door4" parent="." instance=ExtResource("10_5kvxw")]
 transform = Transform3D(-6.55671e-08, 0, 0.25, 0, 3, 0, -1.5, 0, -1.09278e-08, 4.25776, 7.5, 18.5016)
 
-[node name="StaticBody3D" parent="Door4" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
+[node name="StaticBody3D" parent="Door4/dvere" index="0"]
+metadata/InteractableChildIndex = 1
 
-[node name="AudioStreamPlayer3D" parent="Door4/StaticBody3D" index="0"]
-stream = ExtResource("11_uqg1i")
-
-[node name="DoorInteractable" parent="Door4/StaticBody3D" index="3"]
-ClosedDegrees = Vector3(0, 90, 0)
+[node name="DoorInteractable" parent="Door4/dvere/StaticBody3D" index="1" node_paths=PackedStringArray("CollisionShape")]
+CollisionShape = NodePath("..")
 
 [node name="Door2" parent="." instance=ExtResource("10_5kvxw")]
 transform = Transform3D(1.5, 0, 0, 0, 3, 0, 0, 0, 0.25, -19.4944, 7.5, 19.25)
 
-[node name="StaticBody3D" parent="Door2" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
+[node name="StaticBody3D" parent="Door2/dvere" index="0"]
+metadata/InteractableChildIndex = 1
 
-[node name="AudioStreamPlayer3D" parent="Door2/StaticBody3D" index="0"]
-stream = ExtResource("11_uqg1i")
-
-[node name="DoorInteractable" parent="Door2/StaticBody3D" index="3"]
-OpenDegrees = Vector3(0, -90, 0)
+[node name="DoorInteractable" parent="Door2/dvere/StaticBody3D" index="1" node_paths=PackedStringArray("CollisionShape")]
+CollisionShape = NodePath("..")
 
 [node name="GenericCharacterBody" parent="." instance=ExtResource("9_yfudu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.34298, 7.83555, 3.893)

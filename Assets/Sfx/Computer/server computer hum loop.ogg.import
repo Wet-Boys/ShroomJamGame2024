@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c2uaqhq7sb3mq"
+path="res://.godot/imported/server computer hum loop.ogg-05788b19ceb88f34d9229ae2bff7004e.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Sfx/Computer/server computer hum loop.ogg"
+dest_files=["res://.godot/imported/server computer hum loop.ogg-05788b19ceb88f34d9229ae2bff7004e.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

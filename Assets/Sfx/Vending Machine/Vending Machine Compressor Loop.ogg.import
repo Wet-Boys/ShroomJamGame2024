@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://x45ok5yds0c4"
+path="res://.godot/imported/Vending Machine Compressor Loop.ogg-93ce47c4d3a16eac27477f48ecd7f906.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Sfx/Vending Machine/Vending Machine Compressor Loop.ogg"
+dest_files=["res://.godot/imported/Vending Machine Compressor Loop.ogg-93ce47c4d3a16eac27477f48ecd7f906.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
