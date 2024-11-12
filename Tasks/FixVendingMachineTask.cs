@@ -30,7 +30,10 @@ namespace ShroomJamGame.Tasks
 
         public override void PerformTask()
         {
-
+            if (vendingMachine.done)
+            {
+                EmitSignal(SignalName.TaskFinished, this);
+            }
         }
     }
 }

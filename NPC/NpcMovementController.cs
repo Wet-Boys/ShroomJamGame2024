@@ -32,7 +32,7 @@ namespace ShroomJamGame.NPC
         [Export]
         RayCast3D? interactionRay;
         [Export]
-        Godot.Collections.Array<Node3D> ownedItems;
+        public Godot.Collections.Array<Node3D> ownedItems;
         Godot.Collections.Array<Vector3> ownedItemsStartingPositions = new Godot.Collections.Array<Vector3>();
         Godot.Collections.Array<Vector3> ownedItemsStartingRotations = new Godot.Collections.Array<Vector3>();
         public bool freezeUntilDoneSpeaking = false;
@@ -163,17 +163,20 @@ namespace ShroomJamGame.NPC
             }
             else
             {
-                for (int i = 0; i < ownedItems.Count; i++)
+                if (ownedItems.Count != 0)
                 {
-                    if (ownedItems[i].GlobalPosition.DistanceTo(ownedItemsStartingPositions[i]) > 1)
+                    for (int i = 0; i < ownedItems.Count; i++)
                     {
-                        targetNode = ownedItems[i];
-                        SayWords($"Why did you throw my {targetNode.Name}");
-                        grabbingObject = true;
-                        return;
+                        if (ownedItems[i].GlobalPosition.DistanceTo(ownedItemsStartingPositions[i]) > 1)
+                        {
+                            targetNode = ownedItems[i];
+                            SayWords($"Why did you throw my {targetNode.Name}");
+                            grabbingObject = true;
+                            return;
+                        }
                     }
+                    targetNode = ownedItems.PickRandom();
                 }
-                targetNode = ownedItems.PickRandom();
             }
         }
 

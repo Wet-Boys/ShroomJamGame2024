@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0flng1l0c66w"]
+
+[ext_resource type="Script" path="res://ImpactSoundMaker.cs" id="1_pxi4w"]
+
+[node name="ImpactSoundMaker" type="Node3D" node_paths=PackedStringArray("soundEmitter")]
+script = ExtResource("1_pxi4w")
+soundEmitter = NodePath("AudioStreamPlayer3D")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+attenuation_model = 2
+unit_size = 1.76
