@@ -70,23 +70,66 @@ namespace ShroomJamGame.Tasks
                 Tasks[i].PerformTask();
             }
         }
-
+        private void CleanupTask(BaseTask task)
+        {
+            Tasks.Remove(task);
+            task.TaskFinished -= TaskTracker_TaskFinished;
+            tasksToControls[task].QueueFree();
+            tasksToControls.Remove(task);
+            BroadCastHandler.instance.FinishQuestBroadcast(task.taskName);
+        }
         private void TaskTracker_TaskFinished(BaseTask task)
         {
             switch (task.taskName)
             {
+                case "Greet everyone":
+                    //fix broken computer
+                    break;
+                case "Fix broken computer":
+                    //fix broken chair
+                    break;
+                case "Fix another broken computer":
+                    //fix vending machine
+                    break;
+                case "Fix the vending machine":
+                    //after time, cut to next day, then fix boss's toilet
+                    break;
+                case "Fix smart toilet":
+                    //wash hands
+                    break;
+                case "Wash yo hands":
+                    //talk to manager
+                    break;
+                case "The sink seems to be broken, alert the manager":
+                    //show sink (urinal)
+                    break;
+                case "Show him the sink":
+                    //actually wash hands
+                    break;
+                case "Please wash your hands":
+                    //fix computer
+                    break;
+                case "Fix computer":
+                    //fix toilet (cut to next day)
+                    break;
+                case "Fix toilet":
+                    //task to fix HR computer
+                    break;
+                case "Fix HR computer":
+                    //task to microwave food (next day)
+                    break;
+                case "Make food":
+                    //various tasks followed by "crash" and credits
+                    break;
                 default:
-                    Tasks.Remove(task);
-                    task.TaskFinished -= TaskTracker_TaskFinished;
-                    tasksToControls[task].QueueFree();
-                    tasksToControls.Remove(task);
-                    BroadCastHandler.instance.FinishQuestBroadcast(task.taskName);
-                    if (Tasks.Count == 0)
-                    {
-                        BroadCastHandler.instance.CreateFixQuestBroadcast();
-                    }
                     break;
             }
+            CleanupTask(task);
+        }
+
+        private void LoadNewScene(Vector3 playerPosition)
+        {
+            EventHandler.instance
         }
     }
 }

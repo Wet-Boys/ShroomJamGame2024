@@ -10,6 +10,7 @@ namespace ShroomJamGame.Events
 {
     [GlobalClass]
     public partial class BroadCastHandler : Node //godot doesn't have broadcastmessage like Unity does, cry about it.
+        //this is just a global function class now lmao
     {
         public static BroadCastHandler instance;
         public override void _Ready()

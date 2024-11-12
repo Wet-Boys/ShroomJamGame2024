@@ -31,6 +31,7 @@ transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0, 0.7
 
 [node name="RayCast3D" type="RayCast3D" parent="Head"]
 target_position = Vector3(0, 0, -4)
+collision_mask = 5
 
 [node name="StepHelper" type="Node3D" parent="." node_paths=PackedStringArray("PlayerBody", "_stepShapeCast", "_clearanceShapeCast")]
 script = ExtResource("2_7fi1s")

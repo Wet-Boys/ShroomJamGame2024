@@ -17,10 +17,18 @@ namespace ShroomJamGame.Tasks
             foreach (var item in NpcMovementController.npcs)
             {
                 peopleToTalkTo.Add(item);
+                item.interactionComponent.isInteractable = true;
+                item.interactionComponent.InteractedWith += InteractionComponent_InteractedWith;
                 BroadCastHandler.instance.HighlightObject(item._visualController.skeleton);
             }
             taskName = "Greet everyone";
             return base.Setup(worldRoot);
+        }
+
+        private void InteractionComponent_InteractedWith(NpcMovementController itsme)
+        {
+            BroadCastHandler.instance.UnHighlightObject(itsme._visualController.skeleton);
+            peopleToTalkTo.Remove(itsme);
         }
 
         public override void PerformTask()

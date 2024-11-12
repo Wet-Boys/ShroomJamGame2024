@@ -24,7 +24,7 @@ namespace ShroomJamGame.NPC
         [Export]
         private Vector3 targetPosition;
         [Export]
-        private CharacterBody3D? characterBody3D;
+        public CharacterBody3D? characterBody3D;
         [Export]
         private NavigationAgent3D? _navigationAgent;
         [Export]
@@ -54,10 +54,13 @@ namespace ShroomJamGame.NPC
         [Export]
         SubViewport speechBubbleViewPort;
         [Export]
-        private AnimalesePlayer3D? AnimalesePlayer;
+        public AnimalesePlayer3D? AnimalesePlayer;
         private double stuckTimer = 0;
         private int stuckCount = 0;
         private Vector3 prevPathPosition = Vector3.Zero;
+        [Export]
+        public NpcInteractable interactionComponent;
+        public bool onlyLookAtPlayer = false;
         public void SayWords(string whatToSay)
         {
             if (AnimalesePlayer is null || speechBubbleText is null)
@@ -150,9 +153,13 @@ namespace ShroomJamGame.NPC
                 decideTimer = 0;
             }
         }
+        public bool IsDoingStuff()
+        {
+            return grabbingObject || placingObject || freezeUntilDoneSpeaking;
+        }
         private void DecideTime()
         {
-            if (!reachedTarget || grabbingObject || placingObject || freezeUntilDoneSpeaking)
+            if (!reachedTarget || IsDoingStuff())
             {
                 return;
             }
@@ -226,51 +233,50 @@ namespace ShroomJamGame.NPC
 
         public override void _PhysicsProcess(double delta)
         {
-            if (!freezeUntilDoneSpeaking)
+            if (IsInstanceValid(targetNode) && oldTargetPos != targetNode.GlobalPosition)
             {
-                if (IsInstanceValid(targetNode) && oldTargetPos != targetNode.GlobalPosition)
-                {
-                    oldTargetPos = targetNode.GlobalPosition;
-                    _SetTargetPosition(oldTargetPos);
-                }
-                float distanceToTarget = _navigationAgent.DistanceToTarget();
-                Vector3 nextPathPosition = _navigationAgent.GetNextPathPosition();
-                if (distanceToTarget < 2)
-                {
-                    ReachTarget();
-                }
-                if (_navigationAgent.IsNavigationFinished())
-                {
-                    ReachTarget();
-                    _characterMovementController.InputMovement = new Vector2(0, 0);
-                    return;
-                }
-                else if (nextPathPosition == prevPathPosition)
-                {
-                    stuckTimer += delta;
-                    if (stuckTimer > 1)
-                    {
-                        stuckTimer = 0;
-                        stuckCount++;
-                        if (IsInstanceValid(targetNode))
-                        {
-                            _SetTargetPosition(targetNode.GlobalPosition);
-                        }
-                    }
-                    if (stuckCount > 5)
-                    {
-                        ReachTarget();
-                    }
-                }
-                prevPathPosition = nextPathPosition;
-                Quaternion currentYRot = characterBody3D.Quaternion;
-                characterBody3D.LookAt(nextPathPosition);
-                characterBody3D.RotationDegrees = new Vector3(0, characterBody3D.RotationDegrees.Y + 180, 0);
-                Quaternion newYRot = characterBody3D.Quaternion;
-                characterBody3D.Quaternion = currentYRot.Slerp(newYRot, (float)delta * 8);
-                _characterMovementController.InputMovement = new Vector2(0, 1);
+                oldTargetPos = targetNode.GlobalPosition;
+                _SetTargetPosition(oldTargetPos);
             }
-            if (freezeUntilDoneSpeaking)
+            float distanceToTarget = _navigationAgent.DistanceToTarget();
+            Vector3 nextPathPosition = _navigationAgent.GetNextPathPosition();
+            if (distanceToTarget < 2)
+            {
+                ReachTarget();
+            }
+            if (_navigationAgent.IsNavigationFinished())
+            {
+                ReachTarget();
+                _characterMovementController.InputMovement = new Vector2(0, 0);
+                return;
+            }
+            else if (nextPathPosition == prevPathPosition)
+            {
+                stuckTimer += delta;
+                if (stuckTimer > 1)
+                {
+                    stuckTimer = 0;
+                    stuckCount++;
+                    if (IsInstanceValid(targetNode))
+                    {
+                        _SetTargetPosition(targetNode.GlobalPosition);
+                    }
+                }
+                if (stuckCount > 5)
+                {
+                    ReachTarget();
+                }
+            }
+            prevPathPosition = nextPathPosition;
+
+            Quaternion currentYRot = characterBody3D.Quaternion;
+            characterBody3D.LookAt(onlyLookAtPlayer ? TaskTracker.instance.player.GlobalPosition : nextPathPosition);
+            characterBody3D.RotationDegrees = new Vector3(0, characterBody3D.RotationDegrees.Y + 180, 0);
+            Quaternion newYRot = characterBody3D.Quaternion;
+            characterBody3D.Quaternion = currentYRot.Slerp(newYRot, (float)delta * 8);
+
+            _characterMovementController.InputMovement = new Vector2(0, 1);
+            if (freezeUntilDoneSpeaking || onlyLookAtPlayer)
             {
                 _characterMovementController.InputMovement = new Vector2(0, 0);
             }

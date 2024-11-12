@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://lkw7ko7kkqpk"]
+[gd_scene load_steps=12 format=3 uid="uid://lkw7ko7kkqpk"]
 
 [ext_resource type="PackedScene" uid="uid://ct5gfq2sqqps7" path="res://Assets/Prefabs/GenericCharacterBody.tscn" id="1_qxxhq"]
 [ext_resource type="Script" path="res://NPC/NpcMovementController.cs" id="2_272a2"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ceb786quhxbuv" path="res://Assets/Character Assets/base_person.tscn" id="4_d4pih"]
 [ext_resource type="PackedScene" uid="uid://3uwdy68ldbhd" path="res://Assets/Prefabs/animalese_player_3d.tscn" id="5_1nscl"]
 [ext_resource type="PackedScene" uid="uid://ljehdkywvla2" path="res://Assets/Prefabs/SpeechBubbles/SpeechBubble.tscn" id="5_nuck4"]
+[ext_resource type="Script" path="res://Interaction/NpcInteractable.cs" id="7_5ax68"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_mva81"]
 height = 2.25
@@ -19,12 +20,13 @@ material = ExtResource("2_glad6")
 viewport_path = NodePath("SubViewport")
 
 [node name="GenericCharacterBody" instance=ExtResource("1_qxxhq")]
+metadata/InteractableChildIndex = 11
 
 [node name="CharacterMovementController" parent="." index="0"]
 _moveSpeed = 40.0
 _maxSpeed = 400.0
 
-[node name="NpcMovementController" type="Node" parent="." index="1" node_paths=PackedStringArray("_characterMovementController", "characterBody3D", "_navigationAgent", "_visualController", "interactionRay", "ownedItems", "speechBubbleNode", "speechBubbleText", "speechBubbleSprite", "speechBubbleViewPort", "AnimalesePlayer")]
+[node name="NpcMovementController" type="Node" parent="." index="1" node_paths=PackedStringArray("_characterMovementController", "characterBody3D", "_navigationAgent", "_visualController", "interactionRay", "ownedItems", "speechBubbleNode", "speechBubbleText", "speechBubbleSprite", "speechBubbleViewPort", "AnimalesePlayer", "interactionComponent")]
 script = ExtResource("2_272a2")
 _characterMovementController = NodePath("../CharacterMovementController")
 characterBody3D = NodePath("..")
@@ -37,6 +39,7 @@ speechBubbleText = NodePath("../SpeechBubble/SubViewport/MarginContainer/MarginC
 speechBubbleSprite = NodePath("../SpeechBubble/Sprite3D")
 speechBubbleViewPort = NodePath("../SpeechBubble/SubViewport")
 AnimalesePlayer = NodePath("../AnimalesePlayer3D")
+interactionComponent = NodePath("../NpcInteractable")
 
 [node name="Head" parent="." index="2"]
 transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0, 0.875, 0)
@@ -83,5 +86,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.99116, 0)
 
 [node name="Sprite3D" parent="SpeechBubble" index="1"]
 texture = SubResource("ViewportTexture_5xsnv")
+
+[node name="NpcInteractable" type="Node" parent="." index="11" node_paths=PackedStringArray("npcController", "CollisionShape")]
+script = ExtResource("7_5ax68")
+npcController = NodePath("../NpcMovementController")
+CollisionShape = NodePath("..")
 
 [editable path="SpeechBubble"]
