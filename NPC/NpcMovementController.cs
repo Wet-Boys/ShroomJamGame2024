@@ -81,7 +81,7 @@ namespace ShroomJamGame.NPC
             speechBubbleText.Text = content;
             speechBubbleNode.Visible = content != "";
         }
-        private void _SetTargetPosition(Vector3 position)
+        public void _SetTargetPosition(Vector3 position)
         {
             targetPosition = position;
             reachedTarget = false;
@@ -115,9 +115,12 @@ namespace ShroomJamGame.NPC
         }
         private async void DoneTalking()
         {
-            await ToSignal(this.GetTree().CreateTimer(3.0), SceneTreeTimer.SignalName.Timeout);
-            freezeUntilDoneSpeaking = false;
-            SayWords("");
+            await ToSignal(this.GetTree().CreateTimer(1), SceneTreeTimer.SignalName.Timeout);
+            if (!AnimalesePlayer.isSpeaking)
+            {
+                freezeUntilDoneSpeaking = false;
+                SayWords("");
+            }
         }
 
         public override void _ExitTree()
@@ -313,12 +316,14 @@ namespace ShroomJamGame.NPC
         }
         public void STOP()
         {
+            waiting = false;
             ReachTarget();
             stuckCount = 5;
             stuckTimer = .75f;
         }
         public void GoToPositionAndSayWords(Vector3 position, string words)
         {
+            waiting = false;
             needToGoTo.Add(position);
             needToSay.Add(words);
         }

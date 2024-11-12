@@ -62,4 +62,5 @@ texture = ExtResource("2_d8eux")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 billboard = 2
+no_depth_test = true
 texture = SubResource("ViewportTexture_dqcwe")
