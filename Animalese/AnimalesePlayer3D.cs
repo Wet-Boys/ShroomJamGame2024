@@ -29,6 +29,7 @@ public partial class AnimalesePlayer3D : AudioStreamPlayer3D
     
     private readonly Queue<SoundSymbol> _remainingSounds = new();
     private readonly RandomNumberGenerator _rng = new();
+    public bool isSpeaking = false;
 
     public void PlayText(string text)
     {
@@ -40,8 +41,8 @@ public partial class AnimalesePlayer3D : AudioStreamPlayer3D
     {
         if (SoundSet is null)
             return;
-        
-        if (_remainingSounds.Count <= 0)
+        isSpeaking = _remainingSounds.Count > 0;
+        if (!isSpeaking)
         {
             EmitSignal(SignalName.FinishedPlaying);
             return;

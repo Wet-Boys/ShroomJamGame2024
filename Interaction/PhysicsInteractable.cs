@@ -1,5 +1,7 @@
 using Godot;
 using ShroomJamGame.NPC;
+using System;
+using System.Collections.Generic;
 
 namespace ShroomJamGame.Interaction;
 
@@ -8,6 +10,10 @@ public partial class PhysicsInteractable : RigidBody3D, IInteractableObject
 {
     public bool isHeld = false;
     public NpcMovementController owner;
+    public bool holdable = true;
+    public string nonHoldableText = "";
+    public Func<PhysicsInteractable, int> interactionFunction = null;
+    public ProgressBarRunner progressBar;
     public static Godot.Collections.Array<PhysicsInteractable> physicsObjects = new Godot.Collections.Array<PhysicsInteractable>();
     public override void _Ready()
     {
@@ -21,12 +27,19 @@ public partial class PhysicsInteractable : RigidBody3D, IInteractableObject
     }
     public void Interact()
     {
-        
+        if (interactionFunction is not null)
+        {
+            interactionFunction(this);
+        }
     }
 
     public string GetOnHoverText()
     {
-        return $"Press `{Controls.Instance.Interact.GetOsHumanReadableKeyLabel()}` to pick up";
+        if (holdable)
+        {
+            return $"Press `{Controls.Instance.Interact.GetOsHumanReadableKeyLabel()}` to pick up";
+        }
+        return nonHoldableText;
     }
 
     public string GetHeldHoverText()

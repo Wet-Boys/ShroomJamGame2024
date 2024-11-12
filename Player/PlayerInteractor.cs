@@ -184,7 +184,7 @@ public partial class PlayerInteractor : Node3D
             return;
         }
         
-        if (_currentTarget is PhysicsInteractable physicsObject)
+        if (_currentTarget is PhysicsInteractable physicsObject && physicsObject.holdable)
         {
             _heldObject = physicsObject;
             _heldObject.isHeld = true;

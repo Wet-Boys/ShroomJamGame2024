@@ -64,6 +64,10 @@ namespace ShroomJamGame.Tasks
                 timer = 0;
                 CheckAllTasks();
             }
+            if (lowerBlend && DataMoshEffect.Instance.Blend > 0)
+            {
+                DataMoshEffect.Instance.Blend -= (float)delta * .2f;
+            }
         }
         public void CheckAllTasks()
         {
@@ -133,13 +137,22 @@ namespace ShroomJamGame.Tasks
         {
             LoadNewScene(new Vector3(-0.174f, 7.8f, -2.107f));
         }
+        bool lowerBlend = false;
         private async void LoadNewScene(Vector3 playerPosition)
         {
             FrameCaptureEffect.CaptureNextFrame = true;
             DataMoshEffect.Instance.Enabled = true;
-            await ToSignal(this.GetTree().CreateTimer(2f), SceneTreeTimer.SignalName.Timeout);
+            lowerBlend = false;
+            DataMoshEffect.Instance.Blend = 1;
+            await ToSignal(this.GetTree().CreateTimer(5f), SceneTreeTimer.SignalName.Timeout);
+            DataMoshEffect.Instance.EnableMoshingWithVelocity = false;
             player.GlobalPosition = new Vector3(playerPosition.X, player.GlobalPosition.Y, playerPosition.Z);
+            await ToSignal(this.GetTree().CreateTimer(.1f), SceneTreeTimer.SignalName.Timeout);
+            DataMoshEffect.Instance.EnableMoshingWithVelocity = true;
             await ToSignal(this.GetTree().CreateTimer(2f), SceneTreeTimer.SignalName.Timeout);
+            lowerBlend = true;
+            await ToSignal(this.GetTree().CreateTimer(5f), SceneTreeTimer.SignalName.Timeout);
+            lowerBlend = false;
             DataMoshEffect.Instance.Enabled = false;
         }
     }
