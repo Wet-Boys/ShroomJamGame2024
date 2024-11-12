@@ -1,4 +1,5 @@
 ﻿using Godot;
+using ShroomJamGame.Events;
 using ShroomJamGame.Interaction;
 using System;
 using System.Collections.Generic;
@@ -25,20 +26,7 @@ namespace ShroomJamGame.Tasks
             circle = ((PackedScene)GD.Load("res://Assets/Prefabs/WorldObjects/ClickbaitCircle.tscn")).Instantiate<Node3D>();
             target.AddChild(circle);
             circle.Position = Vector3.Zero;
-            int childCount = target.GetChildren().Count;
-            for (int i = 0; i < childCount; i++)
-            {
-                if (target.GetChildren()[i] is MeshInstance3D mesh)
-                {
-                    meshInstances.Add(mesh.Duplicate() as MeshInstance3D);
-                    target.AddChild(meshInstances.Last());
-                    for (int x = 0; x < meshInstances.Last().Mesh.GetSurfaceCount(); x++)
-                    {
-                        meshInstances.Last().Mesh = (Mesh)meshInstances.Last().Mesh.Duplicate();
-                        meshInstances.Last().Mesh.SurfaceSetMaterial(x, (Material)GD.Load("res://Assets/Shaders/GlowMaterial.tres"));
-                    }
-                }
-            }
+            BroadCastHandler.instance.HighlightObject(target);
             originalPosition = target.GlobalPosition;
             placementPosition = new Vector3(-2.85f, 7.48f, -3.72f);
             taskName = "Take object to your work station";
@@ -62,10 +50,7 @@ namespace ShroomJamGame.Tasks
                 }
                 else
                 {
-                    foreach (var item in meshInstances)
-                    {
-                        item.QueueFree();
-                    }
+                    BroadCastHandler.instance.UnHighlightObject(target);
                     circle.QueueFree();
                     EmitSignal(SignalName.TaskFinished, this);
                 }

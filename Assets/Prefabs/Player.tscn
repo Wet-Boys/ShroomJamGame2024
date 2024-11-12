@@ -70,9 +70,10 @@ _playerHead = NodePath("..")
 [node name="PauseUi" parent="PauseMenu" index="0"]
 visible = false
 
-[node name="TaskTracker" type="Node" parent="." index="9" node_paths=PackedStringArray("player")]
+[node name="TaskTracker" type="Node" parent="." index="9" node_paths=PackedStringArray("player", "HUD")]
 script = ExtResource("10_sul16")
 player = NodePath("..")
+HUD = NodePath("../GeneralHud")
 
 [editable path="GeneralHud"]
 [editable path="PauseMenu"]

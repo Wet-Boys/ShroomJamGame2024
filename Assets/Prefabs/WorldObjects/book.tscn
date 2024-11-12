@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0cwjs6xlba6b"]
+
+[ext_resource type="Script" path="res://Interaction/PhysicsInteractable.cs" id="1_l0g1v"]
+[ext_resource type="ArrayMesh" uid="uid://dk85vy3c3gxhw" path="res://Assets/Prefabs/WorldObjects/book.tres" id="2_trjj0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f5luk"]
+size = Vector3(0.260376, 0.0280762, 0.20105)
+
+[node name="BOOK" type="RigidBody3D"]
+script = ExtResource("1_l0g1v")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.384433, -1.17252, 0)
+mesh = ExtResource("2_trjj0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.968718, 0, 0.248166, 0, 1, 0, -0.248166, 0, 0.968718, 0.00889212, 0.00360036, 0.126524)
+shape = SubResource("BoxShape3D_f5luk")

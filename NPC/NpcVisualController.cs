@@ -15,6 +15,8 @@ namespace ShroomJamGame.NPC
         NpcOutfitController outfitController;
         [Export]
         AnimationTree animationTree;
+        [Export]
+        public Skeleton3D skeleton;
 
         public void Interact()
         {
