@@ -25,6 +25,12 @@ namespace ShroomJamGame
             body.ContactMonitor = true;
             body.MaxContactsReported = 1;
             body.BodyEntered += Body_BodyEntered;
+            soundEmitter.Finished += SoundEmitter_Finished;
+        }
+
+        private void SoundEmitter_Finished()
+        {
+            canPlay = true;
         }
 
         private void Body_BodyEntered(Node body)
@@ -34,15 +40,6 @@ namespace ShroomJamGame
                 soundEmitter.Stream = impactSound;
                 soundEmitter.Play();
                 canPlay = false;
-            }
-        }
-        public override void _Process(double delta)
-        {
-            currentCooldown += delta;
-            if (currentCooldown > cooldownTime)
-            {
-                currentCooldown = 0;
-                canPlay = true;
             }
         }
     }
