@@ -24,9 +24,9 @@ namespace ShroomJamGame.NPC
         }
         public void SetAnimationTreeState(float velocity, bool holding)
         {
-            animationTree.Set("parameters/Transition/transition_request", velocity == 0 ? "Idle" : "Walk");
+            animationTree.Set("parameters/Transition/transition_request", velocity < .01f ? "Idle" : "Walk");
             animationTree.Set("parameters/HoldWalk/blend_amount", holding ? "1" : "0");
-            animationTree.Set("parameters/currentWalkingSpeed/scale", velocity * 4);
+            animationTree.Set("parameters/currentWalkingSpeed/scale", velocity * 1.5f);
         }
         public void RandomizeOutfit()
         {

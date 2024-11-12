@@ -20,9 +20,8 @@ public partial class NpcInteractable : Interactable
     {
         if (isInteractable && !npcController.IsDoingStuff())
         {
+            BroadCastHandler.instance.StopNPCAndSpeak(npcController, introductions.PickRandom());
             isInteractable = false;
-            npcController.onlyLookAtPlayer = true;
-            npcController.GoToPositionAndSayWords(npcController.characterBody3D.GlobalPosition, introductions.PickRandom());
             EmitSignal(SignalName.InteractedWith, npcController);
             npcController.AnimalesePlayer.FinishedPlaying += AnimalesePlayer_FinishedPlaying;
         }

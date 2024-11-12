@@ -1,5 +1,6 @@
 ﻿using Godot;
 using ShroomJamGame.Interaction;
+using ShroomJamGame.NPC;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -72,6 +73,20 @@ namespace ShroomJamGame.Events
                 item.QueueFree();
             }
             glowyObjects.Remove(obj);
+        }
+
+
+        [Signal]
+        public delegate void Day1FinishedEventHandler();
+        public void FinishDay1()
+        {
+            EmitSignal(SignalName.Day1Finished);
+        }
+        public void StopNPCAndSpeak(NpcMovementController npcController, string whatToSay)
+        {
+            npcController.STOP();
+            npcController.onlyLookAtPlayer = true;
+            npcController.GoToPositionAndSayWords(npcController.characterBody3D.GlobalPosition, whatToSay);
         }
     }
 }

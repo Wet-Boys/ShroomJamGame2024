@@ -29,6 +29,10 @@ namespace ShroomJamGame.Tasks
         {
             BroadCastHandler.instance.UnHighlightObject(itsme._visualController.skeleton);
             peopleToTalkTo.Remove(itsme);
+            if (peopleToTalkTo.Count == 0)TODO designate a normal NPC and have them only highlight now to make sure the flow works
+            {
+                (TaskTracker.instance.CreateTask(new PlugInComputerTask()) as PlugInComputerTask).SetupForReal(itsme);
+            }
         }
 
         public override void PerformTask()

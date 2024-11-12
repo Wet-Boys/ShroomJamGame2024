@@ -1,10 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://dd0uid4dhunk5"]
+[gd_scene load_steps=9 format=3 uid="uid://dd0uid4dhunk5"]
 
 [ext_resource type="PackedScene" uid="uid://bv7hgobt87i0x" path="res://Assets/Prefabs/Player.tscn" id="1_5e5w6"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_xwnke"]
 [ext_resource type="PackedScene" uid="uid://bkh80lrmoy5cs" path="res://Assets/Scenes/Office/de_office.tscn" id="3_dn84n"]
-[ext_resource type="PackedScene" uid="uid://4swu3uur8oxc" path="res://Assets/Prefabs/Door.tscn" id="4_vr3q7"]
-[ext_resource type="AudioStream" uid="uid://dy8nabc8e6dxv" path="res://Assets/Sfx/Door/Door Close.ogg" id="5_1bb1r"]
+[ext_resource type="PackedScene" uid="uid://c4ty2u3kw7126" path="res://Assets/Prefabs/Door.tscn" id="4_vr3q7"]
 [ext_resource type="PackedScene" uid="uid://lkw7ko7kkqpk" path="res://Assets/Prefabs/NPC.tscn" id="6_cyjk6"]
 
 [sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_tph6i"]
@@ -21,10 +20,10 @@ viewport_path = NodePath("SubViewport")
 [node name="Player-testing-1" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("1_5e5w6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.42438, 7.80016, 1.30462)
+transform = Transform3D(-0.0910324, 0, -0.995848, 0, 1, 0, 0.995848, 0, -0.0910324, 13.8433, 7.53554, 12.2651)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 8.42438, 8.55016, 1.30462)
+transform = Transform3D(0.0910325, 0, 0.995848, 0, 1, 0, -0.995848, 0, 0.0910325, 13.8433, 8.28555, 12.2651)
 attributes = SubResource("CameraAttributesPhysical_tph6i")
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D"]
@@ -48,38 +47,29 @@ transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
 [node name="Door" parent="." instance=ExtResource("4_vr3q7")]
 transform = Transform3D(1.5, 0, 0, 0, 3, 0, 0, 0, 0.25, -3.5, 7.5, 19.25)
 
-[node name="StaticBody3D" parent="Door" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
+[node name="StaticBody3D" parent="Door/dvere" index="0"]
+metadata/InteractableChildIndex = 1
 
-[node name="AudioStreamPlayer3D" parent="Door/StaticBody3D" index="0"]
-stream = ExtResource("5_1bb1r")
-
-[node name="DoorInteractable" parent="Door/StaticBody3D" index="3"]
-OpenDegrees = Vector3(0, -90, 0)
+[node name="DoorInteractable" parent="Door/dvere/StaticBody3D" index="1" node_paths=PackedStringArray("CollisionShape")]
+CollisionShape = NodePath("..")
 
 [node name="Door4" parent="." instance=ExtResource("4_vr3q7")]
 transform = Transform3D(-6.55671e-08, 0, 0.25, 0, 3, 0, -1.5, 0, -1.09278e-08, 4.25776, 7.5, 18.5016)
 
-[node name="StaticBody3D" parent="Door4" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
+[node name="StaticBody3D" parent="Door4/dvere" index="0"]
+metadata/InteractableChildIndex = 1
 
-[node name="AudioStreamPlayer3D" parent="Door4/StaticBody3D" index="0"]
-stream = ExtResource("5_1bb1r")
-
-[node name="DoorInteractable" parent="Door4/StaticBody3D" index="3"]
-ClosedDegrees = Vector3(0, 90, 0)
+[node name="DoorInteractable" parent="Door4/dvere/StaticBody3D" index="1" node_paths=PackedStringArray("CollisionShape")]
+CollisionShape = NodePath("..")
 
 [node name="Door2" parent="." instance=ExtResource("4_vr3q7")]
 transform = Transform3D(1.5, 0, 0, 0, 3, 0, 0, 0, 0.25, -19.4944, 7.5, 19.25)
 
-[node name="StaticBody3D" parent="Door2" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
+[node name="StaticBody3D" parent="Door2/dvere" index="0"]
+metadata/InteractableChildIndex = 1
 
-[node name="AudioStreamPlayer3D" parent="Door2/StaticBody3D" index="0"]
-stream = ExtResource("5_1bb1r")
-
-[node name="DoorInteractable" parent="Door2/StaticBody3D" index="3"]
-OpenDegrees = Vector3(0, -90, 0)
+[node name="DoorInteractable" parent="Door2/dvere/StaticBody3D" index="1" node_paths=PackedStringArray("CollisionShape")]
+CollisionShape = NodePath("..")
 
 [node name="Janitor" parent="." instance=ExtResource("6_cyjk6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2232, 7.87558, -6.83438)

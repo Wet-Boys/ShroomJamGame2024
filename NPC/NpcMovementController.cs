@@ -33,9 +33,11 @@ namespace ShroomJamGame.NPC
         RayCast3D? interactionRay;
         [Export]
         public Godot.Collections.Array<Node3D> ownedItems;
-        Godot.Collections.Array<Vector3> ownedItemsStartingPositions = new Godot.Collections.Array<Vector3>();
-        Godot.Collections.Array<Vector3> ownedItemsStartingRotations = new Godot.Collections.Array<Vector3>();
+        public Godot.Collections.Array<Vector3> ownedItemsStartingPositions = new Godot.Collections.Array<Vector3>();
+        public Godot.Collections.Array<Vector3> ownedItemsStartingRotations = new Godot.Collections.Array<Vector3>();
         public bool freezeUntilDoneSpeaking = false;
+        public bool waiting = false;
+        public bool waitAtNextDestination = false;
         public Godot.Collections.Array<Vector3> needToGoTo = new Godot.Collections.Array<Vector3>();
         public Godot.Collections.Array<string> needToSay = new Godot.Collections.Array<string>();
         private bool grabbingObject = false;
@@ -44,7 +46,7 @@ namespace ShroomJamGame.NPC
         private Node3D heldObject;
         double decideTimer = 0;
         [Signal]
-        public delegate void ReachedDestinationEventHandler();
+        public delegate void ReachedDestinationEventHandler(bool needToSaySomething, string thingToSay);
         [Export]
         Node3D speechBubbleNode;
         [Export]
@@ -55,8 +57,8 @@ namespace ShroomJamGame.NPC
         SubViewport speechBubbleViewPort;
         [Export]
         public AnimalesePlayer3D? AnimalesePlayer;
-        private double stuckTimer = 0;
-        private int stuckCount = 0;
+        public double stuckTimer = 0;
+        public int stuckCount = 0;
         private Vector3 prevPathPosition = Vector3.Zero;
         [Export]
         public NpcInteractable interactionComponent;
@@ -84,6 +86,7 @@ namespace ShroomJamGame.NPC
             targetPosition = position;
             reachedTarget = false;
             _navigationAgent.TargetPosition = position;
+            waiting = false;
         }
         private Vector3 oldTargetPos = Vector3.Zero;
         public override void _Ready()
@@ -142,10 +145,9 @@ namespace ShroomJamGame.NPC
         {
             SetSpeechBubble(speechBubbleText.Text + chars);
         }
-
         public override void _Process(double delta)
         {
-            _visualController.SetAnimationTreeState(characterBody3D.Velocity.Normalized().Length(), false);
+            _visualController.SetAnimationTreeState(characterBody3D.Velocity.Length(), false);
             decideTimer += delta;
             if (decideTimer > 2)
             {
@@ -155,7 +157,7 @@ namespace ShroomJamGame.NPC
         }
         public bool IsDoingStuff()
         {
-            return grabbingObject || placingObject || freezeUntilDoneSpeaking;
+            return grabbingObject || placingObject || freezeUntilDoneSpeaking || waiting;
         }
         private void DecideTime()
         {
@@ -190,8 +192,11 @@ namespace ShroomJamGame.NPC
                 }
             }
         }
-
-        private void NpcMovementController_ReachedDestination()
+        private bool CanBeGrabbed(PhysicsInteractable physicsInteractable)
+        {
+            return !physicsInteractable.isHeld && !physicsInteractable.Freeze;
+        }
+        private void NpcMovementController_ReachedDestination(bool needToSaySomething, string thing)
         {
             if (placingObject && IsInstanceValid(heldObject) && (heldObject is PhysicsInteractable physicsObject))
             {
@@ -204,7 +209,7 @@ namespace ShroomJamGame.NPC
                 _visualController.Interact();
                 SayWords($"");
             }
-            if (grabbingObject && IsInstanceValid(targetNode) && (targetNode is PhysicsInteractable physicsObject2) && !physicsObject2.isHeld)
+            if (grabbingObject && IsInstanceValid(targetNode) && (targetNode is PhysicsInteractable physicsObject2) && CanBeGrabbed(physicsObject2))
             {
                 grabbingObject = false;
                 placingObject = true;
@@ -217,13 +222,13 @@ namespace ShroomJamGame.NPC
                 _visualController.Interact();
                 SayWords($"Let me put it back");
             }
-            if (needToGoTo.Count() != 0 && needToGoTo.Count() == needToSay.Count())
+            if (needToGoTo.Count() != 0 && !needToSaySomething)
             {
                 _SetTargetPosition(needToGoTo.First());
                 needToGoTo.RemoveAt(0);
                 targetNode = null;
             }
-            else if (needToSay.Count() != 0)
+            else if (needToSaySomething)
             {
                 freezeUntilDoneSpeaking = true;
                 SayWords(needToSay.First());
@@ -293,14 +298,24 @@ namespace ShroomJamGame.NPC
                 }
             }
         }
-        private void ReachTarget()
+        public void ReachTarget()
         {
             if (!reachedTarget)
             {
+                if (waitAtNextDestination)
+                {
+                    waiting = true;
+                }
                 stuckCount = 0;
                 reachedTarget = true;
-                EmitSignal(SignalName.ReachedDestination);
+                EmitSignal(SignalName.ReachedDestination, needToGoTo.Count < needToSay.Count, needToSay.Count > 0 ? needToSay.First() : "");
             }
+        }
+        public void STOP()
+        {
+            ReachTarget();
+            stuckCount = 5;
+            stuckTimer = .75f;
         }
         public void GoToPositionAndSayWords(Vector3 position, string words)
         {
@@ -309,7 +324,6 @@ namespace ShroomJamGame.NPC
         }
         public void LookAtPosition(Vector3 position)
         {
-            Quaternion currentYRot = characterBody3D.Quaternion;
             characterBody3D.LookAt(position);
             characterBody3D.RotationDegrees = new Vector3(0, characterBody3D.RotationDegrees.Y + 180, 0);
         }

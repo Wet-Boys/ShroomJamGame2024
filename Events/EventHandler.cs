@@ -28,42 +28,61 @@ namespace ShroomJamGame.Events
 
 
         
-        public void StartSpawningVendingMachinesEvent()
+        public void StartSpawningVendingMachinesEvent(float duration)
         {
             spawnVendingMachines = true;
             TransformObjectIntoVendingMachine();
             SpawnNewVendingMachine();
+            StopVendingMachinesAfterTime(duration);
+        }
+        public async void StopVendingMachinesAfterTime(float duration)
+        {
+            await ToSignal(this.GetTree().CreateTimer(duration), SceneTreeTimer.SignalName.Timeout);
+            spawnVendingMachines = false;
+            BroadCastHandler.instance.FinishDay1();
+            await ToSignal(this.GetTree().CreateTimer(1f), SceneTreeTimer.SignalName.Timeout);
+            StopSpawningVendingMachinesEvent();
         }
         public void StopSpawningVendingMachinesEvent()
         {
             spawnVendingMachines = false;
+            foreach (var item in vendingMachines)
+            {
+                item.QueueFree();
+            }
+            foreach (var npc in NpcMovementController.npcs)
+            {
+                for (int i = 0; i < npc.ownedItems.Count; i++)
+                {
+                    PhysicsInteractable realItem = npc.ownedItems[i] as PhysicsInteractable;
+                    realItem.Freeze = false;
+                    realItem.GlobalPosition = npc.ownedItemsStartingPositions[i];
+                    realItem.Rotation = npc.ownedItemsStartingRotations[i];
+                }
+            }
             vendingMachines.Clear();
         }
         bool spawnVendingMachines = false;
         Godot.Collections.Array<Node3D> vendingMachines = new Godot.Collections.Array<Node3D>();
         public async void TransformObjectIntoVendingMachine()
         {
-            if (spawnVendingMachines && PhysicsInteractable.physicsObjects.Count != 0)
+            if (spawnVendingMachines)
             {
                 await ToSignal(this.GetTree().CreateTimer(.2f), SceneTreeTimer.SignalName.Timeout);
-                PhysicsInteractable objectToChange = PhysicsInteractable.physicsObjects.PickRandom();
-                Node3D newVendingMachine = ((PackedScene)GD.Load("res://Assets/Prefabs/WorldObjects/vending_machine.tscn")).Instantiate<RigidBody3D>();
-                newVendingMachine.GetNode<OmniLight3D>("OmniLight3D").QueueFree();
-                if (IsInstanceValid(objectToChange))
+                foreach (var objectToChange in PhysicsInteractable.physicsObjects)
                 {
-                    objectToChange.GetTree().Root.AddChild(newVendingMachine);
-                    newVendingMachine.GlobalPosition = objectToChange.GlobalPosition;
-                    newVendingMachine.RotationDegrees = new Vector3(randomGenerator.Randf(), randomGenerator.Randf(), randomGenerator.Randf()) * 360;
-                    if (IsInstanceValid(objectToChange.owner))
+                    if (IsInstanceValid(objectToChange) && !objectToChange.Freeze)
                     {
-                        objectToChange.owner.ownedItems.Remove(objectToChange);
+                        Node3D newVendingMachine = ((PackedScene)GD.Load("res://Assets/Prefabs/WorldObjects/vending_machine.tscn")).Instantiate<RigidBody3D>();
+                        newVendingMachine.GetNode<OmniLight3D>("OmniLight3D").QueueFree();
+                        objectToChange.GetTree().Root.AddChild(newVendingMachine);
+                        newVendingMachine.GlobalPosition = objectToChange.GlobalPosition;
+                        newVendingMachine.RotationDegrees = new Vector3(randomGenerator.Randf(), randomGenerator.Randf(), randomGenerator.Randf()) * 360;
+                        objectToChange.Freeze = true;
+                        objectToChange.GlobalPosition = new Vector3(-9999, -9999, -9999);
+                        vendingMachines.Add(newVendingMachine);
+                        break;
                     }
-                    objectToChange.QueueFree();
-                    vendingMachines.Add(newVendingMachine);
-                }
-                else
-                {
-                    newVendingMachine.QueueFree();
                 }
                 TransformObjectIntoVendingMachine();
             }

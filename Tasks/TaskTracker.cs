@@ -1,5 +1,6 @@
 ﻿using Godot;
 using ShroomJamGame.Events;
+using ShroomJamGame.Rendering.Effects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,6 +30,7 @@ namespace ShroomJamGame.Tasks
             TaskList = HUD.GetNode<Control>("Task Container");
 
             DebugCommand();
+            BroadCastHandler.instance.Day1Finished += Day1Finished;
         }
 
         public BaseTask CreateTask(BaseTask inputTask)
@@ -125,15 +127,20 @@ namespace ShroomJamGame.Tasks
                     break;
             }
             CleanupTask(task);
-            if (Tasks.Count == 0)
-            {
-                CreateTask(new FixVendingMachineTask());
-            }
         }
 
-        private void LoadNewScene(Vector3 playerPosition)
+        private void Day1Finished()
         {
-            //EventHandler.instance
+            LoadNewScene(new Vector3(-0.174f, 7.8f, -2.107f));
+        }
+        private async void LoadNewScene(Vector3 playerPosition)
+        {
+            FrameCaptureEffect.CaptureNextFrame = true;
+            DataMoshEffect.Instance.Enabled = true;
+            await ToSignal(this.GetTree().CreateTimer(2f), SceneTreeTimer.SignalName.Timeout);
+            player.GlobalPosition = new Vector3(playerPosition.X, player.GlobalPosition.Y, playerPosition.Z);
+            await ToSignal(this.GetTree().CreateTimer(2f), SceneTreeTimer.SignalName.Timeout);
+            DataMoshEffect.Instance.Enabled = false;
         }
     }
 }
