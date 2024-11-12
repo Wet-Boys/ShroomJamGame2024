@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://cdmxxfo37j7de"]
 
-[ext_resource type="ArrayMesh" uid="uid://c0fpelkug36pk" path="res://Assets/Prefabs/WorldObjects/vending_machine.tres" id="1_xl5pv"]
+[ext_resource type="ArrayMesh" uid="uid://cfntoprc6s1mj" path="res://Assets/Prefabs/WorldObjects/vending_machine.tres" id="1_xl5pv"]
 [ext_resource type="Script" path="res://Interaction/VendingMachineInteractable.cs" id="3_4dbk1"]
-[ext_resource type="PackedScene" uid="uid://d0flng1l0c66w" path="res://Assets/Prefabs/ImpactSound.tscn" id="3_78gpf"]
+[ext_resource type="PackedScene" path="res://Assets/Prefabs/ImpactSound.tscn" id="3_78gpf"]
 [ext_resource type="AudioStream" uid="uid://blp7jbmvo6fvp" path="res://Assets/Sfx/Metal/160045_2888453-lq.ogg" id="4_1ifo7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jc4vn"]

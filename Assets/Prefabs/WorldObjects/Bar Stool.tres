@@ -1,4 +1,4 @@
-[gd_resource type="ArrayMesh" load_steps=4 format=4 uid="uid://64e05u52mkbl"]
+[gd_resource type="ArrayMesh" load_steps=4 format=4 uid="uid://bhpib0481i022"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y8txd"]
 resource_name = "LaminatedBoard_black"

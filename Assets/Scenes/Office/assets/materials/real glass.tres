@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://bcrvf2qh2jsoh"]
+
+[ext_resource type="Texture2D" uid="uid://bdcq7hm8y14yi" path="res://Assets/Scenes/Office/assets/materials/glass/garage_floor_nor_gl_4k.jpg" id="1_jdafj"]
+[ext_resource type="Texture2D" uid="uid://cwk0f6iemj817" path="res://Assets/Scenes/Office/assets/materials/glass/SP_2K_Roughness.png" id="2_ic57k"]
+
+[resource]
+resource_name = "Glass"
+transparency = 4
+cull_mode = 2
+albedo_color = Color(1, 1, 1, 0.149485)
+metallic = 0.2
+roughness_texture = ExtResource("2_ic57k")
+roughness_texture_channel = 4
+normal_texture = ExtResource("1_jdafj")
+uv1_triplanar = true
+uv1_world_triplanar = true
