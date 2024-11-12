@@ -38,6 +38,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.522051, 7.80016, 5.45681)
 [node name="Head" parent="Player" index="2"]
 transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0, 0.875, 0)
 
+[node name="PlayerHeadController" parent="Player/Head" index="4"]
+_mouseSensitivity = null
+_maxXRotation = null
+_minXRotation = null
+InvertY = null
+InvertX = null
+
 [node name="StepHelper" parent="Player" index="3"]
 MinClearance = Vector3(0.25, 2.25, 0.5)
 
@@ -47,11 +54,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.075, 0.5)
 [node name="CollisionShape3D" parent="Player" index="4"]
 shape = SubResource("CylinderShape3D_mva81")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.572378, 0.0374122, -0.819136, 0.334887, -0.922516, 0.191871, -0.748488, -0.384141, -0.540557, -18.8688, 13.9035, -23.3223)
-light_energy = 0.07
-shadow_enabled = true
-
 [node name="AnimalesePlayer3D" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.18721, 4.11217)
 unit_size = 4.35
@@ -60,6 +62,8 @@ panning_strength = 0.26
 bus = &"Animalese Bus"
 script = ExtResource("3_1hc3e")
 SoundSet = ExtResource("4_nagxe")
+PitchMultiplierRange = null
+InflectionShift = null
 BasePitch = 5.845
 
 [node name="Label3D" type="Label3D" parent="AnimalesePlayer3D"]
@@ -244,8 +248,6 @@ process_priority = 300
 process_physics_priority = 300
 script = ExtResource("2_5f2ps")
 
-[connection signal="CharactersPlayed" from="AnimalesePlayer3D" to="AnimalesePlayer3D/AnimaleseDialogTest" method="OnCharacterPlayed"]
-[connection signal="FinishedPlaying" from="AnimalesePlayer3D" to="AnimalesePlayer3D/AnimaleseDialogTest" method="PlayNext"]
 [connection signal="finished" from="AnimalesePlayer3D" to="AnimalesePlayer3D" method="PlayNextSound"]
 
 [editable path="Player"]

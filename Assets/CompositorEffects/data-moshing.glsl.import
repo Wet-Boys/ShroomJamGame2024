@@ -1,0 +1,14 @@
+[remap]
+
+importer="glsl"
+type="RDShaderFile"
+uid="uid://w6o4ir6s5vrj"
+path="res://.godot/imported/data-moshing.glsl-ac188a9b863839b2576bf35cca4a69bd.res"
+
+[deps]
+
+source_file="res://Assets/CompositorEffects/data-moshing.glsl"
+dest_files=["res://.godot/imported/data-moshing.glsl-ac188a9b863839b2576bf35cca4a69bd.res"]
+
+[params]
+

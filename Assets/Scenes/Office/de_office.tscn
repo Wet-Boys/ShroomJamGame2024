@@ -1,4 +1,4 @@
-[gd_scene load_steps=246 format=4 uid="uid://bkh80lrmoy5cs"]
+[gd_scene load_steps=254 format=4 uid="uid://bkh80lrmoy5cs"]
 
 [ext_resource type="Material" uid="uid://ce3wou354fqct" path="res://Assets/Scenes/Office/assets/materials/kitchen wall.tres" id="1_42koi"]
 [ext_resource type="Material" uid="uid://bm4mtepbl3aav" path="res://Assets/Scenes/Office/assets/materials/Backrooms Wallpaper.tres" id="1_giika"]
@@ -42,6 +42,11 @@
 [ext_resource type="Texture2D" uid="uid://dj1sw4r5obi7e" path="res://Assets/Scenes/Office/assets/materials/ceiling tile/tiles_0013_normal_directx_1k.png" id="26_yc5bu"]
 [ext_resource type="Texture2D" uid="uid://36w5t8834hb7" path="res://Assets/Scenes/Office/assets/materials/ceiling tile/tiles_0013_roughness_1k.jpg" id="27_4bp2x"]
 [ext_resource type="Environment" uid="uid://dwti8rciemlf5" path="res://Assets/environment.tres" id="42_glwae"]
+[ext_resource type="RDShaderFile" uid="uid://dfc38df6pmiax" path="res://Assets/CompositorEffects/capture-frame.glsl" id="43_k7xdm"]
+[ext_resource type="Script" path="res://Rendering/Effects/FrameCaptureEffect.cs" id="44_sso0g"]
+[ext_resource type="RDShaderFile" uid="uid://w6o4ir6s5vrj" path="res://Assets/CompositorEffects/data-moshing.glsl" id="45_ch5ps"]
+[ext_resource type="Script" path="res://Rendering/Effects/DataMoshEffect.cs" id="46_mxl28"]
+[ext_resource type="Script" path="res://Rendering/RightClickToDataMosh.cs" id="47_cnugj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mt4ui"]
 
@@ -1988,6 +1993,29 @@ uv1_scale = Vector3(0.04, 0.04, 0.04)
 uv1_triplanar = true
 uv1_world_triplanar = true
 
+[sub_resource type="CompositorEffect" id="CompositorEffect_mmya2"]
+resource_local_to_scene = false
+resource_name = ""
+enabled = true
+effect_callback_type = 4
+needs_motion_vectors = false
+needs_normal_roughness = false
+script = ExtResource("44_sso0g")
+FrameCaptureShaderFile = ExtResource("43_k7xdm")
+
+[sub_resource type="CompositorEffect" id="CompositorEffect_2tqhy"]
+resource_local_to_scene = false
+resource_name = ""
+enabled = false
+effect_callback_type = 4
+needs_motion_vectors = true
+needs_normal_roughness = false
+script = ExtResource("46_mxl28")
+DataMoshShaderFile = ExtResource("45_ch5ps")
+
+[sub_resource type="Compositor" id="Compositor_wsb0w"]
+compositor_effects = Array[CompositorEffect]([SubResource("CompositorEffect_mmya2"), SubResource("CompositorEffect_2tqhy")])
+
 [node name="DeOffice" type="Node3D"]
 
 [node name="Asset Complete Office2" type="Node3D" parent="."]
@@ -3221,6 +3249,15 @@ transform = Transform3D(-8, 0, -1.20797e-06, 0, 8, 0, 1.20797e-06, 0, -8, -9.542
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("42_glwae")
+compositor = SubResource("Compositor_wsb0w")
+
+[node name="RightClickToDataMosh" type="Node" parent="WorldEnvironment"]
+script = ExtResource("47_cnugj")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.572378, 0.0374122, -0.819136, 0.334887, -0.922516, 0.191871, -0.748488, -0.384141, -0.540557, -18.8688, 13.9035, -23.3223)
+light_energy = 0.07
+shadow_enabled = true
 
 [editable path="Asset Complete Office2/Cubicle2"]
 [editable path="Asset Complete Office2/Cubicle3"]

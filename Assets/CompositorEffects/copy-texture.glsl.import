@@ -1,0 +1,14 @@
+[remap]
+
+importer="glsl"
+type="RDShaderFile"
+uid="uid://djufnr2selcaf"
+path="res://.godot/imported/copy-texture.glsl-da88b2463972584f77411da1b7a93893.res"
+
+[deps]
+
+source_file="res://Assets/CompositorEffects/copy-texture.glsl"
+dest_files=["res://.godot/imported/copy-texture.glsl-da88b2463972584f77411da1b7a93893.res"]
+
+[params]
+
