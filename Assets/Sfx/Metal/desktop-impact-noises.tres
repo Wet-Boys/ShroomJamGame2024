@@ -1,0 +1,23 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=10 format=3 uid="uid://bhgmdi1e04lyd"]
+
+[ext_resource type="AudioStream" uid="uid://bvtu688fmfgxu" path="res://Assets/Sfx/Metal/Desktop Hit 1.ogg" id="1_16sbs"]
+[ext_resource type="AudioStream" uid="uid://brvbs2cj17py" path="res://Assets/Sfx/Metal/Desktop Hit 2.ogg" id="2_57k62"]
+[ext_resource type="AudioStream" uid="uid://f3qrm46jcqqv" path="res://Assets/Sfx/Metal/Desktop Hit 3.ogg" id="3_0til0"]
+[ext_resource type="AudioStream" uid="uid://ct6tq5dk3fw3b" path="res://Assets/Sfx/Metal/Desktop Hit 4.ogg" id="4_djb2e"]
+[ext_resource type="AudioStream" uid="uid://cr44hi6pbvi7m" path="res://Assets/Sfx/Metal/Desktop Hit 5.ogg" id="5_4tadh"]
+[ext_resource type="AudioStream" uid="uid://d0yoxyts7eo62" path="res://Assets/Sfx/Metal/Desktop Hit 6.ogg" id="6_kfx65"]
+[ext_resource type="AudioStream" uid="uid://cyivyt1wljmo5" path="res://Assets/Sfx/Metal/Desktop Hit 7.ogg" id="7_2wn46"]
+[ext_resource type="AudioStream" uid="uid://b0nqr4qtfiaok" path="res://Assets/Sfx/Metal/Desktop Hit 8.ogg" id="8_w6e22"]
+[ext_resource type="AudioStream" uid="uid://d3fevxdt25qju" path="res://Assets/Sfx/Metal/Desktop Hit 9.ogg" id="9_rtmvp"]
+
+[resource]
+streams_count = 9
+stream_0/stream = ExtResource("1_16sbs")
+stream_1/stream = ExtResource("2_57k62")
+stream_2/stream = ExtResource("3_0til0")
+stream_3/stream = ExtResource("4_djb2e")
+stream_4/stream = ExtResource("5_4tadh")
+stream_5/stream = ExtResource("6_kfx65")
+stream_6/stream = ExtResource("7_2wn46")
+stream_7/stream = ExtResource("8_w6e22")
+stream_8/stream = ExtResource("9_rtmvp")

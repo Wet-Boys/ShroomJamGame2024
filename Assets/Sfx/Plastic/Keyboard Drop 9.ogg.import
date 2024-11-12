@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://0mipm8vw6nsy"
+path="res://.godot/imported/Keyboard Drop 9.ogg-5af114fb65aa04cc3782a00ee0848f6b.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Sfx/Plastic/Keyboard Drop 9.ogg"
+dest_files=["res://.godot/imported/Keyboard Drop 9.ogg-5af114fb65aa04cc3782a00ee0848f6b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

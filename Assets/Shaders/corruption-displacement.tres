@@ -205,7 +205,7 @@ billboard_type = 3
 
 [resource]
 code = "shader_type spatial;
-render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx, unshaded;
+render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx, unshaded, shadows_disabled;
 
 uniform bool Pixelization;
 uniform int Pixel_Size = 10;
@@ -436,8 +436,9 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(-1253.99, -97.7983)
+graph_offset = Vector2(-2035.46, -335.641)
 flags/unshaded = true
+flags/shadows_disabled = true
 nodes/vertex/2/node = SubResource("VisualShaderNodeBillboard_5s3pv")
 nodes/vertex/2/position = Vector2(-360, 460)
 nodes/vertex/connections = PackedInt32Array(2, 0, 0, 10)
@@ -519,11 +520,11 @@ nodes/fragment/62/position = Vector2(-3720, -80)
 nodes/fragment/63/node = SubResource("VisualShaderNodeVectorOp_4vmr7")
 nodes/fragment/63/position = Vector2(-5480, -760)
 nodes/fragment/64/node = SubResource("VisualShaderNodeSwitch_7o0gs")
-nodes/fragment/64/position = Vector2(-4660, -600)
+nodes/fragment/64/position = Vector2(-4660, -640)
 nodes/fragment/65/node = SubResource("VisualShaderNodeBooleanParameter_ibhba")
-nodes/fragment/65/position = Vector2(-5040, -800)
+nodes/fragment/65/position = Vector2(-5060, -820)
 nodes/fragment/66/node = SubResource("VisualShaderNodeInput_b7lbf")
-nodes/fragment/66/position = Vector2(-5060, -420)
+nodes/fragment/66/position = Vector2(-5060, -460)
 nodes/fragment/67/node = SubResource("VisualShaderNodeVectorOp_2ytna")
 nodes/fragment/67/position = Vector2(-3460, 180)
 nodes/fragment/68/node = SubResource("VisualShaderNodeFrame_mj0l2")

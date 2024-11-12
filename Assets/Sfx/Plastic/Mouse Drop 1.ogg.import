@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b5u50ex0n62yf"
+path="res://.godot/imported/Mouse Drop 1.ogg-0ae7fdab8458659c440290a92d5dec9e.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Sfx/Plastic/Mouse Drop 1.ogg"
+dest_files=["res://.godot/imported/Mouse Drop 1.ogg-0ae7fdab8458659c440290a92d5dec9e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

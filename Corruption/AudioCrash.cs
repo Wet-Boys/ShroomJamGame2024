@@ -30,6 +30,9 @@ public partial class AudioCrash : Node
     
     public override void _Ready()
     {
+        Controls.Instance.SecondaryAction.OnPress += StartAudioCrash;
+        Controls.Instance.SecondaryAction.OnRelease += StopAudioCrash;
+        
         _instance = this;
         
         _recordEffect = GetRecordEffect();
@@ -46,6 +49,9 @@ public partial class AudioCrash : Node
     {
         if (notification == NotificationPredelete)
         {
+            Controls.Instance.SecondaryAction.OnPress -= StartAudioCrash;
+            Controls.Instance.SecondaryAction.OnRelease -= StopAudioCrash;
+            
             if (_crashTimer is null)
                 return;
 

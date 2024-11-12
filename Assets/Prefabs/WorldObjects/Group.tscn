@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=4 uid="uid://6d18cgcfmxb"]
+[gd_scene load_steps=93 format=4 uid="uid://6d18cgcfmxb"]
 
 [ext_resource type="Texture2D" uid="uid://b8ik45ofcgcgo" path="res://Assets/Scenes/Office/textures/ServerFrame_BaseColor.jpg" id="5_arcgk"]
 [ext_resource type="Texture2D" uid="uid://b4hgu7ihgi2vg" path="res://Assets/Scenes/Office/textures/ServerFrame_Roughness.jpg" id="6_j4dre"]
@@ -25,7 +25,9 @@
 [ext_resource type="Texture2D" uid="uid://65wk12818edy" path="res://Assets/Scenes/Office/textures/ServerDisplay2_Roughness.jpg" id="27_ndxim"]
 [ext_resource type="Texture2D" uid="uid://blv2axxpj2u30" path="res://Assets/Scenes/Office/textures/ServerDisplay2_Normal.jpg" id="28_mxw0n"]
 [ext_resource type="Texture2D" uid="uid://48uevv45vd5p" path="res://Assets/Scenes/Office/textures/ServerPanelEnd_BaseColor.jpg" id="29_g5rv1"]
+[ext_resource type="AudioStream" uid="uid://c2uaqhq7sb3mq" path="res://Assets/Sfx/Computer/server computer hum loop.ogg" id="29_gk4rd"]
 [ext_resource type="Texture2D" uid="uid://bglujpmf401qw" path="res://Assets/Scenes/Office/textures/ServerPanelEnd_Roughness.jpg" id="30_av32y"]
+[ext_resource type="AudioStream" uid="uid://chxwgrymowwwi" path="res://Assets/Sfx/Computer/noisy hard drive.ogg" id="30_qfwmv"]
 [ext_resource type="Texture2D" uid="uid://ck07tofw71va6" path="res://Assets/Scenes/Office/textures/ServerPanelEnd_Normal.jpg" id="31_bs8gp"]
 [ext_resource type="Texture2D" uid="uid://1ccphinkjfh4" path="res://Assets/Scenes/Office/textures/PostersTex.png" id="32_mysxe"]
 [ext_resource type="Texture2D" uid="uid://e44q8wp3ewwn" path="res://Assets/Scenes/Office/textures/SmudgesLarge001_OVERLAY_VAR2_3K.jpg" id="33_7v15x"]
@@ -1141,6 +1143,22 @@ skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Futuristic Server Room with Displays/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_074tu")
+
+[node name="Server Sounds" type="AudioStreamPlayer3D" parent="Futuristic Server Room with Displays"]
+transform = Transform3D(0.175803, 0, 0, 0, 0.175803, 0, 0, 0, 0.175803, 0, 1.05482, 0)
+stream = ExtResource("29_gk4rd")
+attenuation_model = 2
+unit_size = 5.0
+autoplay = true
+bus = &"Sound Effects"
+
+[node name="Hard Drive Sounds" type="AudioStreamPlayer3D" parent="Futuristic Server Room with Displays"]
+transform = Transform3D(0.175803, 0, 0, 0, 0.175803, 0, 0, 0, 0.175803, 0, 1.05482, 0)
+stream = ExtResource("30_qfwmv")
+attenuation_model = 2
+unit_size = 5.0
+autoplay = true
+bus = &"Sound Effects"
 
 [node name="LDesk_Supports" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.20815, -5.532, -3.93826)

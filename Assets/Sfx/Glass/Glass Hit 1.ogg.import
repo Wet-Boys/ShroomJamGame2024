@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cdvll7pnidviu"
+path="res://.godot/imported/Glass Hit 1.ogg-c6eb682e0f7800ef35bf7b7c9d0d69e5.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Sfx/Glass/Glass Hit 1.ogg"
+dest_files=["res://.godot/imported/Glass Hit 1.ogg-c6eb682e0f7800ef35bf7b7c9d0d69e5.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

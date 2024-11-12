@@ -1,0 +1,25 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=11 format=3 uid="uid://bh88ge0n275av"]
+
+[ext_resource type="AudioStream" uid="uid://tntq58mywocb" path="res://Assets/Sfx/Plastic/Keyboard Drop 1.ogg" id="1_ito5p"]
+[ext_resource type="AudioStream" uid="uid://b27j4tm8hj4sm" path="res://Assets/Sfx/Plastic/Keyboard Drop 2.ogg" id="2_rw0om"]
+[ext_resource type="AudioStream" uid="uid://b4rsim0cr2da6" path="res://Assets/Sfx/Plastic/Keyboard Drop 3.ogg" id="3_j4fof"]
+[ext_resource type="AudioStream" uid="uid://cqd15g1mih8gw" path="res://Assets/Sfx/Plastic/Keyboard Drop 4.ogg" id="4_e0bxa"]
+[ext_resource type="AudioStream" uid="uid://d3kgrs4a50xy2" path="res://Assets/Sfx/Plastic/Keyboard Drop 5.ogg" id="5_d3fau"]
+[ext_resource type="AudioStream" uid="uid://bm76j4803rrm7" path="res://Assets/Sfx/Plastic/Keyboard Drop 6.ogg" id="6_jinxx"]
+[ext_resource type="AudioStream" uid="uid://3svd478iweyo" path="res://Assets/Sfx/Plastic/Keyboard Drop 7.ogg" id="7_pkk6l"]
+[ext_resource type="AudioStream" uid="uid://he7ixsrdy068" path="res://Assets/Sfx/Plastic/Keyboard Drop 8.ogg" id="8_xeyxt"]
+[ext_resource type="AudioStream" uid="uid://0mipm8vw6nsy" path="res://Assets/Sfx/Plastic/Keyboard Drop 9.ogg" id="9_aqy4r"]
+[ext_resource type="AudioStream" uid="uid://cf4yxxf3jvl8i" path="res://Assets/Sfx/Plastic/Keyboard Drop 10.ogg" id="10_jsphl"]
+
+[resource]
+streams_count = 10
+stream_0/stream = ExtResource("1_ito5p")
+stream_1/stream = ExtResource("2_rw0om")
+stream_2/stream = ExtResource("3_j4fof")
+stream_3/stream = ExtResource("4_e0bxa")
+stream_4/stream = ExtResource("5_d3fau")
+stream_5/stream = ExtResource("6_jinxx")
+stream_6/stream = ExtResource("7_pkk6l")
+stream_7/stream = ExtResource("8_xeyxt")
+stream_8/stream = ExtResource("9_aqy4r")
+stream_9/stream = ExtResource("10_jsphl")

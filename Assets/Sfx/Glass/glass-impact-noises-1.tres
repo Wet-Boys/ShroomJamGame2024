@@ -1,0 +1,19 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=8 format=3 uid="uid://cvv5n8uadidwf"]
+
+[ext_resource type="AudioStream" uid="uid://cdvll7pnidviu" path="res://Assets/Sfx/Glass/Glass Hit 1.ogg" id="1_raom1"]
+[ext_resource type="AudioStream" uid="uid://jk7bylkiy4hh" path="res://Assets/Sfx/Glass/Glass Hit 2.ogg" id="2_7a2kq"]
+[ext_resource type="AudioStream" uid="uid://e10gikr3153m" path="res://Assets/Sfx/Glass/Glass Hit 3.ogg" id="3_imhif"]
+[ext_resource type="AudioStream" uid="uid://7dr6hhatpbft" path="res://Assets/Sfx/Glass/Glass Hit 4.ogg" id="4_bb64l"]
+[ext_resource type="AudioStream" uid="uid://qdv4gsy78q6m" path="res://Assets/Sfx/Glass/Glass Hit 5.ogg" id="5_yywsk"]
+[ext_resource type="AudioStream" uid="uid://be6by06tvosy5" path="res://Assets/Sfx/Glass/Glass Hit 6.ogg" id="6_pthqd"]
+[ext_resource type="AudioStream" uid="uid://bn0okeew7rkql" path="res://Assets/Sfx/Glass/Glass Hit 7.ogg" id="7_8nfuk"]
+
+[resource]
+streams_count = 7
+stream_0/stream = ExtResource("1_raom1")
+stream_1/stream = ExtResource("2_7a2kq")
+stream_2/stream = ExtResource("3_imhif")
+stream_3/stream = ExtResource("4_bb64l")
+stream_4/stream = ExtResource("5_yywsk")
+stream_5/stream = ExtResource("6_pthqd")
+stream_6/stream = ExtResource("7_8nfuk")

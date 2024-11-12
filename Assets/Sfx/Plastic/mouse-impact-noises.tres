@@ -1,0 +1,15 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=6 format=3 uid="uid://dj7c228jaaamq"]
+
+[ext_resource type="AudioStream" uid="uid://b5u50ex0n62yf" path="res://Assets/Sfx/Plastic/Mouse Drop 1.ogg" id="1_tjc0b"]
+[ext_resource type="AudioStream" uid="uid://c1e7eboi8w08l" path="res://Assets/Sfx/Plastic/Mouse Drop 2.ogg" id="2_w61ly"]
+[ext_resource type="AudioStream" uid="uid://b2w6oio8wmbi" path="res://Assets/Sfx/Plastic/Mouse Drop 3.ogg" id="3_dapsc"]
+[ext_resource type="AudioStream" uid="uid://cxy4b5dxjsr2" path="res://Assets/Sfx/Plastic/Mouse Drop 4.ogg" id="4_y8ay8"]
+[ext_resource type="AudioStream" uid="uid://bflw5cy03oe14" path="res://Assets/Sfx/Plastic/Mouse Drop 5.ogg" id="5_d3xd2"]
+
+[resource]
+streams_count = 5
+stream_0/stream = ExtResource("1_tjc0b")
+stream_1/stream = ExtResource("2_w61ly")
+stream_2/stream = ExtResource("3_dapsc")
+stream_3/stream = ExtResource("4_y8ay8")
+stream_4/stream = ExtResource("5_d3xd2")

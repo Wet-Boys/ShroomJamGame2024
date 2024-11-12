@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://brvbs2cj17py"
+path="res://.godot/imported/Desktop Hit 2.ogg-48e879504c01a07007ca459b8bf7ad4e.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Sfx/Metal/Desktop Hit 2.ogg"
+dest_files=["res://.godot/imported/Desktop Hit 2.ogg-48e879504c01a07007ca459b8bf7ad4e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

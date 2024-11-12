@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cdmxxfo37j7de"]
+[gd_scene load_steps=7 format=3 uid="uid://cdmxxfo37j7de"]
 
 [ext_resource type="ArrayMesh" uid="uid://cfntoprc6s1mj" path="res://Assets/Prefabs/WorldObjects/vending_machine.tres" id="1_xl5pv"]
 [ext_resource type="Script" path="res://Interaction/VendingMachineInteractable.cs" id="3_4dbk1"]
-[ext_resource type="PackedScene" uid="uid://d0flng1l0c66w" path="res://Assets/Prefabs/ImpactSound.tscn" id="3_78gpf"]
-[ext_resource type="AudioStream" uid="uid://blp7jbmvo6fvp" path="res://Assets/Sfx/Metal/160045_2888453-lq.ogg" id="4_1ifo7"]
+[ext_resource type="Script" path="res://Sound/ImpactSoundMaker.cs" id="4_bat4c"]
+[ext_resource type="AudioStream" uid="uid://x45ok5yds0c4" path="res://Assets/Sfx/Vending Machine/Vending Machine Compressor Loop.ogg" id="5_5bmut"]
+[ext_resource type="AudioStream" uid="uid://brxon3c6vn70g" path="res://Assets/Sfx/Metal/metal-impact-noises.tres" id="5_cl8xm"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jc4vn"]
 size = Vector3(1, 1.99908, 1)
@@ -27,6 +28,24 @@ script = ExtResource("3_4dbk1")
 vendingMachineNode = NodePath("..")
 CollisionShape = NodePath("..")
 
-[node name="ImpactSoundMaker" parent="." node_paths=PackedStringArray("body") instance=ExtResource("3_78gpf")]
-body = NodePath("..")
-impactSound = ExtResource("4_1ifo7")
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+stream = ExtResource("5_5bmut")
+attenuation_model = 2
+volume_db = -14.58
+unit_size = 5.0
+autoplay = true
+bus = &"Sound Effects"
+
+[node name="ImpactSoundMaker" type="Node3D" parent="." node_paths=PackedStringArray("_body", "_soundEmitter")]
+script = ExtResource("4_bat4c")
+_body = NodePath("..")
+_soundEmitter = NodePath("AudioStreamPlayer3D")
+_impactSound = ExtResource("5_cl8xm")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="ImpactSoundMaker"]
+attenuation_model = 2
+volume_db = -10.0
+unit_size = 6.0
+max_polyphony = 6
+bus = &"Sound Effects"

@@ -1,4 +1,6 @@
-[gd_scene load_steps=15 format=4 uid="uid://djeybq5nvfjoi"]
+[gd_scene load_steps=16 format=4 uid="uid://djeybq5nvfjoi"]
+
+[ext_resource type="AudioStream" uid="uid://cp8j867lcrek6" path="res://Assets/Sfx/Water Cooler/Water Cooler Gurgle Loop.ogg" id="1_58fnn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gqwe4"]
 resource_name = "Material.014"
@@ -303,3 +305,12 @@ shape = SubResource("CylinderShape3D_5m8v6")
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0246905, 1.17754, 0.324197)
 shape = SubResource("CylinderShape3D_kq1ee")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.64941, 0)
+stream = ExtResource("1_58fnn")
+attenuation_model = 2
+volume_db = -10.0
+unit_size = 1.0
+autoplay = true
+bus = &"Sound Effects"

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cp8j867lcrek6"
+path="res://.godot/imported/Water Cooler Gurgle Loop.ogg-ff7bb71fe009f5cdc378b419d07339fc.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Sfx/Water Cooler/Water Cooler Gurgle Loop.ogg"
+dest_files=["res://.godot/imported/Water Cooler Gurgle Loop.ogg-ff7bb71fe009f5cdc378b419d07339fc.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
