@@ -28,7 +28,7 @@ namespace ShroomJamGame.NPC
         [Export]
         private NavigationAgent3D? _navigationAgent;
         [Export]
-        NpcVisualController? _visualController;
+        public NpcVisualController? _visualController;
         [Export]
         RayCast3D? interactionRay;
         [Export]
@@ -176,6 +176,10 @@ namespace ShroomJamGame.NPC
                         }
                     }
                     targetNode = ownedItems.PickRandom();
+                }
+                else if (PhysicsInteractable.physicsObjects.Count != 0)
+                {
+                    targetNode = PhysicsInteractable.physicsObjects.PickRandom();
                 }
             }
         }

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://ntkjs3jrvbbo"]
+
+[node name="Background" type="Panel"]
+custom_minimum_size = Vector2(0, 24)
+
+[node name="TaskName" type="Label" parent="."]
+layout_mode = 0
+offset_right = 325.0
+offset_bottom = 23.0
+text = "Ligma balls idiot lmao gottem dasdasdasd"

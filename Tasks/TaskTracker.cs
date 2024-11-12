@@ -15,31 +15,43 @@ namespace ShroomJamGame.Tasks
         public static TaskTracker instance;
         [Export]
         public CharacterBody3D player;
+        [Export]
+        public Control HUD;
+        Control TaskList;
         double timer = 0;
         Node rootNode;
-
+        Godot.Collections.Dictionary<BaseTask, Control> tasksToControls = new Godot.Collections.Dictionary<BaseTask, Control>();
         public override void _Ready()
         {
             instance = this;
             rootNode = GetTree().Root.GetChild(0);
             BroadCastHandler.instance.CreateFixQuest += BroadCastHandler_CreateFixQuest;
-
+            TaskList = HUD.GetNode<Control>("Task Container");
 
             DebugCommand();
+        }
+
+        public BaseTask CreateTask(BaseTask inputTask)
+        {
+            Tasks.Add(inputTask);
+            inputTask.Setup(rootNode);
+            inputTask.TaskFinished += TaskTracker_TaskFinished;
+            var thing = ((PackedScene)GD.Load("res://Assets/Prefabs/TaskPopup.tscn")).Instantiate<Panel>();
+            thing.GetNode<Label>("TaskName").Text = inputTask.taskName;
+            TaskList.AddChild(thing);
+            tasksToControls.Add(inputTask, thing);
+            return inputTask;
         }
 
         private async void DebugCommand()
         {
             await ToSignal(rootNode.GetTree().CreateTimer(1.0), SceneTreeTimer.SignalName.Timeout);
-            BroadCastHandler.instance.CreateFixQuestBroadcast();
-            Tasks.Add(new FixVendingMachineTask());
-            Tasks.Last().Setup(rootNode).TaskFinished += TaskTracker_TaskFinished;
+            CreateTask(new IntroductionTask());
         }
 
         private void BroadCastHandler_CreateFixQuest()
         {
-            Tasks.Add(new FixObjectTask());
-            Tasks.Last().Setup(rootNode).TaskFinished += TaskTracker_TaskFinished;
+            CreateTask(new FixObjectTask());
         }
 
         public override void _Process(double delta)
@@ -66,6 +78,8 @@ namespace ShroomJamGame.Tasks
                 default:
                     Tasks.Remove(task);
                     task.TaskFinished -= TaskTracker_TaskFinished;
+                    tasksToControls[task].QueueFree();
+                    tasksToControls.Remove(task);
                     BroadCastHandler.instance.FinishQuestBroadcast(task.taskName);
                     if (Tasks.Count == 0)
                     {

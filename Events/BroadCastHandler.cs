@@ -40,5 +40,37 @@ namespace ShroomJamGame.Events
             (bar as ProgressBarRunner).timeToComplete = timeToDoTask;
             return (bar as ProgressBarRunner);
         }
+
+        Godot.Collections.Dictionary<Node3D, Godot.Collections.Array<MeshInstance3D>> glowyObjects = new Godot.Collections.Dictionary<Node3D, Godot.Collections.Array<MeshInstance3D>>();
+        public void HighlightObject(Node3D obj)
+        {
+            if (glowyObjects.ContainsKey(obj))
+            {
+                return;
+            }
+            glowyObjects.Add(obj, new Godot.Collections.Array<MeshInstance3D>());
+            int childCount = obj.GetChildren().Count;
+            for (int i = 0; i < childCount; i++)
+            {
+                if (obj.GetChildren()[i] is MeshInstance3D mesh)
+                {
+                    glowyObjects[obj].Add(mesh.Duplicate() as MeshInstance3D);
+                    obj.AddChild(glowyObjects[obj].Last());
+                    for (int x = 0; x < glowyObjects[obj].Last().Mesh.GetSurfaceCount(); x++)
+                    {
+                        glowyObjects[obj].Last().Mesh = (Mesh)glowyObjects[obj].Last().Mesh.Duplicate();
+                        glowyObjects[obj].Last().Mesh.SurfaceSetMaterial(x, (Material)GD.Load("res://Assets/Shaders/GlowMaterial.tres"));
+                    }
+                }
+            }
+        }
+        public void UnHighlightObject(Node3D obj)
+        {
+            foreach (var item in glowyObjects[obj])
+            {
+                item.QueueFree();
+            }
+            glowyObjects.Remove(obj);
+        }
     }
 }
