@@ -14,18 +14,18 @@
 [ext_resource type="PackedScene" uid="uid://bwrpx53438ggj" path="res://Assets/Prefabs/WorldObjects/OfficeChairAlt.tscn" id="11_vrl1v"]
 [ext_resource type="Texture2D" uid="uid://djlcj5x2wh2l5" path="res://Assets/Scenes/Office/assets/materials/light-iron_e5a409e8-17b0-4dd3-8ab5-02ec4f258db4/textures/tiled_plane_DefaultMaterial_Roughness.jpg" id="12_kjeus"]
 [ext_resource type="Material" uid="uid://bx605yju7u21v" path="res://Assets/Scenes/Office/assets/materials/carpet.tres" id="12_phc8k"]
-[ext_resource type="PackedScene" uid="uid://b6wodlnttbmdj" path="res://Assets/Prefabs/WorldObjects/vending_machine.tscn" id="13_gfsq5"]
+[ext_resource type="PackedScene" uid="uid://cdmxxfo37j7de" path="res://Assets/Prefabs/WorldObjects/vending_machine.tscn" id="13_gfsq5"]
 [ext_resource type="PackedScene" uid="uid://6d18cgcfmxb" path="res://Assets/Prefabs/WorldObjects/Group.tscn" id="13_mt8ad"]
 [ext_resource type="PackedScene" uid="uid://b5mtbbqyp1bus" path="res://Assets/Prefabs/WorldObjects/Cubicle.tscn" id="13_vss4u"]
-[ext_resource type="PackedScene" path="res://Assets/Prefabs/WorldObjects/water_cooler.tscn" id="14_5eudm"]
-[ext_resource type="PackedScene" path="res://Assets/Prefabs/WorldObjects/Straight Trim.tscn" id="14_djbcu"]
+[ext_resource type="PackedScene" uid="uid://djeybq5nvfjoi" path="res://Assets/Prefabs/WorldObjects/water_cooler.tscn" id="14_5eudm"]
+[ext_resource type="PackedScene" uid="uid://d4h3qorq1w3ho" path="res://Assets/Prefabs/WorldObjects/Straight Trim.tscn" id="14_djbcu"]
 [ext_resource type="PackedScene" uid="uid://mfys02xva10s" path="res://Assets/Prefabs/WorldObjects/dining_table.tscn" id="14_gn8o5"]
 [ext_resource type="PackedScene" uid="uid://d2ij0h27g3arf" path="res://Assets/Prefabs/WorldObjects/Bathroom Stalls.tscn" id="14_s2s3k"]
 [ext_resource type="PackedScene" uid="uid://blfdf5y8g6x1h" path="res://Assets/Prefabs/WorldObjects/tool_cart.tscn" id="15_8mutc"]
 [ext_resource type="PackedScene" uid="uid://hf2rsb2864f0" path="res://Assets/Prefabs/WorldObjects/kitchen_chair.tscn" id="15_opswh"]
 [ext_resource type="Texture2D" uid="uid://u00l155k64dt" path="res://Assets/Scenes/Office/textures/brown_tiling_14-4K/4K_tiling_14_basecolor.png" id="16_g5nqw"]
 [ext_resource type="Texture2D" uid="uid://r32ipxwb135e" path="res://Assets/Scenes/Office/assets/materials/wood-effect-tile_2fa5f0d6-756e-46cf-95d6-4c6b7a53ec5d/textures/diffuse.jpg" id="16_j87tu"]
-[ext_resource type="PackedScene" path="res://Assets/Prefabs/WorldObjects/Plant1.tscn" id="16_lps8o"]
+[ext_resource type="PackedScene" uid="uid://bckae7hvsr4oo" path="res://Assets/Prefabs/WorldObjects/Plant1.tscn" id="16_lps8o"]
 [ext_resource type="Texture2D" uid="uid://cui0hxy2v66rf" path="res://Assets/Scenes/Office/textures/brown_tiling_14-4K/4K_tiling_14_ambientocclusion.png" id="17_3uusy"]
 [ext_resource type="Texture2D" uid="uid://c7yjggfda6gxb" path="res://Assets/Scenes/Office/assets/materials/wood-effect-tile_2fa5f0d6-756e-46cf-95d6-4c6b7a53ec5d/textures/ao.jpg" id="17_pgyoh"]
 [ext_resource type="Texture2D" uid="uid://vbvno3dsnqv8" path="res://Assets/Scenes/Office/assets/materials/wood-effect-tile_2fa5f0d6-756e-46cf-95d6-4c6b7a53ec5d/textures/height.jpg" id="18_3u2gc"]
@@ -3255,7 +3255,7 @@ compositor = SubResource("Compositor_wsb0w")
 script = ExtResource("47_cnugj")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.572378, 0.0374122, -0.819136, 0.334887, -0.922516, 0.191871, -0.748488, -0.384141, -0.540557, -18.8688, 13.9035, -23.3223)
+transform = Transform3D(0.572378, 0.0374121, -0.819136, 0.334887, -0.922516, 0.191871, -0.748488, -0.384141, -0.540557, -18.8688, 13.9035, -23.3223)
 light_energy = 0.07
 shadow_enabled = true
 
