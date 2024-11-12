@@ -1968,6 +1968,8 @@ needs_motion_vectors = true
 needs_normal_roughness = false
 script = ExtResource("46_mxl28")
 DataMoshShaderFile = ExtResource("45_ch5ps")
+EnableMoshingWithVelocity = true
+Blend = 1.0
 
 [sub_resource type="Compositor" id="Compositor_wsb0w"]
 compositor_effects = Array[CompositorEffect]([SubResource("CompositorEffect_mmya2"), SubResource("CompositorEffect_2tqhy")])
