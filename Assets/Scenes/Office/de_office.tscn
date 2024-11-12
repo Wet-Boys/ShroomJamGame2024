@@ -3358,7 +3358,7 @@ compositor = SubResource("Compositor_wsb0w")
 script = ExtResource("47_cnugj")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.572378, 0.0374121, -0.819136, 0.334887, -0.922516, 0.191871, -0.748488, -0.384141, -0.540557, -18.8688, 13.9035, -23.3223)
+transform = Transform3D(0.572378, 0.0374122, -0.819136, 0.334887, -0.922516, 0.191871, -0.748488, -0.384141, -0.540557, -18.8688, 13.9035, -23.3223)
 light_energy = 0.07
 shadow_enabled = true
 

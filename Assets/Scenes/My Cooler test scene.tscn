@@ -1,11 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bqidnw2pcckwn"]
+[gd_scene load_steps=8 format=3 uid="uid://bqidnw2pcckwn"]
 
 [ext_resource type="PackedScene" uid="uid://bv7hgobt87i0x" path="res://Assets/Prefabs/Player.tscn" id="1_y5cu4"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_u2jix"]
+[ext_resource type="PackedScene" uid="uid://b8tht0xs4gqs1" path="res://Assets/Prefabs/WorldObjects/this shit is so ass door kill me fuckinng please.tscn" id="5_hu3p4"]
 [ext_resource type="PackedScene" uid="uid://lkw7ko7kkqpk" path="res://Assets/Prefabs/NPC.tscn" id="6_orrfj"]
 [ext_resource type="PackedScene" uid="uid://bkh80lrmoy5cs" path="res://Assets/Scenes/Office/de_office.tscn" id="7_qe2q5"]
-[ext_resource type="PackedScene" path="res://Assets/Prefabs/Door.tscn" id="10_hqynx"]
-[ext_resource type="AudioStream" uid="uid://dy8nabc8e6dxv" path="res://Assets/Sfx/Door/Door Close.ogg" id="11_80tci"]
 
 [sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_tph6i"]
 
@@ -42,48 +41,14 @@ navigation_mesh = SubResource("NavigationMesh_kbavx")
 [node name="DeOffice2" parent="NavigationRegion3D/World" instance=ExtResource("7_qe2q5")]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
 
-[node name="Door" parent="." instance=ExtResource("10_hqynx")]
-transform = Transform3D(1.5, 0, 0, 0, 3, 0, 0, 0, 0.25, -3.5, 7.5, 19.25)
-
-[node name="StaticBody3D" parent="Door" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
-
-[node name="AudioStreamPlayer3D" parent="Door/StaticBody3D" index="0"]
-stream = ExtResource("11_80tci")
-
-[node name="DoorInteractable" parent="Door/StaticBody3D" index="3"]
-OpenDegrees = Vector3(0, -90, 0)
-
-[node name="Door4" parent="." instance=ExtResource("10_hqynx")]
-transform = Transform3D(-6.55671e-08, 0, 0.25, 0, 3, 0, -1.5, 0, -1.09278e-08, 4.25776, 7.5, 18.5016)
-
-[node name="StaticBody3D" parent="Door4" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
-
-[node name="AudioStreamPlayer3D" parent="Door4/StaticBody3D" index="0"]
-stream = ExtResource("11_80tci")
-
-[node name="DoorInteractable" parent="Door4/StaticBody3D" index="3"]
-ClosedDegrees = Vector3(0, 90, 0)
-
-[node name="Door2" parent="." instance=ExtResource("10_hqynx")]
-transform = Transform3D(1.5, 0, 0, 0, 3, 0, 0, 0, 0.25, -19.4944, 7.5, 19.25)
-
-[node name="StaticBody3D" parent="Door2" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
-
-[node name="AudioStreamPlayer3D" parent="Door2/StaticBody3D" index="0"]
-stream = ExtResource("11_80tci")
-
-[node name="DoorInteractable" parent="Door2/StaticBody3D" index="3"]
-OpenDegrees = Vector3(0, -90, 0)
-
 [node name="GenericCharacterBody3" parent="." instance=ExtResource("6_orrfj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2232, 7.87558, 4.62119)
+
+[node name="door city" type="Node3D" parent="."]
+
+[node name="this shit so ass" parent="door city" instance=ExtResource("5_hu3p4")]
+transform = Transform3D(1.45608, 0, 0, 0, 1.47931, 0, 0, 0, 1.71247, 4.10661, 5.97521, 17.123)
 
 [editable path="NavigationRegion3D/World/DeOffice2"]
 [editable path="NavigationRegion3D/World/DeOffice2/Asset Complete Office2/Cubicle2"]
 [editable path="NavigationRegion3D/World/DeOffice2/Asset Complete Office2/Cubicle3"]
-[editable path="Door"]
-[editable path="Door4"]
-[editable path="Door2"]
