@@ -1,0 +1,88 @@
+[gd_scene load_steps=10 format=4 uid="uid://b6gb4fpjgps0q"]
+
+[ext_resource type="Texture2D" uid="uid://dawpkastqv7o6" path="res://Assets/Scenes/Office/assets/models/assorted pictures/ Thistles ca_ 1883–1889 by John Singer Sargent_ Original from The Art Institute of Chicago_ Digitally enhanced by rawpixel_.jpg" id="1_jju3f"]
+[ext_resource type="Texture2D" uid="uid://df8vph8kdleua" path="res://Assets/Scenes/Office/assets/models/assorted pictures/ Thistles ca_ 1883–1889 by John Singer Sargent_ Original from The Art Institute of Chicago_ Digitally enhanced by rawpixel_.png" id="2_uvcj8"]
+[ext_resource type="Texture2D" uid="uid://qs7g8asa6dh2" path="res://Assets/Scenes/Office/assets/models/assorted pictures/Marble021_4K_Color.jpg" id="3_m0ak4"]
+[ext_resource type="Texture2D" uid="uid://brrg3jowjtn0s" path="res://Assets/Scenes/Office/assets/models/assorted pictures/Marble021_4K_Roughness.png" id="4_n7etx"]
+[ext_resource type="Texture2D" uid="uid://ctwyaoy2gcw4a" path="res://Assets/Scenes/Office/assets/models/assorted pictures/Marble021_4K_NormalDX.jpg" id="5_3fkxr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_urfxx"]
+resource_name = "Thistles by John Singer Sargent"
+cull_mode = 2
+albedo_texture = ExtResource("1_jju3f")
+metallic_texture = ExtResource("2_uvcj8")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_uvcj8")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("1_jju3f")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bhppn"]
+resource_name = "marbre blanc"
+cull_mode = 2
+albedo_texture = ExtResource("3_m0ak4")
+metallic_texture = ExtResource("4_n7etx")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("4_n7etx")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("5_3fkxr")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_5rpxj"]
+_surfaces = [{
+"aabb": AABB(-0.478145, -0.611616, 0.0055398, 0.95629, 1.22323, 0.0344602),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AwAGAAIAAwAHAAYABwAFAAYABwAEAAUAAAAHAAMAAAAEAAcAAQAEAAAAAQAFAAQAAgAFAAEAAgAGAAUAAAACAAEAAAADAAIA"),
+"name": "Thistles by John Singer Sargent",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAAAAAAAAAP//AAAAAP////8AAAAA//8AAAAAAAAAAAAA//8AAAAA/////wAA////////AAD//wAA//8AAA==")
+}, {
+"aabb": AABB(-0.497304, -0.630776, 9.31323e-09, 0.994609, 1.26155, 0.0399999),
+"format": 34896613377,
+"index_count": 84,
+"index_data": PackedByteArray("CAADAAkACAACAAMAAgAHAAMAAgAGAAcABgAKAAcABgALAAoABQANAAEABQAOAA0AAgALAAYAAgAIAAsABwAJAAMABwAKAAkAAAAJAAEAAAAIAAkABQALAAQABQAKAAsABAAIAAAABAALAAgAAQAKAAUAAQAJAAoABAAOAAUABAAPAA4AAAAPAAQAAAAMAA8AAQAMAAAAAQANAAwADAAOAA8ADAANAA4A"),
+"name": "marbre blanc",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("pAPfAv//AACkAx/9//8AAAAAAAAAAAAAAAD//wAAAABa/N8C//8AAFr8H/3//wAA//8AAAAAAAD/////AAAAAAAAAAD//wAAAAD/////AAD///////8AAP//AAD//wAApAPfAnQjAACkAx/9dCMAAFr8H/10IwAAWvzfAnQjAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_xdvro"]
+resource_name = "assorted pictures_Cube_019"
+_surfaces = [{
+"aabb": AABB(-0.478145, -0.611616, 0.0055398, 0.95629, 1.22323, 0.0344602),
+"attribute_data": PackedByteArray("BYD/f8XB/38FgE3C////f8XB/3/+/03C/v///8XB/////03CBYD//8XB//8FgE3CBYD/fyq+/38FgLC9/v//fyq+/3///7C9/////yq+///+/7C9BYD//yq+//8FgLC9"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("CwAUAAgACwAXABQAFQAPABIAFQAMAA8AAQAWAAoAAQANABYABQAOAAIABQARAA4ABwAQAAQABwATABAAAAAGAAMAAAAJAAYA"),
+"material": SubResource("StandardMaterial3D_urfxx"),
+"name": "Thistles by John Singer Sargent",
+"primitive": 3,
+"uv_scale": Vector4(2.00091, 1.99999, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AAAAAAAAAAAAAAAAAACqKgAAAAAAAKoqAAD//wAAAAAAAP//AABU1QAA//8AAKoq/////wAAAAD/////AABU1f////8AAFTV//8AAAAAAAD//wAAAACqKv//AAAAAFTVAAAAAP///78AAAAA//+qKgAAAAD//6oqAAD//////78AAP////9U1QAA/////6oq/////////7////////9U1f///////1TV//8AAP///7///wAA//+qKv//AAD//1TV/7//v1RVVFVU1VTV/7//v1TVqipU1VTV/7//v1TVqiqqKqoq/7//v1RVVFWqKqoq/////1RVVFVU1VTV/////1TVqipU1VTV/////1TVqiqqKqoq/////1RVVFWqKqoq")
+}, {
+"aabb": AABB(-0.497304, -0.630776, 9.31323e-09, 0.994609, 1.26155, 0.0399999),
+"attribute_data": PackedByteArray("6r7/f4vSckKuzl2B6r6g/ovS//+uzv//AAChfovS//8mxKF+AAD//4vStj8mxP//gmH/f4vS2p8EyF2BgmGg/ovSl6IEyP//JGChfovS2p8mxKF+JGD//4vS2p8mxP//SMChfq7O//9IwKF+SMD//67Otj9IwP//JGD//67O2p8EyP//JGChfq7O2p8EyKF+Z10AAODVckJZy12BZ12hfuDV//9Zy///AAChfuDVl6JZy///AAAAAODV2p9Zy12B"),
+"format": 34896613399,
+"index_count": 84,
+"index_data": PackedByteArray("GgALAB0AGgAIAAsABgAVAAkABgASABUAFAAgABcAFAAjACAAEAAoAAQAEAArACgABwAiABMABwAZACIAFgAcAAoAFgAfABwAAAAbAAMAAAAYABsADwAhAAwADwAeACEADAAYAAAADAAhABgAAwAeAA8AAwAbAB4ADgAsABEADgAvACwAAQAuAA0AAQAlAC4ABQAmAAIABQApACYAJAAqAC0AJAAnACoA"),
+"material": SubResource("StandardMaterial3D_bhppn"),
+"name": "marbre blanc",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 48,
+"vertex_data": PackedByteArray("pAPfAv//1/6kA98C//9U1aQD3wL/////pAMf/f//zf6kAx/9//9U1aQDH/3/////AAAAAAAA//8AAAAAAABU1QAAAAAAAP//AAD//wAA//8AAP//AABU1QAA//8AAP//WvzfAv//zf5a/N8C//9U1Vr83wL/////Wvwf/f//1/5a/B/9//9U1Vr8H/3///////8AAAAA/////wAAAABU1f//AAAAAP///////wAA////////AABU1f////8AAP//AAAAAP//1P4AAAAA//9U1QAAAAD/////AAD/////1v4AAP////9U1QAA////////////////1P7///////9U1f////////////8AAP//1v7//wAA//9U1f//AAD/////pAPfAnQj//+kA98CdCNU1aQD3wJ0I///pAMf/XQj//+kAx/9dCNU1aQDH/10I///Wvwf/XQj//9a/B/9dCNU1Vr8H/10I///WvzfAnQj//9a/N8CdCNU1Vr83wJ0I////3//f1TVqir/v/9//////1RVVFX/v/9/////f1RVVFX/P/9/////f1TVqir/P/9//////1TVqir/P/9//3//f1RVVFX/P/9/////f1RVVFX/v/9/////f1TVqir/v/9//3//f1RVVFX/P/9//////1TVqir/P/9//3//f1TVqir/v/9//////1RVVFX/v/9//3//f1TVqir/v/9//3//f1RVVFX/v/9//3//f1RVVFX/P/9//3//f1TVqir/P/9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_5rpxj")
+
+[node name="painting 9" type="MeshInstance3D"]
+transform = Transform3D(0, 1, -5.96046e-08, -5.96046e-08, 0, 1, 1, -5.96046e-08, 0, 0, 0, 0)
+mesh = SubResource("ArrayMesh_xdvro")
+skeleton = NodePath("")

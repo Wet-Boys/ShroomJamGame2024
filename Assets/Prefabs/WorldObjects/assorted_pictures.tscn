@@ -1,0 +1,38 @@
+[gd_scene load_steps=12 format=3 uid="uid://bwh0w0f327y4r"]
+
+[ext_resource type="PackedScene" uid="uid://cr54ay2b62su1" path="res://Assets/Prefabs/WorldObjects/painting_11.tscn" id="1_mgagh"]
+[ext_resource type="PackedScene" uid="uid://dhf4sxevdm04h" path="res://Assets/Prefabs/WorldObjects/painting_10.tscn" id="2_muib8"]
+[ext_resource type="PackedScene" uid="uid://b6gb4fpjgps0q" path="res://Assets/Prefabs/WorldObjects/painting_9.tscn" id="3_vt4ir"]
+[ext_resource type="PackedScene" uid="uid://b1msvy8geygoo" path="res://Assets/Prefabs/WorldObjects/painting_8.tscn" id="4_4fhpg"]
+[ext_resource type="PackedScene" uid="uid://dd8u8vokfykif" path="res://Assets/Prefabs/WorldObjects/painting_7.tscn" id="5_x12x1"]
+[ext_resource type="PackedScene" uid="uid://bqjflbpwvyxtc" path="res://Assets/Prefabs/WorldObjects/painting_1.tscn" id="6_fcwyu"]
+[ext_resource type="PackedScene" uid="uid://cbhuuk1cifft8" path="res://Assets/Prefabs/WorldObjects/painting_2.tscn" id="7_kyg7k"]
+[ext_resource type="PackedScene" uid="uid://cb4mknph76c8k" path="res://Assets/Prefabs/WorldObjects/painting_3.tscn" id="8_77gxp"]
+[ext_resource type="PackedScene" uid="uid://q2tfw3eca0fi" path="res://Assets/Prefabs/WorldObjects/painting_4.tscn" id="9_ihjcb"]
+[ext_resource type="PackedScene" uid="uid://4uoe616lrbhy" path="res://Assets/Prefabs/WorldObjects/painting_5.tscn" id="10_c2pms"]
+[ext_resource type="PackedScene" uid="uid://cwgf0v6rro5s8" path="res://Assets/Prefabs/WorldObjects/painting_6.tscn" id="11_8n2ag"]
+
+[node name="assorted pictures" type="Node3D"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+
+[node name="painting 11" parent="." instance=ExtResource("1_mgagh")]
+
+[node name="painting 10" parent="." instance=ExtResource("2_muib8")]
+
+[node name="painting 9" parent="." instance=ExtResource("3_vt4ir")]
+
+[node name="painting 8" parent="." instance=ExtResource("4_4fhpg")]
+
+[node name="painting 7" parent="." instance=ExtResource("5_x12x1")]
+
+[node name="painting 1" parent="." instance=ExtResource("6_fcwyu")]
+
+[node name="painting 2" parent="." instance=ExtResource("7_kyg7k")]
+
+[node name="painting 3" parent="." instance=ExtResource("8_77gxp")]
+
+[node name="painting 4" parent="." instance=ExtResource("9_ihjcb")]
+
+[node name="painting 5" parent="." instance=ExtResource("10_c2pms")]
+
+[node name="painting 6" parent="." instance=ExtResource("11_8n2ag")]

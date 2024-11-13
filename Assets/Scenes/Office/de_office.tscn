@@ -1,4 +1,4 @@
-[gd_scene load_steps=254 format=4 uid="uid://bkh80lrmoy5cs"]
+[gd_scene load_steps=266 format=4 uid="uid://bkh80lrmoy5cs"]
 
 [ext_resource type="Material" uid="uid://ce3wou354fqct" path="res://Assets/Scenes/Office/assets/materials/kitchen wall.tres" id="1_42koi"]
 [ext_resource type="Material" uid="uid://bm4mtepbl3aav" path="res://Assets/Scenes/Office/assets/materials/Backrooms Wallpaper.tres" id="1_giika"]
@@ -33,14 +33,14 @@
 [ext_resource type="Texture2D" uid="uid://r32ipxwb135e" path="res://Assets/Scenes/Office/assets/materials/wood-effect-tile_2fa5f0d6-756e-46cf-95d6-4c6b7a53ec5d/textures/diffuse.jpg" id="16_j87tu"]
 [ext_resource type="PackedScene" uid="uid://bckae7hvsr4oo" path="res://Assets/Prefabs/WorldObjects/Plant1.tscn" id="16_lps8o"]
 [ext_resource type="Texture2D" uid="uid://cui0hxy2v66rf" path="res://Assets/Scenes/Office/textures/brown_tiling_14-4K/4K_tiling_14_ambientocclusion.png" id="17_3uusy"]
-[ext_resource type="PackedScene" path="res://Assets/Prefabs/WorldObjects/bathroom_sink.tscn" id="17_24r22"]
+[ext_resource type="PackedScene" uid="uid://bf6kgkt4a04to" path="res://Assets/Prefabs/WorldObjects/bathroom_sink.tscn" id="17_24r22"]
 [ext_resource type="Texture2D" uid="uid://c7yjggfda6gxb" path="res://Assets/Scenes/Office/assets/materials/wood-effect-tile_2fa5f0d6-756e-46cf-95d6-4c6b7a53ec5d/textures/ao.jpg" id="17_pgyoh"]
 [ext_resource type="Texture2D" uid="uid://vbvno3dsnqv8" path="res://Assets/Scenes/Office/assets/materials/wood-effect-tile_2fa5f0d6-756e-46cf-95d6-4c6b7a53ec5d/textures/height.jpg" id="18_3u2gc"]
 [ext_resource type="Texture2D" uid="uid://chaqvjtnwmiyp" path="res://Assets/Scenes/Office/textures/brown_tiling_14-4K/4K_tiling_14_height.png" id="18_hw0hu"]
 [ext_resource type="Texture2D" uid="uid://csofjfa46wo5j" path="res://Assets/Scenes/Office/assets/materials/wood-effect-tile_2fa5f0d6-756e-46cf-95d6-4c6b7a53ec5d/textures/normal.jpg" id="19_6hfhx"]
 [ext_resource type="Texture2D" uid="uid://qboo6nov5qj3" path="res://Assets/Scenes/Office/textures/brown_tiling_14-4K/4K_tiling_14_metallic.png" id="19_323jb"]
 [ext_resource type="Texture2D" uid="uid://jgn4k73dcfiv" path="res://Assets/Scenes/Office/textures/brown_tiling_14-4K/4K_tiling_14_normal.png" id="20_bm3pv"]
-[ext_resource type="PackedScene" path="res://Assets/Prefabs/WorldObjects/hand dryer.tscn" id="20_lgef8"]
+[ext_resource type="PackedScene" uid="uid://cgh31ecorfh4u" path="res://Assets/Prefabs/WorldObjects/hand dryer.tscn" id="20_lgef8"]
 [ext_resource type="PackedScene" uid="uid://dletgdb3ldyhl" path="res://Assets/Prefabs/WorldObjects/tube_light.tscn" id="21_6iria"]
 [ext_resource type="Texture2D" uid="uid://dkgdos3w0nkyu" path="res://Assets/Scenes/Office/textures/brown_tiling_14-4K/4K_tiling_14_roughness.png" id="21_xf5rx"]
 [ext_resource type="Texture2D" uid="uid://be2v6r8uggw8w" path="res://Assets/Scenes/Office/assets/materials/ceiling tile/tiles_0013_color_1k.jpg" id="22_v56ti"]
@@ -50,31 +50,43 @@
 [ext_resource type="Texture2D" uid="uid://b2acrgwk3xm1u" path="res://Assets/Scenes/Office/assets/materials/ceiling tile/tiles_0013_height_1k.png" id="24_vr5ik"]
 [ext_resource type="PackedScene" uid="uid://bkiu2ffi882dw" path="res://Assets/Prefabs/WorldObjects/Mouse.tscn" id="25_6wf6u"]
 [ext_resource type="Texture2D" uid="uid://br7jfrgijf8ik" path="res://Assets/Scenes/Office/assets/materials/ceiling tile/tiles_0013_metallic_1k.jpg" id="25_pbofh"]
-[ext_resource type="PackedScene" path="res://Assets/Prefabs/WorldObjects/toilet.tscn" id="26_2s64u"]
+[ext_resource type="PackedScene" uid="uid://buayo3bhj00iu" path="res://Assets/Prefabs/WorldObjects/toilet.tscn" id="26_2s64u"]
 [ext_resource type="PackedScene" uid="uid://cieljfy51ui4s" path="res://Assets/Prefabs/WorldObjects/Keyboard.tscn" id="26_i88ij"]
 [ext_resource type="PackedScene" uid="uid://dcm8nmt78ymb0" path="res://Assets/Prefabs/WorldObjects/PoolTable.tscn" id="26_kfca7"]
 [ext_resource type="Texture2D" uid="uid://dj1sw4r5obi7e" path="res://Assets/Scenes/Office/assets/materials/ceiling tile/tiles_0013_normal_directx_1k.png" id="26_yc5bu"]
 [ext_resource type="Texture2D" uid="uid://36w5t8834hb7" path="res://Assets/Scenes/Office/assets/materials/ceiling tile/tiles_0013_roughness_1k.jpg" id="27_4bp2x"]
 [ext_resource type="PackedScene" uid="uid://doely3tqxg17o" path="res://Assets/Prefabs/WorldObjects/pool_cue.tscn" id="27_q6yse"]
-[ext_resource type="PackedScene" path="res://Assets/Prefabs/WorldObjects/toilet_paper.tscn" id="27_v3egx"]
+[ext_resource type="PackedScene" uid="uid://05074hgwm85x" path="res://Assets/Prefabs/WorldObjects/toilet_paper.tscn" id="27_v3egx"]
 [ext_resource type="PackedScene" uid="uid://sucmon0cf6k8" path="res://Assets/Prefabs/WorldObjects/OfficeChair.tscn" id="30_fjces"]
-[ext_resource type="PackedScene" path="res://Assets/Prefabs/WorldObjects/whiteboard.tscn" id="31_bivl4"]
-[ext_resource type="PackedScene" path="res://Assets/Prefabs/WorldObjects/marker.tscn" id="32_dfjrb"]
-[ext_resource type="PackedScene" path="res://Assets/Prefabs/WorldObjects/trash_can.tscn" id="32_u74lh"]
-[ext_resource type="PackedScene" path="res://Assets/Prefabs/WorldObjects/tv.tscn" id="33_hocsv"]
-[ext_resource type="PackedScene" path="res://Assets/Prefabs/WorldObjects/printer.tscn" id="33_vvghg"]
-[ext_resource type="PackedScene" path="res://Assets/Prefabs/WorldObjects/meeting_table.tscn" id="36_8epht"]
-[ext_resource type="PackedScene" path="res://Assets/Prefabs/WorldObjects/boss_chair.tscn" id="41_mge33"]
+[ext_resource type="PackedScene" uid="uid://ck5nebwosli5l" path="res://Assets/Prefabs/WorldObjects/whiteboard.tscn" id="31_bivl4"]
+[ext_resource type="PackedScene" uid="uid://b1576dc5lb2dy" path="res://Assets/Prefabs/WorldObjects/marker.tscn" id="32_dfjrb"]
+[ext_resource type="PackedScene" uid="uid://b7vsnbtfng120" path="res://Assets/Prefabs/WorldObjects/trash_can.tscn" id="32_u74lh"]
+[ext_resource type="PackedScene" uid="uid://dbwbj1d7x74g3" path="res://Assets/Prefabs/WorldObjects/tv.tscn" id="33_hocsv"]
+[ext_resource type="PackedScene" uid="uid://dw0i481qgdkqu" path="res://Assets/Prefabs/WorldObjects/printer.tscn" id="33_vvghg"]
+[ext_resource type="PackedScene" uid="uid://bb2p7b4q35uxh" path="res://Assets/Prefabs/WorldObjects/meeting_table.tscn" id="36_8epht"]
+[ext_resource type="PackedScene" uid="uid://dhi6o1tunsdcx" path="res://Assets/Prefabs/WorldObjects/hr_cardboard.tscn" id="39_7dp53"]
+[ext_resource type="PackedScene" uid="uid://bj73e8q4ewyae" path="res://Assets/Prefabs/WorldObjects/hr_desk.tscn" id="40_dl2j5"]
+[ext_resource type="PackedScene" uid="uid://bh3wnejo207xa" path="res://Assets/Prefabs/WorldObjects/boss_chair.tscn" id="41_mge33"]
 [ext_resource type="Environment" uid="uid://33v7dtbsec0t" path="res://Assets/environment.tres" id="42_glwae"]
-[ext_resource type="PackedScene" path="res://Assets/Prefabs/WorldObjects/boss_desk.tscn" id="42_iypbj"]
+[ext_resource type="PackedScene" uid="uid://dhtyoauwu7y8t" path="res://Assets/Prefabs/WorldObjects/boss_desk.tscn" id="42_iypbj"]
 [ext_resource type="Script" path="res://Rendering/RightClickToDataMosh.cs" id="47_cnugj"]
 [ext_resource type="PackedScene" uid="uid://pbq706q3dtdx" path="res://Assets/Prefabs/WorldObjects/elevator.tscn" id="56_e1htd"]
-[ext_resource type="Compositor" uid="uid://ccmk57cv4a0gr" path="res://Assets/compositor.tres" id="61_7xgf3"]
-[ext_resource type="PackedScene" path="res://Assets/Prefabs/WorldObjects/conference chair.tscn" id="65_udbvo"]
-[ext_resource type="PackedScene" path="res://Assets/Prefabs/WorldObjects/boss_sink.tscn" id="72_vvw20"]
-[ext_resource type="PackedScene" path="res://Assets/Prefabs/WorldObjects/boss_toilet.tscn" id="73_ilwok"]
-[ext_resource type="PackedScene" path="res://Assets/Prefabs/WorldObjects/boss_urinal.tscn" id="74_ixrvx"]
-[ext_resource type="ArrayOccluder3D" uid="uid://dwgrmutgy6app" path="res://Assets/Scenes/Office/de_office.occ" id="75_hksek"]
+[ext_resource type="Compositor" uid="uid://ccrycwv5i0yyi" path="res://Assets/compositor.tres" id="61_7xgf3"]
+[ext_resource type="PackedScene" uid="uid://0alugtqy63q6" path="res://Assets/Prefabs/WorldObjects/conference chair.tscn" id="65_udbvo"]
+[ext_resource type="PackedScene" uid="uid://boxxihrkclqq0" path="res://Assets/Prefabs/WorldObjects/boss_sink.tscn" id="72_vvw20"]
+[ext_resource type="PackedScene" uid="uid://ddjue5hteh6fw" path="res://Assets/Prefabs/WorldObjects/boss_toilet.tscn" id="73_ilwok"]
+[ext_resource type="PackedScene" uid="uid://do2itx74a8yoq" path="res://Assets/Prefabs/WorldObjects/boss_urinal.tscn" id="74_ixrvx"]
+[ext_resource type="PackedScene" uid="uid://bqjflbpwvyxtc" path="res://Assets/Prefabs/WorldObjects/painting_1.tscn" id="77_ukq70"]
+[ext_resource type="PackedScene" uid="uid://cbhuuk1cifft8" path="res://Assets/Prefabs/WorldObjects/painting_2.tscn" id="78_f2tm1"]
+[ext_resource type="PackedScene" uid="uid://cb4mknph76c8k" path="res://Assets/Prefabs/WorldObjects/painting_3.tscn" id="79_6wkp3"]
+[ext_resource type="PackedScene" uid="uid://q2tfw3eca0fi" path="res://Assets/Prefabs/WorldObjects/painting_4.tscn" id="80_ldmag"]
+[ext_resource type="PackedScene" uid="uid://4uoe616lrbhy" path="res://Assets/Prefabs/WorldObjects/painting_5.tscn" id="81_wrma1"]
+[ext_resource type="PackedScene" uid="uid://cwgf0v6rro5s8" path="res://Assets/Prefabs/WorldObjects/painting_6.tscn" id="82_354fr"]
+[ext_resource type="PackedScene" uid="uid://dd8u8vokfykif" path="res://Assets/Prefabs/WorldObjects/painting_7.tscn" id="83_7dfoi"]
+[ext_resource type="PackedScene" uid="uid://b1msvy8geygoo" path="res://Assets/Prefabs/WorldObjects/painting_8.tscn" id="84_rjjtg"]
+[ext_resource type="PackedScene" uid="uid://b6gb4fpjgps0q" path="res://Assets/Prefabs/WorldObjects/painting_9.tscn" id="85_v4p3y"]
+[ext_resource type="PackedScene" uid="uid://dhf4sxevdm04h" path="res://Assets/Prefabs/WorldObjects/painting_10.tscn" id="86_pbld0"]
+[ext_resource type="PackedScene" uid="uid://cr54ay2b62su1" path="res://Assets/Prefabs/WorldObjects/painting_11.tscn" id="87_peepo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_70w70"]
 
@@ -1983,27 +1995,53 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Asset Complete Office2/Cube_162/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_b35ha")
 
-[node name="Cube_128" type="MeshInstance3D" parent="Asset Complete Office2"]
-transform = Transform3D(-8.74228e-07, 0, -0.5, 0, 10, 0, 20, 0, -2.18557e-08, 17.5, 34, -40)
+[node name="Cube_128" type="CSGBox3D" parent="Asset Complete Office2"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17.5, 27.5, -39)
 material_override = ExtResource("1_giika")
-mesh = SubResource("ArrayMesh_4e80x")
-skeleton = NodePath("")
+use_collision = true
+size = Vector3(39, 6, 1)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Asset Complete Office2/Cube_128"]
+[node name="Cube_188" type="CSGBox3D" parent="Asset Complete Office2"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17.5, 37.5, -26.5)
+material_override = ExtResource("1_giika")
+use_collision = true
+size = Vector3(14, 14, 1)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Asset Complete Office2/Cube_128/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_cktho")
+[node name="Cube_189" type="CSGBox3D" parent="Asset Complete Office2"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17.5, 41, -36)
+material_override = ExtResource("1_giika")
+use_collision = true
+size = Vector3(5, 7, 1)
 
-[node name="Cube_135" type="MeshInstance3D" parent="Asset Complete Office2"]
-transform = Transform3D(-8.74228e-07, 0, -0.5, 0, 10, 0, 20, 0, -2.18557e-08, 16.5, 34, -40)
+[node name="Cube_190" type="CSGBox3D" parent="Asset Complete Office2"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17.5, 37.5, -48.5)
+material_override = ExtResource("1_giika")
+use_collision = true
+size = Vector3(20, 14, 1)
+
+[node name="Cube_135" type="CSGBox3D" parent="Asset Complete Office2"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 16.5, 27, -40)
 material_override = ExtResource("1_42koi")
-mesh = SubResource("ArrayMesh_4e80x")
-skeleton = NodePath("")
+use_collision = true
+size = Vector3(37, 7, 1)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Asset Complete Office2/Cube_135"]
+[node name="Cube_185" type="CSGBox3D" parent="Asset Complete Office2"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 16.5, 37.5, -27.5)
+material_override = ExtResource("1_42koi")
+use_collision = true
+size = Vector3(12, 14, 1)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Asset Complete Office2/Cube_135/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_cktho")
+[node name="Cube_186" type="CSGBox3D" parent="Asset Complete Office2"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 16.5, 37.5, -48.5)
+material_override = ExtResource("1_42koi")
+use_collision = true
+size = Vector3(20, 14, 1)
+
+[node name="Cube_187" type="CSGBox3D" parent="Asset Complete Office2"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 16.5, 41, -36)
+material_override = ExtResource("1_42koi")
+use_collision = true
+size = Vector3(5, 7, 1)
 
 [node name="Cube_141" type="MeshInstance3D" parent="Asset Complete Office2"]
 transform = Transform3D(0, 0, -1, 0, 10, 0, 20, 0, 0, 39, 34, -40)
@@ -2812,6 +2850,24 @@ transform = Transform3D(-2.15643, 0, 10.1359, 0, 10.3629, 0, -10.1359, 0, -2.156
 [node name="Blender keyboard4" parent="Asset Complete Office2/Cubicle3" index="23"]
 transform = Transform3D(2.86037, 0, 9.96022, 0, 10.3629, 0, -9.96022, 0, 2.86037, -10.2785, -0.485497, 9.87009)
 
+[node name="Screen2_015" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("24_6sh7m")]
+transform = Transform3D(-10.007, -0.323303, -0.0713798, 5.88362e-07, 2.15859, -9.77703, 0.331089, -9.77167, -2.15741, 47.1351, 2.03869, -93.0836)
+
+[node name="Gigabyte Computer_015" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("23_lxv0o")]
+transform = Transform3D(-7.68624, 0, 0.163188, 0, 7.68796, 0, -0.163188, 0, -7.68623, 41.8222, -0.384359, -92.9676)
+
+[node name="Mouse_015" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("25_6wf6u")]
+transform = Transform3D(6.09477, 0, 1.05203, 0, 6.1849, 0, -1.05203, 0, 6.09477, 43.9011, -0.397289, -95.1065)
+
+[node name="Blender keyboard5" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("26_i88ij")]
+transform = Transform3D(-10.1743, 0, -1.9721, 0, 10.3638, 0, 1.9721, 0, -10.1743, 47.0709, -0.384342, -95.1032)
+
+[node name="Office Chair_REX_025" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("30_fjces")]
+transform = Transform3D(6.33008, 0, 0, 0, 6.33008, 0, 0, 0, 6.33008, 46.0707, -4.70919, -98.6348)
+
+[node name="trash can5" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("32_u74lh")]
+transform = Transform3D(9.6, 0, 0, 0, 9.6, 0, 0, 0, 9.6, 42.9673, -5, -104.833)
+
 [node name="Office Chair_REX_015" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("30_fjces")]
 transform = Transform3D(6.32723, 0, 0.189974, 0, 6.33008, 0, -0.189974, 0, 6.32723, 19.7166, -4.70919, 35.7949)
 
@@ -2856,6 +2912,12 @@ transform = Transform3D(1.44347, 0, 7.8687, 0, 8, 0, -7.8687, 0, 1.44347, 60.394
 
 [node name="tv2" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("33_hocsv")]
 transform = Transform3D(-5.59111e-07, 12.791, -5.59111e-07, 0, -5.59111e-07, -12.791, -12.791, -5.59111e-07, 2.44395e-14, 8.62749, 7.22809, 38.9876)
+
+[node name="hr cardboard" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("39_7dp53")]
+transform = Transform3D(-3.50117e-07, 8.00853, 0.139789, 1.80725, 0.136185, -7.80201, -7.8032, 0.0315405, -1.80698, 40.8298, 5.47572, -84.9365)
+
+[node name="hr desk" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("40_dl2j5")]
+transform = Transform3D(-6.43652, 0, -5.62698e-07, 0, 6.43652, 0, 5.62698e-07, 0, -6.43652, 46.9864, -4.9899, -94.1489)
 
 [node name="SMT_Straight" parent="Asset Complete Office2" instance=ExtResource("14_djbcu")]
 transform = Transform3D(-1.44414e-05, -8, -3.49691e-07, 0, -3.49691e-07, 8, -330.38, 3.49691e-07, 1.52855e-14, 16.02, 24, 46.9927)
@@ -3310,6 +3372,9 @@ transform = Transform3D(-5.09117, 0, -5.09117, 0, 7.2, 0, 5.09117, 0, -5.09117, 
 [node name="Plant1" parent="." instance=ExtResource("16_lps8o")]
 transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 13.9371, 24, 14.3539)
 
+[node name="Plant3" parent="." instance=ExtResource("16_lps8o")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 36.1829, 24, -56.9472)
+
 [node name="Plant2" parent="." instance=ExtResource("16_lps8o")]
 transform = Transform3D(2.07055, 0, -7.72741, 0, 8, 0, 7.72741, 0, 2.07055, 13.9371, 24, 61.3539)
 
@@ -3343,6 +3408,9 @@ transform = Transform3D(-3.52336e-07, 0, 8.0605, 0, 8.0605, 0, -8.0605, 0, -3.52
 [node name="conference chair2" parent="." instance=ExtResource("65_udbvo")]
 transform = Transform3D(6.36952, 0, -4.40224, 0, 7.74277, 0, 4.40224, 0, 6.36952, 33.4689, 24.1791, 72.0953)
 
+[node name="conference chair4" parent="." instance=ExtResource("65_udbvo")]
+transform = Transform3D(-6.93282, 0, -3.44768, 0, 7.74277, 0, 3.44768, 0, -6.93282, 32.7628, 24.1791, -26.6996)
+
 [node name="conference chair3" parent="." instance=ExtResource("65_udbvo")]
 transform = Transform3D(-3.91531, 0, -6.67988, 0, 7.74277, 0, 6.67988, 0, -3.91531, 33.4689, 24.1791, 94.0983)
 
@@ -3355,8 +3423,38 @@ transform = Transform3D(-3.49691e-07, 0, -8, 0, 8, 0, 8, 0, -3.49691e-07, -16.03
 [node name="boss urinal" parent="." instance=ExtResource("74_ixrvx")]
 transform = Transform3D(-3.50976e-07, -8.02939, 3.50976e-07, 0, -3.50976e-07, -8.02939, 8.02939, -3.50976e-07, 1.53416e-14, -15.9154, 27.1793, 83.1825)
 
-[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
-occluder = ExtResource("75_hksek")
+[node name="painting 1" parent="." instance=ExtResource("77_ukq70")]
+transform = Transform3D(-3.49691e-07, -8, 3.49691e-07, 0, -3.49691e-07, -8, 8, -3.49691e-07, 1.52855e-14, -16, 34, -5.436)
+
+[node name="painting 2" parent="." instance=ExtResource("78_f2tm1")]
+transform = Transform3D(8, 0, 0, 0, -3.49691e-07, -8, 0, 8, -3.49691e-07, -57.037, 34, -14)
+
+[node name="painting 3" parent="." instance=ExtResource("79_6wkp3")]
+transform = Transform3D(8, 0, 0, 0, -3.49691e-07, -8, 0, 8, -3.49691e-07, -33.466, 34, -14)
+
+[node name="painting 4" parent="." instance=ExtResource("80_ldmag")]
+transform = Transform3D(8, 0, 0, 0, -3.49691e-07, 8, 0, -8, -3.49691e-07, -19.311, 34, 76)
+
+[node name="painting 5" parent="." instance=ExtResource("81_wrma1")]
+transform = Transform3D(8, 0, 0, 0, -3.49691e-07, -8, 0, 8, -3.49691e-07, -49.649, 34, 78)
+
+[node name="painting 6" parent="." instance=ExtResource("82_354fr")]
+transform = Transform3D(8, 0, 0, 0, 1.04907e-06, 8, 0, -8, 1.04907e-06, 30.59, 34, 66)
+
+[node name="painting 7" parent="." instance=ExtResource("83_7dfoi")]
+transform = Transform3D(-3.49691e-07, 8, -3.49691e-07, 0, -3.49691e-07, -8, -8, -3.49691e-07, 1.52855e-14, 18, 34, 39.8846)
+
+[node name="painting 8" parent="." instance=ExtResource("84_rjjtg")]
+transform = Transform3D(-3.49691e-07, 8, -3.49691e-07, 0, -3.49691e-07, -8, -8, -3.49691e-07, 1.52855e-14, 18, 34, 4.64)
+
+[node name="painting 9" parent="." instance=ExtResource("85_v4p3y")]
+transform = Transform3D(0, 8, -4.76837e-07, -8, 4.76837e-07, -3.49691e-07, -8.26528e-07, 2.08432e-14, 8, 31.259, 34, -20)
+
+[node name="painting 10" parent="." instance=ExtResource("86_pbld0")]
+transform = Transform3D(-3.49691e-07, -3.49691e-07, -8, -1.20857, 7.90818, -2.92849e-07, 7.90818, 1.20857, -3.98506e-07, -16, 32.5302, -48.446)
+
+[node name="painting 11" parent="." instance=ExtResource("87_peepo")]
+transform = Transform3D(-3.49691e-07, -8, 3.49691e-07, 0, -3.49691e-07, -8, 8, -3.49691e-07, 1.52855e-14, 38, 34, -37.99)
 
 [editable path="Asset Complete Office2/Cubicle2"]
 [editable path="Asset Complete Office2/Cubicle3"]

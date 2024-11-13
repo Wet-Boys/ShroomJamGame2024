@@ -12,5 +12,6 @@ metallic = 0.2
 roughness_texture = ExtResource("2_ic57k")
 roughness_texture_channel = 4
 normal_texture = ExtResource("1_jdafj")
+uv1_scale = Vector3(0.225, 0.225, 0.225)
 uv1_triplanar = true
 uv1_world_triplanar = true
