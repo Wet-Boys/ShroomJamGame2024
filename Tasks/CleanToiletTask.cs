@@ -13,7 +13,7 @@ namespace ShroomJamGame.Tasks
     {
         public override BaseTask Setup(Node worldRoot)
         {
-            taskName = "Unclog the toilet";
+            taskName = "Sounds like another toilet is clogged";
             foreach (var item in Interactable.interactables)
             {
                 if (item is ToiletInteractable toilet)

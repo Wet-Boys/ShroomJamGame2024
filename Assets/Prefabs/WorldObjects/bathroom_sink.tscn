@@ -49,9 +49,8 @@ shape = SubResource("BoxShape3D_b0qpc")
 transform = Transform3D(1, -1.30512e-10, -2.33406e-13, 1.30512e-10, 1, 2.49258e-11, 2.26568e-13, -2.49258e-11, 1, -87.8656, 60.8171, -284.426)
 shape = SubResource("BoxShape3D_b0qpc")
 
-[node name="SinkInteractable" type="Node" parent="StaticBody3D" node_paths=PackedStringArray("sinkNode", "CollisionShape")]
+[node name="SinkInteractable" type="Node" parent="StaticBody3D" node_paths=PackedStringArray("CollisionShape")]
 script = ExtResource("4_k5wx6")
-sinkNode = NodePath("")
 CollisionShape = NodePath("..")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

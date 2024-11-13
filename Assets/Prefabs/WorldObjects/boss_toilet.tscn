@@ -1,4 +1,9 @@
-[gd_scene load_steps=9 format=4 uid="uid://ddjue5hteh6fw"]
+[gd_scene load_steps=10 format=4 uid="uid://bt33465ny50md"]
+
+[ext_resource type="Script" path="res://Interaction/BossInteractables.cs" id="1_wg4w2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cypg5"]
+size = Vector3(0.369781, 0.328552, 0.537109)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q4knt"]
 resource_name = "White Gloss"
@@ -105,11 +110,20 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_vnjxb")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_cypg5"]
-size = Vector3(0.369781, 0.328552, 0.537109)
-
 [node name="boss toilet" type="Node3D"]
 transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+metadata/InteractableChildIndex = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00108337, -0.0310364, 0.266846)
+shape = SubResource("BoxShape3D_cypg5")
+
+[node name="BossInteractables" type="Node" parent="StaticBody3D" node_paths=PackedStringArray("objectNode", "CollisionShape")]
+script = ExtResource("1_wg4w2")
+objectNode = NodePath("../..")
+CollisionShape = NodePath("..")
 
 [node name="lid" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.010876, 0.156132, 0.112398)
@@ -124,9 +138,3 @@ skeleton = NodePath("")
 [node name="toilet" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_igl70")
 skeleton = NodePath("")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="toilet"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="toilet/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00108337, -0.0310364, 0.266846)
-shape = SubResource("BoxShape3D_cypg5")
