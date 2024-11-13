@@ -1,0 +1,67 @@
+[gd_resource type="Compositor" load_steps=14 format=3 uid="uid://ccmk57cv4a0gr"]
+
+[ext_resource type="RDShaderFile" uid="uid://dfc38df6pmiax" path="res://Assets/CompositorEffects/capture-frame.glsl" id="1_k6v8p"]
+[ext_resource type="Script" path="res://Rendering/Effects/FrameCaptureEffect.cs" id="2_otnnx"]
+[ext_resource type="RDShaderFile" uid="uid://w6o4ir6s5vrj" path="res://Assets/CompositorEffects/data-moshing.glsl" id="3_mjw7d"]
+[ext_resource type="Script" path="res://Rendering/Effects/DataMoshEffect.cs" id="4_rogf7"]
+[ext_resource type="RDShaderFile" uid="uid://djufnr2selcaf" path="res://Assets/CompositorEffects/copy-texture.glsl" id="5_6omn5"]
+[ext_resource type="RDShaderFile" uid="uid://boa5rdvrbwtyj" path="res://Assets/CompositorEffects/outline-shader.glsl" id="6_mcen7"]
+[ext_resource type="Script" path="res://Rendering/Effects/OutlineEffect.cs" id="7_2v3xg"]
+[ext_resource type="RDShaderFile" uid="uid://cjmeubsil820d" path="res://Assets/CompositorEffects/posterization.glsl" id="8_iq5g8"]
+[ext_resource type="Script" path="res://Rendering/Effects/PosterizationEffect.cs" id="9_oqf2i"]
+
+[sub_resource type="CompositorEffect" id="CompositorEffect_mmya2"]
+resource_local_to_scene = false
+resource_name = ""
+enabled = true
+effect_callback_type = 4
+needs_motion_vectors = false
+needs_normal_roughness = false
+script = ExtResource("2_otnnx")
+FrameCaptureShaderFile = ExtResource("1_k6v8p")
+
+[sub_resource type="CompositorEffect" id="CompositorEffect_2tqhy"]
+resource_local_to_scene = false
+resource_name = ""
+enabled = false
+effect_callback_type = 4
+needs_motion_vectors = true
+needs_normal_roughness = false
+script = ExtResource("4_rogf7")
+DataMoshShaderFile = ExtResource("3_mjw7d")
+EnableMoshingWithVelocity = true
+Blend = 1.0
+
+[sub_resource type="CompositorEffect" id="CompositorEffect_7metv"]
+resource_local_to_scene = false
+resource_name = ""
+enabled = true
+effect_callback_type = 1
+access_resolved_color = false
+access_resolved_depth = false
+needs_motion_vectors = false
+needs_normal_roughness = true
+script = ExtResource("7_2v3xg")
+OutlineShaderFile = ExtResource("6_mcen7")
+CopyTextureShaderFile = ExtResource("5_6omn5")
+Scale = 2
+DepthThreshold = 4.0
+NormalThreshold = 0.729
+DepthNormalThreshold = 0.346
+DepthNormalThresholdScale = 7.0
+EdgeColor = Color(0, 0, 0, 1)
+OnlyShowOutlines = false
+
+[sub_resource type="CompositorEffect" id="CompositorEffect_l0p60"]
+resource_local_to_scene = false
+resource_name = ""
+enabled = true
+effect_callback_type = 4
+needs_motion_vectors = false
+needs_normal_roughness = false
+script = ExtResource("9_oqf2i")
+PosterizationShader = ExtResource("8_iq5g8")
+Levels = 20.0
+
+[resource]
+compositor_effects = Array[CompositorEffect]([SubResource("CompositorEffect_mmya2"), SubResource("CompositorEffect_2tqhy"), SubResource("CompositorEffect_7metv"), SubResource("CompositorEffect_l0p60")])

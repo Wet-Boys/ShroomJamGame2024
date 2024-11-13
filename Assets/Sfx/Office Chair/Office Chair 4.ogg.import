@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ielc4tyf6m82"
+path="res://.godot/imported/Office Chair 4.ogg-a7a5c9d674dd96d0577a486b51b6d7fa.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Sfx/Office Chair/Office Chair 4.ogg"
+dest_files=["res://.godot/imported/Office Chair 4.ogg-a7a5c9d674dd96d0577a486b51b6d7fa.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

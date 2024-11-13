@@ -1,0 +1,25 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=11 format=3 uid="uid://knok7vigia6n"]
+
+[ext_resource type="AudioStream" uid="uid://d2xxkqtdnfuy8" path="res://Assets/Sfx/Office Chair/Office Chair 1.ogg" id="1_llrwp"]
+[ext_resource type="AudioStream" uid="uid://dom0df77e3npc" path="res://Assets/Sfx/Office Chair/Office Chair 2.ogg" id="2_de7iu"]
+[ext_resource type="AudioStream" uid="uid://bht3oojaui66r" path="res://Assets/Sfx/Office Chair/Office Chair 3.ogg" id="3_73qrr"]
+[ext_resource type="AudioStream" uid="uid://ielc4tyf6m82" path="res://Assets/Sfx/Office Chair/Office Chair 4.ogg" id="4_ddv0q"]
+[ext_resource type="AudioStream" uid="uid://dbaqmjmixfr" path="res://Assets/Sfx/Office Chair/Office Chair 5.ogg" id="5_660yh"]
+[ext_resource type="AudioStream" uid="uid://37u6f1blygtf" path="res://Assets/Sfx/Office Chair/Office Chair 6.ogg" id="6_3wwe0"]
+[ext_resource type="AudioStream" uid="uid://dq5prqfawfxpa" path="res://Assets/Sfx/Office Chair/Office Chair 7.ogg" id="7_4gpaw"]
+[ext_resource type="AudioStream" uid="uid://crltd70rkphm6" path="res://Assets/Sfx/Office Chair/Office Chair 8.ogg" id="8_gxtxg"]
+[ext_resource type="AudioStream" uid="uid://wa5ewk307486" path="res://Assets/Sfx/Office Chair/Office Chair 9.ogg" id="9_rsvif"]
+[ext_resource type="AudioStream" uid="uid://xfydmygi6hb3" path="res://Assets/Sfx/Office Chair/Office Chair 10.ogg" id="10_3tedk"]
+
+[resource]
+streams_count = 10
+stream_0/stream = ExtResource("1_llrwp")
+stream_1/stream = ExtResource("2_de7iu")
+stream_2/stream = ExtResource("3_73qrr")
+stream_3/stream = ExtResource("4_ddv0q")
+stream_4/stream = ExtResource("5_660yh")
+stream_5/stream = ExtResource("6_3wwe0")
+stream_6/stream = ExtResource("7_4gpaw")
+stream_7/stream = ExtResource("8_gxtxg")
+stream_8/stream = ExtResource("9_rsvif")
+stream_9/stream = ExtResource("10_3tedk")
