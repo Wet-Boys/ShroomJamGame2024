@@ -16,6 +16,7 @@ script = ExtResource("1_iv1sb")
 shape = SubResource("ConvexPolygonShape3D_7sdpq")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+gi_mode = 2
 mesh = ExtResource("1_v4kw8")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]

@@ -1,0 +1,26 @@
+[remap]
+
+importer="2d_array_texture"
+type="CompressedTexture2DArray"
+uid="uid://bjgrmbtq472ak"
+path="res://.godot/imported/de_office.exr-0734412f4d259c85ac500aab2d1304b7.ctexarray"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Assets/Scenes/Office/de_office.exr"
+dest_files=["res://.godot/imported/de_office.exr-0734412f4d259c85ac500aab2d1304b7.ctexarray"]
+
+[params]
+
+compress/mode=3
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/channel_pack=1
+mipmaps/generate=false
+mipmaps/limit=-1
+slices/horizontal=1
+slices/vertical=5

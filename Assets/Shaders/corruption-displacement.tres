@@ -191,7 +191,7 @@ linked_parent_graph_frame = 69
 op_type = 0
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_mj0l2"]
-size = Vector2(2724, 798)
+size = Vector2(2744, 1158)
 title = "Pixelization"
 attached_nodes = PackedInt32Array(63, 44, 58, 46, 56, 47, 45, 57, 55, 51, 54, 53, 49, 50, 52)
 

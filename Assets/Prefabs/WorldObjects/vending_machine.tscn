@@ -17,6 +17,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00351, 0)
 shape = SubResource("BoxShape3D_jc4vn")
 
 [node name="MeshInstance3d" type="MeshInstance3D" parent="."]
+gi_mode = 2
 mesh = ExtResource("1_xl5pv")
 metadata/InteractableChildIndex = 1
 

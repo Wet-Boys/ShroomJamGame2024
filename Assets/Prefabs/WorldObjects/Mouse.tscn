@@ -17,6 +17,7 @@ transform = Transform3D(0.999944, 0, -5.03659e-06, 0, 0.999944, 0, 5.03659e-06, 
 shape = SubResource("BoxShape3D_cbjty")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+gi_mode = 2
 mesh = ExtResource("2_w1tfu")
 
 [node name="ImpactSoundMaker" type="Node3D" parent="." node_paths=PackedStringArray("_body", "_soundEmitter")]

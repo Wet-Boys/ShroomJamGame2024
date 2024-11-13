@@ -21,4 +21,5 @@ transform = Transform3D(1, 0, 2.38419e-07, 0, 1, 0, -2.38419e-07, 0, 1, 0.002472
 shape = SubResource("BoxShape3D_frivc")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+gi_mode = 2
 mesh = ExtResource("2_8t2rp")
