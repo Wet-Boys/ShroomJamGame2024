@@ -1,4 +1,5 @@
 ﻿using Godot;
+using ShroomJamGame.Corruption;
 using ShroomJamGame.Events;
 using ShroomJamGame.Interaction;
 using ShroomJamGame.NPC;
@@ -53,7 +54,7 @@ namespace ShroomJamGame.Tasks
         private async void DebugCommand()
         {
             await ToSignal(rootNode.GetTree().CreateTimer(1.0), SceneTreeTimer.SignalName.Timeout);
-            CreateTask(new FixChairTask());//RESET THIS TO WHATEVER STARTING POINT YOU WANT
+            CreateTask(new IntroductionTask());//RESET THIS TO WHATEVER STARTING POINT YOU WANT
         }
 
         private void BroadCastHandler_CreateFixQuest()
@@ -121,6 +122,7 @@ namespace ShroomJamGame.Tasks
         public int currentDay = 0;
         private async void LoadNewScene(Vector3 playerPosition)
         {
+            AudioCrash.Instance.StartAudioCrash();
             FrameCaptureEffect.CaptureNextFrame = true;
             DataMoshEffect.Instance.Enabled = true;
             lowerBlend = false;
@@ -137,6 +139,7 @@ namespace ShroomJamGame.Tasks
             await ToSignal(this.GetTree().CreateTimer(.1f), SceneTreeTimer.SignalName.Timeout);
             DataMoshEffect.Instance.EnableMoshingWithVelocity = true;
             await ToSignal(this.GetTree().CreateTimer(2f), SceneTreeTimer.SignalName.Timeout);
+            AudioCrash.Instance.StopAudioCrash();
             lowerBlend = true;
             await ToSignal(this.GetTree().CreateTimer(5f), SceneTreeTimer.SignalName.Timeout);
             foreach (var npc in NpcMovementController.npcs)

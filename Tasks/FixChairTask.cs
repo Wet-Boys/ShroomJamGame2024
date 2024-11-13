@@ -42,8 +42,18 @@ namespace ShroomJamGame.Tasks
             taskNpc = closestNPC;
             taskNpc.permaWait = true;
             taskNpc.GoToPositionAndSayWords(targetChair.GlobalPosition, "");
+            Node3D audio = ((PackedScene)GD.Load("res://one_shot_audio.tscn")).Instantiate<Node3D>();
+            taskNpc.GetTree().Root.AddChild(audio);
+            audio.GlobalPosition = new Vector3(-12.354f, 6.273f, -12.723f);
+            audio.GetNode<AudioStreamPlayer3D>("AudioStreamPlayer3D").Play();
             return base.Setup(worldRoot);
         }
+
+        private void FixChairTask_Finished()
+        {
+            throw new NotImplementedException();
+        }
+
         bool npcSpoke = false;
         int tracker = 0;
         bool tracker2Done = false;

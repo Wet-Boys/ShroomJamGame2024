@@ -35,7 +35,7 @@ namespace ShroomJamGame.Tasks
                     interactables.Remove(item);
                     BroadCastHandler.instance.UnHighlightObject(item);
                     tracker++;
-                    BroadCastHandler.instance.CreateLoadingBarAtLocation(item, new Vector3(0, 1, 0), 5).ProgressBarFinished += FixManyComputers_ProgressBarFinished;
+                    BroadCastHandler.instance.CreateLoadingBarAtLocation(item, new Vector3(0, 1, 0), 2).ProgressBarFinished += FixManyComputers_ProgressBarFinished;
                     item.nonHoldableText = "";
                     item.interactionFunction = (yote2) =>
                     {

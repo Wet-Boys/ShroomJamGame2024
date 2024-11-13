@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://s518k1fjfg3d"
+path="res://.godot/imported/this is the gamecube version.ogg-24760b338a3d2ea9faf5dd7402cbffcb.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Sfx/Vinny/this is the gamecube version.ogg"
+dest_files=["res://.godot/imported/this is the gamecube version.ogg-24760b338a3d2ea9faf5dd7402cbffcb.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

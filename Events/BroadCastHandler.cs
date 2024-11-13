@@ -18,6 +18,7 @@ namespace ShroomJamGame.Events
         public override void _Ready()
         {
             instance = this;
+            RandomizeNPCs();
         }
 
         //put new broadcast messages here
@@ -92,6 +93,27 @@ namespace ShroomJamGame.Events
         public void ResetPlayer()
         {
             TaskTracker.instance.player.GlobalPosition = TaskTracker.instance.originalPlayerPos;
+        }
+
+        bool randomizing = false;
+        RandomNumberGenerator rando = new RandomNumberGenerator();
+        public async void RandomizeNPCs()
+        {
+            await ToSignal(this.GetTree().CreateTimer(rando.RandfRange(60, 120)), SceneTreeTimer.SignalName.Timeout);
+            randomizing = true;
+            await ToSignal(this.GetTree().CreateTimer(6f), SceneTreeTimer.SignalName.Timeout);
+            randomizing = false;
+            RandomizeNPCs();
+        }
+        public override void _Process(double delta)
+        {
+            if (randomizing)
+            {
+                foreach (var npc in NpcMovementController.npcs)
+                {
+                    npc._visualController.RandomizeOutfit();
+                }
+            }
         }
     }
 }
