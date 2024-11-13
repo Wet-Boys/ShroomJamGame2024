@@ -38,7 +38,7 @@ public partial class ToiletInteractable : Interactable
         TaskTracker.instance.currentDay = 1;
         await ToSignal(this.GetTree().CreateTimer(.1f), SceneTreeTimer.SignalName.Timeout);
         TaskTracker.instance.DayFinished();
-        await ToSignal(this.GetTree().CreateTimer(2f), SceneTreeTimer.SignalName.Timeout);
+        await ToSignal(this.GetTree().CreateTimer(5f), SceneTreeTimer.SignalName.Timeout);
         mesh.QueueFree();
         isPartOfTask = false;
     }
@@ -48,7 +48,7 @@ public partial class ToiletInteractable : Interactable
         {
             mesh.LookAt(TaskTracker.instance.player.GetNode<Node3D>("Head").GlobalPosition);
             mesh.RotateObjectLocal(new Vector3(0, 1, 0), 160);
-            mesh.GlobalPosition = mesh.GlobalPosition.Lerp(TaskTracker.instance.player.GetNode<Node3D>("Head").GlobalPosition, (float)delta * 3.5f);
+            mesh.GlobalPosition = mesh.GlobalPosition.Lerp(TaskTracker.instance.player.GetNode<Node3D>("Head").GlobalPosition, (float)delta * 4.5f);
         }
     }
 

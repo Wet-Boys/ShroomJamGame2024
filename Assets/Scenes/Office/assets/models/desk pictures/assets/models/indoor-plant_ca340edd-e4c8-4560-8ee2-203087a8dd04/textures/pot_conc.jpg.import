@@ -3,32 +3,33 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bfl8e31xwvrqq"
-path="res://.godot/imported/pot_conc.jpg-6130b1cc4b3be24afe2a280b245fdf1d.ctex"
+path.s3tc="res://.godot/imported/pot_conc.jpg-6130b1cc4b3be24afe2a280b245fdf1d.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/Scenes/Office/assets/models/desk pictures/assets/models/indoor-plant_ca340edd-e4c8-4560-8ee2-203087a8dd04/textures/pot_conc.jpg"
-dest_files=["res://.godot/imported/pot_conc.jpg-6130b1cc4b3be24afe2a280b245fdf1d.ctex"]
+dest_files=["res://.godot/imported/pot_conc.jpg-6130b1cc4b3be24afe2a280b245fdf1d.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=0
+compress/normal_map=1
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
+roughness/mode=1
+roughness/src_normal="res://Assets/Scenes/Office/assets/models/desk pictures/assets/models/indoor-plant_ca340edd-e4c8-4560-8ee2-203087a8dd04/textures/pot_conc.jpg"
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://dhi6o1tunsdcx"]
+[gd_scene load_steps=9 format=4 uid="uid://dhi6o1tunsdcx"]
 
 [ext_resource type="Texture2D" uid="uid://dabtngk0wnb6v" path="res://Assets/Scenes/Office/assets/models/HR cardboard/CardBoard_Board_mat_BaseColor-Grayscale.png" id="1_mqmqg"]
 [ext_resource type="Texture2D" uid="uid://de78jg7hno636" path="res://Assets/Scenes/Office/assets/models/HR cardboard/CardBoard_Board_mat_Roughness.png" id="2_yw12j"]
@@ -83,9 +83,17 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_yeo7q")
 
-[node name="hr cardboard" type="Node3D"]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+[sub_resource type="BoxShape3D" id="BoxShape3D_oomev"]
+size = Vector3(6.09076, 0.0509186, 10.171)
+
+[node name="hr cardboard" type="RigidBody3D"]
+freeze = true
 
 [node name="CardBoard" type="MeshInstance3D" parent="."]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, 0)
 mesh = SubResource("ArrayMesh_0ib2i")
 skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0262756, 0.0405502, 0.285385)
+shape = SubResource("BoxShape3D_oomev")

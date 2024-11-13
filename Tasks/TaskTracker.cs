@@ -50,7 +50,7 @@ namespace ShroomJamGame.Tasks
         private async void DebugCommand()
         {
             await ToSignal(rootNode.GetTree().CreateTimer(1.0), SceneTreeTimer.SignalName.Timeout);
-            CreateTask(new BossToiletTask());//RESET THIS TO WHATEVER STARTING POINT YOU WANT
+            CreateTask(new IntroductionTask());//RESET THIS TO WHATEVER STARTING POINT YOU WANT
         }
 
         private void BroadCastHandler_CreateFixQuest()
@@ -143,8 +143,10 @@ namespace ShroomJamGame.Tasks
                     TaskTracker.instance.CreateTask(new BossToiletTask());
                     break;
                 case 2:
+                    TaskTracker.instance.CreateTask(new hrTask());
                     break;
                 case 3:
+                    TaskTracker.instance.CreateTask(new FixManyComputers());
                     break;
                 default:
                     break;

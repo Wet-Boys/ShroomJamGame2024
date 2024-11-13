@@ -107,6 +107,7 @@ shadow_mesh = SubResource("ArrayMesh_rg7py")
 
 [node name="boss sink" type="Node3D"]
 transform = Transform3D(8, 0, 0, 0, -3.49691e-07, -8, 0, 8, -3.49691e-07, 0, 0, 0)
+visible = false
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 metadata/InteractableChildIndex = 1

@@ -126,6 +126,8 @@ namespace ShroomJamGame.Tasks
                 tracker = 6;
                 boss.onlyLookAtPlayer = true;
                 boss.SayWords("Ah that was quicker than I expected.\n...\nMy sink...?\nWhat are you talking about?");
+                sink.hoverText = "";
+                sink.isActive = false;
                 sink.objectNode.Visible = false;
                 urinal.objectNode.Visible = true;
             }

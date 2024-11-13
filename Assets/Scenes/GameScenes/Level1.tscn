@@ -46,6 +46,9 @@ navigation_mesh = SubResource("NavigationMesh_kbavx")
 
 [node name="DeOffice2" parent="NavigationRegion3D/World" instance=ExtResource("3_dn84n")]
 
+[node name="hr cardboard" parent="NavigationRegion3D/World/DeOffice2/Asset Complete Office2/Cubicle3" index="54"]
+transform = Transform3D(2.23517e-08, 0.999848, 0.0174525, 0.225631, 0.0170024, -0.974064, -0.974213, 0.00393785, -0.225597, 40.8298, 5.47572, -84.9365)
+
 [node name="Door" parent="." instance=ExtResource("4_vr3q7")]
 transform = Transform3D(1.5, 0, 0, 0, 3, 0, 0, 0, 0.25, -3.5, 7.5, 19.25)
 
@@ -101,7 +104,7 @@ texture = SubResource("ViewportTexture_x0gq3")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.24935, 7.36933, -8.62745)
 
 [node name="Node3D" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.52064, 7.07597, 21.5592)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.03328, 7.07597, -8.49832)
 
 [editable path="NavigationRegion3D/World/DeOffice2"]
 [editable path="NavigationRegion3D/World/DeOffice2/Asset Complete Office2/CABINET_001"]

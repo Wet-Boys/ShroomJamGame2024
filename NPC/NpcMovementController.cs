@@ -267,6 +267,14 @@ namespace ShroomJamGame.NPC
             {
                 ReachTarget();
                 _characterMovementController.InputMovement = new Vector2(0, 0);
+                if (onlyLookAtPlayer)
+                {
+                    Quaternion currentYRot2 = characterBody3D.Quaternion;
+                    characterBody3D.LookAt(TaskTracker.instance.player.GlobalPosition);
+                    characterBody3D.RotationDegrees = new Vector3(0, characterBody3D.RotationDegrees.Y + 180, 0);
+                    Quaternion newYRot2 = characterBody3D.Quaternion;
+                    characterBody3D.Quaternion = currentYRot2.Slerp(newYRot2, (float)delta * 8);
+                }
                 return;
             }
             else if (nextPathPosition == prevPathPosition)

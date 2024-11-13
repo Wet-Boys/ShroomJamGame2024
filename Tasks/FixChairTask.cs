@@ -70,7 +70,7 @@ namespace ShroomJamGame.Tasks
                     destMarker.GlobalPosition = new Vector3(0, 6.581f, -1.3878f);
                     targetChair.offLimits = true;
                 }
-                if ((IsInstanceValid(targetChair)) && targetChair.GlobalPosition.DistanceTo(destMarker.GlobalPosition) < 3 && !flag)
+                if (IsInstanceValid(targetChair) && IsInstanceValid(destMarker) && targetChair.GlobalPosition.DistanceTo(destMarker.GlobalPosition) < 3 && !flag)
                 {
                     flag = true;
                     taskName = "Swap out the graphics card";
