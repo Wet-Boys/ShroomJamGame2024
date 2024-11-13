@@ -84,7 +84,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_yeo7q")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_oomev"]
-size = Vector3(6.09076, 0.0509186, 10.171)
+size = Vector3(6.09076, 0.185154, 10.171)
 
 [node name="hr cardboard" type="RigidBody3D"]
 freeze = true
@@ -95,5 +95,5 @@ mesh = SubResource("ArrayMesh_0ib2i")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0262756, 0.0405502, 0.285385)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0262756, 0.0271969, 0.285385)
 shape = SubResource("BoxShape3D_oomev")

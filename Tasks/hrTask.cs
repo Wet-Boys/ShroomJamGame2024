@@ -38,7 +38,7 @@ namespace ShroomJamGame.Tasks
             }
             cardBoard = monitor.GetNode<RigidBody3D>("../hr cardboard");
             player = TaskTracker.instance.player;
-            hr.GoToPositionAndSayWords(new Vector3(8.033f, 7.076f, -8.498f), "");
+            hr.GoToPositionAndSayWords(hr.originalPosition, "");
             hr.permaWait = true;
             monitor.holdable = false;
             BroadCastHandler.instance.HighlightObject(monitor);
@@ -85,7 +85,8 @@ namespace ShroomJamGame.Tasks
         {
             tracker = 4;
             await ToSignal(hr.GetTree().CreateTimer(10f), SceneTreeTimer.SignalName.Timeout);
-            hr.SayWords("uh");
+            hr.GoToPositionAndSayWords(hr.characterBody3D.GlobalPosition,"uh");
+            hr.permaWait = true;
             hr.onlyLookAtPlayer = false;
             await ToSignal(hr.GetTree().CreateTimer(.5f), SceneTreeTimer.SignalName.Timeout);
             cardBoard.Freeze = false;

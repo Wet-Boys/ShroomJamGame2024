@@ -30,8 +30,8 @@ public partial class AudioCrash : Node
     
     public override void _Ready()
     {
-        Controls.Instance.SecondaryAction.OnPress += StartAudioCrash;
-        Controls.Instance.SecondaryAction.OnRelease += StopAudioCrash;
+        //Controls.Instance.SecondaryAction.OnPress += StartAudioCrash;
+        //Controls.Instance.SecondaryAction.OnRelease += StopAudioCrash;
         
         _instance = this;
         

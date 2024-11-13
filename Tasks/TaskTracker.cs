@@ -18,6 +18,7 @@ namespace ShroomJamGame.Tasks
         public static TaskTracker instance;
         [Export]
         public CharacterBody3D player;
+        public Vector3 originalPlayerPos;
         [Export]
         public Control HUD;
         Control TaskList;
@@ -28,6 +29,7 @@ namespace ShroomJamGame.Tasks
         public override void _Ready()
         {
             instance = this;
+            originalPlayerPos = player.GlobalPosition;
             rootNode = GetTree().Root.GetChild(0);
             TaskList = HUD.GetNode<Control>("Task Container");
 
@@ -51,7 +53,7 @@ namespace ShroomJamGame.Tasks
         private async void DebugCommand()
         {
             await ToSignal(rootNode.GetTree().CreateTimer(1.0), SceneTreeTimer.SignalName.Timeout);
-            CreateTask(new IntroductionTask());//RESET THIS TO WHATEVER STARTING POINT YOU WANT
+            CreateTask(new FixChairTask());//RESET THIS TO WHATEVER STARTING POINT YOU WANT
         }
 
         private void BroadCastHandler_CreateFixQuest()
@@ -131,6 +133,7 @@ namespace ShroomJamGame.Tasks
                 item.characterBody3D.GlobalPosition = item.originalPosition;
                 item.SayWords("");
             }
+
             await ToSignal(this.GetTree().CreateTimer(.1f), SceneTreeTimer.SignalName.Timeout);
             DataMoshEffect.Instance.EnableMoshingWithVelocity = true;
             await ToSignal(this.GetTree().CreateTimer(2f), SceneTreeTimer.SignalName.Timeout);
