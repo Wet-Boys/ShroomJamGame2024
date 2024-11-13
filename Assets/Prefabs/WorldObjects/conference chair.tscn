@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://0alugtqy63q6"]
+[gd_scene load_steps=20 format=4 uid="uid://c6hway71hboke"]
 
 [ext_resource type="Texture2D" uid="uid://dobjjg8j1a7xu" path="res://Assets/Scenes/Office/assets/models/conference chair/Wood026_1K-JPG_Color.jpg" id="1_2yeuy"]
 [ext_resource type="Script" path="res://Interaction/PhysicsInteractable.cs" id="1_e1a7r"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://cj4a78hw56uxo" path="res://Assets/Scenes/Office/assets/models/conference chair/Fabric030_2K-JPG_AmbientOcclusion.jpg" id="4_k6w51"]
 [ext_resource type="Texture2D" uid="uid://dadfn3jqvxenx" path="res://Assets/Scenes/Office/assets/models/conference chair/Fabric030_1K-JPG_Roughness.png" id="5_tlkwf"]
 [ext_resource type="Texture2D" uid="uid://4y458j5eni31" path="res://Assets/Scenes/Office/assets/models/conference chair/Fabric030_1K-JPG_NormalGL.jpg" id="6_7ngin"]
+[ext_resource type="Script" path="res://Sound/ImpactSoundMaker.cs" id="8_qmxok"]
+[ext_resource type="AudioStream" uid="uid://ccdlqy7psjm3o" path="res://Assets/Sfx/Heavy/heavy-impact-noises.tres" id="9_0cjdb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c3dlx"]
 resource_name = "Oak_wood"
@@ -218,3 +220,18 @@ shape = SubResource("BoxShape3D_vxvef")
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
 transform = Transform3D(-1.07699, 0, -0.0067958, 0, 1.07701, 0, 0.0067958, 0, -1.07699, 0.395231, 0.407786, 0.026467)
 shape = SubResource("BoxShape3D_vxvef")
+
+[node name="ImpactSoundMaker" type="Node3D" parent="." node_paths=PackedStringArray("_body", "_soundEmitter")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.344908, 0)
+script = ExtResource("8_qmxok")
+_body = NodePath("..")
+_soundEmitter = NodePath("AudioStreamPlayer3D")
+_impactSound = ExtResource("9_0cjdb")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="ImpactSoundMaker"]
+attenuation_model = 2
+volume_db = -30.0
+unit_size = 6.0
+pitch_scale = 1.5
+max_polyphony = 6
+bus = &"Sound Effects"

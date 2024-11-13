@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dxxxp57el8byi"
+path="res://.godot/imported/Pool Ball Hit 1.ogg-0014d9f551a4063f270b86136a0abdbf.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Sfx/Light/Pool Ball Hit 1.ogg"
+dest_files=["res://.godot/imported/Pool Ball Hit 1.ogg-0014d9f551a4063f270b86136a0abdbf.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

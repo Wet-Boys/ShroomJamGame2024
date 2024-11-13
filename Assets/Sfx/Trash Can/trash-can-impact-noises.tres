@@ -1,0 +1,13 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=5 format=3 uid="uid://bg7s8by0pnhp8"]
+
+[ext_resource type="AudioStream" uid="uid://06labh05jbyr" path="res://Assets/Sfx/Trash Can/Trash Can Hit 1.ogg" id="1_0kvcs"]
+[ext_resource type="AudioStream" uid="uid://d0gtl0sv8opoi" path="res://Assets/Sfx/Trash Can/Trash Can Hit 2.ogg" id="2_5g634"]
+[ext_resource type="AudioStream" uid="uid://c3w582bhswnh1" path="res://Assets/Sfx/Trash Can/Trash Can Hit 3.ogg" id="3_plitr"]
+[ext_resource type="AudioStream" uid="uid://v1qs4mrbrdkx" path="res://Assets/Sfx/Trash Can/Trash Can Hit 4.ogg" id="4_bjbyl"]
+
+[resource]
+streams_count = 4
+stream_0/stream = ExtResource("1_0kvcs")
+stream_1/stream = ExtResource("2_5g634")
+stream_2/stream = ExtResource("3_plitr")
+stream_3/stream = ExtResource("4_bjbyl")

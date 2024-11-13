@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://2mbywjgbo7tu"]
+[gd_scene load_steps=17 format=4 uid="uid://2mbywjgbo7tu"]
 
 [ext_resource type="Script" path="res://Interaction/PhysicsInteractable.cs" id="1_3yqxn"]
 [ext_resource type="Texture2D" uid="uid://lbx7dwti20h0" path="res://Assets/Scenes/Office/assets/models/hour glass/CUsersSpektrusblenderkit_datamaterialschestnut_fine_wood_texture_57864b59-0d42-4086-b3a2-25a274fbb5b0texturesDiffuse.png" id="1_nlmjr"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://b8us56wjvm1kp" path="res://Assets/Scenes/Office/assets/models/hour glass/CUsersSpektrusblenderkit_datamaterialssand_orange_57181d3e-09d4-40e9-862c-155f5c974300textures_1ksand02 roughness 4k.png" id="5_v4p6d"]
 [ext_resource type="Texture2D" uid="uid://dckf6d2xyj7kj" path="res://Assets/Scenes/Office/assets/models/hour glass/CUsersSpektrusblenderkit_datamaterialssand_orange_57181d3e-09d4-40e9-862c-155f5c974300textures_1ksand02 normal 4k.jpg" id="6_yhneo"]
 [ext_resource type="Material" uid="uid://bcrvf2qh2jsoh" path="res://Assets/Scenes/Office/assets/materials/real glass.tres" id="8_lg4tv"]
+[ext_resource type="Script" path="res://Sound/ImpactSoundMaker.cs" id="9_6611h"]
+[ext_resource type="AudioStream" uid="uid://85gl00m51kyo" path="res://Assets/Sfx/Light/small-object-impact-noises.tres" id="10_8vyie"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p7kik"]
 resource_name = "metal"
@@ -159,3 +161,17 @@ skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("ConvexPolygonShape3D_fqsqa")
+
+[node name="ImpactSoundMaker" type="Node3D" parent="." node_paths=PackedStringArray("_body", "_soundEmitter")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+script = ExtResource("9_6611h")
+_body = NodePath("..")
+_soundEmitter = NodePath("AudioStreamPlayer3D")
+_impactSound = ExtResource("10_8vyie")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="ImpactSoundMaker"]
+attenuation_model = 2
+volume_db = -15.0
+unit_size = 6.0
+max_polyphony = 6
+bus = &"Sound Effects"

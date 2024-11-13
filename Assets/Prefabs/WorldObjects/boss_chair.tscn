@@ -1,8 +1,10 @@
-[gd_scene load_steps=12 format=4 uid="uid://bh3wnejo207xa"]
+[gd_scene load_steps=14 format=4 uid="uid://pu3b2u8gdh7k"]
 
 [ext_resource type="Texture2D" uid="uid://csva3pnsxmsdj" path="res://Assets/Scenes/Office/assets/models/boss chair/Swoon chair velvet mask.png" id="1_3swvv"]
 [ext_resource type="Script" path="res://Interaction/PhysicsInteractable.cs" id="1_uuhxr"]
 [ext_resource type="Texture2D" uid="uid://c3h32hdpdwmw1" path="res://Assets/Scenes/Office/assets/models/boss chair/fabric7_normal.jpg" id="2_dyqcm"]
+[ext_resource type="Script" path="res://Sound/ImpactSoundMaker.cs" id="4_qhkts"]
+[ext_resource type="AudioStream" uid="uid://knok7vigia6n" path="res://Assets/Sfx/Office Chair/office-chair-impact-noises.tres" id="5_tw6hd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g6whp"]
 resource_name = "Matte Black"
@@ -136,3 +138,17 @@ shape = SubResource("BoxShape3D_7mrec")
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.241886, 0.522093, 0.0537916)
 shape = SubResource("BoxShape3D_7mrec")
+
+[node name="ImpactSoundMaker" type="Node3D" parent="." node_paths=PackedStringArray("_body", "_soundEmitter")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+script = ExtResource("4_qhkts")
+_body = NodePath("..")
+_soundEmitter = NodePath("AudioStreamPlayer3D")
+_impactSound = ExtResource("5_tw6hd")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="ImpactSoundMaker"]
+attenuation_model = 2
+volume_db = -15.0
+unit_size = 6.0
+max_polyphony = 6
+bus = &"Sound Effects"

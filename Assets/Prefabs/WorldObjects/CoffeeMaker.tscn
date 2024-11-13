@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=4 uid="uid://wtd2wc3hk5ev"]
 
-[ext_resource type="Material" uid="uid://boxj7xw0alcup" path="res://Assets/Scenes/Office/assets/materials/black plastic.tres" id="1_vtp1e"]
+[ext_resource type="Material" path="res://Assets/Scenes/Office/assets/materials/black plastic.tres" id="1_vtp1e"]
 [ext_resource type="Material" uid="uid://bcrvf2qh2jsoh" path="res://Assets/Scenes/Office/assets/materials/real glass.tres" id="2_3w57d"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_isbqy"]

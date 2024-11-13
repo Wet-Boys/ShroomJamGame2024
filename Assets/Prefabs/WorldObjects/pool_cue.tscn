@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://doely3tqxg17o"]
+[gd_scene load_steps=21 format=4 uid="uid://doely3tqxg17o"]
 
 [ext_resource type="Script" path="res://Interaction/PhysicsInteractable.cs" id="1_3jl07"]
 [ext_resource type="Texture2D" uid="uid://cvuwsc61yw5qb" path="res://Assets/Scenes/Office/assets/models/pool cue/DJOBPROJECTMaterialMaple wood textureDiffuse.png" id="1_vwr0y"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://w46xqb4wcmuc" path="res://Assets/Scenes/Office/assets/models/pool cue/H3DProject2KLeatherLeather14_nrm.jpg" id="6_kur5r"]
 [ext_resource type="Texture2D" uid="uid://byy8qo7xlkcbe" path="res://Assets/Scenes/Office/assets/models/pool cue/FabricUpholsteryMidCenturyPebbles001_COL_VAR2_1K.jpg" id="7_rtvcu"]
 [ext_resource type="Texture2D" uid="uid://dkfymwa1q5t5c" path="res://Assets/Scenes/Office/assets/models/pool cue/FabricUpholsteryMidCenturyPebbles001_BUMP_1K.jpg" id="8_xkgen"]
+[ext_resource type="Script" path="res://Sound/ImpactSoundMaker.cs" id="10_tsk50"]
+[ext_resource type="AudioStream" uid="uid://b8v482enrjkvp" path="res://Assets/Sfx/Wood/wood-impact-noises.tres" id="11_pxo2m"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n6opg"]
 resource_name = "Maple wood texture"
@@ -230,3 +232,18 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.00832508, -0.999965, 0, 0.999965, 0.00832508, 0, 0, 0, 1, -0.0121262, 0.0149013, 0)
 shape = SubResource("CapsuleShape3D_7g66k")
+
+[node name="ImpactSoundMaker" type="Node3D" parent="." node_paths=PackedStringArray("_body", "_soundEmitter")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.496217, 0)
+script = ExtResource("10_tsk50")
+_body = NodePath("..")
+_soundEmitter = NodePath("AudioStreamPlayer3D")
+_impactSound = ExtResource("11_pxo2m")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="ImpactSoundMaker"]
+attenuation_model = 2
+volume_db = -10.0
+unit_size = 6.0
+pitch_scale = 1.5
+max_polyphony = 6
+bus = &"Sound Effects"

@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://wqylv4hopvn"]
+[gd_scene load_steps=6 format=3 uid="uid://wqylv4hopvn"]
 
 [ext_resource type="Script" path="res://Interaction/PhysicsInteractable.cs" id="1_o7435"]
-[ext_resource type="ArrayMesh" uid="uid://c33ogi113ye33" path="res://Assets/Prefabs/WorldObjects/Electronic Junk Motor.tres" id="2_6b52g"]
+[ext_resource type="ArrayMesh" uid="uid://bocstsacs0kh" path="res://Assets/Prefabs/WorldObjects/Electronic Junk Motor.tres" id="2_6b52g"]
+[ext_resource type="Script" path="res://Sound/ImpactSoundMaker.cs" id="3_067n8"]
+[ext_resource type="AudioStream" uid="uid://85gl00m51kyo" path="res://Assets/Sfx/Light/small-object-impact-noises.tres" id="4_kh6f1"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_pieei"]
 height = 0.0115073
@@ -16,3 +18,17 @@ shape = SubResource("CylinderShape3D_pieei")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = ExtResource("2_6b52g")
+
+[node name="ImpactSoundMaker" type="Node3D" parent="." node_paths=PackedStringArray("_body", "_soundEmitter")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00766841, 0)
+script = ExtResource("3_067n8")
+_body = NodePath("..")
+_soundEmitter = NodePath("AudioStreamPlayer3D")
+_impactSound = ExtResource("4_kh6f1")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="ImpactSoundMaker"]
+attenuation_model = 2
+volume_db = -15.0
+unit_size = 6.0
+max_polyphony = 6
+bus = &"Sound Effects"

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://v1qs4mrbrdkx"
+path="res://.godot/imported/Trash Can Hit 4.ogg-b4e65ce03a4b4ce9c6e075a79a4fd705.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Sfx/Trash Can/Trash Can Hit 4.ogg"
+dest_files=["res://.godot/imported/Trash Can Hit 4.ogg-b4e65ce03a4b4ce9c6e075a79a4fd705.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

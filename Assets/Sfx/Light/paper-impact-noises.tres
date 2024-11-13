@@ -1,0 +1,19 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=8 format=3 uid="uid://dmv446ft3o8hx"]
+
+[ext_resource type="AudioStream" uid="uid://c725h6o4sq0p7" path="res://Assets/Sfx/Light/Paper Hit 1.ogg" id="1_ymy4d"]
+[ext_resource type="AudioStream" uid="uid://bhor4olawccil" path="res://Assets/Sfx/Light/Paper Hit 2.ogg" id="2_u8opy"]
+[ext_resource type="AudioStream" uid="uid://cwohq1imjvp1k" path="res://Assets/Sfx/Light/Paper Hit 3.ogg" id="3_y2cmo"]
+[ext_resource type="AudioStream" uid="uid://wai8oj580ltu" path="res://Assets/Sfx/Light/Paper Hit 4.ogg" id="4_hy1dw"]
+[ext_resource type="AudioStream" uid="uid://ctpvwqc3a3sh2" path="res://Assets/Sfx/Light/Paper Hit 5.ogg" id="5_h4k5m"]
+[ext_resource type="AudioStream" uid="uid://b1b8ppf8xbq1s" path="res://Assets/Sfx/Light/Paper Hit 6.ogg" id="6_0ykxb"]
+[ext_resource type="AudioStream" uid="uid://bjjjue6kcbqiv" path="res://Assets/Sfx/Light/Paper Hit 7.ogg" id="7_8gtcd"]
+
+[resource]
+streams_count = 7
+stream_0/stream = ExtResource("1_ymy4d")
+stream_1/stream = ExtResource("2_u8opy")
+stream_2/stream = ExtResource("3_y2cmo")
+stream_3/stream = ExtResource("4_hy1dw")
+stream_4/stream = ExtResource("5_h4k5m")
+stream_5/stream = ExtResource("6_0ykxb")
+stream_6/stream = ExtResource("7_8gtcd")

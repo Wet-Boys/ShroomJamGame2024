@@ -1,9 +1,11 @@
-[gd_scene load_steps=25 format=4 uid="uid://d2ij0h27g3arf"]
+[gd_scene load_steps=27 format=4 uid="uid://d2ij0h27g3arf"]
 
 [ext_resource type="Texture2D" uid="uid://dwkh0ex0veda7" path="res://Assets/Scenes/Office/textures/Cubicles_BaseColor.jpg" id="1_m2dc1"]
 [ext_resource type="Texture2D" uid="uid://bvxuma1lil51h" path="res://Assets/Scenes/Office/textures/Cubicles_Roughness.jpg" id="2_oika1"]
 [ext_resource type="Texture2D" uid="uid://c4od1f6ql3fu0" path="res://Assets/Scenes/Office/textures/Cubicles_Normal.jpg" id="3_0rlsv"]
 [ext_resource type="Script" path="res://Interaction/DoorInteractable.cs" id="4_gm3j7"]
+[ext_resource type="AudioStream" uid="uid://bd6qcdsa2lefb" path="res://Assets/Sfx/Door/Stall Door Open.ogg" id="5_srpyy"]
+[ext_resource type="AudioStream" uid="uid://blw2ykltd1koy" path="res://Assets/Sfx/Door/Stall Door Close.ogg" id="6_wyvab"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yrd68"]
 resource_name = "Cubicles"
@@ -267,6 +269,8 @@ script = ExtResource("4_gm3j7")
 OpenDegrees = Vector3(0, -90, 0)
 _doorNode = NodePath("../..")
 _soundEmitter = NodePath("../../../WallExtention/StaticBody3D/CollisionShape3D3/Door 2 Audio")
+_openSound = ExtResource("5_srpyy")
+_closeSound = ExtResource("6_wyvab")
 CollisionShape = NodePath("..")
 
 [node name="Door_002" type="MeshInstance3D" parent="."]
@@ -286,6 +290,8 @@ script = ExtResource("4_gm3j7")
 OpenDegrees = Vector3(0, -90, 0)
 _doorNode = NodePath("../..")
 _soundEmitter = NodePath("../../../WallExtention/StaticBody3D/CollisionShape3D4/Door 1 Audio")
+_openSound = ExtResource("5_srpyy")
+_closeSound = ExtResource("6_wyvab")
 CollisionShape = NodePath("..")
 
 [node name="Door_003" type="MeshInstance3D" parent="."]
@@ -305,6 +311,8 @@ script = ExtResource("4_gm3j7")
 OpenDegrees = Vector3(0, -90, 0)
 _doorNode = NodePath("../..")
 _soundEmitter = NodePath("../../../WallExtention/StaticBody3D/CollisionShape3D2/Door 3 Audio")
+_openSound = ExtResource("5_srpyy")
+_closeSound = ExtResource("6_wyvab")
 CollisionShape = NodePath("..")
 
 [node name="WallExtention" type="MeshInstance3D" parent="."]
@@ -323,18 +331,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.972024, -0.0881348, -0.0090
 shape = SubResource("BoxShape3D_oks3w")
 
 [node name="Door 3 Audio" type="AudioStreamPlayer3D" parent="WallExtention/StaticBody3D/CollisionShape3D2"]
+attenuation_model = 2
+volume_db = -25.0
+bus = &"Sound Effects"
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="WallExtention/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.03347, -0.0755615, -0.00900233)
 shape = SubResource("BoxShape3D_xu4pk")
 
 [node name="Door 2 Audio" type="AudioStreamPlayer3D" parent="WallExtention/StaticBody3D/CollisionShape3D3"]
+attenuation_model = 2
+volume_db = -25.0
+bus = &"Sound Effects"
 
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="WallExtention/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.02279, -0.0597534, -0.00900221)
 shape = SubResource("BoxShape3D_0fvle")
 
 [node name="Door 1 Audio" type="AudioStreamPlayer3D" parent="WallExtention/StaticBody3D/CollisionShape3D4"]
+attenuation_model = 2
+volume_db = -25.0
+bus = &"Sound Effects"
 
 [node name="CollisionShape3D5" type="CollisionShape3D" parent="WallExtention/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.09592, 0.0102539, 0.845349)

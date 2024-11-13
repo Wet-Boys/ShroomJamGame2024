@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dbki7m7ug4eqe"]
+[gd_scene load_steps=6 format=3 uid="uid://dbki7m7ug4eqe"]
 
 [ext_resource type="Script" path="res://Interaction/PhysicsInteractable.cs" id="1_qalc5"]
 [ext_resource type="ArrayMesh" uid="uid://ctoybfpib3owv" path="res://Assets/Prefabs/WorldObjects/lighter.tres" id="2_o4i3t"]
+[ext_resource type="Script" path="res://Sound/ImpactSoundMaker.cs" id="3_78bpx"]
+[ext_resource type="AudioStream" uid="uid://85gl00m51kyo" path="res://Assets/Sfx/Light/small-object-impact-noises.tres" id="4_f4hyt"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kwc3r"]
 size = Vector3(0.0495911, 0.0905151, 0.0134277)
@@ -15,3 +17,17 @@ shape = SubResource("BoxShape3D_kwc3r")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = ExtResource("2_o4i3t")
+
+[node name="ImpactSoundMaker" type="Node3D" parent="." node_paths=PackedStringArray("_body", "_soundEmitter")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0363505, 0)
+script = ExtResource("3_78bpx")
+_body = NodePath("..")
+_soundEmitter = NodePath("AudioStreamPlayer3D")
+_impactSound = ExtResource("4_f4hyt")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="ImpactSoundMaker"]
+attenuation_model = 2
+volume_db = -15.0
+unit_size = 6.0
+max_polyphony = 6
+bus = &"Sound Effects"

@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://sucmon0cf6k8"]
+[gd_scene load_steps=7 format=3 uid="uid://sucmon0cf6k8"]
 
 [ext_resource type="Script" path="res://Interaction/PhysicsInteractable.cs" id="1_5rh6m"]
 [ext_resource type="ArrayMesh" uid="uid://bq321lq3n1lkx" path="res://Assets/Prefabs/WorldObjects/OfficeChair.tres" id="2_8t2rp"]
+[ext_resource type="Script" path="res://Sound/ImpactSoundMaker.cs" id="3_74o1x"]
+[ext_resource type="AudioStream" uid="uid://knok7vigia6n" path="res://Assets/Sfx/Office Chair/office-chair-impact-noises.tres" id="4_3ei0l"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1iw7t"]
 size = Vector3(0.574585, 0.5, 0.613068)
@@ -23,3 +25,17 @@ shape = SubResource("BoxShape3D_frivc")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 gi_mode = 2
 mesh = ExtResource("2_8t2rp")
+
+[node name="ImpactSoundMaker" type="Node3D" parent="." node_paths=PackedStringArray("_body", "_soundEmitter")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+script = ExtResource("3_74o1x")
+_body = NodePath("..")
+_soundEmitter = NodePath("AudioStreamPlayer3D")
+_impactSound = ExtResource("4_3ei0l")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="ImpactSoundMaker"]
+attenuation_model = 2
+volume_db = -15.0
+unit_size = 6.0
+max_polyphony = 6
+bus = &"Sound Effects"

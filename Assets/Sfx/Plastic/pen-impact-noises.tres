@@ -1,0 +1,13 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=5 format=3 uid="uid://kengk7j0bg0j"]
+
+[ext_resource type="AudioStream" uid="uid://dqoeq08buaw71" path="res://Assets/Sfx/Plastic/Pen Drop 1.ogg" id="1_2sa64"]
+[ext_resource type="AudioStream" uid="uid://dvvulb6uex6jy" path="res://Assets/Sfx/Plastic/Pen Drop 2.ogg" id="2_l83b2"]
+[ext_resource type="AudioStream" uid="uid://dmdnnbjb26r8m" path="res://Assets/Sfx/Plastic/Pen Drop 3.ogg" id="3_pdyuv"]
+[ext_resource type="AudioStream" uid="uid://beke4qborgy3j" path="res://Assets/Sfx/Plastic/Pen Drop 4.ogg" id="4_gx5ej"]
+
+[resource]
+streams_count = 4
+stream_0/stream = ExtResource("1_2sa64")
+stream_1/stream = ExtResource("2_l83b2")
+stream_2/stream = ExtResource("3_pdyuv")
+stream_3/stream = ExtResource("4_gx5ej")
