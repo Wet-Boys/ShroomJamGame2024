@@ -91,26 +91,32 @@ transform = Transform3D(-6.36438e-08, 0, -1.712, 0, 1.479, 0, -1.456, 0, 7.48339
 
 [node name="RamDoorFrame" type="MeshInstance3D" parent="door city/this shit so ass8"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.042973, 0, 0.434642)
+material_override = ExtResource("6_6alyy")
 mesh = ExtResource("6_r0i4i")
 
 [node name="RamDoorFrame2" type="MeshInstance3D" parent="door city/this shit so ass8"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.242781, 0, 0.438714)
+material_override = ExtResource("6_6alyy")
 mesh = ExtResource("6_r0i4i")
 
 [node name="RamDoorFrame3" type="MeshInstance3D" parent="door city/this shit so ass8"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.172375, 0, 0.438714)
+material_override = ExtResource("6_6alyy")
 mesh = ExtResource("6_r0i4i")
 
 [node name="RamDoorFrame4" type="MeshInstance3D" parent="door city/this shit so ass8"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0974683, 0, 0.438714)
+material_override = ExtResource("6_6alyy")
 mesh = ExtResource("6_r0i4i")
 
 [node name="RamDoorFrame5" type="MeshInstance3D" parent="door city/this shit so ass8"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0411116, 0, 0.438714)
+material_override = ExtResource("6_6alyy")
 mesh = ExtResource("6_r0i4i")
 
 [node name="RamDoorFrame6" type="MeshInstance3D" parent="door city/this shit so ass8"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.00533232, 0, 0.438714)
+material_override = ExtResource("6_6alyy")
 mesh = ExtResource("6_r0i4i")
 
 [node name="this shit so ass9" type="Node3D" parent="door city"]
@@ -118,26 +124,32 @@ transform = Transform3D(-6.36438e-08, 0, -1.712, 0, 1.479, 0, -1.456, 0, 7.48339
 
 [node name="RamDoorFrame" type="MeshInstance3D" parent="door city/this shit so ass9"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.042973, 0, 0.438714)
+material_override = ExtResource("6_6alyy")
 mesh = ExtResource("6_r0i4i")
 
 [node name="RamDoorFrame2" type="MeshInstance3D" parent="door city/this shit so ass9"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.242781, 0, 0.438714)
+material_override = ExtResource("6_6alyy")
 mesh = ExtResource("6_r0i4i")
 
 [node name="RamDoorFrame3" type="MeshInstance3D" parent="door city/this shit so ass9"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.172375, 0, 0.438714)
+material_override = ExtResource("6_6alyy")
 mesh = ExtResource("6_r0i4i")
 
 [node name="RamDoorFrame4" type="MeshInstance3D" parent="door city/this shit so ass9"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0974683, 0, 0.438714)
+material_override = ExtResource("6_6alyy")
 mesh = ExtResource("6_r0i4i")
 
 [node name="RamDoorFrame5" type="MeshInstance3D" parent="door city/this shit so ass9"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0411116, 0, 0.438714)
+material_override = ExtResource("6_6alyy")
 mesh = ExtResource("6_r0i4i")
 
 [node name="RamDoorFrame6" type="MeshInstance3D" parent="door city/this shit so ass9"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.00533232, 0, 0.438714)
+material_override = ExtResource("6_6alyy")
 mesh = ExtResource("6_r0i4i")
 
 [node name="this shit so ass2" parent="door city" instance=ExtResource("5_hu3p4")]

@@ -1,32 +1,39 @@
-[gd_scene load_steps=3 format=3 uid="uid://b8tht0xs4gqs1"]
+[gd_scene load_steps=4 format=3 uid="uid://b8tht0xs4gqs1"]
 
 [ext_resource type="ArrayMesh" uid="uid://1lg6wkpgirgn" path="res://Assets/Prefabs/WorldObjects/ram door frame.tres" id="1_1kumm"]
+[ext_resource type="Material" uid="uid://u5xu7eqse33j" path="res://Assets/Scenes/Office/assets/materials/dark metal.tres" id="1_ksx3c"]
 [ext_resource type="PackedScene" uid="uid://c4ty2u3kw7126" path="res://Assets/Prefabs/Door.tscn" id="2_66n34"]
 
 [node name="Door that fucking suck" type="Node3D"]
 
 [node name="RamDoorFrame" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.042973, 0, 0.438714)
+material_override = ExtResource("1_ksx3c")
 mesh = ExtResource("1_1kumm")
 
 [node name="RamDoorFrame2" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.242781, 0, 0.438714)
+material_override = ExtResource("1_ksx3c")
 mesh = ExtResource("1_1kumm")
 
 [node name="RamDoorFrame3" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.172375, 0, 0.438714)
+material_override = ExtResource("1_ksx3c")
 mesh = ExtResource("1_1kumm")
 
 [node name="RamDoorFrame4" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0974683, 0, 0.438714)
+material_override = ExtResource("1_ksx3c")
 mesh = ExtResource("1_1kumm")
 
 [node name="RamDoorFrame5" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0411116, 0, 0.438714)
+material_override = ExtResource("1_ksx3c")
 mesh = ExtResource("1_1kumm")
 
 [node name="RamDoorFrame6" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.00533232, 0, 0.438714)
+material_override = ExtResource("1_ksx3c")
 mesh = ExtResource("1_1kumm")
 
 [node name="Door" parent="." instance=ExtResource("2_66n34")]
