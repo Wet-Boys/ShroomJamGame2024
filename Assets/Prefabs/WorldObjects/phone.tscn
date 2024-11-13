@@ -1,12 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://bl06154dautpb"]
+[gd_scene load_steps=4 format=3 uid="uid://b7wxq22ksc1d8"]
 
 [ext_resource type="Script" path="res://Interaction/PhysicsInteractable.cs" id="1_1csot"]
-[ext_resource type="ArrayMesh" uid="uid://dpcmucnkiauet" path="res://Assets/Prefabs/WorldObjects/phone.tres" id="2_h2j6r"]
+[ext_resource type="ArrayMesh" uid="uid://dtm7htcmr57sm" path="res://Assets/Prefabs/WorldObjects/phone.tres" id="2_h2j6r"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2ev2p"]
 size = Vector3(0.0811157, 0.00891113, 0.141479)
 
 [node name="PHONE" type="RigidBody3D"]
+continuous_cd = true
 script = ExtResource("1_1csot")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

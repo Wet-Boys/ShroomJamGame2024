@@ -1,4 +1,4 @@
-[gd_scene load_steps=266 format=4 uid="uid://bkh80lrmoy5cs"]
+[gd_scene load_steps=279 format=4 uid="uid://bkh80lrmoy5cs"]
 
 [ext_resource type="Material" uid="uid://ce3wou354fqct" path="res://Assets/Scenes/Office/assets/materials/kitchen wall.tres" id="1_42koi"]
 [ext_resource type="Material" uid="uid://bm4mtepbl3aav" path="res://Assets/Scenes/Office/assets/materials/Backrooms Wallpaper.tres" id="1_giika"]
@@ -70,6 +70,13 @@
 [ext_resource type="Environment" uid="uid://33v7dtbsec0t" path="res://Assets/environment.tres" id="42_glwae"]
 [ext_resource type="PackedScene" uid="uid://dhtyoauwu7y8t" path="res://Assets/Prefabs/WorldObjects/boss_desk.tscn" id="42_iypbj"]
 [ext_resource type="Script" path="res://Rendering/RightClickToDataMosh.cs" id="47_cnugj"]
+[ext_resource type="PackedScene" uid="uid://ngd4mo1wlot1" path="res://Assets/Prefabs/WorldObjects/book_001.tscn" id="49_x2cum"]
+[ext_resource type="PackedScene" uid="uid://ckgh4hefmekts" path="res://Assets/Prefabs/WorldObjects/book_002.tscn" id="50_4b775"]
+[ext_resource type="PackedScene" uid="uid://2y7j56vsihbf" path="res://Assets/Prefabs/WorldObjects/book_003.tscn" id="51_imlu4"]
+[ext_resource type="PackedScene" uid="uid://b7wxq22ksc1d8" path="res://Assets/Prefabs/WorldObjects/phone.tscn" id="52_eny6n"]
+[ext_resource type="PackedScene" uid="uid://cf65rfdwsm0gm" path="res://Assets/Prefabs/WorldObjects/tablet.tscn" id="53_1aybl"]
+[ext_resource type="PackedScene" uid="uid://dkhohiwpnbfb2" path="res://Assets/Prefabs/WorldObjects/coffee_cup.tscn" id="54_d1f7f"]
+[ext_resource type="PackedScene" uid="uid://bfsrb6gaab7u1" path="res://Assets/Prefabs/WorldObjects/paper_stack.tscn" id="55_ny27y"]
 [ext_resource type="PackedScene" uid="uid://pbq706q3dtdx" path="res://Assets/Prefabs/WorldObjects/elevator.tscn" id="56_e1htd"]
 [ext_resource type="Compositor" uid="uid://ccrycwv5i0yyi" path="res://Assets/compositor.tres" id="61_7xgf3"]
 [ext_resource type="PackedScene" uid="uid://0alugtqy63q6" path="res://Assets/Prefabs/WorldObjects/conference chair.tscn" id="65_udbvo"]
@@ -87,6 +94,12 @@
 [ext_resource type="PackedScene" uid="uid://b6gb4fpjgps0q" path="res://Assets/Prefabs/WorldObjects/painting_9.tscn" id="85_v4p3y"]
 [ext_resource type="PackedScene" uid="uid://dhf4sxevdm04h" path="res://Assets/Prefabs/WorldObjects/painting_10.tscn" id="86_pbld0"]
 [ext_resource type="PackedScene" uid="uid://cr54ay2b62su1" path="res://Assets/Prefabs/WorldObjects/painting_11.tscn" id="87_peepo"]
+[ext_resource type="PackedScene" uid="uid://cewlilphc7wi4" path="res://Assets/Prefabs/WorldObjects/lobby_sculpture.tscn" id="88_3qq5t"]
+[ext_resource type="PackedScene" uid="uid://cepx61b6yxc8x" path="res://Assets/Prefabs/WorldObjects/plant_2.tscn" id="89_3nrx2"]
+[ext_resource type="PackedScene" uid="uid://bxkum48snd7le" path="res://Assets/Prefabs/WorldObjects/plant 3.tscn" id="90_hqhbr"]
+[ext_resource type="PackedScene" uid="uid://l5strfv5ubke" path="res://Assets/Prefabs/WorldObjects/desk toy.tscn" id="91_ga5d2"]
+[ext_resource type="PackedScene" uid="uid://x08rpx2e0f4q" path="res://Assets/Prefabs/WorldObjects/desk_clock.tscn" id="92_1g87e"]
+[ext_resource type="PackedScene" uid="uid://2mbywjgbo7tu" path="res://Assets/Prefabs/WorldObjects/hourglass.tscn" id="98_ica2t"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_70w70"]
 
@@ -3126,6 +3139,90 @@ transform = Transform3D(3.63727, 0, -7.12532, 0, 8, 0, 7.12532, 0, 3.63727, -54.
 [node name="boss desk" parent="Asset Complete Office2" instance=ExtResource("42_iypbj")]
 transform = Transform3D(-8, 0, -8.5326e-07, 0, 8, 0, 6.99382e-07, 0, -9.76016, -57.657, 24, 87.6202)
 
+[node name="BOOK_001" parent="Asset Complete Office2" instance=ExtResource("49_x2cum")]
+transform = Transform3D(3.7731, 0, -1.37434, 0, 4.01561, 0, 1.37434, 0, 3.7731, -17.6445, 28.5044, 46.5448)
+
+[node name="BOOK_002" parent="Asset Complete Office2" instance=ExtResource("50_4b775")]
+transform = Transform3D(2.6629, 0, 2.98479, 0, 4, 0, -2.98479, 0, 2.6629, -28.5387, 28.5839, 46.5197)
+
+[node name="BOOK_003" parent="Asset Complete Office2" instance=ExtResource("51_imlu4")]
+transform = Transform3D(-3.83311, 0, 1.14336, 0, 4, 0, -1.14336, 0, -3.83311, -24.3996, 28.5989, 46.6965)
+
+[node name="BOOK_004" parent="Asset Complete Office2" instance=ExtResource("51_imlu4")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -56.8713, 28.5668, 51.0472)
+
+[node name="BOOK_005" parent="Asset Complete Office2" instance=ExtResource("50_4b775")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -59.6794, 29.6561, 82.0408)
+
+[node name="BOOK_006" parent="Asset Complete Office2" instance=ExtResource("50_4b775")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -59.6794, 29.7903, 82.0408)
+
+[node name="BOOK_007" parent="Asset Complete Office2" instance=ExtResource("50_4b775")]
+transform = Transform3D(3.92459, 0, 0.773033, 0, 4, 0, -0.773033, 0, 3.92459, -59.6794, 29.9196, 82.0408)
+
+[node name="PHONE" parent="Asset Complete Office2" instance=ExtResource("52_eny6n")]
+transform = Transform3D(-0.276727, 0, 3.99042, 0, 4, 0, -3.99042, 0, -0.276727, -58.3704, 29.616, 80.8337)
+
+[node name="PHONE2" parent="Asset Complete Office2" instance=ExtResource("52_eny6n")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -10.7127, 28.6614, -14.523)
+
+[node name="TAB HOLDER" parent="Asset Complete Office2" instance=ExtResource("53_1aybl")]
+transform = Transform3D(2.88138, 0, -2.77446, 0, 4, 0, 2.77446, 0, 2.88138, -12.6413, 24.2533, -14.5477)
+
+[node name="BOOK_008" parent="Asset Complete Office2" instance=ExtResource("50_4b775")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -13.3347, 29.7746, -14.5437)
+
+[node name="BOOK_009" parent="Asset Complete Office2" instance=ExtResource("50_4b775")]
+transform = Transform3D(4, 0, 0, 0, 3.87336, 0.998546, 0, -0.998546, 3.87336, -13.3347, 29.9321, -15.1479)
+
+[node name="BOOK_010" parent="Asset Complete Office2" instance=ExtResource("51_imlu4")]
+transform = Transform3D(2.86412, 2.68492, 0.766849, -2.59356, 2.965, -0.69441, -1.03453, 0, 3.8639, -13.5269, 31.2138, -12.6667)
+
+[node name="coffee cup" parent="Asset Complete Office2" instance=ExtResource("54_d1f7f")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -47.4674, 28.8149, -19.2055)
+
+[node name="coffee cup2" parent="Asset Complete Office2" instance=ExtResource("54_d1f7f")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -49.8167, 28.8149, -19.2055)
+
+[node name="coffee cup3" parent="Asset Complete Office2" instance=ExtResource("54_d1f7f")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -51.0954, 28.8149, -18.0073)
+
+[node name="coffee cup5" parent="Asset Complete Office2" instance=ExtResource("54_d1f7f")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -47.1624, 28.8149, 44.2147)
+
+[node name="coffee cup6" parent="Asset Complete Office2" instance=ExtResource("54_d1f7f")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -48.2736, 28.8149, 47.5127)
+
+[node name="coffee cup8" parent="Asset Complete Office2" instance=ExtResource("54_d1f7f")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -62.9038, 28.8149, 51.8455)
+
+[node name="coffee cup9" parent="Asset Complete Office2" instance=ExtResource("54_d1f7f")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -31.2954, 32.0736, 50.5629)
+
+[node name="coffee cup10" parent="Asset Complete Office2" instance=ExtResource("54_d1f7f")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -11.3792, 28.5214, 58.0677)
+
+[node name="coffee cup11" parent="Asset Complete Office2" instance=ExtResource("54_d1f7f")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -13.4614, 28.5214, 37.4983)
+
+[node name="coffee cup7" parent="Asset Complete Office2" instance=ExtResource("54_d1f7f")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -51.928, 28.8149, 47.3228)
+
+[node name="coffee cup4" parent="Asset Complete Office2" instance=ExtResource("54_d1f7f")]
+transform = Transform3D(4.38943, 6.63649, -2.9009e-07, 0, -3.47801e-07, -7.95676, -6.63649, 4.38943, -1.91868e-07, -48.8542, 29.0949, -18.2816)
+
+[node name="paper stack" parent="Asset Complete Office2" instance=ExtResource("55_ny27y")]
+transform = Transform3D(-2.86258, 0, -2.79386, 0, 4, 0, 2.79386, 0, -2.86258, -20.8378, 28.5044, 47.7815)
+
+[node name="paper stack3" parent="Asset Complete Office2" instance=ExtResource("55_ny27y")]
+transform = Transform3D(-3.98801, 0, 0.309451, 0, 4, 0, -0.309451, 0, -3.98801, -26.9888, 28.5044, 47.7815)
+
+[node name="paper stack4" parent="Asset Complete Office2" instance=ExtResource("55_ny27y")]
+transform = Transform3D(-2.25964, 0, 3.30061, 0, 4, 0, -3.30061, 0, -2.25964, -34.7762, 31.969, 47.8033)
+
+[node name="paper stack2" parent="Asset Complete Office2" instance=ExtResource("55_ny27y")]
+transform = Transform3D(-2.86258, 0, -2.79386, 0, 4, 0, 2.79386, 0, -2.86258, -20.8378, 29.0287, 47.7815)
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(34, 0, 0, 0, 2, 0, 0, 0, 22, 1, 23, 89)
 material_override = ExtResource("12_phc8k")
@@ -3378,6 +3475,9 @@ transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 36.1829, 24, -56.9472)
 [node name="Plant2" parent="." instance=ExtResource("16_lps8o")]
 transform = Transform3D(2.07055, 0, -7.72741, 0, 8, 0, 7.72741, 0, 2.07055, 13.9371, 24, 61.3539)
 
+[node name="Plant4" parent="." instance=ExtResource("16_lps8o")]
+transform = Transform3D(2.07055, 0, -7.72741, 0, 8, 0, 7.72741, 0, 2.07055, 35.7834, 24, 69.3248)
+
 [node name="Ablution Wall Units" parent="." instance=ExtResource("14_s2s3k")]
 transform = Transform3D(-8, 0, -1.20797e-06, 0, 8, 0, 1.20797e-06, 0, -8, -9.54204, 24, -58.0042)
 
@@ -3406,7 +3506,7 @@ transform = Transform3D(-3.52336e-07, 0, -8.0605, 0, 8.0605, 0, 8.0605, 0, -3.52
 transform = Transform3D(-3.52336e-07, 0, 8.0605, 0, 8.0605, 0, -8.0605, 0, -3.52336e-07, 63.2274, 39.4602, 47.0809)
 
 [node name="conference chair2" parent="." instance=ExtResource("65_udbvo")]
-transform = Transform3D(6.36952, 0, -4.40224, 0, 7.74277, 0, 4.40224, 0, 6.36952, 33.4689, 24.1791, 72.0953)
+transform = Transform3D(6.36952, 0, -4.40224, 0, 7.74277, 0, 4.40224, 0, 6.36952, 32.4965, 24.1791, 73.5023)
 
 [node name="conference chair4" parent="." instance=ExtResource("65_udbvo")]
 transform = Transform3D(-6.93282, 0, -3.44768, 0, 7.74277, 0, 3.44768, 0, -6.93282, 32.7628, 24.1791, -26.6996)
@@ -3455,6 +3555,63 @@ transform = Transform3D(-3.49691e-07, -3.49691e-07, -8, -1.20857, 7.90818, -2.92
 
 [node name="painting 11" parent="." instance=ExtResource("87_peepo")]
 transform = Transform3D(-3.49691e-07, -8, 3.49691e-07, 0, -3.49691e-07, -8, 8, -3.49691e-07, 1.52855e-14, 38, 34, -37.99)
+
+[node name="lobby sculpture" parent="." instance=ExtResource("88_3qq5t")]
+transform = Transform3D(1.13693, 0, -3.83502, 0, 4, 0, 3.83502, 0, 1.13693, 24.0261, 24, 55.7303)
+
+[node name="plant 2" parent="." instance=ExtResource("89_3nrx2")]
+transform = Transform3D(-1.93673, 0, 7.76203, 0, 8, 0, -7.76203, 0, -1.93673, 55.6993, 24, 12.8152)
+
+[node name="plant 7" parent="." instance=ExtResource("89_3nrx2")]
+transform = Transform3D(7.60802, 0, -2.47346, 0, 8, 0, 2.47346, 0, 7.60802, -44.7634, 24, -11.9458)
+
+[node name="plant 4" parent="." instance=ExtResource("89_3nrx2")]
+transform = Transform3D(-1.93673, 0, 7.76203, 0, 8, 0, -7.76203, 0, -1.93673, 34.9374, 24, -16.0477)
+
+[node name="plant 3" parent="." instance=ExtResource("89_3nrx2")]
+transform = Transform3D(7.35961, 0, 3.13626, 0, 8, 0, -3.13626, 0, 7.35961, 55.0903, 24, 60.2482)
+
+[node name="plant 5" parent="." instance=ExtResource("90_hqhbr")]
+transform = Transform3D(7.31296, 0, -3.24356, 0, 8, 0, 3.24356, 0, 7.31296, -74.5184, 23.9452, -54.4772)
+
+[node name="plant 6" parent="." instance=ExtResource("90_hqhbr")]
+transform = Transform3D(7.31296, 0, -3.24356, 0, 8, 0, 3.24356, 0, 7.31296, -35.563, 23.9452, 94.5885)
+
+[node name="desk toy2" parent="." instance=ExtResource("91_ga5d2")]
+transform = Transform3D(-3.96112, 0, -6.9505, 0, 8, 0, 6.9505, 0, -3.96112, -59.7738, 29.616, 79.4889)
+
+[node name="desk clock" parent="." instance=ExtResource("92_1g87e")]
+transform = Transform3D(-1.94626, 0, 3.49458, 0, 4, 0, -3.49458, 0, -1.94626, -60.8846, 29.616, 85.9666)
+
+[node name="hourglass" parent="." instance=ExtResource("98_ica2t")]
+transform = Transform3D(3.99434, 0, 0.21276, 0, 4, 0, -0.21276, 0, 3.99434, -53.5646, 29.616, 89.541)
+
+[node name="BOOK_002" parent="." instance=ExtResource("50_4b775")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -58.7518, 28.5429, 51.111)
+
+[node name="paper stack" parent="." instance=ExtResource("55_ny27y")]
+transform = Transform3D(6.08234, 0, 0, 0, 6.08234, 0, 0, 0, 6.08234, -11.0831, 31.9125, 46.4242)
+
+[node name="paper stack2" parent="." instance=ExtResource("55_ny27y")]
+transform = Transform3D(-4.73465, 0, 3.01271, 0, 5.61189, 0, -3.01271, 0, -4.73465, -55.1659, 28.5044, 46.5185)
+
+[node name="paper stack3" parent="." instance=ExtResource("55_ny27y")]
+transform = Transform3D(4.21296, 0, 3.41378, 0, 5.42244, 0, -3.41378, 0, 4.21296, -68.7245, 28.5044, 34.7549)
+
+[node name="paper stack4" parent="." instance=ExtResource("55_ny27y")]
+transform = Transform3D(3.67988, 0, 5.27283, 0, 6.42995, 0, -5.27283, 0, 3.67988, -68.351, 28.5044, 61.9818)
+
+[node name="paper stack5" parent="." instance=ExtResource("55_ny27y")]
+transform = Transform3D(-1.90796, 0, -5.73353, 0, 6.04265, 0, 5.73353, 0, -1.90796, -47.5949, 28.5044, 63.4223)
+
+[node name="paper stack6" parent="." instance=ExtResource("55_ny27y")]
+transform = Transform3D(-2.61168, 0, 5.78935, 0, 6.35118, 0, -5.78935, 0, -2.61168, -33.5818, 28.5044, 63.991)
+
+[node name="paper stack7" parent="." instance=ExtResource("55_ny27y")]
+transform = Transform3D(5.17998, 0, 0.673497, 0, 5.22358, 0, -0.673497, 0, 5.17998, -16.5603, 28.5044, 52.4856)
+
+[node name="paper stack8" parent="." instance=ExtResource("55_ny27y")]
+transform = Transform3D(-6.06172, 0, -1.21499, 0, 6.18229, 0, 1.21499, 0, -6.06172, 28.2668, 28.5757, -46.1417)
 
 [editable path="Asset Complete Office2/Cubicle2"]
 [editable path="Asset Complete Office2/Cubicle3"]

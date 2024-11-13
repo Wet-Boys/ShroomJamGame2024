@@ -1,12 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://d0flu5ydvsu86"]
+[gd_scene load_steps=4 format=3 uid="uid://ckgh4hefmekts"]
 
 [ext_resource type="Script" path="res://Interaction/PhysicsInteractable.cs" id="1_oxp0p"]
-[ext_resource type="ArrayMesh" uid="uid://7o7wuq5e8q66" path="res://Assets/Prefabs/WorldObjects/book_002.tres" id="2_hwqn8"]
+[ext_resource type="ArrayMesh" uid="uid://0ki2ocxpegse" path="res://Assets/Prefabs/WorldObjects/book_002.tres" id="2_hwqn8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_n40id"]
 size = Vector3(0.271423, 0.0231323, 0.211792)
 
 [node name="BOOK_002" type="RigidBody3D"]
+continuous_cd = true
 script = ExtResource("1_oxp0p")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
