@@ -1,4 +1,4 @@
-[gd_scene load_steps=279 format=4 uid="uid://bkh80lrmoy5cs"]
+[gd_scene load_steps=292 format=4 uid="uid://bkh80lrmoy5cs"]
 
 [ext_resource type="Material" uid="uid://ce3wou354fqct" path="res://Assets/Scenes/Office/assets/materials/kitchen wall.tres" id="1_42koi"]
 [ext_resource type="Material" uid="uid://bm4mtepbl3aav" path="res://Assets/Scenes/Office/assets/materials/Backrooms Wallpaper.tres" id="1_giika"]
@@ -66,10 +66,19 @@
 [ext_resource type="PackedScene" uid="uid://bb2p7b4q35uxh" path="res://Assets/Prefabs/WorldObjects/meeting_table.tscn" id="36_8epht"]
 [ext_resource type="PackedScene" uid="uid://dhi6o1tunsdcx" path="res://Assets/Prefabs/WorldObjects/hr_cardboard.tscn" id="39_7dp53"]
 [ext_resource type="PackedScene" uid="uid://bj73e8q4ewyae" path="res://Assets/Prefabs/WorldObjects/hr_desk.tscn" id="40_dl2j5"]
+[ext_resource type="PackedScene" uid="uid://cdnbs420hpnme" path="res://Assets/Prefabs/WorldObjects/sticky_note_003.tscn" id="41_i647k"]
 [ext_resource type="PackedScene" uid="uid://bh3wnejo207xa" path="res://Assets/Prefabs/WorldObjects/boss_chair.tscn" id="41_mge33"]
 [ext_resource type="Environment" uid="uid://33v7dtbsec0t" path="res://Assets/environment.tres" id="42_glwae"]
+[ext_resource type="PackedScene" uid="uid://d60q531rsbkx" path="res://Assets/Prefabs/WorldObjects/sticky_note_004.tscn" id="42_i6p86"]
 [ext_resource type="PackedScene" uid="uid://dhtyoauwu7y8t" path="res://Assets/Prefabs/WorldObjects/boss_desk.tscn" id="42_iypbj"]
+[ext_resource type="PackedScene" uid="uid://la5xytq83gqj" path="res://Assets/Prefabs/WorldObjects/sticky_note_005.tscn" id="43_2tl3g"]
+[ext_resource type="PackedScene" uid="uid://c8oxjcv1x36e0" path="res://Assets/Prefabs/WorldObjects/sticky_note_006.tscn" id="44_6oskn"]
+[ext_resource type="PackedScene" uid="uid://ctdhi6hfspevx" path="res://Assets/Prefabs/WorldObjects/sticky_note_007.tscn" id="45_l2afi"]
+[ext_resource type="PackedScene" uid="uid://1tla4v7lgr5a" path="res://Assets/Prefabs/WorldObjects/sticky_note_008.tscn" id="46_46uuh"]
 [ext_resource type="Script" path="res://Rendering/RightClickToDataMosh.cs" id="47_cnugj"]
+[ext_resource type="PackedScene" uid="uid://47aw63dvvclx" path="res://Assets/Prefabs/WorldObjects/sticky_note_009.tscn" id="47_mkw54"]
+[ext_resource type="PackedScene" uid="uid://dwxepsvntp5vj" path="res://Assets/Prefabs/WorldObjects/sticky_note_010.tscn" id="48_2ytt2"]
+[ext_resource type="PackedScene" uid="uid://c1meol40qam15" path="res://Assets/Prefabs/WorldObjects/shitty_mirror.tscn" id="49_gfr6o"]
 [ext_resource type="PackedScene" uid="uid://ngd4mo1wlot1" path="res://Assets/Prefabs/WorldObjects/book_001.tscn" id="49_x2cum"]
 [ext_resource type="PackedScene" uid="uid://ckgh4hefmekts" path="res://Assets/Prefabs/WorldObjects/book_002.tscn" id="50_4b775"]
 [ext_resource type="PackedScene" uid="uid://2y7j56vsihbf" path="res://Assets/Prefabs/WorldObjects/book_003.tscn" id="51_imlu4"]
@@ -78,11 +87,11 @@
 [ext_resource type="PackedScene" uid="uid://dkhohiwpnbfb2" path="res://Assets/Prefabs/WorldObjects/coffee_cup.tscn" id="54_d1f7f"]
 [ext_resource type="PackedScene" uid="uid://bfsrb6gaab7u1" path="res://Assets/Prefabs/WorldObjects/paper_stack.tscn" id="55_ny27y"]
 [ext_resource type="PackedScene" uid="uid://pbq706q3dtdx" path="res://Assets/Prefabs/WorldObjects/elevator.tscn" id="56_e1htd"]
-[ext_resource type="Compositor" uid="uid://ccrycwv5i0yyi" path="res://Assets/compositor.tres" id="61_7xgf3"]
+[ext_resource type="Compositor" uid="uid://8ep4mx12bub7" path="res://Assets/compositor.tres" id="61_7xgf3"]
 [ext_resource type="PackedScene" uid="uid://0alugtqy63q6" path="res://Assets/Prefabs/WorldObjects/conference chair.tscn" id="65_udbvo"]
-[ext_resource type="PackedScene" uid="uid://boxxihrkclqq0" path="res://Assets/Prefabs/WorldObjects/boss_sink.tscn" id="72_vvw20"]
-[ext_resource type="PackedScene" uid="uid://ddjue5hteh6fw" path="res://Assets/Prefabs/WorldObjects/boss_toilet.tscn" id="73_ilwok"]
-[ext_resource type="PackedScene" uid="uid://do2itx74a8yoq" path="res://Assets/Prefabs/WorldObjects/boss_urinal.tscn" id="74_ixrvx"]
+[ext_resource type="PackedScene" uid="uid://bexo2j1l6gg0o" path="res://Assets/Prefabs/WorldObjects/boss_sink.tscn" id="72_vvw20"]
+[ext_resource type="PackedScene" uid="uid://bt33465ny50md" path="res://Assets/Prefabs/WorldObjects/boss_toilet.tscn" id="73_ilwok"]
+[ext_resource type="PackedScene" uid="uid://d0jn33gp4jkbx" path="res://Assets/Prefabs/WorldObjects/boss_urinal.tscn" id="74_ixrvx"]
 [ext_resource type="PackedScene" uid="uid://bqjflbpwvyxtc" path="res://Assets/Prefabs/WorldObjects/painting_1.tscn" id="77_ukq70"]
 [ext_resource type="PackedScene" uid="uid://cbhuuk1cifft8" path="res://Assets/Prefabs/WorldObjects/painting_2.tscn" id="78_f2tm1"]
 [ext_resource type="PackedScene" uid="uid://cb4mknph76c8k" path="res://Assets/Prefabs/WorldObjects/painting_3.tscn" id="79_6wkp3"]
@@ -99,7 +108,11 @@
 [ext_resource type="PackedScene" uid="uid://bxkum48snd7le" path="res://Assets/Prefabs/WorldObjects/plant 3.tscn" id="90_hqhbr"]
 [ext_resource type="PackedScene" uid="uid://l5strfv5ubke" path="res://Assets/Prefabs/WorldObjects/desk toy.tscn" id="91_ga5d2"]
 [ext_resource type="PackedScene" uid="uid://x08rpx2e0f4q" path="res://Assets/Prefabs/WorldObjects/desk_clock.tscn" id="92_1g87e"]
+[ext_resource type="PackedScene" uid="uid://7aanbohpmcg7" path="res://Assets/Prefabs/WorldObjects/mirror.tscn" id="93_fr6kb"]
 [ext_resource type="PackedScene" uid="uid://2mbywjgbo7tu" path="res://Assets/Prefabs/WorldObjects/hourglass.tscn" id="98_ica2t"]
+[ext_resource type="PackedScene" uid="uid://utokvl8urm7a" path="res://Assets/Prefabs/WorldObjects/skybox.tscn" id="101_t2ssf"]
+[ext_resource type="PackedScene" uid="uid://cwn1f1pjk8tik" path="res://Assets/Prefabs/WorldObjects/sticky_note_001.tscn" id="110_n161j"]
+[ext_resource type="PackedScene" uid="uid://bx7c75rya5rtd" path="res://Assets/Prefabs/WorldObjects/sticky_note_002.tscn" id="111_uxnv7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_70w70"]
 
@@ -2927,10 +2940,397 @@ transform = Transform3D(1.44347, 0, 7.8687, 0, 8, 0, -7.8687, 0, 1.44347, 60.394
 transform = Transform3D(-5.59111e-07, 12.791, -5.59111e-07, 0, -5.59111e-07, -12.791, -12.791, -5.59111e-07, 2.44395e-14, 8.62749, 7.22809, 38.9876)
 
 [node name="hr cardboard" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("39_7dp53")]
-transform = Transform3D(-3.50117e-07, 8.00853, 0.139789, 1.80725, 0.136185, -7.80201, -7.8032, 0.0315405, -1.80698, 40.8298, 5.47572, -84.9365)
+transform = Transform3D(-3.50117e-07, 8.00853, 0.139789, 1.80725, 0.136185, -7.80201, -7.8032, 0.0315405, -1.80698, 40.8298, 5.47572, -84.9017)
 
 [node name="hr desk" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("40_dl2j5")]
 transform = Transform3D(-6.43652, 0, -5.62698e-07, 0, 6.43652, 0, 5.62698e-07, 0, -6.43652, 46.9864, -4.9899, -94.1489)
+
+[node name="StickyNote_003" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("41_i647k")]
+transform = Transform3D(-3.53851, -3.90518e-07, -1.86519, 1.86519, -1.87309e-08, -3.53851, 3.36729e-07, -4, 1.98667e-07, 4.58394, 3.04913, -0.127254)
+
+[node name="StickyNote_004" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("42_i6p86")]
+transform = Transform3D(-3.83527, -3.85286e-07, -1.13608, 1.13608, -6.64053e-08, -3.83527, 3.50559e-07, -4, 1.731e-07, 8.35781, 2.91871, -0.127254)
+
+[node name="StickyNote_005" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("43_2tl3g")]
+transform = Transform3D(-3.87477, -3.80891e-07, -0.993053, 0.993053, -8.8188e-08, -3.87477, 3.47072e-07, -4, 1.79988e-07, 2.94634, 1.1949, -0.127254)
+
+[node name="StickyNote_006" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("44_6oskn")]
+transform = Transform3D(-3.83871, -2.77423e-07, 1.12443, -1.12443, -2.75484e-07, -3.83871, 3.43677e-07, -4, 1.8639e-07, 5.68472, 2.55542, -0.127254)
+
+[node name="StickyNote_007" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("45_l2afi")]
+transform = Transform3D(-3.62129, -3.90396e-07, -1.6989, 1.6989, -2.11093e-08, -3.62129, 3.44469e-07, -4, 1.84922e-07, 3.89077, 3.54605, -0.127254)
+
+[node name="StickyNote_008" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("46_46uuh")]
+transform = Transform3D(-3.6716, -2.69697e-07, 1.58725, -1.58725, -2.83052e-07, -3.6716, 3.59873e-07, -4, 1.52794e-07, 9.18869, 3.83337, -0.127274)
+
+[node name="StickyNote_009" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("47_mkw54")]
+transform = Transform3D(-3.74326, -3.8459e-07, -1.40998, 1.40998, -7.03223e-08, -3.74326, 3.35117e-07, -4, 2.01375e-07, 7.53823, 2.36991, -0.127274)
+
+[node name="StickyNote_010" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("48_2ytt2")]
+transform = Transform3D(-3.93197, -3.24007e-07, 0.734594, -0.734594, -2.18801e-07, -3.93197, 3.58679e-07, -4, 1.55576e-07, 6.09302, 3.81452, -0.127274)
+
+[node name="StickyNote_011" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("41_i647k")]
+transform = Transform3D(-3.53851, -3.90518e-07, -1.86519, 1.86519, -1.87309e-08, -3.53851, 3.36729e-07, -4, 1.98667e-07, -6.81906, 3.04913, -0.127254)
+
+[node name="StickyNote_012" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("42_i6p86")]
+transform = Transform3D(-3.83527, -3.85286e-07, -1.13608, 1.13608, -6.64053e-08, -3.83527, 3.50559e-07, -4, 1.731e-07, -3.04519, 2.91871, -0.127254)
+
+[node name="StickyNote_013" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("43_2tl3g")]
+transform = Transform3D(-3.87477, -3.80891e-07, -0.993053, 0.993053, -8.8188e-08, -3.87477, 3.47072e-07, -4, 1.79988e-07, -8.45666, 1.1949, -0.127254)
+
+[node name="StickyNote_014" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("44_6oskn")]
+transform = Transform3D(-3.83871, -2.77423e-07, 1.12443, -1.12443, -2.75484e-07, -3.83871, 3.43677e-07, -4, 1.8639e-07, -5.71828, 2.55542, -0.127254)
+
+[node name="StickyNote_015" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("45_l2afi")]
+transform = Transform3D(-3.62129, -3.90396e-07, -1.6989, 1.6989, -2.11093e-08, -3.62129, 3.44469e-07, -4, 1.84922e-07, -7.51223, 3.54605, -0.127254)
+
+[node name="StickyNote_016" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("46_46uuh")]
+transform = Transform3D(-3.6716, -2.69697e-07, 1.58725, -1.58725, -2.83052e-07, -3.6716, 3.59873e-07, -4, 1.52794e-07, -2.21431, 3.83337, -0.127274)
+
+[node name="StickyNote_017" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("47_mkw54")]
+transform = Transform3D(-3.74326, -3.8459e-07, -1.40998, 1.40998, -7.03223e-08, -3.74326, 3.35117e-07, -4, 2.01375e-07, -3.86477, 2.36991, -0.127274)
+
+[node name="StickyNote_018" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("48_2ytt2")]
+transform = Transform3D(-3.93197, -3.24007e-07, 0.734594, -0.734594, -2.18801e-07, -3.93197, 3.58679e-07, -4, 1.55576e-07, -5.30998, 3.81452, -0.127274)
+
+[node name="StickyNote_019" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("41_i647k")]
+transform = Transform3D(-3.53851, -3.90518e-07, -1.86519, 1.86519, -1.87309e-08, -3.53851, 3.36729e-07, -4, 1.98667e-07, -2.08145, 3.04913, -0.127254)
+
+[node name="StickyNote_020" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("42_i6p86")]
+transform = Transform3D(-3.83527, -3.85286e-07, -1.13608, 1.13608, -6.64053e-08, -3.83527, 3.50559e-07, -4, 1.731e-07, 1.69242, 2.91871, -0.127254)
+
+[node name="StickyNote_021" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("43_2tl3g")]
+transform = Transform3D(-3.87477, -3.80891e-07, -0.993053, 0.993053, -8.8188e-08, -3.87477, 3.47072e-07, -4, 1.79988e-07, -3.71905, 1.1949, -0.127254)
+
+[node name="StickyNote_022" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("44_6oskn")]
+transform = Transform3D(-3.83871, -2.77423e-07, 1.12443, -1.12443, -2.75484e-07, -3.83871, 3.43677e-07, -4, 1.8639e-07, -0.980667, 2.55542, -0.127254)
+
+[node name="StickyNote_023" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("45_l2afi")]
+transform = Transform3D(-3.62129, -3.90396e-07, -1.6989, 1.6989, -2.11093e-08, -3.62129, 3.44469e-07, -4, 1.84922e-07, -2.77462, 3.54605, -0.127254)
+
+[node name="StickyNote_024" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("46_46uuh")]
+transform = Transform3D(-3.6716, -2.69697e-07, 1.58725, -1.58725, -2.83052e-07, -3.6716, 3.59873e-07, -4, 1.52794e-07, 2.5233, 3.83337, -0.127274)
+
+[node name="StickyNote_117" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("43_2tl3g")]
+transform = Transform3D(5.16444e-07, -4, 2.23396e-07, 0.993053, -8.8188e-08, -3.87477, 3.87477, 5.55736e-07, 0.993053, 12.9293, 1.1949, -14.5633)
+
+[node name="StickyNote_118" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("45_l2afi")]
+transform = Transform3D(5.0276e-07, -4, 2.59184e-07, 1.6989, -2.11093e-08, -3.62129, 3.62129, 5.65242e-07, 1.6989, 12.9293, 3.54605, -15.5078)
+
+[node name="StickyNote_119" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("46_46uuh")]
+transform = Transform3D(4.7306e-07, -4, -2.60095e-08, -1.58725, -2.83052e-07, -3.6716, 3.6716, 4.44543e-07, -1.58725, 12.9293, 3.83337, -14.1403)
+
+[node name="StickyNote_120" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("43_2tl3g")]
+transform = Transform3D(-8.55187e-07, 4, -3.10211e-07, 0.993053, -8.8188e-08, -3.87477, -3.87477, -9.05427e-07, -0.993053, -13.0507, 1.1949, -14.6504)
+
+[node name="StickyNote_121" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("45_l2afi")]
+transform = Transform3D(-8.19344e-07, 4, -4.07707e-07, 1.6989, -2.11093e-08, -3.62129, -3.62129, -9.14933e-07, -1.6989, -13.0507, 3.54605, -13.706)
+
+[node name="StickyNote_122" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("46_46uuh")]
+transform = Transform3D(-7.94042e-07, 4, 1.64771e-07, -1.58725, -2.83052e-07, -3.6716, -3.6716, -7.94234e-07, 1.58725, -13.0507, 3.83337, -15.0735)
+
+[node name="StickyNote_025" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("47_mkw54")]
+transform = Transform3D(-3.74326, -3.8459e-07, -1.40998, 1.40998, -7.03223e-08, -3.74326, 3.35117e-07, -4, 2.01375e-07, 0.872843, 2.36991, -0.127274)
+
+[node name="StickyNote_026" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("48_2ytt2")]
+transform = Transform3D(-3.93197, -3.24007e-07, 0.734594, -0.734594, -2.18801e-07, -3.93197, 3.58679e-07, -4, 1.55576e-07, -0.572372, 3.81452, -0.127274)
+
+[node name="StickyNote_027" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("41_i647k")]
+transform = Transform3D(3.53851, 7.40209e-07, 1.86519, 1.86519, -1.87309e-08, -3.53851, -6.46075e-07, 4, -3.61727e-07, -4.55865, 3.04913, 0.591312)
+
+[node name="StickyNote_028" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("42_i6p86")]
+transform = Transform3D(3.83527, 7.34977e-07, 1.13608, 1.13608, -6.64054e-08, -3.83527, -6.85849e-07, 4, -2.7242e-07, -8.33252, 2.91871, 0.591312)
+
+[node name="StickyNote_029" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("43_2tl3g")]
+transform = Transform3D(3.87477, 7.30582e-07, 0.993053, 0.993053, -8.8188e-08, -3.87477, -6.85815e-07, 4, -2.66804e-07, -2.92105, 1.1949, 0.591312)
+
+[node name="StickyNote_030" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("44_6oskn")]
+transform = Transform3D(3.83871, 6.27114e-07, -1.12443, -1.12443, -2.75484e-07, -3.83871, -6.79267e-07, 4, -8.80893e-08, -5.65943, 2.55542, 0.591312)
+
+[node name="StickyNote_031" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("45_l2afi")]
+transform = Transform3D(3.62129, 7.40087e-07, 1.6989, 1.6989, -2.11093e-08, -3.62129, -6.61052e-07, 4, -3.33445e-07, -3.86548, 3.54605, 0.591312)
+
+[node name="StickyNote_032" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("46_46uuh")]
+transform = Transform3D(3.6716, 6.19388e-07, -1.58725, -1.58725, -2.83052e-07, -3.6716, -6.80855e-07, 4, -1.40316e-08, -9.1634, 3.83337, 0.591331)
+
+[node name="StickyNote_033" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("47_mkw54")]
+transform = Transform3D(3.74326, 7.34281e-07, 1.40998, 1.40998, -7.03222e-08, -3.74326, -6.62362e-07, 4, -3.24639e-07, -7.51294, 2.36991, 0.591331)
+
+[node name="StickyNote_034" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("48_2ytt2")]
+transform = Transform3D(3.93197, 6.73698e-07, -0.734594, -0.734594, -2.18801e-07, -3.93197, -7.02423e-07, 4, -9.13563e-08, -6.06772, 3.81452, 0.591331)
+
+[node name="StickyNote_123" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("41_i647k")]
+transform = Transform3D(-8.00749e-07, 4, -4.43257e-07, 1.86519, -1.87309e-08, -3.53851, -3.53851, -9.15054e-07, -1.86519, -13.0662, 3.04913, 12.8113)
+
+[node name="StickyNote_124" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("44_6oskn")]
+transform = Transform3D(-8.47062e-07, 4, -3.8939e-08, -1.12443, -2.75484e-07, -3.83871, -3.83871, -8.0196e-07, 1.12443, -13.0662, 2.55542, 13.912)
+
+[node name="StickyNote_125" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("47_mkw54")]
+transform = Transform3D(-8.25985e-07, 4, -3.86271e-07, 1.40998, -7.03223e-08, -3.74326, -3.74326, -9.09127e-07, -1.40998, -13.0662, 2.36991, 15.7655)
+
+[node name="StickyNote_126" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("48_2ytt2")]
+transform = Transform3D(-8.74294e-07, 4, -5.92462e-08, -0.734594, -2.18801e-07, -3.93197, -3.93197, -8.48544e-07, 0.734594, -13.0662, 3.81452, 14.3203)
+
+[node name="StickyNote_035" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("41_i647k")]
+transform = Transform3D(3.53851, 7.40209e-07, 1.86519, 1.86519, -1.87309e-08, -3.53851, -6.46075e-07, 4, -3.61727e-07, 6.84435, 3.04913, 0.591312)
+
+[node name="StickyNote_036" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("42_i6p86")]
+transform = Transform3D(3.83527, 7.34977e-07, 1.13608, 1.13608, -6.64054e-08, -3.83527, -6.85849e-07, 4, -2.7242e-07, 3.07048, 2.91871, 0.591312)
+
+[node name="StickyNote_037" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("43_2tl3g")]
+transform = Transform3D(3.87477, 7.30582e-07, 0.993053, 0.993053, -8.8188e-08, -3.87477, -6.85815e-07, 4, -2.66804e-07, 8.48195, 1.1949, 0.591312)
+
+[node name="StickyNote_038" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("44_6oskn")]
+transform = Transform3D(3.83871, 6.27114e-07, -1.12443, -1.12443, -2.75484e-07, -3.83871, -6.79267e-07, 4, -8.80893e-08, 5.74357, 2.55542, 0.591312)
+
+[node name="StickyNote_039" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("45_l2afi")]
+transform = Transform3D(3.62129, 7.40087e-07, 1.6989, 1.6989, -2.11093e-08, -3.62129, -6.61052e-07, 4, -3.33445e-07, 7.53752, 3.54605, 0.591312)
+
+[node name="StickyNote_040" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("46_46uuh")]
+transform = Transform3D(3.6716, 6.19388e-07, -1.58725, -1.58725, -2.83052e-07, -3.6716, -6.80855e-07, 4, -1.40316e-08, 2.2396, 3.83337, 0.591331)
+
+[node name="StickyNote_041" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("47_mkw54")]
+transform = Transform3D(3.74326, 7.34281e-07, 1.40998, 1.40998, -7.03222e-08, -3.74326, -6.62362e-07, 4, -3.24639e-07, 3.89006, 2.36991, 0.591331)
+
+[node name="StickyNote_042" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("48_2ytt2")]
+transform = Transform3D(3.93197, 6.73698e-07, -0.734594, -0.734594, -2.18801e-07, -3.93197, -7.02423e-07, 4, -9.13563e-08, 5.33527, 3.81452, 0.591331)
+
+[node name="StickyNote_043" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("41_i647k")]
+transform = Transform3D(3.53851, 7.40209e-07, 1.86519, 1.86519, -1.87309e-08, -3.53851, -6.46075e-07, 4, -3.61727e-07, 2.10674, 3.04913, 0.591312)
+
+[node name="StickyNote_044" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("42_i6p86")]
+transform = Transform3D(3.83527, 7.34977e-07, 1.13608, 1.13608, -6.64054e-08, -3.83527, -6.85849e-07, 4, -2.7242e-07, -1.66713, 2.91871, 0.591312)
+
+[node name="StickyNote_045" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("43_2tl3g")]
+transform = Transform3D(3.87477, 7.30582e-07, 0.993053, 0.993053, -8.8188e-08, -3.87477, -6.85815e-07, 4, -2.66804e-07, 3.74434, 1.1949, 0.591312)
+
+[node name="StickyNote_046" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("44_6oskn")]
+transform = Transform3D(3.83871, 6.27114e-07, -1.12443, -1.12443, -2.75484e-07, -3.83871, -6.79267e-07, 4, -8.80893e-08, 1.00596, 2.55542, 0.591312)
+
+[node name="StickyNote_047" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("45_l2afi")]
+transform = Transform3D(3.62129, 7.40087e-07, 1.6989, 1.6989, -2.11093e-08, -3.62129, -6.61052e-07, 4, -3.33445e-07, 2.79991, 3.54605, 0.591312)
+
+[node name="StickyNote_048" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("46_46uuh")]
+transform = Transform3D(3.6716, 6.19388e-07, -1.58725, -1.58725, -2.83052e-07, -3.6716, -6.80855e-07, 4, -1.40316e-08, -2.49801, 3.83337, 0.591331)
+
+[node name="StickyNote_049" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("47_mkw54")]
+transform = Transform3D(3.74326, 7.34281e-07, 1.40998, 1.40998, -7.03222e-08, -3.74326, -6.62362e-07, 4, -3.24639e-07, -0.847551, 2.36991, 0.591331)
+
+[node name="StickyNote_050" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("48_2ytt2")]
+transform = Transform3D(3.93197, 6.73698e-07, -0.734594, -0.734594, -2.18801e-07, -3.93197, -7.02423e-07, 4, -9.13563e-08, 0.597664, 3.81452, 0.591331)
+
+[node name="StickyNote_127" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("42_i6p86")]
+transform = Transform3D(5.52062e-07, -4, 1.0846e-07, 1.13608, -6.64053e-08, -3.83527, 3.83527, 5.60131e-07, 1.13608, 12.8049, 2.91871, 9.1694)
+
+[node name="StickyNote_128" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("47_mkw54")]
+transform = Transform3D(4.98739e-07, -4, 2.63007e-07, 1.40998, -7.03223e-08, -3.74326, 3.74326, 5.59436e-07, 1.40998, 12.8049, 2.36991, 9.98899)
+
+[node name="StickyNote_129" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("44_6oskn")]
+transform = Transform3D(5.11472e-07, -4, 1.3724e-07, -1.12443, -2.75484e-07, -3.83871, 3.83871, 4.52269e-07, -1.12443, 12.8049, 2.55542, 7.10489)
+
+[node name="StickyNote_130" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("48_2ytt2")]
+transform = Transform3D(5.30551e-07, -4, 1.23466e-07, -0.734594, -2.18801e-07, -3.93197, 3.93197, 4.98853e-07, -0.734594, 12.8049, 3.81452, 6.69659)
+
+[node name="StickyNote_051" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("41_i647k")]
+transform = Transform3D(-3.53851, -3.90518e-07, -1.86519, 1.86519, -1.87309e-08, -3.53851, 3.36729e-07, -4, 1.98667e-07, -30.1236, 3.04913, -0.127254)
+
+[node name="StickyNote_052" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("42_i6p86")]
+transform = Transform3D(-3.83527, -3.85286e-07, -1.13608, 1.13608, -6.64053e-08, -3.83527, 3.50559e-07, -4, 1.731e-07, -26.3497, 2.91871, -0.127254)
+
+[node name="StickyNote_053" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("43_2tl3g")]
+transform = Transform3D(-3.87477, -3.80891e-07, -0.993053, 0.993053, -8.8188e-08, -3.87477, 3.47072e-07, -4, 1.79988e-07, -31.7612, 1.1949, -0.127254)
+
+[node name="StickyNote_054" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("44_6oskn")]
+transform = Transform3D(-3.83871, -2.77423e-07, 1.12443, -1.12443, -2.75484e-07, -3.83871, 3.43677e-07, -4, 1.8639e-07, -29.0228, 2.55542, -0.127254)
+
+[node name="StickyNote_055" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("45_l2afi")]
+transform = Transform3D(-3.62129, -3.90396e-07, -1.6989, 1.6989, -2.11093e-08, -3.62129, 3.44469e-07, -4, 1.84922e-07, -30.8168, 3.54605, -0.127254)
+
+[node name="StickyNote_056" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("46_46uuh")]
+transform = Transform3D(-3.6716, -2.69697e-07, 1.58725, -1.58725, -2.83052e-07, -3.6716, 3.59873e-07, -4, 1.52794e-07, -25.5188, 3.83337, -0.127274)
+
+[node name="StickyNote_057" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("47_mkw54")]
+transform = Transform3D(-3.74326, -3.8459e-07, -1.40998, 1.40998, -7.03223e-08, -3.74326, 3.35117e-07, -4, 2.01375e-07, -27.1693, 2.36991, -0.127274)
+
+[node name="StickyNote_058" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("48_2ytt2")]
+transform = Transform3D(-3.93197, -3.24007e-07, 0.734594, -0.734594, -2.18801e-07, -3.93197, 3.58679e-07, -4, 1.55576e-07, -28.6145, 3.81452, -0.127274)
+
+[node name="StickyNote_109" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("42_i6p86")]
+transform = Transform3D(5.18204e-07, -4, 2.2276e-07, 1.13608, -6.64054e-08, -3.83527, 3.83527, 5.60131e-07, 1.13608, -22.3178, 2.91871, -15.8801)
+
+[node name="StickyNote_110" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("44_6oskn")]
+transform = Transform3D(5.11472e-07, -4, 1.3724e-07, -1.12443, -2.75484e-07, -3.83871, 3.83871, 4.52269e-07, -1.12443, -22.3178, 2.55542, -13.207)
+
+[node name="StickyNote_111" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("47_mkw54")]
+transform = Transform3D(4.98739e-07, -4, 2.63007e-07, 1.40998, -7.03222e-08, -3.74326, 3.74326, 5.59436e-07, 1.40998, -22.3178, 2.36991, -15.0605)
+
+[node name="StickyNote_112" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("48_2ytt2")]
+transform = Transform3D(5.30551e-07, -4, 1.23466e-07, -0.734594, -2.18801e-07, -3.93197, 3.93197, 4.98853e-07, -0.734594, -22.3178, 3.81452, -13.6153)
+
+[node name="StickyNote_059" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("41_i647k")]
+transform = Transform3D(-3.53851, -3.90518e-07, -1.86519, 1.86519, -1.87309e-08, -3.53851, 3.36729e-07, -4, 1.98667e-07, -41.5266, 3.04913, -0.127254)
+
+[node name="StickyNote_060" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("42_i6p86")]
+transform = Transform3D(-3.83527, -3.85286e-07, -1.13608, 1.13608, -6.64053e-08, -3.83527, 3.50559e-07, -4, 1.731e-07, -37.7527, 2.91871, -0.127254)
+
+[node name="StickyNote_061" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("43_2tl3g")]
+transform = Transform3D(-3.87477, -3.80891e-07, -0.993053, 0.993053, -8.8188e-08, -3.87477, 3.47072e-07, -4, 1.79988e-07, -43.1642, 1.1949, -0.127254)
+
+[node name="StickyNote_062" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("44_6oskn")]
+transform = Transform3D(-3.83871, -2.77423e-07, 1.12443, -1.12443, -2.75484e-07, -3.83871, 3.43677e-07, -4, 1.8639e-07, -40.4258, 2.55542, -0.127254)
+
+[node name="StickyNote_063" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("45_l2afi")]
+transform = Transform3D(-3.62129, -3.90396e-07, -1.6989, 1.6989, -2.11093e-08, -3.62129, 3.44469e-07, -4, 1.84922e-07, -42.2198, 3.54605, -0.127254)
+
+[node name="StickyNote_064" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("46_46uuh")]
+transform = Transform3D(-3.6716, -2.69697e-07, 1.58725, -1.58725, -2.83052e-07, -3.6716, 3.59873e-07, -4, 1.52794e-07, -36.9218, 3.83337, -0.127274)
+
+[node name="StickyNote_065" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("47_mkw54")]
+transform = Transform3D(-3.74326, -3.8459e-07, -1.40998, 1.40998, -7.03223e-08, -3.74326, 3.35117e-07, -4, 2.01375e-07, -38.5723, 2.36991, -0.127274)
+
+[node name="StickyNote_066" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("48_2ytt2")]
+transform = Transform3D(-3.93197, -3.24007e-07, 0.734594, -0.734594, -2.18801e-07, -3.93197, 3.58679e-07, -4, 1.55576e-07, -40.0175, 3.81452, -0.127274)
+
+[node name="StickyNote_067" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("41_i647k")]
+transform = Transform3D(-3.53851, -3.90518e-07, -1.86519, 1.86519, -1.87309e-08, -3.53851, 3.36729e-07, -4, 1.98667e-07, -36.789, 3.04913, -0.127254)
+
+[node name="StickyNote_068" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("42_i6p86")]
+transform = Transform3D(-3.83527, -3.85286e-07, -1.13608, 1.13608, -6.64053e-08, -3.83527, 3.50559e-07, -4, 1.731e-07, -33.0151, 2.91871, -0.127254)
+
+[node name="StickyNote_069" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("43_2tl3g")]
+transform = Transform3D(-3.87477, -3.80891e-07, -0.993053, 0.993053, -8.8188e-08, -3.87477, 3.47072e-07, -4, 1.79988e-07, -38.4266, 1.1949, -0.127254)
+
+[node name="StickyNote_070" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("44_6oskn")]
+transform = Transform3D(-3.83871, -2.77423e-07, 1.12443, -1.12443, -2.75484e-07, -3.83871, 3.43677e-07, -4, 1.8639e-07, -35.6882, 2.55542, -0.127254)
+
+[node name="StickyNote_113" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("42_i6p86")]
+transform = Transform3D(-1.82913e-07, 4, -1.2344e-07, 1.13608, -6.64054e-08, -3.83527, -3.83527, -2.1044e-07, -1.13608, -48.3009, 2.91871, -12.69)
+
+[node name="StickyNote_114" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("48_2ytt2")]
+transform = Transform3D(-1.86807e-07, 4, -1.87687e-07, -0.734594, -2.18801e-07, -3.93197, -3.93197, -1.49162e-07, 0.734594, -48.3008, 3.81452, -14.9548)
+
+[node name="StickyNote_115" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("43_2tl3g")]
+transform = Transform3D(-1.777e-07, 4, -1.3658e-07, 0.993053, -8.8188e-08, -3.87477, -3.87477, -2.06045e-07, -0.993053, -48.3009, 1.1949, -13.3639)
+
+[node name="StickyNote_116" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("44_6oskn")]
+transform = Transform3D(-1.75882e-07, 4, -2.3554e-07, -1.12443, -2.75484e-07, -3.83871, -3.83871, -1.02577e-07, 1.12443, -48.3009, 2.55542, -10.6255)
+
+[node name="StickyNote_071" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("45_l2afi")]
+transform = Transform3D(-3.62129, -3.90396e-07, -1.6989, 1.6989, -2.11093e-08, -3.62129, 3.44469e-07, -4, 1.84922e-07, -37.4821, 3.54605, -0.127254)
+
+[node name="StickyNote_072" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("46_46uuh")]
+transform = Transform3D(-3.6716, -2.69697e-07, 1.58725, -1.58725, -2.83052e-07, -3.6716, 3.59873e-07, -4, 1.52794e-07, -32.1842, 3.83337, -0.127274)
+
+[node name="StickyNote_073" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("47_mkw54")]
+transform = Transform3D(-3.74326, -3.8459e-07, -1.40998, 1.40998, -7.03223e-08, -3.74326, 3.35117e-07, -4, 2.01375e-07, -33.8347, 2.36991, -0.127274)
+
+[node name="StickyNote_074" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("48_2ytt2")]
+transform = Transform3D(-3.93197, -3.24007e-07, 0.734594, -0.734594, -2.18801e-07, -3.93197, 3.58679e-07, -4, 1.55576e-07, -35.2799, 3.81452, -0.127274)
+
+[node name="StickyNote_075" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("41_i647k")]
+transform = Transform3D(3.53851, 7.40209e-07, 1.86519, 1.86519, -1.87309e-08, -3.53851, -6.46075e-07, 4, -3.61727e-07, -39.2662, 3.04913, 0.591312)
+
+[node name="StickyNote_076" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("42_i6p86")]
+transform = Transform3D(3.83527, 7.34977e-07, 1.13608, 1.13608, -6.64054e-08, -3.83527, -6.85849e-07, 4, -2.7242e-07, -43.04, 2.91871, 0.591312)
+
+[node name="StickyNote_077" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("43_2tl3g")]
+transform = Transform3D(3.87477, 7.30582e-07, 0.993053, 0.993053, -8.8188e-08, -3.87477, -6.85815e-07, 4, -2.66804e-07, -37.6286, 1.1949, 0.591312)
+
+[node name="StickyNote_078" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("44_6oskn")]
+transform = Transform3D(3.83871, 6.27114e-07, -1.12443, -1.12443, -2.75484e-07, -3.83871, -6.79267e-07, 4, -8.80893e-08, -40.367, 2.55542, 0.591312)
+
+[node name="StickyNote_079" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("45_l2afi")]
+transform = Transform3D(3.62129, 7.40087e-07, 1.6989, 1.6989, -2.11093e-08, -3.62129, -6.61052e-07, 4, -3.33445e-07, -38.573, 3.54605, 0.591312)
+
+[node name="StickyNote_080" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("46_46uuh")]
+transform = Transform3D(3.6716, 6.19388e-07, -1.58725, -1.58725, -2.83052e-07, -3.6716, -6.80855e-07, 4, -1.40316e-08, -43.8709, 3.83337, 0.591331)
+
+[node name="StickyNote_081" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("47_mkw54")]
+transform = Transform3D(3.74326, 7.34281e-07, 1.40998, 1.40998, -7.03222e-08, -3.74326, -6.62362e-07, 4, -3.24639e-07, -42.2205, 2.36991, 0.591331)
+
+[node name="StickyNote_082" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("48_2ytt2")]
+transform = Transform3D(3.93197, 6.73698e-07, -0.734594, -0.734594, -2.18801e-07, -3.93197, -7.02423e-07, 4, -9.13563e-08, -40.7752, 3.81452, 0.591331)
+
+[node name="StickyNote_083" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("41_i647k")]
+transform = Transform3D(3.53851, 7.40209e-07, 1.86519, 1.86519, -1.87309e-08, -3.53851, -6.46075e-07, 4, -3.61727e-07, -27.8632, 3.04913, 0.591312)
+
+[node name="StickyNote_084" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("42_i6p86")]
+transform = Transform3D(3.83527, 7.34977e-07, 1.13608, 1.13608, -6.64054e-08, -3.83527, -6.85849e-07, 4, -2.7242e-07, -31.6371, 2.91871, 0.591312)
+
+[node name="StickyNote_085" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("43_2tl3g")]
+transform = Transform3D(3.87477, 7.30582e-07, 0.993053, 0.993053, -8.8188e-08, -3.87477, -6.85815e-07, 4, -2.66804e-07, -26.2256, 1.1949, 0.591312)
+
+[node name="StickyNote_086" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("44_6oskn")]
+transform = Transform3D(3.83871, 6.27114e-07, -1.12443, -1.12443, -2.75484e-07, -3.83871, -6.79267e-07, 4, -8.80893e-08, -28.964, 2.55542, 0.591312)
+
+[node name="StickyNote_087" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("45_l2afi")]
+transform = Transform3D(3.62129, 7.40087e-07, 1.6989, 1.6989, -2.11093e-08, -3.62129, -6.61052e-07, 4, -3.33445e-07, -27.17, 3.54605, 0.591312)
+
+[node name="StickyNote_088" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("46_46uuh")]
+transform = Transform3D(3.6716, 6.19388e-07, -1.58725, -1.58725, -2.83052e-07, -3.6716, -6.80855e-07, 4, -1.40316e-08, -32.4679, 3.83337, 0.591331)
+
+[node name="StickyNote_089" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("47_mkw54")]
+transform = Transform3D(3.74326, 7.34281e-07, 1.40998, 1.40998, -7.03222e-08, -3.74326, -6.62362e-07, 4, -3.24639e-07, -30.8175, 2.36991, 0.591331)
+
+[node name="StickyNote_090" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("48_2ytt2")]
+transform = Transform3D(3.93197, 6.73698e-07, -0.734594, -0.734594, -2.18801e-07, -3.93197, -7.02423e-07, 4, -9.13563e-08, -29.3723, 3.81452, 0.591331)
+
+[node name="StickyNote_091" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("41_i647k")]
+transform = Transform3D(3.53851, 7.40209e-07, 1.86519, 1.86519, -1.87309e-08, -3.53851, -6.46075e-07, 4, -3.61727e-07, -32.6008, 3.04913, 0.591312)
+
+[node name="StickyNote_092" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("42_i6p86")]
+transform = Transform3D(3.83527, 7.34977e-07, 1.13608, 1.13608, -6.64054e-08, -3.83527, -6.85849e-07, 4, -2.7242e-07, -36.3747, 2.91871, 0.591312)
+
+[node name="StickyNote_093" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("43_2tl3g")]
+transform = Transform3D(3.87477, 7.30582e-07, 0.993053, 0.993053, -8.8188e-08, -3.87477, -6.85815e-07, 4, -2.66804e-07, -30.9632, 1.1949, 0.591312)
+
+[node name="StickyNote_094" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("44_6oskn")]
+transform = Transform3D(3.83871, 6.27114e-07, -1.12443, -1.12443, -2.75484e-07, -3.83871, -6.79267e-07, 4, -8.80893e-08, -33.7016, 2.55542, 0.591312)
+
+[node name="StickyNote_095" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("45_l2afi")]
+transform = Transform3D(3.62129, 7.40087e-07, 1.6989, 1.6989, -2.11093e-08, -3.62129, -6.61052e-07, 4, -3.33445e-07, -31.9076, 3.54605, 0.591312)
+
+[node name="StickyNote_096" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("46_46uuh")]
+transform = Transform3D(3.6716, 6.19388e-07, -1.58725, -1.58725, -2.83052e-07, -3.6716, -6.80855e-07, 4, -1.40316e-08, -37.2055, 3.83337, 0.591331)
+
+[node name="StickyNote_104" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("43_2tl3g")]
+transform = Transform3D(-8.55187e-07, 4, -3.10211e-07, 0.993053, -8.8188e-08, -3.87477, -3.87477, -9.05427e-07, -0.993053, -48.2822, 1.1949, 7.91302)
+
+[node name="StickyNote_105" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("44_6oskn")]
+transform = Transform3D(-8.47062e-07, 4, -3.8939e-08, -1.12443, -2.75484e-07, -3.83871, -3.83871, -8.0196e-07, 1.12443, -48.2822, 2.55542, 10.6514)
+
+[node name="StickyNote_106" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("45_l2afi")]
+transform = Transform3D(-8.19344e-07, 4, -4.07707e-07, 1.6989, -2.11093e-08, -3.62129, -3.62129, -9.14933e-07, -1.6989, -48.2822, 3.54605, 8.85746)
+
+[node name="StickyNote_107" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("48_2ytt2")]
+transform = Transform3D(-8.74294e-07, 4, -5.92462e-08, -0.734594, -2.18801e-07, -3.93197, -3.93197, -8.48544e-07, 0.734594, -48.2821, 3.81452, 11.0597)
+
+[node name="StickyNote_108" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("46_46uuh")]
+transform = Transform3D(-8.88649e-07, 4, -5.40726e-08, -1.58725, -2.83052e-07, -3.6716, -3.6716, -7.94234e-07, 1.58725, -48.2821, 3.83337, 7.48999)
+
+[node name="StickyNote_097" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("47_mkw54")]
+transform = Transform3D(3.74326, 7.34281e-07, 1.40998, 1.40998, -7.03222e-08, -3.74326, -6.62362e-07, 4, -3.24639e-07, -35.5551, 2.36991, 0.591331)
+
+[node name="StickyNote_098" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("48_2ytt2")]
+transform = Transform3D(3.93197, 6.73698e-07, -0.734594, -0.734594, -2.18801e-07, -3.93197, -7.02423e-07, 4, -9.13563e-08, -34.1099, 3.81452, 0.591331)
+
+[node name="StickyNote_099" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("41_i647k")]
+transform = Transform3D(4.91402e-07, -4, 2.80197e-07, 1.86519, -1.87309e-08, -3.53851, 3.53851, 5.65363e-07, 1.86519, -22.3202, 3.04913, 13.4899)
+
+[node name="StickyNote_100" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("47_mkw54")]
+transform = Transform3D(4.98739e-07, -4, 2.63007e-07, 1.40998, -7.03223e-08, -3.74326, 3.74326, 5.59436e-07, 1.40998, -22.3202, 2.36991, 10.5356)
+
+[node name="StickyNote_101" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("41_i647k")]
+transform = Transform3D(4.91402e-07, -4, 2.80197e-07, 1.86519, -1.87309e-08, -3.53851, 3.53851, 5.65363e-07, 1.86519, -22.3202, 3.04913, 8.75227)
+
+[node name="StickyNote_102" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("43_2tl3g")]
+transform = Transform3D(5.16444e-07, -4, 2.23396e-07, 0.993053, -8.8188e-08, -3.87477, 3.87477, 5.55736e-07, 0.993053, -22.3202, 1.1949, 10.3899)
+
+[node name="StickyNote_103" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("48_2ytt2")]
+transform = Transform3D(5.30551e-07, -4, 1.23466e-07, -0.734594, -2.18801e-07, -3.93197, 3.93197, 4.98853e-07, -0.734594, -22.3202, 3.81452, 7.24319)
+
+[node name="shitty mirror" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("49_gfr6o")]
+transform = Transform3D(-1.74846e-07, -5.62991, 4.01137e-07, -1.39426e-07, -2.89494e-07, -4.25218, 2.67342, -4.36802e-07, -4.6434e-07, 16, 31.6873, -30.5454)
 
 [node name="SMT_Straight" parent="Asset Complete Office2" instance=ExtResource("14_djbcu")]
 transform = Transform3D(-1.44414e-05, -8, -3.49691e-07, 0, -3.49691e-07, 8, -330.38, 3.49691e-07, 1.52855e-14, 16.02, 24, 46.9927)
@@ -3516,6 +3916,7 @@ transform = Transform3D(-3.91531, 0, -6.67988, 0, 7.74277, 0, 6.67988, 0, -3.915
 
 [node name="boss sink" parent="." instance=ExtResource("72_vvw20")]
 transform = Transform3D(-3.49691e-07, -8, 3.49691e-07, 0, -3.49691e-07, -8, 8, -3.49691e-07, 1.52855e-14, -15.7735, 29.3884, 83.1479)
+visible = false
 
 [node name="boss toilet" parent="." instance=ExtResource("73_ilwok")]
 transform = Transform3D(-3.49691e-07, 0, -8, 0, 8, 0, 8, 0, -3.49691e-07, -16.0341, 25.9619, 91.1162)
@@ -3523,7 +3924,9 @@ transform = Transform3D(-3.49691e-07, 0, -8, 0, 8, 0, 8, 0, -3.49691e-07, -16.03
 [node name="boss urinal" parent="." instance=ExtResource("74_ixrvx")]
 transform = Transform3D(-3.50976e-07, -8.02939, 3.50976e-07, 0, -3.50976e-07, -8.02939, 8.02939, -3.50976e-07, 1.53416e-14, -15.9154, 27.1793, 83.1825)
 
-[node name="painting 1" parent="." instance=ExtResource("77_ukq70")]
+[node name="mirror" parent="." instance=ExtResource("93_fr6kb")]
+
+[node name="painting 12" parent="." instance=ExtResource("77_ukq70")]
 transform = Transform3D(-3.49691e-07, -8, 3.49691e-07, 0, -3.49691e-07, -8, 8, -3.49691e-07, 1.52855e-14, -16, 34, -5.436)
 
 [node name="painting 2" parent="." instance=ExtResource("78_f2tm1")]
@@ -3612,6 +4015,24 @@ transform = Transform3D(5.17998, 0, 0.673497, 0, 5.22358, 0, -0.673497, 0, 5.179
 
 [node name="paper stack8" parent="." instance=ExtResource("55_ny27y")]
 transform = Transform3D(-6.06172, 0, -1.21499, 0, 6.18229, 0, 1.21499, 0, -6.06172, 28.2668, 28.5757, -46.1417)
+
+[node name="skybox" parent="." instance=ExtResource("101_t2ssf")]
+transform = Transform3D(10.902, 0, -8.14895, 0, 13.611, 0, 8.14895, 0, 10.902, -990.825, -614.883, 145.262)
+
+[node name="StickyNote_001" parent="." instance=ExtResource("110_n161j")]
+transform = Transform3D(-3.98552, 0, -0.340093, 0.340093, -1.74846e-07, -3.98552, -1.4866e-08, -4, 1.74212e-07, -20.1747, 32, 48.9363)
+
+[node name="StickyNote_003" parent="." instance=ExtResource("110_n161j")]
+transform = Transform3D(1.59346e-07, -4, 1.89078e-07, 0.340093, -1.74846e-07, -3.98552, 3.98552, 1.74846e-07, 0.340093, -9.90484, 32, 34.8139)
+
+[node name="StickyNote_004" parent="." instance=ExtResource("110_n161j")]
+transform = Transform3D(-5.07771e-07, 4, -2.1881e-07, 0.340093, -1.74846e-07, -3.98552, -3.98552, -5.24537e-07, -0.340093, -35.8581, 32, 34.0324)
+
+[node name="StickyNote_002" parent="." instance=ExtResource("111_uxnv7")]
+transform = Transform3D(-3.99231, 0.00564585, 0.100438, -0.100438, -1.74565e-07, -3.99231, -0.00564407, -3.99357, 0.000142167, -15.8191, 32, 48.9325)
+
+[node name="shitty mirror" parent="." instance=ExtResource("49_gfr6o")]
+transform = Transform3D(-5.24537e-07, -4, 1.74846e-07, 0.44705, -1.81238e-07, -3.99722, 11.9917, -1.6821e-07, 0.149017, 16, 33.9035, -35.9611)
 
 [editable path="Asset Complete Office2/Cubicle2"]
 [editable path="Asset Complete Office2/Cubicle3"]
