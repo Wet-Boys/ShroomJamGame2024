@@ -1,10 +1,11 @@
-[gd_scene load_steps=20 format=4 uid="uid://b5mtbbqyp1bus"]
+[gd_scene load_steps=21 format=4 uid="uid://b5mtbbqyp1bus"]
 
 [ext_resource type="PackedScene" uid="uid://4e775rot7wp3" path="res://Assets/Prefabs/WorldObjects/Monitor.tscn" id="1_kd7eh"]
 [ext_resource type="PackedScene" uid="uid://sucmon0cf6k8" path="res://Assets/Prefabs/WorldObjects/OfficeChair.tscn" id="2_n8ypg"]
 [ext_resource type="PackedScene" uid="uid://cieljfy51ui4s" path="res://Assets/Prefabs/WorldObjects/Keyboard.tscn" id="4_btyns"]
 [ext_resource type="PackedScene" uid="uid://bkiu2ffi882dw" path="res://Assets/Prefabs/WorldObjects/Mouse.tscn" id="6_2p2c0"]
 [ext_resource type="PackedScene" uid="uid://bqhln5nafgh43" path="res://Assets/Prefabs/WorldObjects/cubicle wall.tscn" id="6_ibgeb"]
+[ext_resource type="PackedScene" uid="uid://b7vsnbtfng120" path="res://Assets/Prefabs/WorldObjects/trash_can.tscn" id="7_l8sha"]
 [ext_resource type="PackedScene" uid="uid://bw57vxw8aglf7" path="res://Assets/Prefabs/WorldObjects/Computer.tscn" id="12_axl02"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lt4fy"]
@@ -310,3 +311,15 @@ transform = Transform3D(0.8, 0, 0, 0, 5.6, 0, 0, 0, 8.8, -13.3721, 0.748616, 9.3
 
 [node name="Cubicle6" parent="." instance=ExtResource("6_ibgeb")]
 transform = Transform3D(-3.49691e-08, 0, 13.6155, 0, 5.6, 0, -0.8, 0, -5.95151e-07, -0.0722809, 0.755818, 0.208512)
+
+[node name="trash can" parent="." instance=ExtResource("7_l8sha")]
+transform = Transform3D(9.6, 0, 0, 0, 9.6, 0, 0, 0, 9.6, -10.987, -5, -14.3814)
+
+[node name="trash can2" parent="." instance=ExtResource("7_l8sha")]
+transform = Transform3D(9.6, 0, 0, 0, 9.6, 0, 0, 0, 9.6, 10.013, -5, 15.2697)
+
+[node name="trash can3" parent="." instance=ExtResource("7_l8sha")]
+transform = Transform3D(9.6, 0, 0, 0, 9.6, 0, 0, 0, 9.6, -10.987, -5, 15.2697)
+
+[node name="trash can4" parent="." instance=ExtResource("7_l8sha")]
+transform = Transform3D(9.6, 0, 0, 0, 9.6, 0, 0, 0, 9.6, 10.013, -5, -14.3814)

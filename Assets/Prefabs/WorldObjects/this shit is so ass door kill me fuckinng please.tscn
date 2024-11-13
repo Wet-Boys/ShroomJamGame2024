@@ -9,4 +9,24 @@
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.042973, 0, 0.438714)
 mesh = ExtResource("1_1kumm")
 
+[node name="RamDoorFrame2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.242781, 0, 0.438714)
+mesh = ExtResource("1_1kumm")
+
+[node name="RamDoorFrame3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.172375, 0, 0.438714)
+mesh = ExtResource("1_1kumm")
+
+[node name="RamDoorFrame4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0974683, 0, 0.438714)
+mesh = ExtResource("1_1kumm")
+
+[node name="RamDoorFrame5" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0411116, 0, 0.438714)
+mesh = ExtResource("1_1kumm")
+
+[node name="RamDoorFrame6" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.00533232, 0, 0.438714)
+mesh = ExtResource("1_1kumm")
+
 [node name="Door" parent="." instance=ExtResource("2_66n34")]

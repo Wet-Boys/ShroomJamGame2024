@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0cdqqj0mymt5"]
+
+[ext_resource type="PackedScene" uid="uid://c3bum4vu7wxcr" path="res://Assets/Scenes/Office/assets/models/trash can/trash can.gltf" id="1_6wxqf"]
+
+[node name="trash can" instance=ExtResource("1_6wxqf")]
