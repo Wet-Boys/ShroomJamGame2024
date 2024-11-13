@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cki36yxjf8oth"
+path="res://.godot/imported/Bubble Deep Pop 3.ogg-7431f9e44181bf91ac413750cac44d5a.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Sfx/NPC/Bubble Deep Pop 3.ogg"
+dest_files=["res://.godot/imported/Bubble Deep Pop 3.ogg-7431f9e44181bf91ac413750cac44d5a.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

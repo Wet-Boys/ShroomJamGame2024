@@ -1,0 +1,15 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=6 format=3 uid="uid://ohdg6e0n5xji"]
+
+[ext_resource type="AudioStream" uid="uid://bsbs3xvtkkhif" path="res://Assets/Sfx/NPC/Bubble Deep Pop 1.ogg" id="1_cm6du"]
+[ext_resource type="AudioStream" uid="uid://c6jtrd3hrdf6a" path="res://Assets/Sfx/NPC/Bubble Deep Pop 2.ogg" id="2_2dngs"]
+[ext_resource type="AudioStream" uid="uid://cki36yxjf8oth" path="res://Assets/Sfx/NPC/Bubble Deep Pop 3.ogg" id="3_n8qlr"]
+[ext_resource type="AudioStream" uid="uid://by41sk8ya5ofu" path="res://Assets/Sfx/NPC/Bubble Deep Pop 4.ogg" id="4_grafw"]
+[ext_resource type="AudioStream" uid="uid://ct58pw1rcdv3o" path="res://Assets/Sfx/NPC/Bubble Deep Pop 5.ogg" id="5_pkxrb"]
+
+[resource]
+streams_count = 5
+stream_0/stream = ExtResource("1_cm6du")
+stream_1/stream = ExtResource("2_2dngs")
+stream_2/stream = ExtResource("3_n8qlr")
+stream_3/stream = ExtResource("4_grafw")
+stream_4/stream = ExtResource("5_pkxrb")
