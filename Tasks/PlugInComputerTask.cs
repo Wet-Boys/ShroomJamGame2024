@@ -15,13 +15,13 @@ namespace ShroomJamGame.Tasks
         public NpcMovementController npc;
         public override BaseTask Setup(Node worldRoot)
         {
-            taskName = "Fix the computer";
             return base.Setup(worldRoot);
         }
         int counter = 1;
         PhysicsInteractable targetComputer;
         public void SetupForReal(NpcMovementController npc)
         {
+            taskName = "Please Hold";
             this.npc = npc;
             npc.AnimalesePlayer.FinishedPlaying += AnimalesePlayer_FinishedPlaying;
         }
@@ -30,13 +30,13 @@ namespace ShroomJamGame.Tasks
         {
             if (counter == 1)
             {
-                counter--;
                 foreach (var item in npc.ownedItems)
                 {
                     if (item.Name.ToString().StartsWith("Gigabyte"))
                     {
                         BroadCastHandler.instance.HighlightObject(item);
                         BroadCastHandler.instance.StopNPCAndSpeak(npc, "Hey, while I've got you here\ncan you look at my computer?\nIt suddenly stopped working after I moved it\nand I'm not sure what's wrong.");
+                        taskName = "Utilize your ears";
                         npc.targetNode = item;
                         targetComputer = item as PhysicsInteractable;
                         targetComputer.holdable = false;
@@ -44,19 +44,36 @@ namespace ShroomJamGame.Tasks
                     }
                 }
             }
-            else
+            else if (counter == 0)
             {
-                npc.AnimalesePlayer.FinishedPlaying -= AnimalesePlayer_FinishedPlaying;
                 npc.GoToPositionAndSayWords(targetComputer.GlobalPosition, "This is it. Do you mind taking a look?");
-                npc.waitAtNextDestination = true;
+                npc.permaWait = true;
+                taskName = "Follow Them";
+            }
+            else if (counter == -1)
+            {
+                taskName = "Fix the computer";
                 targetComputer.nonHoldableText = $"Press `{Controls.Instance.Interact.GetOsHumanReadableKeyLabel()}` to plug in power cord";
                 targetComputer.interactionFunction = (physObject) =>
                 {
-                    physObject.progressBar = BroadCastHandler.instance.CreateLoadingBarAtLocation(physObject, new Vector3(0,1,0), 1);
+                    physObject.progressBar = BroadCastHandler.instance.CreateLoadingBarAtLocation(physObject, new Vector3(0, 1, 0), 1);
                     physObject.progressBar.ProgressBarFinished += ProgressBar_ProgressBarFinished;
+                    targetComputer.nonHoldableText = $"";
+                    targetComputer.interactionFunction = (physObject) =>
+                    {
+                        return 0;
+                    };
                     return 0;
                 };
             }
+            else if (counter == -2)
+            {
+                npc.permaWait = false;
+                npc.waiting = false;
+                TaskTracker.instance.CreateTask(new FixChairTask());
+                npc.AnimalesePlayer.FinishedPlaying -= AnimalesePlayer_FinishedPlaying;
+            }
+            counter--;
         }
 
         private void ProgressBar_ProgressBarFinished(Node3D bar)
@@ -64,6 +81,8 @@ namespace ShroomJamGame.Tasks
             bar.QueueFree();
             npc.GoToPositionAndSayWords(npc.characterBody3D.GlobalPosition, "Oh it was that easy?\nYou IT people sure are good at your jobs.\nThat's why we keep you around haha..............");
             EmitSignal(SignalName.TaskFinished, this);
+            BroadCastHandler.instance.UnHighlightObject(targetComputer);
+            targetComputer.holdable = true;
         }
     }
 }

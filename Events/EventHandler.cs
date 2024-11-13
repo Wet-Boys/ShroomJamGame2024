@@ -91,7 +91,7 @@ namespace ShroomJamGame.Events
         {
             if (spawnVendingMachines)
             {
-                await ToSignal(this.GetTree().CreateTimer(.01f), SceneTreeTimer.SignalName.Timeout);
+                await ToSignal(this.GetTree().CreateTimer(.2f), SceneTreeTimer.SignalName.Timeout);
                 if (vendingMachines.Count != 0)
                 {
                     Node3D newVendingMachine = ((PackedScene)GD.Load("res://Assets/Prefabs/WorldObjects/vending_machine.tscn")).Instantiate<RigidBody3D>();

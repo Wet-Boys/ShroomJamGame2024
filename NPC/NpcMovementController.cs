@@ -20,7 +20,16 @@ namespace ShroomJamGame.NPC
         [Export]
         private CharacterMovementController? _characterMovementController;
         [Export]
-        public Node3D? targetNode;
+        public Node3D? targetNode
+        {
+            get => _targetNode;
+            set
+            {
+                _targetNode = value;
+                oldTargetPos = Vector3.Zero;
+            }
+        }
+        private Node3D? _targetNode;
         [Export]
         private Vector3 targetPosition;
         [Export]
@@ -37,7 +46,7 @@ namespace ShroomJamGame.NPC
         public Godot.Collections.Array<Vector3> ownedItemsStartingRotations = new Godot.Collections.Array<Vector3>();
         public bool freezeUntilDoneSpeaking = false;
         public bool waiting = false;
-        public bool waitAtNextDestination = false;
+        public bool permaWait = false;
         public Godot.Collections.Array<Vector3> needToGoTo = new Godot.Collections.Array<Vector3>();
         public Godot.Collections.Array<string> needToSay = new Godot.Collections.Array<string>();
         private bool grabbingObject = false;
@@ -63,6 +72,7 @@ namespace ShroomJamGame.NPC
         [Export]
         public NpcInteractable interactionComponent;
         public bool onlyLookAtPlayer = false;
+        public Vector3 originalPosition;
         public void SayWords(string whatToSay)
         {
             if (AnimalesePlayer is null || speechBubbleText is null)
@@ -107,6 +117,7 @@ namespace ShroomJamGame.NPC
             SayWords("");
             if (ownedItems.Count == 0)
                 SetupJanitor();
+            originalPosition = characterBody3D.GlobalPosition;
         }
 
         private void AnimalesePlayer_FinishedPlaying()
@@ -131,7 +142,7 @@ namespace ShroomJamGame.NPC
         private async void SetupJanitor()
         {
 
-            await ToSignal(this.GetTree().CreateTimer(1.0), SceneTreeTimer.SignalName.Timeout);
+            await ToSignal(this.GetTree().CreateTimer(.5f), SceneTreeTimer.SignalName.Timeout);
             foreach (var item in PhysicsInteractable.physicsObjects)
             {
                 if (!IsInstanceValid(item.owner))
@@ -179,7 +190,7 @@ namespace ShroomJamGame.NPC
                 {
                     for (int i = 0; i < ownedItems.Count; i++)
                     {
-                        if (ownedItems[i].GlobalPosition.DistanceTo(ownedItemsStartingPositions[i]) > 1)
+                        if (ownedItems[i].GlobalPosition.DistanceTo(ownedItemsStartingPositions[i]) > 1 && !(ownedItems[i] as PhysicsInteractable).offLimits)
                         {
                             targetNode = ownedItems[i];
                             SayWords($"Why did you throw my {targetNode.Name}");
@@ -270,7 +281,7 @@ namespace ShroomJamGame.NPC
                         _SetTargetPosition(targetNode.GlobalPosition);
                     }
                 }
-                if (stuckCount > 5)
+                if (stuckCount > 10)
                 {
                     ReachTarget();
                 }
@@ -305,10 +316,7 @@ namespace ShroomJamGame.NPC
         {
             if (!reachedTarget)
             {
-                if (waitAtNextDestination)
-                {
-                    waiting = true;
-                }
+                waiting = permaWait;
                 stuckCount = 0;
                 reachedTarget = true;
                 EmitSignal(SignalName.ReachedDestination, needToGoTo.Count < needToSay.Count, needToSay.Count > 0 ? needToSay.First() : "");
@@ -318,7 +326,7 @@ namespace ShroomJamGame.NPC
         {
             waiting = false;
             ReachTarget();
-            stuckCount = 5;
+            stuckCount = 10;
             stuckTimer = .75f;
         }
         public void GoToPositionAndSayWords(Vector3 position, string words)
@@ -331,6 +339,34 @@ namespace ShroomJamGame.NPC
         {
             characterBody3D.LookAt(position);
             characterBody3D.RotationDegrees = new Vector3(0, characterBody3D.RotationDegrees.Y + 180, 0);
+        }
+        public static NpcMovementController GetRandomNPCWithItem(string itemName)//why didn't I make these sooner fml
+        {
+            Godot.Collections.Array<NpcMovementController> validNpcs = new Godot.Collections.Array<NpcMovementController>();
+            foreach (var npc in npcs)
+            {
+                foreach (var item in npc.ownedItems)
+                {
+                    if (item.Name.ToString().StartsWith(itemName))
+                    {
+                        validNpcs.Add(npc);
+                        break;
+                    }
+                }
+            }
+            return validNpcs.PickRandom();
+        }
+        public PhysicsInteractable GetPhysicsObjectOfName(string objectName)
+        {
+            Godot.Collections.Array<PhysicsInteractable> validItems = new Godot.Collections.Array<PhysicsInteractable>();
+            foreach (var item in ownedItems)
+            {
+                if (item.Name.ToString().StartsWith(objectName))
+                {
+                    validItems.Add(item as PhysicsInteractable);
+                }
+            }
+            return validItems.PickRandom();
         }
     }
 }

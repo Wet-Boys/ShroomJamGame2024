@@ -54,6 +54,7 @@ namespace ShroomJamGame.Tasks
                     jim.interactionComponent.isInteractable = true;
                     jim.interactionComponent.InteractedWith += InteractionComponent_InteractedWith;
                     BroadCastHandler.instance.HighlightObject(jim._visualController.skeleton);
+                    jim = null;
                 }
                 else
                 {

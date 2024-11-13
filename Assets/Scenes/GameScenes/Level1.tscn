@@ -23,7 +23,7 @@ viewport_path = NodePath("SubViewport")
 transform = Transform3D(-0.0910324, 0, -0.995848, 0, 1, 0, 0.995848, 0, -0.0910324, 13.8433, 7.53554, 12.2651)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.0910325, 0, 0.995848, 0, 1, 0, -0.995848, 0, 0.0910325, 13.8433, 8.28555, 12.2651)
+transform = Transform3D(0.0910325, 0, 0.995848, 0, 1, 0, -0.995848, 0, 0.0910325, 13.8433, 8.28554, 12.2651)
 attributes = SubResource("CameraAttributesPhysical_tph6i")
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D"]
@@ -47,29 +47,11 @@ transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
 [node name="Door" parent="." instance=ExtResource("4_vr3q7")]
 transform = Transform3D(1.5, 0, 0, 0, 3, 0, 0, 0, 0.25, -3.5, 7.5, 19.25)
 
-[node name="StaticBody3D" parent="Door/dvere" index="0"]
-metadata/InteractableChildIndex = 1
-
-[node name="DoorInteractable" parent="Door/dvere/StaticBody3D" index="1" node_paths=PackedStringArray("CollisionShape")]
-CollisionShape = NodePath("..")
-
 [node name="Door4" parent="." instance=ExtResource("4_vr3q7")]
 transform = Transform3D(-6.55671e-08, 0, 0.25, 0, 3, 0, -1.5, 0, -1.09278e-08, 4.25776, 7.5, 18.5016)
 
-[node name="StaticBody3D" parent="Door4/dvere" index="0"]
-metadata/InteractableChildIndex = 1
-
-[node name="DoorInteractable" parent="Door4/dvere/StaticBody3D" index="1" node_paths=PackedStringArray("CollisionShape")]
-CollisionShape = NodePath("..")
-
 [node name="Door2" parent="." instance=ExtResource("4_vr3q7")]
 transform = Transform3D(1.5, 0, 0, 0, 3, 0, 0, 0, 0.25, -19.4944, 7.5, 19.25)
-
-[node name="StaticBody3D" parent="Door2/dvere" index="0"]
-metadata/InteractableChildIndex = 1
-
-[node name="DoorInteractable" parent="Door2/dvere/StaticBody3D" index="1" node_paths=PackedStringArray("CollisionShape")]
-CollisionShape = NodePath("..")
 
 [node name="Janitor" parent="." instance=ExtResource("6_cyjk6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2232, 7.87558, -6.83438)
@@ -109,6 +91,9 @@ texture = SubResource("ViewportTexture_x0gq3")
 
 [node name="HR" parent="." instance=ExtResource("6_cyjk6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.24935, 7.36933, -8.62745)
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.03041, 6.85992, -5.01104)
 
 [editable path="NavigationRegion3D/World/DeOffice2"]
 [editable path="NavigationRegion3D/World/DeOffice2/Asset Complete Office2/CABINET_001"]
