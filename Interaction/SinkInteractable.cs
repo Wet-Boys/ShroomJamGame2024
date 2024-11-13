@@ -11,8 +11,6 @@ namespace ShroomJamGame.Interaction;
 public partial class SinkInteractable : Interactable
 {
     public bool isPartOfTask = false;
-    [Export]
-    private Node3D? sinkNode;
     public WashYoHandsTask task;
 
     public override void Interact()

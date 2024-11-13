@@ -50,7 +50,7 @@ namespace ShroomJamGame.Tasks
         private async void DebugCommand()
         {
             await ToSignal(rootNode.GetTree().CreateTimer(1.0), SceneTreeTimer.SignalName.Timeout);
-            CreateTask(new MakeFoodTask());//RESET THIS TO WHATEVER STARTING POINT YOU WANT
+            CreateTask(new BossToiletTask());//RESET THIS TO WHATEVER STARTING POINT YOU WANT
         }
 
         private void BroadCastHandler_CreateFixQuest()
@@ -93,50 +93,6 @@ namespace ShroomJamGame.Tasks
         }
         private void TaskTracker_TaskFinished(BaseTask task)
         {
-            switch (task.taskName)
-            {
-                case "Greet everyone":
-                    //fix broken computer
-                    break;
-                case "Fix broken computer":
-                    //fix broken chair
-                    break;
-                case "Fix another broken computer":
-                    //fix vending machine
-                    break;
-                case "Fix the vending machine":
-                    //after time, cut to next day, then fix boss's toilet
-                    break;
-                case "Fix smart toilet":
-                    //wash hands
-                    break;
-                case "Wash yo hands":
-                    //talk to manager
-                    break;
-                case "The sink seems to be broken, alert the manager":
-                    //show sink (urinal)
-                    break;
-                case "Show him the sink":
-                    //actually wash hands
-                    break;
-                case "Please wash your hands":
-                    //fix computer
-                    break;
-                case "Fix computer":
-                    //fix toilet (cut to next day)
-                    break;
-                case "Fix toilet":
-                    //task to fix HR computer
-                    break;
-                case "Fix HR computer":
-                    //task to microwave food (next day)
-                    break;
-                case "Make food":
-                    //various tasks followed by "crash" and credits
-                    break;
-                default:
-                    break;
-            }
             CleanupTask(task);
         }
 
@@ -184,7 +140,7 @@ namespace ShroomJamGame.Tasks
             switch (currentDay)
             {
                 case 1:
-                    TaskTracker.instance.CreateTask(new FixComputerScreenTask());
+                    TaskTracker.instance.CreateTask(new BossToiletTask());
                     break;
                 case 2:
                     break;

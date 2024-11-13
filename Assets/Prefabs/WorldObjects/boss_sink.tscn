@@ -1,4 +1,9 @@
-[gd_scene load_steps=7 format=4 uid="uid://boxxihrkclqq0"]
+[gd_scene load_steps=8 format=4 uid="uid://bexo2j1l6gg0o"]
+
+[ext_resource type="Script" path="res://Interaction/BossInteractables.cs" id="1_dg7s3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_incap"]
+size = Vector3(0.480339, 0.318264, 0.0744476)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kiaeo"]
 resource_name = "Porcelain"
@@ -100,18 +105,22 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_rg7py")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_incap"]
-size = Vector3(0.480339, 0.318264, 0.0744476)
-
 [node name="boss sink" type="Node3D"]
 transform = Transform3D(8, 0, 0, 0, -3.49691e-07, -8, 0, 8, -3.49691e-07, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+metadata/InteractableChildIndex = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00111008, 0.158945, 0.00124359)
+shape = SubResource("BoxShape3D_incap")
+
+[node name="BossInteractables" type="Node" parent="StaticBody3D" node_paths=PackedStringArray("objectNode", "CollisionShape")]
+script = ExtResource("1_dg7s3")
+sink = true
+objectNode = NodePath("../..")
+CollisionShape = NodePath("..")
 
 [node name="Mini Wash Me hand basin" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_wve8m")
 skeleton = NodePath("")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Mini Wash Me hand basin"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Mini Wash Me hand basin/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00111008, 0.158945, 0.00124359)
-shape = SubResource("BoxShape3D_incap")

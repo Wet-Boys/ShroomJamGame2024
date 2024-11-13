@@ -45,7 +45,7 @@ navigation_mesh = SubResource("NavigationMesh_kbavx")
 
 [node name="DeOffice2" parent="NavigationRegion3D/World" instance=ExtResource("7_qe2q5")]
 
-[node name="SMT_Straight13" parent="NavigationRegion3D/World/DeOffice2/Asset Complete Office2" index="86"]
+[node name="SMT_Straight13" parent="NavigationRegion3D/World/DeOffice2/Asset Complete Office2" index="97"]
 transform = Transform3D(-5.03126e-06, -8, -3.49691e-07, 0, -3.49691e-07, 8, -115.102, 3.49691e-07, 1.52855e-14, -30.9457, 24, 91.3184)
 
 [node name="GenericCharacterBody3" parent="." instance=ExtResource("6_orrfj")]

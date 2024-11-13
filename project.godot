@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="ShroomJamGame"
-run/main_scene="res://Assets/Scenes/My Cooler test scene.tscn"
+run/main_scene="res://Assets/Scenes/GameScenes/Level1.tscn"
 config/features=PackedStringArray("4.3", "C#", "Forward Plus")
 config/icon="res://Assets/icon.svg"
 
