@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bv7hgobt87i0x"]
+[gd_scene load_steps=15 format=3 uid="uid://bv7hgobt87i0x"]
 
 [ext_resource type="Script" path="res://Player/PlayerHeadController.cs" id="1_74oir"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="1_rdmxy"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://850tnty6q4cv" path="res://Assets/UI/PauseMenu.tscn" id="9_syifq"]
 [ext_resource type="Script" path="res://Tasks/TaskTracker.cs" id="10_sul16"]
 [ext_resource type="Script" path="res://Corruption/AudioCrash.cs" id="11_kq22c"]
+[ext_resource type="AudioStream" uid="uid://btm5ufgkes7h" path="res://Assets/Sfx/Ui/Success-242501_4414128-hq.ogg" id="12_0ae11"]
 
 [sub_resource type="Resource" id="Resource_4oitb"]
 script = ExtResource("2_ahif8")
@@ -71,10 +72,11 @@ _playerHead = NodePath("..")
 [node name="PauseUi" parent="PauseMenu" index="0"]
 visible = false
 
-[node name="TaskTracker" type="Node" parent="." index="9" node_paths=PackedStringArray("player", "HUD")]
+[node name="TaskTracker" type="Node" parent="." index="9" node_paths=PackedStringArray("player", "HUD", "_successPlayer")]
 script = ExtResource("10_sul16")
 player = NodePath("..")
 HUD = NodePath("../GeneralHud")
+_successPlayer = NodePath("../AudioStreamPlayer2")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="10"]
 
@@ -82,6 +84,10 @@ HUD = NodePath("../GeneralHud")
 script = ExtResource("11_kq22c")
 _crashAudioBus = "Crash Bypass"
 _streamPlayer = NodePath("..")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." index="11"]
+stream = ExtResource("12_0ae11")
+bus = &"Sound Effects"
 
 [editable path="GeneralHud"]
 [editable path="PauseMenu"]

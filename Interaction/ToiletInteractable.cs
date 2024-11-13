@@ -10,6 +10,9 @@ namespace ShroomJamGame.Interaction;
 [GlobalClass]
 public partial class ToiletInteractable : Interactable
 {
+    [Export]
+    private AudioStreamPlayer3D? _toiletPlayer;
+    
     public bool isPartOfTask = false;
     [Export]
     private Node3D? toiletNode;
@@ -20,6 +23,8 @@ public partial class ToiletInteractable : Interactable
 
     public override void Interact()
     {
+        _toiletPlayer?.Play();
+        
         if (isPartOfTask)
         {
             moveMesh = true;
@@ -29,10 +34,6 @@ public partial class ToiletInteractable : Interactable
             task.FinishTask();
             isPartOfTask = false;
             TaskTracker.instance.currentDay = 1;
-        }
-        else
-        {
-            //TODO toilet flush sfx
         }
     }
     public async void Test()
