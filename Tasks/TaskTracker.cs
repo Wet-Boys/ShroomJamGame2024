@@ -1,5 +1,6 @@
 ﻿using Godot;
 using ShroomJamGame.Events;
+using ShroomJamGame.Interaction;
 using ShroomJamGame.NPC;
 using ShroomJamGame.Rendering.Effects;
 using System;
@@ -135,6 +136,16 @@ namespace ShroomJamGame.Tasks
             await ToSignal(this.GetTree().CreateTimer(2f), SceneTreeTimer.SignalName.Timeout);
             lowerBlend = true;
             await ToSignal(this.GetTree().CreateTimer(5f), SceneTreeTimer.SignalName.Timeout);
+            foreach (var npc in NpcMovementController.npcs)
+            {
+                for (int i = 0; i < npc.ownedItems.Count; i++)
+                {
+                    PhysicsInteractable realItem = npc.ownedItems[i] as PhysicsInteractable;
+                    realItem.Freeze = false;
+                    realItem.GlobalPosition = npc.ownedItemsStartingPositions[i];
+                    realItem.Rotation = npc.ownedItemsStartingRotations[i];
+                }
+            }
             lowerBlend = false;
             DataMoshEffect.Instance.Enabled = false;
             switch (currentDay)

@@ -36,7 +36,7 @@ public partial class ToiletInteractable : Interactable
     public async void Test()
     {
         TaskTracker.instance.currentDay = 1;
-        await ToSignal(this.GetTree().CreateTimer(.1f), SceneTreeTimer.SignalName.Timeout);
+        await ToSignal(this.GetTree().CreateTimer(.25f), SceneTreeTimer.SignalName.Timeout);
         TaskTracker.instance.DayFinished();
         await ToSignal(this.GetTree().CreateTimer(5f), SceneTreeTimer.SignalName.Timeout);
         mesh.QueueFree();
