@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://wai8oj580ltu"
+path="res://.godot/imported/Paper Hit 4.ogg-a93475ea2db08b7e83b8061544155ec5.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Sfx/Light/Paper Hit 4.ogg"
+dest_files=["res://.godot/imported/Paper Hit 4.ogg-a93475ea2db08b7e83b8061544155ec5.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

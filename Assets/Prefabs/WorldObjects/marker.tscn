@@ -1,7 +1,9 @@
-[gd_scene load_steps=10 format=4 uid="uid://b1576dc5lb2dy"]
+[gd_scene load_steps=12 format=4 uid="uid://du3nq30xoobeu"]
 
 [ext_resource type="Texture2D" uid="uid://d3kpiq3s3m2r1" path="res://Assets/Scenes/Office/assets/models/marker/Z-Up_logo_white.png" id="1_8dghw"]
 [ext_resource type="Script" path="res://Interaction/PhysicsInteractable.cs" id="1_ay42s"]
+[ext_resource type="Script" path="res://Sound/ImpactSoundMaker.cs" id="3_8rgoi"]
+[ext_resource type="AudioStream" uid="uid://kengk7j0bg0j" path="res://Assets/Sfx/Plastic/pen-impact-noises.tres" id="4_716ci"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_im0r5"]
 resource_name = "White Metall"
@@ -151,3 +153,17 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.00170726, -0.999999, 0, 0.999999, 0.00170726, 0, 0, 0, 1, -0.00331132, 0.00790104, 0)
 shape = SubResource("CylinderShape3D_lgjjs")
+
+[node name="ImpactSoundMaker" type="Node3D" parent="." node_paths=PackedStringArray("_body", "_soundEmitter")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00834049, 0)
+script = ExtResource("3_8rgoi")
+_body = NodePath("..")
+_soundEmitter = NodePath("AudioStreamPlayer3D")
+_impactSound = ExtResource("4_716ci")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="ImpactSoundMaker"]
+attenuation_model = 2
+volume_db = -15.0
+unit_size = 6.0
+max_polyphony = 6
+bus = &"Sound Effects"

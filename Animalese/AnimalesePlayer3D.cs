@@ -101,6 +101,7 @@ public partial class AnimalesePlayer3D : AudioStreamPlayer3D
                 if (SoundSet.ContainsSoundForChars(subChars.ToLower()))
                 {
                     EnqueueSound(subChars.ToLower(), subChars, isInflective);
+                    skipNextChar = true;
                     continue;
                 }
             }

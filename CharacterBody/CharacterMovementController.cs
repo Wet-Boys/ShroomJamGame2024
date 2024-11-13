@@ -1,5 +1,6 @@
 using Godot;
 using ShroomJamGame.Player;
+using ShroomJamGame.Sound;
 
 namespace ShroomJamGame.CharacterBody;
 

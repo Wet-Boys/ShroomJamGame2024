@@ -1,9 +1,13 @@
-[gd_resource type="AudioStreamRandomizer" load_steps=3 format=3 uid="uid://brxon3c6vn70g"]
+[gd_resource type="AudioStreamRandomizer" load_steps=5 format=3 uid="uid://brxon3c6vn70g"]
 
 [ext_resource type="AudioStream" uid="uid://c023jite0ah3e" path="res://Assets/Sfx/Metal/metal-object-movement-359135_3491501-hq.ogg" id="1_bl7gh"]
-[ext_resource type="AudioStream" uid="uid://b8m4ssy0ty873" path="res://Assets/Sfx/Metal/metal-slam.ogg" id="2_3c6jc"]
+[ext_resource type="AudioStream" uid="uid://uheqovy8ak6m" path="res://Assets/Sfx/Metal/Heavy Thud 1.ogg" id="2_ck07h"]
+[ext_resource type="AudioStream" uid="uid://eh6kky7rbkni" path="res://Assets/Sfx/Metal/Heavy Thud 2.ogg" id="3_8chkd"]
+[ext_resource type="AudioStream" uid="uid://ba53ek37864q8" path="res://Assets/Sfx/Metal/thud-impact-275160_4745081-hq.ogg" id="4_iq1mt"]
 
 [resource]
-streams_count = 2
+streams_count = 4
 stream_0/stream = ExtResource("1_bl7gh")
-stream_1/stream = ExtResource("2_3c6jc")
+stream_1/stream = ExtResource("2_ck07h")
+stream_2/stream = ExtResource("3_8chkd")
+stream_3/stream = ExtResource("4_iq1mt")

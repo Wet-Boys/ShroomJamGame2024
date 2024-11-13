@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://d2fxukcjdyi6q"
+path="res://.godot/imported/Samll Object Drop 1.ogg-d688cc913b4c8b05ca425aaf0e527945.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Sfx/Light/Samll Object Drop 1.ogg"
+dest_files=["res://.godot/imported/Samll Object Drop 1.ogg-d688cc913b4c8b05ca425aaf0e527945.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

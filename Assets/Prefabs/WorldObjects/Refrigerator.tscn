@@ -424,9 +424,13 @@ shape = SubResource("BoxShape3D_1uast")
 
 [node name="Fridge Door Emitter" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(0.0925181, 0, 0, 0, 0.0925181, 0, 0, 0, 0.0925181, -0.228313, 0.647626, 0.583062)
+volume_db = 30.0
+bus = &"Sound Effects"
 
 [node name="Freezer Door Emitter" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(0.0925181, 0, 0, 0, 0.0925181, 0, 0, 0, 0.0925181, -0.228313, 1.11022, 0.583062)
+volume_db = 30.0
+bus = &"Sound Effects"
 
 [node name="Fridge Hum" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(0.0925181, 0, 0, 0, 0.0925181, 0, 0, 0, 0.0925181, 0, 0.740145, 0.46259)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://c10b6t4qqwe1r"]
+[gd_scene load_steps=19 format=3 uid="uid://c10b6t4qqwe1r"]
 
 [ext_resource type="PackedScene" uid="uid://bv7hgobt87i0x" path="res://Assets/Prefabs/Player.tscn" id="1_f5xs7"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_5f2ps"]
@@ -11,8 +11,7 @@
 [ext_resource type="Script" path="res://Interaction/PhysicsInteractable.cs" id="10_iqgul"]
 [ext_resource type="VoxelGIData" uid="uid://0plyd188t1iq" path="res://Assets/Scenes/Player-Testing-1.VoxelGI_data.res" id="11_02grs"]
 [ext_resource type="LightmapGIData" uid="uid://b5i07r4nt5y2" path="res://Assets/Scenes/Player-Testing-1.lmbake" id="11_j60g3"]
-[ext_resource type="Material" uid="uid://bv05oqgv5v8ju" path="res://Assets/Materials/subpixel-perfect-display.tres" id="13_6cmvj"]
-[ext_resource type="Material" uid="uid://blydyffs1tf5p" path="res://Assets/Materials/corruption-distortion.tres" id="13_1585j"]
+[ext_resource type="PackedScene" uid="uid://bjikw5crdfikw" path="res://Assets/Prefabs/corruption-effects.tscn" id="12_2dgjc"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_mva81"]
 height = 2.25
@@ -30,18 +29,6 @@ region_min_size = 17.0
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_brehb"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_loyoe"]
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_v3dha"]
-emission_shape = 3
-emission_box_extents = Vector3(1, 1, 1)
-gravity = Vector3(0, 0, 0)
-
-[sub_resource type="QuadMesh" id="QuadMesh_251im"]
-material = ExtResource("13_1585j")
-size = Vector2(0.25, 0.25)
-
-[sub_resource type="QuadMesh" id="QuadMesh_3jln5"]
-material = ExtResource("13_6cmvj")
 
 [node name="Player-testing-1" type="Node3D"]
 
@@ -217,17 +204,7 @@ process_priority = 300
 process_physics_priority = 300
 script = ExtResource("2_5f2ps")
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.2221, 6.92996, 9.6923)
-cast_shadow = 0
-amount = 32
-randomness = 1.0
-process_material = SubResource("ParticleProcessMaterial_v3dha")
-draw_pass_1 = SubResource("QuadMesh_251im")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.8611, 9.1399, 0)
-mesh = SubResource("QuadMesh_3jln5")
+[node name="GPUParticles3D" parent="." instance=ExtResource("12_2dgjc")]
 
 [connection signal="finished" from="AnimalesePlayer3D" to="AnimalesePlayer3D" method="PlayNextSound"]
 

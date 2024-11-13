@@ -1,0 +1,11 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=4 format=3 uid="uid://ccdlqy7psjm3o"]
+
+[ext_resource type="AudioStream" uid="uid://dxaoakjdrisb0" path="res://Assets/Sfx/Heavy/Heavy Thud 1.ogg" id="1_vgi6h"]
+[ext_resource type="AudioStream" uid="uid://bk1hvvawm1xp1" path="res://Assets/Sfx/Heavy/Heavy Thud 2.ogg" id="2_02jd7"]
+[ext_resource type="AudioStream" uid="uid://dfk27l4ydw741" path="res://Assets/Sfx/Heavy/thud-impact-275160_4745081-hq.ogg" id="3_x6juf"]
+
+[resource]
+streams_count = 3
+stream_0/stream = ExtResource("1_vgi6h")
+stream_1/stream = ExtResource("2_02jd7")
+stream_2/stream = ExtResource("3_x6juf")

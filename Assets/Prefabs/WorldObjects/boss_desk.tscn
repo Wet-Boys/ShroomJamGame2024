@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://dhtyoauwu7y8t"]
+[gd_scene load_steps=14 format=4 uid="uid://bkcc2b770bol6"]
 
 [ext_resource type="Texture2D" uid="uid://bkswiv6kpn63h" path="res://Assets/Scenes/Office/assets/models/boss desk/plywood_diff_4k.jpg" id="1_qiy1x"]
 [ext_resource type="Texture2D" uid="uid://spr1ib86rafp" path="res://Assets/Scenes/Office/assets/models/boss desk/plywood_rough_4k.png" id="2_gn4bs"]

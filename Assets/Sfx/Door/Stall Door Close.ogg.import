@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://blw2ykltd1koy"
+path="res://.godot/imported/Stall Door Close.ogg-b3710c8a512cf7ab72197c78171f24fd.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Sfx/Door/Stall Door Close.ogg"
+dest_files=["res://.godot/imported/Stall Door Close.ogg-b3710c8a512cf7ab72197c78171f24fd.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

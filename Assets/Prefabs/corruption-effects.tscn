@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjikw5crdfikw"]
+
+[ext_resource type="Material" uid="uid://blydyffs1tf5p" path="res://Assets/Materials/corruption-distortion.tres" id="1_g461b"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_v3dha"]
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+gravity = Vector3(0, 0, 0)
+
+[sub_resource type="QuadMesh" id="QuadMesh_251im"]
+material = ExtResource("1_g461b")
+size = Vector2(0.25, 0.25)
+
+[node name="CorruptionEffects" type="GPUParticles3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.2221, 6.92996, 9.6923)
+cast_shadow = 0
+amount = 32
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_v3dha")
+draw_pass_1 = SubResource("QuadMesh_251im")

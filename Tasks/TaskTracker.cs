@@ -22,6 +22,8 @@ namespace ShroomJamGame.Tasks
         public Vector3 originalPlayerPos;
         [Export]
         public Control HUD;
+        [Export]
+        private AudioStreamPlayer? _successPlayer;
         Control TaskList;
         double timer = 0;
         Node rootNode;
@@ -48,6 +50,8 @@ namespace ShroomJamGame.Tasks
             TaskList.AddChild(thing);
             tasksToControls.Add(inputTask, thing);
             taskNames.Add(inputTask, thing.GetNode<Label>("TaskName"));
+            
+            _successPlayer?.Play();
             return inputTask;
         }
 

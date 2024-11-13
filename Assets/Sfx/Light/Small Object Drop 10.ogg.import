@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://8tlq38apbmiq"
+path="res://.godot/imported/Small Object Drop 10.ogg-03f18bb0473f869d1f618fe528136f8b.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Sfx/Light/Small Object Drop 10.ogg"
+dest_files=["res://.godot/imported/Small Object Drop 10.ogg-03f18bb0473f869d1f618fe528136f8b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

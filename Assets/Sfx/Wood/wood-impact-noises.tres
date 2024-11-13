@@ -1,0 +1,13 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=5 format=3 uid="uid://b8v482enrjkvp"]
+
+[ext_resource type="AudioStream" uid="uid://rfxnnfpwa4hb" path="res://Assets/Sfx/Wood/Wood Hit 1.ogg" id="1_i1w8t"]
+[ext_resource type="AudioStream" uid="uid://bg3p3ygbfylhh" path="res://Assets/Sfx/Wood/Wood Hit 2.ogg" id="2_fsuln"]
+[ext_resource type="AudioStream" uid="uid://8hsnesuwpd4j" path="res://Assets/Sfx/Wood/Wood Hit 3.ogg" id="3_y7c8x"]
+[ext_resource type="AudioStream" uid="uid://nld2pclfrcd2" path="res://Assets/Sfx/Wood/Wood Hit 4.ogg" id="4_mrgs0"]
+
+[resource]
+streams_count = 4
+stream_0/stream = ExtResource("1_i1w8t")
+stream_1/stream = ExtResource("2_fsuln")
+stream_2/stream = ExtResource("3_y7c8x")
+stream_3/stream = ExtResource("4_mrgs0")

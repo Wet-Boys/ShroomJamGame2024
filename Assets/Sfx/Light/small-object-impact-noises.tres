@@ -1,0 +1,25 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=11 format=3 uid="uid://85gl00m51kyo"]
+
+[ext_resource type="AudioStream" uid="uid://d2fxukcjdyi6q" path="res://Assets/Sfx/Light/Samll Object Drop 1.ogg" id="1_rc5g4"]
+[ext_resource type="AudioStream" uid="uid://ckixrjkt5ksdc" path="res://Assets/Sfx/Light/Small Object Drop 2.ogg" id="2_533bu"]
+[ext_resource type="AudioStream" uid="uid://ckttbs5v16dry" path="res://Assets/Sfx/Light/Small Object Drop 3.ogg" id="3_2kmrk"]
+[ext_resource type="AudioStream" uid="uid://r2finjhohmpe" path="res://Assets/Sfx/Light/Small Object Drop 4.ogg" id="4_xt31b"]
+[ext_resource type="AudioStream" uid="uid://cyrfot4kgqh5y" path="res://Assets/Sfx/Light/Small Object Drop 5.ogg" id="5_4ejft"]
+[ext_resource type="AudioStream" uid="uid://bnr87dku72im8" path="res://Assets/Sfx/Light/Small Object Drop 6.ogg" id="6_thsjt"]
+[ext_resource type="AudioStream" uid="uid://dcmxcvxa2ifol" path="res://Assets/Sfx/Light/Small Object Drop 7.ogg" id="7_jjyuj"]
+[ext_resource type="AudioStream" uid="uid://fphg2d7pjppf" path="res://Assets/Sfx/Light/Small Object Drop 8.ogg" id="8_15rul"]
+[ext_resource type="AudioStream" uid="uid://d27t1ym2wf4hc" path="res://Assets/Sfx/Light/Small Object Drop 9.ogg" id="9_thrcp"]
+[ext_resource type="AudioStream" uid="uid://8tlq38apbmiq" path="res://Assets/Sfx/Light/Small Object Drop 10.ogg" id="10_rijf0"]
+
+[resource]
+streams_count = 10
+stream_0/stream = ExtResource("1_rc5g4")
+stream_1/stream = ExtResource("2_533bu")
+stream_2/stream = ExtResource("3_2kmrk")
+stream_3/stream = ExtResource("4_xt31b")
+stream_4/stream = ExtResource("5_4ejft")
+stream_5/stream = ExtResource("6_thsjt")
+stream_6/stream = ExtResource("7_jjyuj")
+stream_7/stream = ExtResource("8_15rul")
+stream_8/stream = ExtResource("9_thrcp")
+stream_9/stream = ExtResource("10_rijf0")

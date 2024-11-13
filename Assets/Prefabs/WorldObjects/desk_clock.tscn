@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=4 uid="uid://x08rpx2e0f4q"]
+[gd_scene load_steps=11 format=4 uid="uid://x08rpx2e0f4q"]
 
 [ext_resource type="Texture2D" uid="uid://bmq7krl53e7sb" path="res://Assets/Scenes/Office/assets/models/desk clock/WoodenClock_Base_color_1001.jpg" id="1_r6eig"]
 [ext_resource type="Script" path="res://Interaction/PhysicsInteractable.cs" id="1_wlpdh"]
 [ext_resource type="Texture2D" uid="uid://djmrwmcw1f2gn" path="res://Assets/Scenes/Office/assets/models/desk clock/WoodenClock_Metallic_1001-WoodenClock_Roughness_1001.png" id="2_7vrtk"]
 [ext_resource type="Texture2D" uid="uid://ch1btty7x16o" path="res://Assets/Scenes/Office/assets/models/desk clock/WoodenClock_Normal_OpenGL_1001.jpg" id="3_1vuf6"]
+[ext_resource type="Script" path="res://Sound/ImpactSoundMaker.cs" id="5_63ee5"]
+[ext_resource type="AudioStream" uid="uid://85gl00m51kyo" path="res://Assets/Sfx/Light/small-object-impact-noises.tres" id="6_wt483"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_57axw"]
 height = 0.281572
@@ -66,3 +68,17 @@ shape = SubResource("CylinderShape3D_57axw")
 [node name="WoodenBody" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_0lbhu")
 skeleton = NodePath("")
+
+[node name="ImpactSoundMaker" type="Node3D" parent="." node_paths=PackedStringArray("_body", "_soundEmitter")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+script = ExtResource("5_63ee5")
+_body = NodePath("..")
+_soundEmitter = NodePath("AudioStreamPlayer3D")
+_impactSound = ExtResource("6_wt483")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="ImpactSoundMaker"]
+attenuation_model = 2
+volume_db = -15.0
+unit_size = 6.0
+max_polyphony = 6
+bus = &"Sound Effects"

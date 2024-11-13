@@ -1,7 +1,9 @@
-[gd_scene load_steps=16 format=4 uid="uid://dw0i481qgdkqu"]
+[gd_scene load_steps=18 format=4 uid="uid://cv4yi4hifn1v1"]
 
 [ext_resource type="Script" path="res://Interaction/PhysicsInteractable.cs" id="1_cw5ir"]
 [ext_resource type="Texture2D" uid="uid://dqcod4htg1m21" path="res://Assets/Scenes/Office/assets/models/printer/PrinterDisplay_TFS.jpg" id="1_n2qh5"]
+[ext_resource type="Script" path="res://Sound/ImpactSoundMaker.cs" id="3_gio8w"]
+[ext_resource type="AudioStream" uid="uid://brxon3c6vn70g" path="res://Assets/Sfx/Metal/metal-impact-noises.tres" id="4_jyltu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_atmvg"]
 resource_name = "TFSPlastic_V2_Light"
@@ -195,3 +197,18 @@ shape = SubResource("BoxShape3D_kmbe0")
 [node name="CollisionShape3D6" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.938535, 0.345184, 0, -0.345184, 0.938535, 0, 0, 0, 1, -0.448556, 0.767444, -0.0444419)
 shape = SubResource("BoxShape3D_kmbe0")
+
+[node name="ImpactSoundMaker" type="Node3D" parent="." node_paths=PackedStringArray("_body", "_soundEmitter")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+script = ExtResource("3_gio8w")
+_body = NodePath("..")
+_soundEmitter = NodePath("AudioStreamPlayer3D")
+_impactSound = ExtResource("4_jyltu")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="ImpactSoundMaker"]
+attenuation_model = 2
+volume_db = -25.0
+unit_size = 6.0
+pitch_scale = 2.0
+max_polyphony = 6
+bus = &"Sound Effects"
