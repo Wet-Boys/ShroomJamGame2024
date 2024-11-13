@@ -24,6 +24,8 @@ namespace ShroomJamGame.NPC
         public Godot.Collections.Array<CompressedTexture2D> eyeTextures;
         [Export]
         public Godot.Collections.Array<CompressedTexture2D> mouthTextures;
+        [Export]
+        public Godot.Collections.Array<CompressedTexture2D> torsoTextures;
         //[Export]
         //public Godot.Collections.Array<Material> HeadMaterials;
         //[Export]

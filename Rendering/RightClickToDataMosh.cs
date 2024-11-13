@@ -8,8 +8,8 @@ public partial class RightClickToDataMosh : Node
 {
     public override void _Ready()
     {
-        Controls.Instance.SecondaryAction.OnPress += DoDataMosh;
-        Controls.Instance.SecondaryAction.OnRelease += StopDataMosh;
+        //Controls.Instance.SecondaryAction.OnPress += DoDataMosh;
+        //Controls.Instance.SecondaryAction.OnRelease += StopDataMosh;
     }
 
     public override void _Notification(int notification)

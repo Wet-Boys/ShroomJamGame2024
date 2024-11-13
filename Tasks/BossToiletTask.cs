@@ -114,7 +114,7 @@ namespace ShroomJamGame.Tasks
 
         public override void PerformTask()
         {
-            if (tracker == 0 && player.GlobalPosition.DistanceTo(toilet.objectNode.GlobalPosition) < 4 && !boss.AnimalesePlayer.isSpeaking)
+            if (tracker == 0 && player.GlobalPosition.DistanceTo(toilet.objectNode.GlobalPosition) < 3 && !boss.AnimalesePlayer.isSpeaking)
             {
                 tracker = 1;
                 boss.onlyLookAtPlayer = true;

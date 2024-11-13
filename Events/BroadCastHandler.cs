@@ -1,6 +1,7 @@
 ﻿using Godot;
 using ShroomJamGame.Interaction;
 using ShroomJamGame.NPC;
+using ShroomJamGame.Tasks;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -87,6 +88,10 @@ namespace ShroomJamGame.Events
             npcController.STOP();
             npcController.onlyLookAtPlayer = true;
             npcController.GoToPositionAndSayWords(npcController.characterBody3D.GlobalPosition, whatToSay);
+        }
+        public void ResetPlayer()
+        {
+            TaskTracker.instance.player.GlobalPosition = TaskTracker.instance.originalPlayerPos;
         }
     }
 }

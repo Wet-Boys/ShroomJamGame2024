@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="NpcOutfits" load_steps=41 format=3 uid="uid://bcca04txeequm"]
+[gd_resource type="Resource" script_class="NpcOutfits" load_steps=47 format=3 uid="uid://bcca04txeequm"]
 
 [ext_resource type="ArrayMesh" uid="uid://hmmuhjgqti1n" path="res://Assets/Character Assets/Body Parts/base person_ballHands.res" id="1_kpsft"]
 [ext_resource type="ArrayMesh" uid="uid://bwk4nj26rh01t" path="res://Assets/Character Assets/Body Parts/base person_balloon.res" id="2_h7so4"]
@@ -40,6 +40,12 @@
 [ext_resource type="Texture2D" uid="uid://b61u0m27cknxe" path="res://Assets/Character Assets/Face Textures/Mouth States/Mouth6.png" id="37_6cy4m"]
 [ext_resource type="Texture2D" uid="uid://mycawkee3i76" path="res://Assets/Character Assets/Face Textures/Mouth States/Mouth7.png" id="38_se2mu"]
 [ext_resource type="Texture2D" uid="uid://dao50cu3qcuex" path="res://Assets/Character Assets/Face Textures/Mouth States/Mouth8.png" id="39_ugnod"]
+[ext_resource type="Texture2D" uid="uid://ddoo27dljwk6h" path="res://Assets/Character Assets/Tshirt IT Texture.png" id="41_ltdva"]
+[ext_resource type="Texture2D" uid="uid://dtlty8poetm4" path="res://Assets/Character Assets/Janitor Texture.png" id="42_quqhn"]
+[ext_resource type="Texture2D" uid="uid://ces1r4l08h0j7" path="res://Assets/Character Assets/Dress Texture.png" id="43_7wpdj"]
+[ext_resource type="Texture2D" uid="uid://xdmkf828iaha" path="res://Assets/Character Assets/Labcoat Texture.png" id="44_1bgnu"]
+[ext_resource type="Texture2D" uid="uid://bw5dwyb8exkor" path="res://Assets/Character Assets/Suit Texture.png" id="45_6i7ty"]
+[ext_resource type="Texture2D" uid="uid://c8b1iw83h6nmu" path="res://Assets/Character Assets/Tshirt HR Texture.png" id="46_qh8kw"]
 
 [resource]
 script = ExtResource("20_c7gsa")
@@ -50,3 +56,4 @@ torsoMeshes = Array[Mesh]([ExtResource("10_ihh3l"), ExtResource("14_c8cts"), Ext
 allMeshes = Array[Mesh]([ExtResource("1_kpsft"), ExtResource("2_h7so4"), ExtResource("3_8ls8f"), ExtResource("4_6i14e"), ExtResource("5_to55c"), ExtResource("6_fkl13"), ExtResource("7_weyud"), ExtResource("8_t6ogx"), ExtResource("9_vs6vk"), ExtResource("10_ihh3l"), ExtResource("11_ef51v"), ExtResource("12_22vc3"), ExtResource("13_4o67m"), ExtResource("14_c8cts"), ExtResource("15_b6s2m"), ExtResource("16_uf6is"), ExtResource("17_5cpiy"), ExtResource("18_yvrjq"), ExtResource("19_kda0k")])
 eyeTextures = Array[CompressedTexture2D]([ExtResource("20_wqvnj"), ExtResource("21_kcq8v"), ExtResource("22_ceekv"), ExtResource("23_vw3fi"), ExtResource("24_dyeuv"), ExtResource("25_86rmo"), ExtResource("26_dy3fy"), ExtResource("27_wsb62"), ExtResource("28_4xds2"), ExtResource("29_yircv"), ExtResource("30_s7dys"), ExtResource("31_m4lm7")])
 mouthTextures = Array[CompressedTexture2D]([ExtResource("32_7bi2c"), ExtResource("33_vx2cc"), ExtResource("34_r3u6m"), ExtResource("35_msu37"), ExtResource("36_5tlp8"), ExtResource("37_6cy4m"), ExtResource("38_se2mu"), ExtResource("39_ugnod")])
+torsoTextures = Array[CompressedTexture2D]([ExtResource("41_ltdva"), ExtResource("42_quqhn"), ExtResource("43_7wpdj"), ExtResource("44_1bgnu"), ExtResource("45_6i7ty"), ExtResource("46_qh8kw")])

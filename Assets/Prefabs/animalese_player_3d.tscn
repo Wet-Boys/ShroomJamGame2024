@@ -5,8 +5,7 @@
 
 [node name="AnimalesePlayer3D" type="AudioStreamPlayer3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.18721, 4.11217)
-unit_size = 4.35
-max_distance = 5.0
+attenuation_model = 2
 panning_strength = 0.26
 bus = &"Animalese Bus"
 script = ExtResource("1_uswo6")

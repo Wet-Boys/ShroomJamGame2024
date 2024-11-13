@@ -89,6 +89,10 @@ namespace ShroomJamGame.NPC
             head.Mesh.SurfaceSetMaterial(1, prevMaterial);
             head.Mesh.SurfaceGetMaterial(1).Set("shader_parameter/Eyes", outfitList.eyeTextures.PickRandom());
             head.Mesh.SurfaceGetMaterial(1).Set("shader_parameter/Mouth", outfitList.mouthTextures.PickRandom());
+
+            prevMaterial = (Material)torso.Mesh.SurfaceGetMaterial(0).Duplicate();
+            torso.Mesh.SurfaceSetMaterial(0, prevMaterial);
+            torso.Mesh.SurfaceGetMaterial(0).Set("albedo_texture", outfitList.torsoTextures.PickRandom());
         }
         public void SetEyes(Eyes eyeID)
         {

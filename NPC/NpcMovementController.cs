@@ -35,7 +35,7 @@ namespace ShroomJamGame.NPC
         [Export]
         public CharacterBody3D? characterBody3D;
         [Export]
-        private NavigationAgent3D? _navigationAgent;
+        public NavigationAgent3D? _navigationAgent;
         [Export]
         public NpcVisualController? _visualController;
         [Export]
@@ -167,6 +167,10 @@ namespace ShroomJamGame.NPC
             {
                 DecideTime();
                 decideTimer = 0;
+            }
+            if (characterBody3D.GlobalPosition.Y < 4)
+            {
+                characterBody3D.GlobalPosition = originalPosition;
             }
         }
         public bool IsDoingStuff()
@@ -312,7 +316,7 @@ namespace ShroomJamGame.NPC
                 var hit = interactionRay?.GetCollider();
                 if (hit is not CollisionObject3D targetCollision)
                     return;
-                DoorInteractable door = targetCollision.GetChildOrNull<DoorInteractable>(3);
+                DoorInteractable door = targetCollision.GetChildOrNull<DoorInteractable>(1);
                 if (door is not null && !door.IsOpen)
                 {
                     door.Interact();

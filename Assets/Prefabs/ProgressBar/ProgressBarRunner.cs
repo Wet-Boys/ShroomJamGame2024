@@ -1,4 +1,5 @@
 using Godot;
+using ShroomJamGame.Tasks;
 using System;
 
 public partial class ProgressBarRunner : Node3D
@@ -13,8 +14,10 @@ public partial class ProgressBarRunner : Node3D
     public double timeToComplete;
     [Signal]
     public delegate void ProgressBarFinishedEventHandler(Node3D bar);
+	public CharacterBody3D player;
     public override void _Ready()
 	{
+		player = TaskTracker.instance.player;
 		sprite.Texture = viewport.GetTexture();
 	}
 
@@ -26,8 +29,16 @@ public partial class ProgressBarRunner : Node3D
 			EmitSignal(SignalName.ProgressBarFinished, this);
 		}
 		else
-		{
-            progressBar.Value += delta * (100 / timeToComplete);
+        {
+            if (player.GlobalPosition.DistanceTo(GlobalPosition) > 3)
+            {
+				sprite.Modulate = new Color(1, 0, 0);
+            }
+			else
+            {
+                sprite.Modulate = new Color(1, 1, 1);
+                progressBar.Value += delta * (100 / timeToComplete);
+            }
         }
 	}
 }
