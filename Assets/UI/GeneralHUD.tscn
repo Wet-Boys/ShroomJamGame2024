@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bos5qjgi60df2"]
+[gd_scene load_steps=4 format=3 uid="uid://bos5qjgi60df2"]
 
 [ext_resource type="PackedScene" uid="uid://d1be3wvwreyiw" path="res://crash screen.tscn" id="1_tamh0"]
 [ext_resource type="PackedScene" uid="uid://cfbfnmy0ip0cd" path="res://corruptionSprite.tscn" id="2_4h1dh"]
+[ext_resource type="Texture2D" uid="uid://cpcymbmktafh7" path="res://Assets/logo/logo.png" id="2_mg3jv"]
 
 [node name="GeneralHud" type="Control"]
 layout_mode = 3
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 
 [node name="Tooltip Container" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -63,16 +65,45 @@ offset_right = -2.0
 offset_bottom = -1.0
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+visible = false
 layout_mode = 1
 offset_right = 1280.0
 offset_bottom = 721.0
 
 [node name="ColorRect" type="ColorRect" parent="MarginContainer"]
 layout_mode = 2
-color = Color(0.442911, 0.442911, 0.442911, 1)
-
-[node name="AnimatedSprite2D" parent="MarginContainer/ColorRect" instance=ExtResource("2_4h1dh")]
-position = Vector2(741, 345.5)
-scale = Vector2(0.2875, 0.2875)
+color = Color(0, 0, 0, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="MarginContainer/ColorRect"]
+position = Vector2(648, 321)
+scale = Vector2(0.501852, 0.501852)
+texture = ExtResource("2_mg3jv")
+
+[node name="AnimatedSprite2D" parent="MarginContainer/ColorRect" instance=ExtResource("2_4h1dh")]
+position = Vector2(958, 488)
+rotation = -0.123088
+scale = Vector2(0.6625, 0.6625)
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -70.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2"]
+layout_mode = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="MarginContainer2/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Play"
