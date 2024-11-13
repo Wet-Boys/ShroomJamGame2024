@@ -1,32 +1,14 @@
 [gd_scene load_steps=25 format=4 uid="uid://bbn478krkdfcu"]
 
-[ext_resource type="Texture2D" uid="uid://roxbxyovej6o" path="res://Assets/Scenes/Office/textures/Oak multiple.jpg" id="1_ja1jv"]
-[ext_resource type="PackedScene" uid="uid://c0cwjs6xlba6b" path="res://Assets/Prefabs/WorldObjects/book.tscn" id="2_fvcgu"]
-[ext_resource type="PackedScene" uid="uid://53l7uggnhkws" path="res://Assets/Prefabs/WorldObjects/book_001.tscn" id="3_gf57g"]
-[ext_resource type="PackedScene" uid="uid://d0flu5ydvsu86" path="res://Assets/Prefabs/WorldObjects/book_002.tscn" id="4_0ddg1"]
-[ext_resource type="PackedScene" uid="uid://dwbx3fhgd24va" path="res://Assets/Prefabs/WorldObjects/book_003.tscn" id="5_g3yf0"]
-[ext_resource type="PackedScene" uid="uid://bl06154dautpb" path="res://Assets/Prefabs/WorldObjects/phone.tscn" id="6_pcvs7"]
-[ext_resource type="PackedScene" uid="uid://by3cvl7p2mdpj" path="res://Assets/Prefabs/WorldObjects/tab_holder.tscn" id="7_urd7a"]
-[ext_resource type="PackedScene" uid="uid://hxptts5soua2" path="res://Assets/Prefabs/WorldObjects/vase.tscn" id="8_6d723"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_74211"]
-resource_name = "BOARD"
-cull_mode = 2
-albedo_color = Color(0.9, 0.9, 0.9, 1)
-roughness = 0.3
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n8x41"]
-resource_name = "WOOD"
-cull_mode = 2
-albedo_texture = ExtResource("1_ja1jv")
-metallic_texture = ExtResource("1_ja1jv")
-metallic_texture_channel = 2
-roughness_texture = ExtResource("1_ja1jv")
-roughness_texture_channel = 1
-normal_enabled = true
-normal_texture = ExtResource("1_ja1jv")
-uv1_scale = Vector3(1, 0.98, 1)
-uv1_offset = Vector3(0.53, 0.00999998, 0)
+[ext_resource type="Material" uid="uid://br0xp8d6dbejt" path="res://Assets/Scenes/Office/assets/materials/wood.tres" id="1_rectm"]
+[ext_resource type="Material" uid="uid://buafrasshjqpi" path="res://Assets/Scenes/Office/assets/materials/metal.tres" id="2_fbmk8"]
+[ext_resource type="PackedScene" path="res://Assets/Prefabs/WorldObjects/book.tscn" id="2_fvcgu"]
+[ext_resource type="PackedScene" path="res://Assets/Prefabs/WorldObjects/book_001.tscn" id="3_gf57g"]
+[ext_resource type="PackedScene" path="res://Assets/Prefabs/WorldObjects/book_002.tscn" id="4_0ddg1"]
+[ext_resource type="PackedScene" path="res://Assets/Prefabs/WorldObjects/book_003.tscn" id="5_g3yf0"]
+[ext_resource type="PackedScene" path="res://Assets/Prefabs/WorldObjects/phone.tscn" id="6_pcvs7"]
+[ext_resource type="PackedScene" path="res://Assets/Prefabs/WorldObjects/tab_holder.tscn" id="7_urd7a"]
+[ext_resource type="PackedScene" uid="uid://cgwlnwn25xcnl" path="res://Assets/Prefabs/WorldObjects/vase.tscn" id="8_6d723"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_msdv6"]
 resource_name = "BLUE"
@@ -77,7 +59,7 @@ _surfaces = [{
 "format": 34359742487,
 "index_count": 360,
 "index_data": PackedByteArray("IwAEAAYASgCkAJ8AXABmAB8AfQCAAI0AEABgAEoAXwAuADQASgCbABAAXwA0AF0AGgBFABwAaABuAGEAfQCIAD0AhACAAH0ApwCkAEoAtAC9AGwAZwC8AL8ABAAmAAEABAAjACYACgBHAAcACgA2AEcADgAvAAwADgBCAC8AJAAHAEcAAwAIAAUACAANAAsADQADAAAACAADAA0AQQB5AHAAQQBaAHkADAA1AAkADAAvADUARQAsABwAOgAxABUAQwACACcAQwAPAAIAOQBLAE4AOQAUAEsAHgAuAF8AMABIADcASAAoACUAKAAwAEQASAAwACgARQAYADEARQAaABgAXgAbAB0AGwAWABkAFgBJABMASQBeAFsAXgAWABsAFgBeAEkAVwCHACsAVwCTAIcAjgCmAIkAjgCjAKYAagBTACEAagB7AFMAqwB0AE8AdABSAHoAsAB0AKsAsABSAHQAlACPAIMAlACYAI8AKQBKAGAAKQBMAEoANAB/AF0APAAUADkAPAAXABQAXAA9AGsAXAB9AD0AZQBWACoAZQBzAFYAEgB1AGQAEgBRAHUAYwB8AGkAYwB2AHwAegBxAHcAegB0AHEAcgBvAHgAcgBiAG8AZgBcAGsAFQAxABgAVQCXAJEAlwB3AFgAdwBVAHEAlwBVAHcAiwBZAEAAiwCZAFkAswChAKUAswCtAKEAOwBGADIARgAzAC0AMwBNAH4ATQA7ADgAOwAzAEYAMwA7AE0AVACpACIAVACyAKkAnQBQABEAnQCuAFAASgAfAKcASgBcAB8AigCxAJYAigCoALEAggCqAJAAggCgAKoAfQApAIQAfQBMACkAiAB9AI0AmwBKAJ8AlQCiAIwAlQCvAKIAhQCeAIEAhQCaAJ4AkgCcAIYAkgCsAJwAPwC+ALcAPwBtAL4AuwAfALgAuwBmAB8AtgC1AD4AugC5ACAA"),
-"material": SubResource("StandardMaterial3D_74211"),
+"material": ExtResource("1_rectm"),
 "name": "BOARD",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -89,7 +71,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 12,
 "index_data": PackedByteArray("AgAAAAYAAgABAAAABwADAAUABwAEAAMA"),
-"material": SubResource("StandardMaterial3D_n8x41"),
+"material": ExtResource("1_rectm"),
 "name": "WOOD",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -111,8 +93,6 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_wlq6o")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8vid5"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_q8aqh"]
 _surfaces = [{
@@ -136,7 +116,7 @@ _surfaces = [{
 "index_count": 468,
 "index_data": PackedByteArray("CwAgAAwACwAfACAADAAhAA0ADAAgACEADQAiAA4ADQAhACIAAAAVAAEAAAAUABUADgAjAA8ADgAiACMAAQAWAAIAAQAVABYADwAkABAADwAjACQAAgAXAAMAAgAWABcAEAAlABEAEAAkACUAAwAYAAQAAwAXABgAEQAmABIAEQAlACYABAAZAAUABAAYABkAEgAnABMAEgAmACcABQAaAAYABQAZABoABgAbAAcABgAaABsABwAcAAgABwAbABwACAAdAAkACAAcAB0ACQAeAAoACQAdAB4ACgAfAAsACgAeAB8AMwBIAEcAMwA0AEgANABJAEgANAA1AEkANQBKAEkANQA2AEoAKAA9ADwAKAApAD0ANgBLAEoANgA3AEsAKQA+AD0AKQAqAD4ANwBMAEsANwA4AEwAKgA/AD4AKgArAD8AOABNAEwAOAA5AE0AKwBAAD8AKwAsAEAAOQBOAE0AOQA6AE4ALABBAEAALAAtAEEAOgBPAE4AOgA7AE8ALQBCAEEALQAuAEIALgBDAEIALgAvAEMALwBEAEMALwAwAEQAMABFAEQAMAAxAEUAMQBGAEUAMQAyAEYAMgBHAEYAMgAzAEcAGQBAAEEAGQAYAEAACgAzADIACgALADMAJwBOAE8AJwAmAE4AGgBBAEIAGgAZAEEACwA0ADMACwAMADQAGwBCAEMAGwAaAEIAEwBPADsAEwAnAE8ADAA1ADQADAANADUAHABDAEQAHAAbAEMADQA2ADUADQAOADYAAAApACgAAAABACkAHQBEAEUAHQAcAEQADgA3ADYADgAPADcAFAAoADwAFAAAACgAAQAqACkAAQACACoAHgBFAEYAHgAdAEUADwA4ADcADwAQADgAAgArACoAAgADACsAHwBGAEcAHwAeAEYAEAA5ADgAEAARADkAAwAsACsAAwAEACwAIABHAEgAIAAfAEcAEQA6ADkAEQASADoABAAtACwABAAFAC0AIQBIAEkAIQAgAEgAEgA7ADoAEgATADsABQAuAC0ABQAGAC4AIgBJAEoAIgAhAEkAFQA8AD0AFQAUADwABgAvAC4ABgAHAC8AIwBKAEsAIwAiAEoAFgA9AD4AFgAVAD0ABwAwAC8ABwAIADAAJABLAEwAJAAjAEsAFwA+AD8AFwAWAD4ACAAxADAACAAJADEAJQBMAE0AJQAkAEwAGAA/AEAAGAAXAD8ACQAyADEACQAKADIAJgBNAE4AJgAlAE0A"),
 "lods": [0.17107, PackedByteArray("CQA1AEEAAgAJAEEADQAJAEEAVwBWAGMAWQBkAF8AWgBdAGAAXgBbAGEAWABcAGIA"), 0.181446, PackedByteArray("CgAiAA0ACgAeACIACQAeAAoADQAiACQACQAdAB4ABgAdAAkABgAaAB0ABgAYABoABAAYAAYAAgAYAAQAAgAVABgAAAAVAAIAuAAAACgADQAkABEAEQAkACYAEQAmABMAEwAmAE8AKAAqAD0AKgBBAD0AKgAsAEEALAAuAEEAvgBBAOwALgBFAEEALgAxAEUAMQBGAEUAMQAyAEYAMgBKAEYAMgA1AEoANQA3AEoANwBOAEoAyAD0AE4ANwA5AE4ADQA5ADcAOQBPAE4AOQA7AE8AywD2APgAvQC6AOoArADeANsArQCvAN8AtQD5AOQAwAC/AO0AsADhAOAAngDPAM0AnwCgANAAtwDOAOcAwgDuAPAAwwDBAO8AsQCyAOIAoQDSANEAogCjANMAxQDxAPMAxgDEAPIApADVANQApQCmANYAswDlAOMAtAC2AOYApwDYANcAqACpANkAyQDHAPUAuwDoAOsAvAC5AOkAqgDcANoAqwCuAN0AzADKAPcA"), 0.188737, PackedByteArray("DQAeACIADQAiACYADQAmABEACQAeAA0AHgAJAEEAKgBBAD0AeACHAD0AKgAuAEEALgBGAEEAAgAJAC4AAgAYAAkAAgAVABgACQA1AC4ALgA1AEYANQBKAEYANQBOAEoANQA5AE4AgwCcAI0AcQB7AJMAeQBvAIgAfgCUAJYAcwCOAIsAdAB2AI8AgACXAJkAgQB/AJgAcACKAIkAdwCEAJAAhQCaAJ0AhgCCAJsAfACRAJUAfQB6AJIAcgB1AIwA")],
-"material": SubResource("StandardMaterial3D_8vid5"),
+"material": ExtResource("1_rectm"),
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 250,
@@ -146,7 +126,13 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_q8aqh")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ay375"]
-size = Vector3(2.21429, 1.20605, 0.990173)
+size = Vector3(2.21429, 1.11536, 0.990173)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8cvi4"]
+size = Vector3(2.03847, 0.104767, 0.147934)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ax5qs"]
+size = Vector3(0.143213, 0.104767, 0.583736)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_mkbxp"]
 _surfaces = [{
@@ -171,7 +157,7 @@ _surfaces = [{
 "index_count": 468,
 "index_data": PackedByteArray("AAAVAAEAAAAUABUADwAkABAADwAjACQACAAdAAkACAAcAB0AAQAWAAIAAQAVABYAEAAlABEAEAAkACUACQAeAAoACQAdAB4AAgAXAAMAAgAWABcAEQAmABIAEQAlACYACgAfAAsACgAeAB8AAwAYAAQAAwAXABgAEgAnABMAEgAmACcACwAgAAwACwAfACAABAAZAAUABAAYABkADAAhAA0ADAAgACEABQAaAAYABQAZABoADQAiAA4ADQAhACIABgAbAAcABgAaABsADgAjAA8ADgAiACMABwAcAAgABwAbABwAKAA9ADwAKAApAD0ANwBMAEsANwA4AEwAMABFAEQAMAAxAEUAKQA+AD0AKQAqAD4AOABNAEwAOAA5AE0AMQBGAEUAMQAyAEYAKgA/AD4AKgArAD8AOQBOAE0AOQA6AE4AMgBHAEYAMgAzAEcAKwBAAD8AKwAsAEAAOgBPAE4AOgA7AE8AMwBIAEcAMwA0AEgALABBAEAALAAtAEEANABJAEgANAA1AEkALQBCAEEALQAuAEIANQBKAEkANQA2AEoALgBDAEIALgAvAEMANgBLAEoANgA3AEsALwBEAEMALwAwAEQACwA0ADMACwAMADQAGwBCAEMAGwAaAEIADAA1ADQADAANADUAFAAoADwAFAAAACgAHABDAEQAHAAbAEMADQA2ADUADQAOADYAAAApACgAAAABACkAHQBEAEUAHQAcAEQADgA3ADYADgAPADcAAQAqACkAAQACACoAHgBFAEYAHgAdAEUADwA4ADcADwAQADgAAgArACoAAgADACsAHwBGAEcAHwAeAEYAEAA5ADgAEAARADkAAwAsACsAAwAEACwAIABHAEgAIAAfAEcAEQA6ADkAEQASADoABAAtACwABAAFAC0AIQBIAEkAIQAgAEgAEgA7ADoAEgATADsABQAuAC0ABQAGAC4AIgBJAEoAIgAhAEkAFQA8AD0AFQAUADwABgAvAC4ABgAHAC8AIwBKAEsAIwAiAEoAFgA9AD4AFgAVAD0ABwAwAC8ABwAIADAAJABLAEwAJAAjAEsAFwA+AD8AFwAWAD4ACAAxADAACAAJADEAJQBMAE0AJQAkAEwAGAA/AEAAGAAXAD8ACQAyADEACQAKADIAJgBNAE4AJgAlAE0AGQBAAEEAGQAYAEAACgAzADIACgALADMAJwBOAE8AJwAmAE4AGgBBAEIAGgAZAEEAEwBPADsAEwAnAE8A"),
 "lods": [0.132944, PackedByteArray("5QAaAeoA5gAWARsBCwE4AT4B+gAtAQAB+wAnAS4B6wAcAe8ADAFDARIBDQE/AUQBAQEzAQYBAgEvATQB8AAhAfQA8QAdASIBBwE1ATkBCAE6AQ4B9QAoAfwA9gAjASkBSAFMAXMBZgFtAZQBbgGaAZUBWQGIAYMBWgFgAYkBTQF4AXQBTgFSAXkBbwGfAZsBYQGOAYoBYgFnAY8BUwF+AXoBVAFbAX8BaAGWAZABXAGEAYABAwFpAWMBBAEJAWoBFwFJAXUBGAHnAEoBKgGBAYUBJQF8AYEBKwEkAYIB6ABPAUsB6QDsAFABCgEPAWsBMAGGAYsBMQEsAYcBEAFwAWwB7QBVAVEB7gDyAFYBNgGMAZEBNwEyAY0BOwE3AZIB8wD3AFcBEQETAXEBHgEZAXYB+ABdAVgBPAGTAZcB+QD9AF4BQAE9AZgBHwF3AXsBQQGZAZwB/gBkAV8B/wAFAWUBJgEgAX0BRQGdAaABRgFCAZ4BFAGhAXIBFQFHAaIB"), 0.178043, PackedByteArray("hwChAIsAkACrAJcAkQCmAKwAnACxALcAmACtALIAjACnAJIAjQCiAKgAmQCzAJ0AxQDMAOEAwADbANQAwQDGANwAuwDVANAAvADCANYAxwBOAN0AiAC9ANEAiQCOAL4AmgCeAMgArgDXAN4ArwCpANgAnwDNAMkAtACwAN8AjwCTAL8AoAC4AM4AowCKANIAlADDACkAtQDgAOIApADTANkAlQDKAMQAlgCbAMsAqgClANoAuQC2AOMAugDkAM8A"), 0.182346, PackedByteArray("VgBcAFoAVwBTAF0AVQBZAF0AIgBOADIAVAAiADIAGgAyAEUAGgBFACkAWABbAF4A"), 0.182346, PackedByteArray("KQBsAAIAYQBxAGgAYgBtAHIAaQBzAIQAXwBuAGMAZACAAHwAZAB5AIEAdgBlAH0AMgBOAIIAdABCAEkAdABvAH4AagCFAHoAYABmAHcAdQCDAIYAcAB4AH8AZwBrAHsA"), 0.200123, PackedByteArray("UQBQAFIAGgAiADIA")],
-"material": SubResource("StandardMaterial3D_74211"),
+"material": ExtResource("2_fbmk8"),
 "name": "BOARD",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -266,8 +252,20 @@ skeleton = NodePath("")
 [node name="StaticBody3D" type="StaticBody3D" parent="BAR"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BAR/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00277709, 0.603027, 0.0829163)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00277709, 0.55768, 0.0829163)
 shape = SubResource("BoxShape3D_ay375")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="BAR/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0141958, 1.15629, 0.504036)
+shape = SubResource("BoxShape3D_8cvi4")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="BAR/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.03905, 1.15629, 0.17241)
+shape = SubResource("BoxShape3D_ax5qs")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="BAR/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.03682, 1.15629, 0.17241)
+shape = SubResource("BoxShape3D_ax5qs")
 
 [node name="BAR_001" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_fa7rl")

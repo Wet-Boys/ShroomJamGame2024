@@ -1,25 +1,11 @@
-[gd_scene load_steps=56 format=4 uid="uid://dcm8nmt78ymb0"]
+[gd_scene load_steps=55 format=4 uid="uid://dcm8nmt78ymb0"]
 
-[ext_resource type="Texture2D" uid="uid://cntkh37sbp6br" path="res://Assets/Scenes/Office/textures/WoodFineDark004_COL_3K.jpg" id="1_ko21m"]
-[ext_resource type="Texture2D" uid="uid://bucf7enjxcysh" path="res://Assets/Scenes/Office/textures/WoodFineDark004_REFL_3K.jpg" id="2_bm14y"]
-[ext_resource type="Texture2D" uid="uid://ccak3dg0n38a0" path="res://Assets/Scenes/Office/textures/WoodFineDark004_NRM_3K.jpg" id="3_6jo2j"]
+[ext_resource type="Material" uid="uid://br0xp8d6dbejt" path="res://Assets/Scenes/Office/assets/materials/wood.tres" id="1_lm1ov"]
 [ext_resource type="Texture2D" uid="uid://cd48kbsuon1oc" path="res://Assets/Scenes/Office/assets/models/pool-table_b3dc2076-1924-42e6-ba84-d8a1b97e8fbc/textures/WoodFineDark004_COL_3K.jpg" id="4_onjtr"]
 [ext_resource type="Texture2D" uid="uid://d0vhjxvm5yjf0" path="res://Assets/Scenes/Office/textures/skaiciai.jpg" id="4_v86br"]
 [ext_resource type="Texture2D" uid="uid://cq4qpcxnt4ypn" path="res://Assets/Scenes/Office/assets/models/pool-table_b3dc2076-1924-42e6-ba84-d8a1b97e8fbc/textures/WoodFineDark004_NRM_3K.jpg" id="5_d3rft"]
 [ext_resource type="Texture2D" uid="uid://c1tbdmhfqj7dt" path="res://Assets/Scenes/Office/assets/models/pool-table_b3dc2076-1924-42e6-ba84-d8a1b97e8fbc/textures/WoodFineDark004_REFL_3K.jpg" id="6_css1b"]
 [ext_resource type="Script" path="res://Interaction/PhysicsInteractable.cs" id="7_jhww2"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yr7mk"]
-resource_name = "oak wood"
-cull_mode = 2
-albedo_texture = ExtResource("1_ko21m")
-metallic_texture = ExtResource("2_bm14y")
-metallic_texture_channel = 2
-roughness_texture = ExtResource("2_bm14y")
-roughness_texture_channel = 1
-normal_enabled = true
-normal_scale = 2.0
-normal_texture = ExtResource("3_6jo2j")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fyyf6"]
 resource_name = "table to fabric"
@@ -127,7 +113,7 @@ _surfaces = [{
 "format": 34896613431,
 "index_count": 408,
 "index_data": PackedByteArray("RwBQAEkARwBBAFAABQAiABoABQAOACIAHwAXAB0AHwAoABcACgASAAwACgABABIAQwA4ADIAQwBLADgANgA3ACwANgA0ADcABAAQAA4ABAAIABAAMAA2AC0AMAA9ADYAQwBOAEsAQwBFAE4AMQAuAD0AMQA/AC4AIwAbABoAIwAlABsATwBRAEIATwBBAFEADQACABMADQAAAAIATwBAAEgATwBCAEAAcQB8AHgAcQByAHwAEQATAAIAEQABABMApwCiAKQApwCoAKIASgBCAFEASgBAAEIAMgBEAEMAMgAzAEQARQA6AE4ARQAzADoAKwAVACEAKwAZABUAnwCbAJwAnwCZAJsAAAAJAAsAAAANAAkAJwAVABkAJwAfABUAlACTAJYAlACSAJMACAAkABAACAAbACQAHgAgABQAHgAcACAAKQAcABYAKQAgABwAqACGAIkAqAClAIYANAA/ADcANAAuAD8ANwAxACwANwA/ADEAVgBaAFcAVgBZAFoAYABfAGEAYABeAF8AZQBkAGYAZQBjAGQAZwBrAGgAZwBqAGsAVABjAGIAVABkAGMAkQCVAJcAkQCQAJUApgCFAIcApgCjAIUAkgCQAI4AkgCUAJAAOQAzADIAOQA8ADMAjwCMAI0AjwCRAIwAfwCdAJoAfwCAAJ0AewB6AHcAewB9AHoAJgAqABYAJgAYACoAeQBxAHYAeQBuAHEAdQB5AH0AdQBvAHkAdAB8AHIAdAB9AHwAiACDAIsAiACFAIMApACDAIQApACgAIMAjACYAJMAjACRAJgAEQAAAAsAEQADAAAANgAvADUANgA+AC8AUwBeAF0AUwBfAF4ABwAaABsABwAGABoADgAkACMADgAPACQAaQBVAGwAaQBtAFUAWABSAFsAWABcAFIAUQBHAEoAUQBBAEcAngCAAIIAngCdAIAAQABGAEkAQABKAEYAigChAKgAigCDAKEAjQCTAJIAjQCMAJMAbwBzAHAAbwB1AHMAEwAKAA0AEwABAAoAfgCBAH8AfgCCAIEATAA7ADgATABNADsAmQCCAH4AmQCeAIIAmwB+AH8AmwCZAH4A"),
-"material": SubResource("StandardMaterial3D_yr7mk"),
+"material": ExtResource("1_lm1ov"),
 "name": "oak wood",
 "primitive": 3,
 "uv_scale": Vector4(2, 2, 0, 2),
@@ -202,7 +188,13 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_da2ey")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_87w11"]
-size = Vector3(1.47205, 0.152268, 2.56891)
+size = Vector3(1.47205, 0.115255, 2.58998)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_osaq8"]
+size = Vector3(1.47205, 0.148326, 0.145298)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y621u"]
+size = Vector3(0.147554, 0.115255, 2.58998)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ud1ey"]
 size = Vector3(1.00528, 0.228478, 2.12587)
@@ -781,8 +773,24 @@ skeleton = NodePath("")
 [node name="StaticBody3D" type="StaticBody3D" parent="table"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="table/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00115966, 0.750893, 0.00503536)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00115966, 0.732387, -0.00550036)
 shape = SubResource("BoxShape3D_87w11")
+
+[node name="CollisionShape3D11" type="CollisionShape3D" parent="table/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00115966, 0.748922, -1.22784)
+shape = SubResource("BoxShape3D_osaq8")
+
+[node name="CollisionShape3D12" type="CollisionShape3D" parent="table/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00115966, 0.748922, 1.21459)
+shape = SubResource("BoxShape3D_osaq8")
+
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="table/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.663408, 0.766108, -0.00550036)
+shape = SubResource("BoxShape3D_y621u")
+
+[node name="CollisionShape3D10" type="CollisionShape3D" parent="table/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.667808, 0.766108, -0.00550036)
+shape = SubResource("BoxShape3D_y621u")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="table/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00450087, 0.566095, 0.000981875)

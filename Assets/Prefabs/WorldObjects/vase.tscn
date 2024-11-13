@@ -1,13 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://hxptts5soua2"]
+[gd_scene load_steps=4 format=3 uid="uid://cgwlnwn25xcnl"]
 
 [ext_resource type="Script" path="res://Interaction/PhysicsInteractable.cs" id="1_4tnkq"]
-[ext_resource type="ArrayMesh" uid="uid://dxrtrikbqlex4" path="res://Assets/Prefabs/WorldObjects/vase.tres" id="2_w17qy"]
+[ext_resource type="ArrayMesh" uid="uid://bw22l4raqplqf" path="res://Assets/Prefabs/WorldObjects/vase.tres" id="2_w17qy"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_rsluy"]
 height = 0.267101
 radius = 0.0741798
 
 [node name="VASE" type="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 script = ExtResource("1_4tnkq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

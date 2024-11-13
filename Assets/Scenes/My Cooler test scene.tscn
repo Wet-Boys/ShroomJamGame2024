@@ -44,9 +44,8 @@ navigation_mesh = SubResource("NavigationMesh_kbavx")
 [node name="World" type="Node3D" parent="NavigationRegion3D"]
 
 [node name="DeOffice2" parent="NavigationRegion3D/World" instance=ExtResource("7_qe2q5")]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
 
-[node name="SMT_Straight13" parent="NavigationRegion3D/World/DeOffice2/Asset Complete Office2" index="85"]
+[node name="SMT_Straight13" parent="NavigationRegion3D/World/DeOffice2/Asset Complete Office2" index="86"]
 transform = Transform3D(-5.03126e-06, -8, -3.49691e-07, 0, -3.49691e-07, 8, -115.102, 3.49691e-07, 1.52855e-14, -30.9457, 24, 91.3184)
 
 [node name="GenericCharacterBody3" parent="." instance=ExtResource("6_orrfj")]
@@ -77,9 +76,6 @@ transform = Transform3D(1.456, 0, 0, 0, 1.479, 0, 0, 0, -1.712, -3.91506, 5.9752
 
 [node name="this shit so ass7" parent="door city" instance=ExtResource("5_hu3p4")]
 transform = Transform3D(1.456, 0, 0, 0, 1.479, 0, 0, 0, -1.712, -3.91506, 5.97521, -7.13399)
-
-[node name="Door" parent="door city/this shit so ass7" index="6"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="door city/this shit so ass7/Door/dvere" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, -7.10543e-15, 0, 1, -0.442347, 1.01884, -0.0127254)

@@ -79,7 +79,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_qb10p")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_b1sg6"]
-size = Vector3(3.9425, 0.045105, 1.1134)
+size = Vector3(4.0107, 0.045105, 1.21194)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xvxch"]
 size = Vector3(2.80215, 0.300095, 0.110428)
@@ -96,7 +96,7 @@ skeleton = NodePath("")
 [node name="StaticBody3D" type="StaticBody3D" parent="VENN Toplantı Masası Office Table/Boss_Extrude32_2_"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="VENN Toplantı Masası Office Table/Boss_Extrude32_2_/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000549316, 0.731842, 0.0567017)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000496805, 0.731842, -0.00627174)
 shape = SubResource("BoxShape3D_b1sg6")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="VENN Toplantı Masası Office Table/Boss_Extrude32_2_/StaticBody3D"]
