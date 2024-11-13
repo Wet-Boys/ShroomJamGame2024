@@ -29,7 +29,7 @@ namespace ShroomJamGame.Tasks
         public void FinishTask()
         {
             EmitSignal(SignalName.TaskFinished, this);
-            TaskTracker.instance.CreateTask(new CleanToiletTask());
+            TaskTracker.instance.CreateTask(new FixComputerScreenTask());
         }
     }
 }

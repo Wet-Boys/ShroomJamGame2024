@@ -67,6 +67,12 @@ _playerHead = NodePath("..")
 
 [node name="GeneralHud" parent="." index="6" instance=ExtResource("8_i06ww")]
 
+[node name="ColorRect" parent="GeneralHud/MarginContainer" index="0"]
+color = Color(0.442911, 0.442911, 0.442911, 1)
+
+[node name="AnimatedSprite2D" parent="GeneralHud/MarginContainer/ColorRect" index="1"]
+position = Vector2(741, 345.5)
+
 [node name="PauseMenu" parent="." index="7" instance=ExtResource("9_syifq")]
 
 [node name="PauseUi" parent="PauseMenu" index="0"]
