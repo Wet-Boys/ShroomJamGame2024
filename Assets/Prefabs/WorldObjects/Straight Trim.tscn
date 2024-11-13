@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=4 uid="uid://d4h3qorq1w3ho"]
+[gd_scene load_steps=5 format=4 uid="uid://d4h3qorq1w3ho"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x2ym2"]
 resource_name = "Basic PBR Dirt Socket"
@@ -36,6 +36,15 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_5ghdt")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_skqat"]
+size = Vector3(0.126724, 0.0261688, 0.128189)
+
 [node name="SMT_Straight" type="MeshInstance3D"]
 mesh = SubResource("ArrayMesh_wysdx")
 skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000221252, 0.0128098, 0.0636978)
+shape = SubResource("BoxShape3D_skqat")

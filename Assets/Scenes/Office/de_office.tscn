@@ -1,4 +1,4 @@
-[gd_scene load_steps=244 format=4 uid="uid://bkh80lrmoy5cs"]
+[gd_scene load_steps=249 format=4 uid="uid://bkh80lrmoy5cs"]
 
 [ext_resource type="Material" uid="uid://ce3wou354fqct" path="res://Assets/Scenes/Office/assets/materials/kitchen wall.tres" id="1_42koi"]
 [ext_resource type="Material" uid="uid://bm4mtepbl3aav" path="res://Assets/Scenes/Office/assets/materials/Backrooms Wallpaper.tres" id="1_giika"]
@@ -53,8 +53,12 @@
 [ext_resource type="Texture2D" uid="uid://36w5t8834hb7" path="res://Assets/Scenes/Office/assets/materials/ceiling tile/tiles_0013_roughness_1k.jpg" id="27_4bp2x"]
 [ext_resource type="PackedScene" uid="uid://doely3tqxg17o" path="res://Assets/Prefabs/WorldObjects/pool_cue.tscn" id="27_q6yse"]
 [ext_resource type="PackedScene" uid="uid://05074hgwm85x" path="res://Assets/Prefabs/WorldObjects/toilet_paper.tscn" id="27_v3egx"]
+[ext_resource type="PackedScene" uid="uid://sucmon0cf6k8" path="res://Assets/Prefabs/WorldObjects/OfficeChair.tscn" id="30_fjces"]
+[ext_resource type="PackedScene" uid="uid://ck5nebwosli5l" path="res://Assets/Prefabs/WorldObjects/whiteboard.tscn" id="31_bivl4"]
+[ext_resource type="PackedScene" uid="uid://b1576dc5lb2dy" path="res://Assets/Prefabs/WorldObjects/marker.tscn" id="32_dfjrb"]
 [ext_resource type="PackedScene" uid="uid://b7vsnbtfng120" path="res://Assets/Prefabs/WorldObjects/trash_can.tscn" id="32_u74lh"]
 [ext_resource type="PackedScene" uid="uid://dw0i481qgdkqu" path="res://Assets/Prefabs/WorldObjects/printer.tscn" id="33_vvghg"]
+[ext_resource type="PackedScene" uid="uid://bb2p7b4q35uxh" path="res://Assets/Prefabs/WorldObjects/meeting_table.tscn" id="36_8epht"]
 [ext_resource type="Environment" uid="uid://33v7dtbsec0t" path="res://Assets/environment.tres" id="42_glwae"]
 [ext_resource type="RDShaderFile" uid="uid://dfc38df6pmiax" path="res://Assets/CompositorEffects/capture-frame.glsl" id="43_k7xdm"]
 [ext_resource type="Script" path="res://Rendering/Effects/FrameCaptureEffect.cs" id="44_sso0g"]
@@ -62,6 +66,7 @@
 [ext_resource type="Script" path="res://Rendering/Effects/DataMoshEffect.cs" id="46_mxl28"]
 [ext_resource type="Script" path="res://Rendering/RightClickToDataMosh.cs" id="47_cnugj"]
 [ext_resource type="PackedScene" uid="uid://pbq706q3dtdx" path="res://Assets/Prefabs/WorldObjects/elevator.tscn" id="56_e1htd"]
+[ext_resource type="PackedScene" uid="uid://0alugtqy63q6" path="res://Assets/Prefabs/WorldObjects/conference chair.tscn" id="65_udbvo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_70w70"]
 
@@ -1817,7 +1822,7 @@ skeleton = NodePath("")
 shape = SubResource("ConvexPolygonShape3D_xery2")
 
 [node name="Cube_121" type="MeshInstance3D" parent="Asset Complete Office2"]
-transform = Transform3D(0, 0, -1, 0, 10, 0, 17, 0, 0, 39, 34, 83)
+transform = Transform3D(-6.99382e-07, 0, -1, 0, 10, 0, 16, 0, -4.37114e-08, 39, 34, 82)
 material_override = ExtResource("1_giika")
 mesh = SubResource("ArrayMesh_uccy2")
 skeleton = NodePath("")
@@ -1880,6 +1885,17 @@ skeleton = NodePath("")
 [node name="StaticBody3D" type="StaticBody3D" parent="Asset Complete Office2/Cube_133"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Asset Complete Office2/Cube_133/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_rp6og")
+
+[node name="Cube_147" type="MeshInstance3D" parent="Asset Complete Office2"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 10, 0, 1, 0, -4.37114e-08, 39, 34, 99)
+material_override = ExtResource("6_hrwgd")
+mesh = SubResource("ArrayMesh_cn2of")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Asset Complete Office2/Cube_147"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Asset Complete Office2/Cube_147/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_rp6og")
 
 [node name="Cube_126" type="MeshInstance3D" parent="Asset Complete Office2"]
@@ -2651,6 +2667,48 @@ transform = Transform3D(-2.15643, 0, 10.1359, 0, 10.3629, 0, -10.1359, 0, -2.156
 [node name="Blender keyboard4" parent="Asset Complete Office2/Cubicle3" index="23"]
 transform = Transform3D(2.86037, 0, 9.96022, 0, 10.3629, 0, -9.96022, 0, 2.86037, -10.2785, -0.485497, 9.87009)
 
+[node name="Office Chair_REX_015" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("30_fjces")]
+transform = Transform3D(6.32723, 0, 0.189974, 0, 6.33008, 0, -0.189974, 0, 6.32723, 19.7166, -4.70919, 35.7949)
+
+[node name="Office Chair_REX_016" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("30_fjces")]
+transform = Transform3D(-6.32723, 0, -0.189974, 0, 6.33008, 0, 0.189974, 0, -6.32723, 19.7166, -4.70919, 42.4347)
+
+[node name="Office Chair_REX_017" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("30_fjces")]
+transform = Transform3D(6.32723, 0, 0.189974, 0, 6.33008, 0, -0.189974, 0, 6.32723, 25.2519, -4.69552, 35.8155)
+
+[node name="Office Chair_REX_018" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("30_fjces")]
+transform = Transform3D(-6.32723, 0, -0.189974, 0, 6.33008, 0, 0.189974, 0, -6.32723, 25.2519, -4.69552, 42.4553)
+
+[node name="Office Chair_REX_019" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("30_fjces")]
+transform = Transform3D(6.32723, 0, 0.189974, 0, 6.33008, 0, -0.189974, 0, 6.32723, 30.3404, -4.69552, 35.8155)
+
+[node name="Office Chair_REX_020" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("30_fjces")]
+transform = Transform3D(-6.32723, 0, -0.189974, 0, 6.33008, 0, 0.189974, 0, -6.32723, 30.3404, -4.69552, 42.4553)
+
+[node name="Office Chair_REX_021" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("30_fjces")]
+transform = Transform3D(6.32723, 0, 0.189974, 0, 6.33008, 0, -0.189974, 0, 6.32723, 35.3981, -4.69552, 35.8155)
+
+[node name="Office Chair_REX_022" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("30_fjces")]
+transform = Transform3D(-6.32723, 0, -0.189974, 0, 6.33008, 0, 0.189974, 0, -6.32723, 35.3981, -4.69552, 42.4553)
+
+[node name="Office Chair_REX_023" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("30_fjces")]
+transform = Transform3D(6.32723, 0, 0.189974, 0, 6.33008, 0, -0.189974, 0, 6.32723, 40.3495, -4.69552, 35.8155)
+
+[node name="Office Chair_REX_024" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("30_fjces")]
+transform = Transform3D(-6.32723, 0, -0.189974, 0, 6.33008, 0, 0.189974, 0, -6.32723, 40.3495, -4.69552, 42.4553)
+
+[node name="whiteboard2" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("31_bivl4")]
+transform = Transform3D(-5.60816e-07, -12.83, 0, -5.60816e-07, 0, -12.83, 12.83, -5.60816e-07, -5.60816e-07, 60.7738, 7.42103, 34.0383)
+
+[node name="marker2" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("32_dfjrb")]
+transform = Transform3D(-3.49691e-07, 0, 8, 0, 8, 0, -8, 0, -3.49691e-07, 60.5695, -0.0602169, 38.766)
+
+[node name="marker3" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("32_dfjrb")]
+transform = Transform3D(-3.49691e-07, 0, 8, 0, 8, 0, -8, 0, -3.49691e-07, 60.3684, -0.0602169, 39.4355)
+
+[node name="marker4" parent="Asset Complete Office2/Cubicle3" instance=ExtResource("32_dfjrb")]
+transform = Transform3D(1.44347, 0, 7.8687, 0, 8, 0, -7.8687, 0, 1.44347, 60.3946, -0.0602169, 37.6406)
+
 [node name="SMT_Straight" parent="Asset Complete Office2" instance=ExtResource("14_djbcu")]
 transform = Transform3D(-1.44414e-05, -8, -3.49691e-07, 0, -3.49691e-07, 8, -330.38, 3.49691e-07, 1.52855e-14, 16.02, 24, 46.9927)
 
@@ -2854,6 +2912,9 @@ transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -12.6897, 24, -36.7465)
 
 [node name="printer" parent="Asset Complete Office2" instance=ExtResource("33_vvghg")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -8.88905, 24, 13.7146)
+
+[node name="meeting table" parent="Asset Complete Office2" instance=ExtResource("36_8epht")]
+transform = Transform3D(6.51739, 0, 0, 0, 6.51739, 0, 0, 0, 6.51739, 6.70733, 24.0073, 88.1953)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(34, 0, 0, 0, 2, 0, 0, 0, 22, 1, 23, 89)
@@ -3130,6 +3191,12 @@ transform = Transform3D(-3.52336e-07, 0, -8.0605, 0, 8.0605, 0, 8.0605, 0, -3.52
 
 [node name="elevator4" parent="." instance=ExtResource("56_e1htd")]
 transform = Transform3D(-3.52336e-07, 0, 8.0605, 0, 8.0605, 0, -8.0605, 0, -3.52336e-07, 63.2274, 39.4602, 47.0809)
+
+[node name="conference chair2" parent="." instance=ExtResource("65_udbvo")]
+transform = Transform3D(6.36952, 0, -4.40224, 0, 7.74277, 0, 4.40224, 0, 6.36952, 33.4689, 24.1791, 72.0953)
+
+[node name="conference chair3" parent="." instance=ExtResource("65_udbvo")]
+transform = Transform3D(-3.91531, 0, -6.67988, 0, 7.74277, 0, 6.67988, 0, -3.91531, 33.4689, 24.1791, 94.0983)
 
 [editable path="Asset Complete Office2/Cubicle2"]
 [editable path="Asset Complete Office2/Cubicle3"]
