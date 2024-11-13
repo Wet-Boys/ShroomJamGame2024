@@ -72,11 +72,10 @@ _playerHead = NodePath("..")
 [node name="PauseUi" parent="PauseMenu" index="0"]
 visible = false
 
-[node name="TaskTracker" type="Node" parent="." index="9" node_paths=PackedStringArray("player", "HUD", "_successPlayer")]
+[node name="TaskTracker" type="Node" parent="." index="9" node_paths=PackedStringArray("player", "HUD")]
 script = ExtResource("10_sul16")
 player = NodePath("..")
 HUD = NodePath("../GeneralHud")
-_successPlayer = NodePath("../AudioStreamPlayer2")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="10"]
 
@@ -87,6 +86,9 @@ _streamPlayer = NodePath("..")
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." index="11"]
 stream = ExtResource("12_0ae11")
+bus = &"Sound Effects"
+
+[node name="VinnyAudio" type="AudioStreamPlayer" parent="." index="12"]
 bus = &"Sound Effects"
 
 [editable path="GeneralHud"]
