@@ -36,11 +36,20 @@ namespace ShroomJamGame.Tasks
             originalPlayerPos = player.GlobalPosition;
             rootNode = GetTree().Root.GetChild(0);
             TaskList = HUD.GetNode<Control>("Task Container");
+            HUD.GetNode<Button>("MarginContainer2/HBoxContainer/Button").ButtonUp += TaskTracker_ButtonUp; ;
 
+            Input.MouseMode = Input.MouseModeEnum.Visible;
+        }
+        bool startedPlaying = false;
+        private void TaskTracker_ButtonUp()
+        {
+            startedPlaying = true;
+            HUD.GetNode<MarginContainer>("MarginContainer2").Visible = false;
             DebugCommand();
             BroadCastHandler.instance.Day1Finished += DayFinished;
             personalAudio = player.GetNode<AudioStreamPlayer>("VinnyAudio");
             personalAudio.VolumeDb = 10;
+            Input.MouseMode = Input.MouseModeEnum.Captured;
         }
 
         public BaseTask CreateTask(BaseTask inputTask)
@@ -73,6 +82,10 @@ namespace ShroomJamGame.Tasks
 
         public override void _Process(double delta)
         {
+            if (!startedPlaying)
+            {
+                Input.MouseMode = Input.MouseModeEnum.Visible;
+            }
             timer += delta;
             if (timer > .25)
             {
