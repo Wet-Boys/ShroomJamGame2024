@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxntwn7mnm7sh"]
+
+[ext_resource type="Script" path="res://Assets/Prefabs/DestinationMarker.cs" id="1_vbhjk"]
+[ext_resource type="Material" uid="uid://c4mdvbepyijfp" path="res://Assets/Shaders/GlowMaterial.tres" id="2_g0umo"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_qp40x"]
+material = ExtResource("2_g0umo")
+
+[sub_resource type="PrismMesh" id="PrismMesh_mkkok"]
+material = ExtResource("2_g0umo")
+size = Vector3(1.5, 1, 1.5)
+
+[node name="DestinationMarker" type="Node3D"]
+
+[node name="Node3D" type="Node3D" parent="."]
+script = ExtResource("1_vbhjk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(0.370111, 0, 0, 0, 0.370111, 0, 0, 0, 0.370111, 0, 0.370297, 0)
+mesh = SubResource("CylinderMesh_qp40x")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(-0.370111, -3.34499e-08, 0, 3.23561e-08, -0.382622, 0, 0, 0, 0.370111, 0, -0.189454, 0)
+mesh = SubResource("PrismMesh_mkkok")
+skeleton = NodePath("../..")

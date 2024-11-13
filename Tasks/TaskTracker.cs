@@ -1,5 +1,6 @@
 ﻿using Godot;
 using ShroomJamGame.Events;
+using ShroomJamGame.NPC;
 using ShroomJamGame.Rendering.Effects;
 using System;
 using System.Collections.Generic;
@@ -22,15 +23,15 @@ namespace ShroomJamGame.Tasks
         double timer = 0;
         Node rootNode;
         Godot.Collections.Dictionary<BaseTask, Control> tasksToControls = new Godot.Collections.Dictionary<BaseTask, Control>();
+        Godot.Collections.Dictionary<BaseTask, Label> taskNames = new Godot.Collections.Dictionary<BaseTask, Label>();
         public override void _Ready()
         {
             instance = this;
             rootNode = GetTree().Root.GetChild(0);
-            BroadCastHandler.instance.CreateFixQuest += BroadCastHandler_CreateFixQuest;
             TaskList = HUD.GetNode<Control>("Task Container");
 
             DebugCommand();
-            BroadCastHandler.instance.Day1Finished += Day1Finished;
+            BroadCastHandler.instance.Day1Finished += DayFinished;
         }
 
         public BaseTask CreateTask(BaseTask inputTask)
@@ -42,13 +43,14 @@ namespace ShroomJamGame.Tasks
             thing.GetNode<Label>("TaskName").Text = inputTask.taskName;
             TaskList.AddChild(thing);
             tasksToControls.Add(inputTask, thing);
+            taskNames.Add(inputTask, thing.GetNode<Label>("TaskName"));
             return inputTask;
         }
 
         private async void DebugCommand()
         {
             await ToSignal(rootNode.GetTree().CreateTimer(1.0), SceneTreeTimer.SignalName.Timeout);
-            CreateTask(new IntroductionTask());
+            CreateTask(new MakeFoodTask());//RESET THIS TO WHATEVER STARTING POINT YOU WANT
         }
 
         private void BroadCastHandler_CreateFixQuest()
@@ -75,6 +77,10 @@ namespace ShroomJamGame.Tasks
             {
                 Tasks[i].PerformTask();
             }
+            foreach (var item in taskNames.Keys)
+            {
+                taskNames[item].Text = item.taskName;
+            }
         }
         private void CleanupTask(BaseTask task)
         {
@@ -82,6 +88,7 @@ namespace ShroomJamGame.Tasks
             task.TaskFinished -= TaskTracker_TaskFinished;
             tasksToControls[task].QueueFree();
             tasksToControls.Remove(task);
+            taskNames.Remove(task);
             BroadCastHandler.instance.FinishQuestBroadcast(task.taskName);
         }
         private void TaskTracker_TaskFinished(BaseTask task)
@@ -133,11 +140,26 @@ namespace ShroomJamGame.Tasks
             CleanupTask(task);
         }
 
-        private void Day1Finished()
+        public void DayFinished()
         {
-            LoadNewScene(new Vector3(-0.174f, 7.8f, -2.107f));
+            currentDay++;
+            switch (currentDay)
+            {
+                case 1:
+                    LoadNewScene(new Vector3(-0.174f, 7.8f, -2.107f));
+                    break;
+                case 2:
+                    LoadNewScene(new Vector3(12.936f, 6.581f, 15.398f));
+                    break;
+                case 3:
+                    LoadNewScene(new Vector3(-2.614f, 6.581f, 22.441f));
+                    break;
+                default:
+                    break;
+            }
         }
         bool lowerBlend = false;
+        public int currentDay = 0;
         private async void LoadNewScene(Vector3 playerPosition)
         {
             FrameCaptureEffect.CaptureNextFrame = true;
@@ -147,6 +169,11 @@ namespace ShroomJamGame.Tasks
             await ToSignal(this.GetTree().CreateTimer(5f), SceneTreeTimer.SignalName.Timeout);
             DataMoshEffect.Instance.EnableMoshingWithVelocity = false;
             player.GlobalPosition = new Vector3(playerPosition.X, player.GlobalPosition.Y, playerPosition.Z);
+            foreach (var item in NpcMovementController.npcs)
+            {
+                item.characterBody3D.GlobalPosition = item.originalPosition;
+                item.SayWords("");
+            }
             await ToSignal(this.GetTree().CreateTimer(.1f), SceneTreeTimer.SignalName.Timeout);
             DataMoshEffect.Instance.EnableMoshingWithVelocity = true;
             await ToSignal(this.GetTree().CreateTimer(2f), SceneTreeTimer.SignalName.Timeout);
@@ -154,6 +181,18 @@ namespace ShroomJamGame.Tasks
             await ToSignal(this.GetTree().CreateTimer(5f), SceneTreeTimer.SignalName.Timeout);
             lowerBlend = false;
             DataMoshEffect.Instance.Enabled = false;
+            switch (currentDay)
+            {
+                case 1:
+                    TaskTracker.instance.CreateTask(new FixComputerScreenTask());
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

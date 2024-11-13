@@ -26,18 +26,26 @@ public partial class VendingMachineInteractable : Interactable
             targetNpcPosition = vendingMachineNode.GlobalPosition;
             npc.GoToPositionAndSayWords(targetNpcPosition, "Ah, vending machine broke again I see.\nThat's rough buddy..............\nYou know, funny thing I read on the internet a bit ago.\nApparently for every 1 person on earth, there are 10 vending machines.\nWho knew?");
             npc.ReachedDestination += Npc_ReachedDestination;
-            progressBar = BroadCastHandler.instance.CreateLoadingBarAtLocation(vendingMachineNode, new Vector3(-0.013f, 0.523f, 0.502f), 2);
+            npc.AnimalesePlayer.FinishedPlaying += AnimalesePlayer_FinishedPlaying;
+            progressBar = BroadCastHandler.instance.CreateLoadingBarAtLocation(vendingMachineNode, new Vector3(-0.013f, 0.523f, 0.502f), 35);
             progressBar.sprite.Billboard = BaseMaterial3D.BillboardModeEnum.Disabled;
             progressBar.ProgressBarFinished += ProgressBar_ProgressBarFinished;
             isInteractable = false;
         }
     }
 
+    private void AnimalesePlayer_FinishedPlaying()
+    {
+        npc.ReachedDestination -= Npc_ReachedDestination;
+        npc.permaWait = false;
+        npc.onlyLookAtPlayer = false;
+    }
+
     private void ProgressBar_ProgressBarFinished(Node3D bar)
     {
         progressBar.QueueFree();
         done = true;
-        EventHandler.instance.StartSpawningVendingMachinesEvent(10);
+        EventHandler.instance.StartSpawningVendingMachinesEvent(20);
     }
 
     private void Npc_ReachedDestination(bool needToSaySomething, string thing)

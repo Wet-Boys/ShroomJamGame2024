@@ -12,6 +12,7 @@ public partial class PhysicsInteractable : RigidBody3D, IInteractableObject
     public NpcMovementController owner;
     public bool holdable = true;
     public string nonHoldableText = "";
+    public bool offLimits = false;
     public Func<PhysicsInteractable, int> interactionFunction = null;
     public ProgressBarRunner progressBar;
     public static Godot.Collections.Array<PhysicsInteractable> physicsObjects = new Godot.Collections.Array<PhysicsInteractable>();

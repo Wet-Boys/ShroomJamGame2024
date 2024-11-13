@@ -1,4 +1,4 @@
-[gd_resource type="Compositor" load_steps=14 format=3 uid="uid://ccmk57cv4a0gr"]
+[gd_resource type="Compositor" load_steps=14 format=3 uid="uid://8ep4mx12bub7"]
 
 [ext_resource type="RDShaderFile" uid="uid://dfc38df6pmiax" path="res://Assets/CompositorEffects/capture-frame.glsl" id="1_k6v8p"]
 [ext_resource type="Script" path="res://Rendering/Effects/FrameCaptureEffect.cs" id="2_otnnx"]

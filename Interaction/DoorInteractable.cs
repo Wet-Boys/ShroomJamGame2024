@@ -1,4 +1,5 @@
 using Godot;
+using System;
 
 namespace ShroomJamGame.Interaction;
 
@@ -8,7 +9,8 @@ public partial class DoorInteractable : Interactable
 {
 	private bool _isOpen;
 
-	[Export]
+    public Func<DoorInteractable, int> interactionFunction = null;
+    [Export]
 	public bool IsOpen
 	{
 		get => _isOpen;
@@ -59,7 +61,11 @@ public partial class DoorInteractable : Interactable
 	public override void Interact()
 	{
 		IsOpen = !IsOpen;
-	}
+        if (interactionFunction is not null)
+        {
+            interactionFunction(this);
+        }
+    }
 
 	public override string GetOnHoverText()
 	{
