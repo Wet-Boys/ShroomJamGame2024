@@ -1,0 +1,80 @@
+[gd_scene load_steps=19 format=3 uid="uid://cfbfnmy0ip0cd"]
+
+[ext_resource type="Texture2D" uid="uid://dic3s6fiy1vbl" path="res://Assets/UI/Crash/frame_00_delay-0.1s.png" id="1_0n1lx"]
+[ext_resource type="Texture2D" uid="uid://bhfp0lunub264" path="res://Assets/UI/Crash/frame_01_delay-0.1s.png" id="2_cfcnh"]
+[ext_resource type="Texture2D" uid="uid://b671l438axtfb" path="res://Assets/UI/Crash/frame_02_delay-0.1s.png" id="3_gbdkl"]
+[ext_resource type="Texture2D" uid="uid://bt52t2ij8hum7" path="res://Assets/UI/Crash/frame_03_delay-0.1s.png" id="4_gf722"]
+[ext_resource type="Texture2D" uid="uid://c6oaopuf6wbum" path="res://Assets/UI/Crash/frame_04_delay-0.1s.png" id="5_4hevf"]
+[ext_resource type="Texture2D" uid="uid://y0p4krq6fpbe" path="res://Assets/UI/Crash/frame_05_delay-0.1s.png" id="6_f1i0p"]
+[ext_resource type="Texture2D" uid="uid://bw36qxch83q5r" path="res://Assets/UI/Crash/frame_06_delay-0.1s.png" id="7_gtmxo"]
+[ext_resource type="Texture2D" uid="uid://bgt3s1cxyucev" path="res://Assets/UI/Crash/frame_07_delay-0.1s.png" id="8_485kc"]
+[ext_resource type="Texture2D" uid="uid://545fu1c3ecub" path="res://Assets/UI/Crash/frame_08_delay-0.1s.png" id="9_pfp30"]
+[ext_resource type="Texture2D" uid="uid://d3qxm1uv3ogi7" path="res://Assets/UI/Crash/frame_09_delay-0.1s.png" id="10_r88c2"]
+[ext_resource type="Texture2D" uid="uid://bq2jlewn62c7g" path="res://Assets/UI/Crash/frame_10_delay-0.1s.png" id="11_fc4be"]
+[ext_resource type="Texture2D" uid="uid://dnn1oxslub8ch" path="res://Assets/UI/Crash/frame_11_delay-0.1s.png" id="12_fx6th"]
+[ext_resource type="Texture2D" uid="uid://b7uqhunb62u8b" path="res://Assets/UI/Crash/frame_12_delay-0.1s.png" id="13_yo11t"]
+[ext_resource type="Texture2D" uid="uid://b788ab3bafffk" path="res://Assets/UI/Crash/frame_13_delay-0.1s.png" id="14_vr0gq"]
+[ext_resource type="Texture2D" uid="uid://dw1cqq4n0hs0r" path="res://Assets/UI/Crash/frame_14_delay-0.1s.png" id="15_jhfps"]
+[ext_resource type="Texture2D" uid="uid://gy48bo2n2lss" path="res://Assets/UI/Crash/frame_15_delay-0.1s.png" id="16_ovqrj"]
+[ext_resource type="Script" path="res://CorruptionSprite.cs" id="17_c8s66"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5mrh0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0n1lx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_cfcnh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gbdkl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gf722")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_4hevf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_f1i0p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_gtmxo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_485kc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_pfp30")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_r88c2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_fc4be")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_fx6th")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_yo11t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_vr0gq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_jhfps")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ovqrj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_5mrh0")
+frame_progress = 0.491935
+script = ExtResource("17_c8s66")

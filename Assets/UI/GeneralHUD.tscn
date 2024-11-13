@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://bos5qjgi60df2"]
+[gd_scene load_steps=3 format=3 uid="uid://bos5qjgi60df2"]
+
+[ext_resource type="PackedScene" uid="uid://d1be3wvwreyiw" path="res://crash screen.tscn" id="1_tamh0"]
+[ext_resource type="PackedScene" uid="uid://cfbfnmy0ip0cd" path="res://corruptionSprite.tscn" id="2_4h1dh"]
 
 [node name="GeneralHud" type="Control"]
 layout_mode = 3
@@ -50,3 +53,26 @@ offset_right = 2.0
 offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="CrashScreen" parent="." instance=ExtResource("1_tamh0")]
+visible = false
+layout_mode = 1
+offset_left = -2.0
+offset_top = -1.0
+offset_right = -2.0
+offset_bottom = -1.0
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+offset_right = 1280.0
+offset_bottom = 721.0
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+layout_mode = 2
+color = Color(0.442911, 0.442911, 0.442911, 1)
+
+[node name="AnimatedSprite2D" parent="MarginContainer/ColorRect" instance=ExtResource("2_4h1dh")]
+position = Vector2(741, 345.5)
+scale = Vector2(0.2875, 0.2875)
+
+[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/ColorRect"]
