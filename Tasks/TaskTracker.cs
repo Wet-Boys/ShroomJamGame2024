@@ -29,6 +29,7 @@ namespace ShroomJamGame.Tasks
         Node rootNode;
         Godot.Collections.Dictionary<BaseTask, Control> tasksToControls = new Godot.Collections.Dictionary<BaseTask, Control>();
         Godot.Collections.Dictionary<BaseTask, Label> taskNames = new Godot.Collections.Dictionary<BaseTask, Label>();
+        public AudioStreamPlayer personalAudio;
         public override void _Ready()
         {
             instance = this;
@@ -38,6 +39,8 @@ namespace ShroomJamGame.Tasks
 
             DebugCommand();
             BroadCastHandler.instance.Day1Finished += DayFinished;
+            personalAudio = player.GetNode<AudioStreamPlayer>("VinnyAudio");
+            personalAudio.VolumeDb = 10;
         }
 
         public BaseTask CreateTask(BaseTask inputTask)
@@ -58,7 +61,9 @@ namespace ShroomJamGame.Tasks
         private async void DebugCommand()
         {
             await ToSignal(rootNode.GetTree().CreateTimer(1.0), SceneTreeTimer.SignalName.Timeout);
-            CreateTask(new IntroductionTask());//RESET THIS TO WHATEVER STARTING POINT YOU WANT
+            personalAudio.Stream = (AudioStreamOggVorbis)GD.Load("res://Assets/Sfx/Vinny/SoChatThisGame.ogg");
+            personalAudio.Play();
+            CreateTask(new FixManyComputers());//RESET THIS TO WHATEVER STARTING POINT YOU WANT
         }
 
         private void BroadCastHandler_CreateFixQuest()
@@ -162,12 +167,18 @@ namespace ShroomJamGame.Tasks
             {
                 case 1:
                     TaskTracker.instance.CreateTask(new BossToiletTask());
+                    personalAudio.Stream = (AudioStreamOggVorbis)GD.Load("res://Assets/Sfx/Vinny/gamecubeversion.ogg");
+                    personalAudio.Play();
                     break;
                 case 2:
                     TaskTracker.instance.CreateTask(new hrTask());
+                    personalAudio.Stream = (AudioStreamOggVorbis)GD.Load("res://Assets/Sfx/Vinny/IfYouScareEasily.ogg");
+                    personalAudio.Play();
                     break;
                 case 3:
                     TaskTracker.instance.CreateTask(new FixManyComputers());
+                    personalAudio.Stream = (AudioStreamOggVorbis)GD.Load("res://Assets/Sfx/Vinny/whatisthisgame.ogg");
+                    personalAudio.Play();
                     break;
                 default:
                     break;
