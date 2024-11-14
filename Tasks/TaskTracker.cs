@@ -36,7 +36,7 @@ namespace ShroomJamGame.Tasks
             originalPlayerPos = player.GlobalPosition;
             rootNode = GetTree().Root.GetChild(0);
             TaskList = HUD.GetNode<Control>("Task Container");
-            HUD.GetNode<Button>("MarginContainer2/HBoxContainer/Button").ButtonUp += TaskTracker_ButtonUp; ;
+            HUD.GetNode<Button>("MarginContainer2/HBoxContainer/Button").ButtonUp += TaskTracker_ButtonUp;
 
             Input.MouseMode = Input.MouseModeEnum.Visible;
         }
@@ -73,7 +73,7 @@ namespace ShroomJamGame.Tasks
             await ToSignal(rootNode.GetTree().CreateTimer(1.0), SceneTreeTimer.SignalName.Timeout);
             personalAudio.Stream = (AudioStreamOggVorbis)GD.Load("res://Assets/Sfx/Vinny/SoChatThisGame.ogg");
             personalAudio.Play();
-            CreateTask(new MakeFoodTask());//RESET THIS TO WHATEVER STARTING POINT YOU WANT
+            CreateTask(new hrTask());//RESET THIS TO WHATEVER STARTING POINT YOU WANT
         }
 
         private void BroadCastHandler_CreateFixQuest()

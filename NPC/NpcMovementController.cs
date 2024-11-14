@@ -192,7 +192,7 @@ namespace ShroomJamGame.NPC
             }
             if (spin)
             {
-                _visualController.skeleton.RotateY((float)delta);
+                _visualController.skeleton.RotateY((float)delta * 15);
             }
         }
         public bool IsDoingStuff()

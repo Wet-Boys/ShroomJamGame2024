@@ -91,6 +91,7 @@ namespace ShroomJamGame.Tasks
             await ToSignal(hr.GetTree().CreateTimer(.5f), SceneTreeTimer.SignalName.Timeout);
             cardBoard.Freeze = false;
             await ToSignal(hr.GetTree().CreateTimer(5f), SceneTreeTimer.SignalName.Timeout);
+            hr._visualController.Sink();
         }
 
         private void Bar_ProgressBarFinished(Node3D bar)
