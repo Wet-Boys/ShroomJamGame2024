@@ -36,7 +36,7 @@ namespace ShroomJamGame.Tasks
             originalPlayerPos = player.GlobalPosition;
             rootNode = GetTree().Root.GetChild(0);
             TaskList = HUD.GetNode<Control>("Task Container");
-            HUD.GetNode<Button>("MarginContainer2/HBoxContainer/Button").ButtonUp += TaskTracker_ButtonUp; ;
+            HUD.GetNode<Button>("MarginContainer2/HBoxContainer/Button").ButtonUp += TaskTracker_ButtonUp;
 
             Input.MouseMode = Input.MouseModeEnum.Visible;
         }
