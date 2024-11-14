@@ -45,6 +45,7 @@ namespace ShroomJamGame.Tasks
         {
             startedPlaying = true;
             HUD.GetNode<MarginContainer>("MarginContainer2").Visible = false;
+            HUD.GetNode<MarginContainer>("MarginContainer").Visible = false;
             DebugCommand();
             BroadCastHandler.instance.Day1Finished += DayFinished;
             personalAudio = player.GetNode<AudioStreamPlayer>("VinnyAudio");

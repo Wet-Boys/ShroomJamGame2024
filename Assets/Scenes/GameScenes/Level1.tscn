@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bv7hgobt87i0x" path="res://Assets/Prefabs/Player.tscn" id="1_5e5w6"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_xwnke"]
 [ext_resource type="PackedScene" uid="uid://bkh80lrmoy5cs" path="res://Assets/Scenes/Office/de_office.tscn" id="3_dn84n"]
-[ext_resource type="PackedScene" path="res://door_city.tscn" id="5_hegjq"]
+[ext_resource type="PackedScene" uid="uid://du8ra8h05v2pk" path="res://door_city.tscn" id="5_hegjq"]
 [ext_resource type="PackedScene" uid="uid://lkw7ko7kkqpk" path="res://Assets/Prefabs/NPC.tscn" id="6_cyjk6"]
 
 [sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_tph6i"]
@@ -34,7 +34,7 @@ viewport_path = NodePath("SubViewport")
 transform = Transform3D(-0.0910324, 0, -0.995848, 0, 1, 0, 0.995848, 0, -0.0910324, 13.8433, 7.53554, 12.2651)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.0910325, 0, 0.995848, 0, 1, 0, -0.995848, 0, 0.0910325, 13.8433, 8.28554, 12.2651)
+transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0, 0.75, 0)
 attributes = SubResource("CameraAttributesPhysical_tph6i")
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D"]
@@ -95,6 +95,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.3491, 7.44545, 6.62646)
 
 [node name="NpcMovementController" parent="Stevathan" index="1" node_paths=PackedStringArray("ownedItems")]
 ownedItems = [NodePath("../../NavigationRegion3D/World/DeOffice2/Asset Complete Office2/Cubicle2/Kitchen Chair11"), NodePath("../../NavigationRegion3D/World/DeOffice2/Asset Complete Office2/coffee cup2"), NodePath("../../NavigationRegion3D/World/DeOffice2/Asset Complete Office2/Cubicle2/Kitchen Chair5")]
+_pickUpSound = null
+_putDownSound = null
 
 [node name="Sprite3D" parent="Stevathan/SpeechBubble" index="1"]
 texture = SubResource("ViewportTexture_062o8")
@@ -113,6 +115,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.4234, 7.44545, 22.167)
 
 [node name="NpcMovementController" parent="Boss" index="1" node_paths=PackedStringArray("ownedItems")]
 ownedItems = [NodePath("../../NavigationRegion3D/World/DeOffice2/Asset Complete Office2/boss chair"), NodePath("../../NavigationRegion3D/World/DeOffice2/Asset Complete Office2/Cubicle2/trash can5"), NodePath("../../NavigationRegion3D/World/DeOffice2/Asset Complete Office2/Cubicle2/Screen2_015"), NodePath("../../NavigationRegion3D/World/DeOffice2/Asset Complete Office2/Cubicle2/Blender keyboard5"), NodePath("../../NavigationRegion3D/World/DeOffice2/Asset Complete Office2/Cubicle2/Mouse_015"), NodePath("../../NavigationRegion3D/World/DeOffice2/Asset Complete Office2/Cubicle2/Screen2_016"), NodePath("../../NavigationRegion3D/World/DeOffice2/Asset Complete Office2/Cubicle2/trash can6"), NodePath("../../NavigationRegion3D/World/DeOffice2/Asset Complete Office2/Cubicle2/Gigabyte Computer_015")]
+_pickUpSound = null
+_putDownSound = null
 
 [node name="Sprite3D" parent="Boss/SpeechBubble" index="1"]
 texture = SubResource("ViewportTexture_lg2s5")
@@ -122,6 +126,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.62062, 7.33668, 7.37787)
 
 [node name="NpcMovementController" parent="Receptionist" index="1" node_paths=PackedStringArray("ownedItems")]
 ownedItems = [NodePath("../../NavigationRegion3D/World/DeOffice2/Asset Complete Office2/CABINET_001/BOOK"), NodePath("../../NavigationRegion3D/World/DeOffice2/Asset Complete Office2/CABINET_001/BOOK_001"), NodePath("../../NavigationRegion3D/World/DeOffice2/Asset Complete Office2/CABINET_001/BOOK_002"), NodePath("../../NavigationRegion3D/World/DeOffice2/Asset Complete Office2/CABINET_001/BOOK_003"), NodePath("../../NavigationRegion3D/World/DeOffice2/Asset Complete Office2/CABINET_001/PHONE"), NodePath("../../NavigationRegion3D/World/DeOffice2/Asset Complete Office2/CABINET_001/TAB HOLDER"), NodePath("../../NavigationRegion3D/World/DeOffice2/Asset Complete Office2/CABINET_001/VASE")]
+_pickUpSound = null
+_putDownSound = null
 
 [node name="Sprite3D" parent="Receptionist/SpeechBubble" index="1"]
 texture = SubResource("ViewportTexture_x0gq3")
@@ -131,6 +137,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.24935, 7.36933, -8.62745)
 
 [node name="NpcMovementController" parent="HR" index="1" node_paths=PackedStringArray("ownedItems")]
 ownedItems = [NodePath("../../NavigationRegion3D/World/DeOffice2/Asset Complete Office2/Cubicle3/Office Chair_REX_025"), NodePath("../../NavigationRegion3D/World/DeOffice2/conference chair4")]
+_pickUpSound = null
+_putDownSound = null
 
 [node name="Sprite3D" parent="HR/SpeechBubble" index="1"]
 texture = SubResource("ViewportTexture_aq5py")

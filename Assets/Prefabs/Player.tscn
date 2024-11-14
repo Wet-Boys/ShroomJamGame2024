@@ -73,11 +73,34 @@ layout_mode = 1
 [node name="PauseUi" parent="GeneralHud/PauseMenu" index="0"]
 visible = false
 
+[node name="SettingsUi" parent="GeneralHud/PauseMenu" index="2"]
+mouse_filter = 0
+
+[node name="TabBar" parent="GeneralHud/PauseMenu/SettingsUi" index="0"]
+tab_count = 3
+tab_2/title = "Controls"
+
+[node name="Margin Container" parent="GeneralHud/PauseMenu/SettingsUi" index="1"]
+offset_left = 0.0
+offset_right = 0.0
+
+[node name="Audio Panel" parent="GeneralHud/PauseMenu/SettingsUi/Margin Container" index="0"]
+mouse_filter = 0
+
+[node name="Graphics Panel" parent="GeneralHud/PauseMenu/SettingsUi/Margin Container" index="1"]
+mouse_filter = 0
+
+[node name="MarginContainer" parent="GeneralHud" index="5"]
+visible = true
+
 [node name="ColorRect" parent="GeneralHud/MarginContainer" index="0"]
 color = Color(0.442911, 0.442911, 0.442911, 1)
 
 [node name="AnimatedSprite2D" parent="GeneralHud/MarginContainer/ColorRect" index="1"]
-position = Vector2(741, 345.5)
+position = Vector2(889, 484)
+
+[node name="MarginContainer2" parent="GeneralHud" index="6"]
+visible = true
 
 [node name="TaskTracker" type="Node" parent="." index="8" node_paths=PackedStringArray("player", "HUD")]
 script = ExtResource("10_sul16")
