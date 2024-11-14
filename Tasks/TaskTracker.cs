@@ -131,9 +131,17 @@ namespace ShroomJamGame.Tasks
                     LoadNewScene(new Vector3(-0.174f, 7.8f, -2.107f));
                     break;
                 case 2:
+                    foreach (var item in NpcMovementController.npcs)
+                    {
+                        item.spin = true;
+                    }
                     LoadNewScene(new Vector3(12.936f, 6.581f, 15.398f));
                     break;
                 case 3:
+                    foreach (var item in NpcMovementController.npcs)
+                    {
+                        item.spin = false;
+                    }
                     LoadNewScene(new Vector3(-2.614f, 6.581f, 22.441f));
                     break;
                 default:

@@ -29,6 +29,16 @@ namespace ShroomJamGame.NPC
                 oldTargetPos = Vector3.Zero;
             }
         }
+        private bool _spin = false;
+        public bool spin
+        {
+            get => _spin;
+            set
+            {
+                _spin = value;
+                _visualController.skeleton.Rotation = new Vector3(0, 0, 0);
+            }
+        }
         private Node3D? _targetNode;
         [Export]
         private Vector3 targetPosition;
@@ -171,6 +181,10 @@ namespace ShroomJamGame.NPC
             if (characterBody3D.GlobalPosition.Y < 4)
             {
                 characterBody3D.GlobalPosition = originalPosition;
+            }
+            if (spin)
+            {
+                _visualController.skeleton.RotateY((float)delta);
             }
         }
         public bool IsDoingStuff()
