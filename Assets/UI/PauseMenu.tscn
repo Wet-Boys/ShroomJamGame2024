@@ -10,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 
 [node name="PauseUi" type="Control" parent="."]
 layout_mode = 1
@@ -18,6 +19,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PauseUi"]
 layout_mode = 1
@@ -27,7 +29,6 @@ anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -100.0
 offset_right = 100.0
-offset_bottom = 96.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 7
@@ -63,6 +64,7 @@ layout_mode = 1
 _pauseUi = NodePath("../../PauseUi")
 
 [connection signal="pressed" from="PauseUi/VBoxContainer/Resume Button" to="PauseMenuController" method="TogglePause"]
+[connection signal="pressed" from="PauseUi/VBoxContainer/Unstuck Button" to="PauseMenuController" method="UnstuckPlayer"]
 [connection signal="pressed" from="PauseUi/VBoxContainer/Settings Button" to="SettingsUi/SettingsUiController" method="ShowSettingsPanel"]
 [connection signal="pressed" from="PauseUi/VBoxContainer/Exit to Desktop Button" to="PauseMenuController" method="ExitToDesktop"]
 

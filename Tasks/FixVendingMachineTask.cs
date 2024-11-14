@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ShroomJamGame.Events;
 
 namespace ShroomJamGame.Tasks
 {
@@ -20,6 +21,7 @@ namespace ShroomJamGame.Tasks
                 {
                     vendingMachine = (VendingMachineInteractable)item;
                     vendingMachine.isInteractable = true;
+                    BroadCastHandler.instance.HighlightObject(vendingMachine.vendingMachineNode);
                     break;
                 }
             }

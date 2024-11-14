@@ -5,11 +5,11 @@
 [resource]
 render_priority = 0
 shader = ExtResource("1_5n3la")
-shader_parameter/Jitter = null
+shader_parameter/Jitter = true
 shader_parameter/Jitter_X_Time_Scale = 50.0
 shader_parameter/Jitter_Y_Time_Scale = 50.0
 shader_parameter/Pixelization = true
-shader_parameter/Pixel_Size = 2
+shader_parameter/Pixel_Size = 5
 shader_parameter/Abberation_R_Offset = 0.009
 shader_parameter/Abberation_G_Offset = 0.006
 shader_parameter/Abberation_B_Offset = -0.006

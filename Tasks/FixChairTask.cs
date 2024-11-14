@@ -21,12 +21,17 @@ namespace ShroomJamGame.Tasks
             Godot.Collections.Array<PhysicsInteractable> barStools = new Godot.Collections.Array<PhysicsInteractable>();
             foreach (var item in PhysicsInteractable.physicsObjects)
             {
-                if (item.Name.ToString().StartsWith("Bar Stool"))
+                if (item.Name.ToString().StartsWith("Kitchen Chair"))
                 {
                     barStools.Add(item);
                 }
             }
             targetChair = barStools.PickRandom();
+            var glitchEffect = ((PackedScene)GD.Load("res://Assets/Prefabs/corruption-effects.tscn")).Instantiate<GpuParticles3D>();
+            targetChair.AddChild(glitchEffect);
+            glitchEffect.Position = Vector3.Zero;
+            glitchEffect.GlobalPosition = targetChair.GlobalPosition;
+            
             BroadCastHandler.instance.HighlightObject(targetChair);
             float closestDistance = 100;
             NpcMovementController closestNPC = NpcMovementController.npcs.First();

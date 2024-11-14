@@ -22,6 +22,19 @@ public partial class PosterizationEffect : BaseCompositorEffect
         Stride = sizeof(float) * 3
     };
     
+    private static PosterizationEffect? _instance;
+
+    public static PosterizationEffect Instance
+    {
+        get
+        {
+            if (_instance is null)
+                throw new InvalidOperationException($"{nameof(PosterizationEffect)} instance can't be null.");
+            
+            return _instance;
+        }
+    }
+    
     private long _frameBufferFormat;
     private long _vertexBufferFormat;
     
@@ -32,6 +45,8 @@ public partial class PosterizationEffect : BaseCompositorEffect
     
     public PosterizationEffect()
     {
+        _instance = this;
+        
         EffectCallbackType = EffectCallbackTypeEnum.PostTransparent;
     }
     
