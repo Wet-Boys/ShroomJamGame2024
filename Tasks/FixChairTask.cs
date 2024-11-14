@@ -15,6 +15,9 @@ namespace ShroomJamGame.Tasks
         PhysicsInteractable targetChair;
         NpcMovementController taskNpc;
         Node3D destMarker;
+
+        private GpuParticles3D? _glitchEffect;
+        
         public override BaseTask Setup(Node worldRoot)
         {
             taskName = "What was that noise in the kitchen?";
@@ -23,14 +26,22 @@ namespace ShroomJamGame.Tasks
             {
                 if (item.Name.ToString().StartsWith("Kitchen Chair"))
                 {
-                    barStools.Add(item);
+                    var itemNumber = item.Name.ToString().Substring("Kitchen Chair".Length);
+
+                    if (int.TryParse(itemNumber, out var number))
+                    {
+                        if (number is >= 5 and <= 12)
+                        {
+                            barStools.Add(item);
+                        }
+                    }
                 }
             }
             targetChair = barStools.PickRandom();
-            var glitchEffect = ((PackedScene)GD.Load("res://Assets/Prefabs/corruption-effects.tscn")).Instantiate<GpuParticles3D>();
-            targetChair.AddChild(glitchEffect);
-            glitchEffect.Position = Vector3.Zero;
-            glitchEffect.GlobalPosition = targetChair.GlobalPosition;
+            _glitchEffect = ((PackedScene)GD.Load("res://Assets/Prefabs/corruption-effects.tscn")).Instantiate<GpuParticles3D>();
+            targetChair.AddChild(_glitchEffect);
+            _glitchEffect.Position = Vector3.Zero;
+            _glitchEffect.GlobalPosition = targetChair.GlobalPosition;
             
             BroadCastHandler.instance.HighlightObject(targetChair);
             float closestDistance = 100;
@@ -110,6 +121,7 @@ namespace ShroomJamGame.Tasks
 
         private void ProgressBar_ProgressBarFinished(Node3D bar)
         {
+            _glitchEffect?.QueueFree();
             bar.QueueFree();
             EmitSignal(SignalName.TaskFinished, this);
             BroadCastHandler.instance.UnHighlightObject(targetChair);
