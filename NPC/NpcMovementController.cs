@@ -115,6 +115,7 @@ namespace ShroomJamGame.NPC
             reachedTarget = false;
             _navigationAgent.TargetPosition = position;
             waiting = false;
+            _visualController.PlayRandomOneShot();
         }
         private Vector3 oldTargetPos = Vector3.Zero;
         public override void _Ready()
