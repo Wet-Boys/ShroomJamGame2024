@@ -16,11 +16,6 @@ public partial class SettingsUiController : Node
     
     [Export]
     private PanelContainer? _graphicsPanel;
-    
-    [Export]
-    private PanelContainer? _controlsPanel;
-    
-    
 
     private void OnTabChanged(int tabIndex)
     {
@@ -32,20 +27,15 @@ public partial class SettingsUiController : Node
         {
             ShowPanel(_graphicsPanel);
         }
-        else if (tabIndex == 2)
-        {
-            ShowPanel(_controlsPanel);
-        }
     }
 
     private void ShowPanel(PanelContainer? panel)
     {
-        if (_audioPanel is null || _graphicsPanel is null || _controlsPanel is null || panel is null)
+        if (_audioPanel is null || _graphicsPanel is null || panel is null)
             return;
 
         _audioPanel.Visible = false;
         _graphicsPanel.Visible = false;
-        _controlsPanel.Visible = false;
         
         panel.Visible = true;
     }

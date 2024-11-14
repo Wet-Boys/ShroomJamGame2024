@@ -83,6 +83,14 @@ namespace ShroomJamGame.NPC
         public NpcInteractable interactionComponent;
         public bool onlyLookAtPlayer = false;
         public Vector3 originalPosition;
+        
+        [Export]
+        private AudioStreamPlayer3D? _popPlayer;
+        [Export]
+        private AudioStream? _pickUpSound;
+        [Export]
+        private AudioStream? _putDownSound;
+        
         public void SayWords(string whatToSay)
         {
             if (AnimalesePlayer is null || speechBubbleText is null)
@@ -240,9 +248,21 @@ namespace ShroomJamGame.NPC
                 heldObject = null;
                 _visualController.Interact();
                 SayWords($"");
+                
+                if (_popPlayer is not null && _putDownSound is not null)
+                {
+                    _popPlayer.Stream = _putDownSound;
+                    _popPlayer.Play();
+                }
             }
             if (grabbingObject && IsInstanceValid(targetNode) && (targetNode is PhysicsInteractable physicsObject2) && CanBeGrabbed(physicsObject2))
             {
+                if (_popPlayer is not null && _pickUpSound is not null)
+                {
+                    _popPlayer.Stream = _pickUpSound;
+                    _popPlayer.Play();
+                }
+                
                 grabbingObject = false;
                 placingObject = true;
                 _SetTargetPosition(ownedItemsStartingPositions[ownedItems.IndexOf(targetNode)]);

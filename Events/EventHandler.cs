@@ -73,11 +73,16 @@ namespace ShroomJamGame.Events
                 {
                     if (IsInstanceValid(objectToChange) && !objectToChange.Freeze)
                     {
+                        var glitchEffect = ((PackedScene)GD.Load("res://Assets/Prefabs/corruption-effects.tscn")).Instantiate<GpuParticles3D>();
+                        
                         Node3D newVendingMachine = ((PackedScene)GD.Load("res://Assets/Prefabs/WorldObjects/vending_machine.tscn")).Instantiate<RigidBody3D>();
                         newVendingMachine.GetNode<OmniLight3D>("OmniLight3D").QueueFree();
                         objectToChange.GetTree().Root.AddChild(newVendingMachine);
                         newVendingMachine.GlobalPosition = objectToChange.GlobalPosition;
                         newVendingMachine.RotationDegrees = new Vector3(randomGenerator.Randf(), randomGenerator.Randf(), randomGenerator.Randf()) * 360;
+                        
+                        newVendingMachine.AddChild(glitchEffect);
+                        
                         objectToChange.Freeze = true;
                         objectToChange.GlobalPosition = new Vector3(-9999, -9999, -9999);
                         vendingMachines.Add(newVendingMachine);
@@ -94,7 +99,10 @@ namespace ShroomJamGame.Events
                 await ToSignal(this.GetTree().CreateTimer(.2f), SceneTreeTimer.SignalName.Timeout);
                 if (vendingMachines.Count != 0)
                 {
+                    var glitchEffect = ((PackedScene)GD.Load("res://Assets/Prefabs/corruption-effects.tscn")).Instantiate<GpuParticles3D>();
                     Node3D newVendingMachine = ((PackedScene)GD.Load("res://Assets/Prefabs/WorldObjects/vending_machine.tscn")).Instantiate<RigidBody3D>();
+                    newVendingMachine.AddChild(glitchEffect);
+                    
                     newVendingMachine.GetNode<OmniLight3D>("OmniLight3D").QueueFree();
                     Node3D vendingMachine = vendingMachines.PickRandom();
                     vendingMachine.GetTree().Root.AddChild(newVendingMachine);

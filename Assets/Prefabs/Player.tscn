@@ -67,36 +67,37 @@ _playerHead = NodePath("..")
 
 [node name="GeneralHud" parent="." index="6" instance=ExtResource("8_i06ww")]
 
+[node name="PauseMenu" parent="GeneralHud" index="4" instance=ExtResource("9_syifq")]
+layout_mode = 1
+
+[node name="PauseUi" parent="GeneralHud/PauseMenu" index="0"]
+visible = false
+
 [node name="ColorRect" parent="GeneralHud/MarginContainer" index="0"]
 color = Color(0.442911, 0.442911, 0.442911, 1)
 
 [node name="AnimatedSprite2D" parent="GeneralHud/MarginContainer/ColorRect" index="1"]
 position = Vector2(741, 345.5)
 
-[node name="PauseMenu" parent="." index="7" instance=ExtResource("9_syifq")]
-
-[node name="PauseUi" parent="PauseMenu" index="0"]
-visible = false
-
-[node name="TaskTracker" type="Node" parent="." index="9" node_paths=PackedStringArray("player", "HUD")]
+[node name="TaskTracker" type="Node" parent="." index="8" node_paths=PackedStringArray("player", "HUD")]
 script = ExtResource("10_sul16")
 player = NodePath("..")
 HUD = NodePath("../GeneralHud")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="10"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="9"]
 
 [node name="AudioCrash" type="Node" parent="AudioStreamPlayer" index="0" node_paths=PackedStringArray("_streamPlayer")]
 script = ExtResource("11_kq22c")
 _crashAudioBus = "Crash Bypass"
 _streamPlayer = NodePath("..")
 
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." index="11"]
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." index="10"]
 stream = ExtResource("12_0ae11")
 bus = &"Sound Effects"
 
-[node name="VinnyAudio" type="AudioStreamPlayer" parent="." index="12"]
+[node name="VinnyAudio" type="AudioStreamPlayer" parent="." index="11"]
 bus = &"Sound Effects"
 
 [editable path="GeneralHud"]
-[editable path="PauseMenu"]
-[editable path="PauseMenu/SettingsUi"]
+[editable path="GeneralHud/PauseMenu"]
+[editable path="GeneralHud/PauseMenu/SettingsUi"]
