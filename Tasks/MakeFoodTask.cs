@@ -30,7 +30,7 @@ namespace ShroomJamGame.Tasks
             {
                 foods[i].GlobalPosition = positions[i];
             }
-            taskName = "You're hungry, make food";
+            taskName = "Heat up food in the microwave";
             foreach (var item in Interactable.interactables)
             {
                 Node3D node = item.GetNode<Node3D>("../../..");

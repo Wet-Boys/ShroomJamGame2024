@@ -156,6 +156,7 @@ namespace ShroomJamGame.Tasks
             AudioCrash.Instance.StartAudioCrash();
             FrameCaptureEffect.CaptureNextFrame = true;
             DataMoshEffect.Instance.Enabled = true;
+            SetNpcTimeScale(0f);
             lowerBlend = false;
             DataMoshEffect.Instance.Blend = 1;
             await ToSignal(this.GetTree().CreateTimer(5f), SceneTreeTimer.SignalName.Timeout);
@@ -171,6 +172,7 @@ namespace ShroomJamGame.Tasks
             DataMoshEffect.Instance.EnableMoshingWithVelocity = true;
             await ToSignal(this.GetTree().CreateTimer(2f), SceneTreeTimer.SignalName.Timeout);
             AudioCrash.Instance.StopAudioCrash();
+            SetNpcTimeScale(1f);
             lowerBlend = true;
             await ToSignal(this.GetTree().CreateTimer(5f), SceneTreeTimer.SignalName.Timeout);
             foreach (var npc in NpcMovementController.npcs)
@@ -205,6 +207,12 @@ namespace ShroomJamGame.Tasks
                 default:
                     break;
             }
+        }
+
+        private void SetNpcTimeScale(float timeScale)
+        {
+            foreach (var npc in NpcMovementController.npcs)
+                npc.SetTimeScale(timeScale);
         }
     }
 }

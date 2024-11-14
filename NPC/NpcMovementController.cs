@@ -414,5 +414,13 @@ namespace ShroomJamGame.NPC
             }
             return validItems.PickRandom();
         }
+
+        public void SetTimeScale(float timeScale)
+        {
+            if (_characterMovementController is null)
+                return;
+            
+            _characterMovementController.PersonalTimeScale = timeScale;
+        }
     }
 }
