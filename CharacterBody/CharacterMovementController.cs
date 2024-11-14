@@ -28,6 +28,7 @@ public partial class CharacterMovementController : Node
     [Export]
     private float _airFriction = 9.5f;
 
+    public float PersonalTimeScale = 1f;
     
     private float _characterHeight = 2f;
     [Export]
@@ -95,6 +96,8 @@ public partial class CharacterMovementController : Node
 
     public override void _PhysicsProcess(double delta)
     {
+        delta *= PersonalTimeScale;
+        
         if (_characterHead is null || _characterBody is null || _stepHelper is null || GameState.Paused || Engine.IsEditorHint())
             return;
 
