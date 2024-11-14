@@ -1,4 +1,5 @@
 using Godot;
+using ShroomJamGame.Events;
 using ShroomJamGame.UI;
 
 namespace ShroomJamGame.Player;
@@ -75,6 +76,8 @@ public partial class PauseMenuController : Node
         _pauseMenu.Visible = false;
         _pauseMenu.MouseFilter = Control.MouseFilterEnum.Ignore;
     }
+
+    public void UnstuckPlayer() => BroadCastHandler.instance.ResetPlayer();
 
     public void ExitToDesktop() => GetTree().Quit();
 }

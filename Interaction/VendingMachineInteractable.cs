@@ -12,7 +12,7 @@ public partial class VendingMachineInteractable : Interactable
 {
     public bool isInteractable = false;
     [Export]
-    private Node3D? vendingMachineNode;
+    public Node3D? vendingMachineNode;
     private NpcMovementController npc;
     ProgressBarRunner progressBar;
     public bool done = false;
@@ -31,6 +31,7 @@ public partial class VendingMachineInteractable : Interactable
             progressBar.sprite.Billboard = BaseMaterial3D.BillboardModeEnum.Disabled;
             progressBar.ProgressBarFinished += ProgressBar_ProgressBarFinished;
             isInteractable = false;
+            BroadCastHandler.instance.UnHighlightObject(vendingMachineNode);
         }
     }
 

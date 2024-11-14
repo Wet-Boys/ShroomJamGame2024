@@ -12,7 +12,6 @@ material = ExtResource("1_g461b")
 size = Vector2(0.25, 0.25)
 
 [node name="CorruptionEffects" type="GPUParticles3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.2221, 6.92996, 9.6923)
 cast_shadow = 0
 amount = 32
 randomness = 1.0
