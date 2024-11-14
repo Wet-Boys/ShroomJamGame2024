@@ -37,19 +37,21 @@ namespace ShroomJamGame.Tasks
             rootNode = GetTree().Root.GetChild(0);
             TaskList = HUD.GetNode<Control>("Task Container");
             HUD.GetNode<Button>("MarginContainer2/HBoxContainer/Button").ButtonUp += TaskTracker_ButtonUp;
-            personalAudio.VolumeDb = 1;
-            personalAudio.Stream = (AudioStream)GD.Load("res://Assets/Sfx/Vinny/manualBlast.ogg");
+            personalAudio = player.GetNode<AudioStreamPlayer>("VinnyAudio");
+            personalAudio.VolumeDb = -10;
+            personalAudio.Stream = (AudioStream)GD.Load("res://Assets/music/officeland menu theme.ogg");
+            personalAudio.Play();
             Input.MouseMode = Input.MouseModeEnum.Visible;
         }
         bool startedPlaying = false;
         private void TaskTracker_ButtonUp()
         {
+            personalAudio.Stop();
             startedPlaying = true;
             HUD.GetNode<MarginContainer>("MarginContainer2").Visible = false;
             HUD.GetNode<MarginContainer>("MarginContainer").Visible = false;
             DebugCommand();
             BroadCastHandler.instance.Day1Finished += DayFinished;
-            personalAudio = player.GetNode<AudioStreamPlayer>("VinnyAudio");
             personalAudio.VolumeDb = 10;
             Input.MouseMode = Input.MouseModeEnum.Captured;
         }
@@ -74,7 +76,7 @@ namespace ShroomJamGame.Tasks
             await ToSignal(rootNode.GetTree().CreateTimer(1.0), SceneTreeTimer.SignalName.Timeout);
             personalAudio.Stream = (AudioStreamOggVorbis)GD.Load("res://Assets/Sfx/Vinny/SoChatThisGame.ogg");
             personalAudio.Play();
-            CreateTask(new hrTask());//RESET THIS TO WHATEVER STARTING POINT YOU WANT
+            CreateTask(new IntroductionTask());//RESET THIS TO WHATEVER STARTING POINT YOU WANT
         }
 
         private void BroadCastHandler_CreateFixQuest()

@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bv7hgobt87i0x" path="res://Assets/Prefabs/Player.tscn" id="1_5e5w6"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_xwnke"]
 [ext_resource type="PackedScene" uid="uid://bkh80lrmoy5cs" path="res://Assets/Scenes/Office/de_office.tscn" id="3_dn84n"]
-[ext_resource type="PackedScene" path="res://door_city.tscn" id="5_hegjq"]
+[ext_resource type="PackedScene" uid="uid://du8ra8h05v2pk" path="res://door_city.tscn" id="5_hegjq"]
 [ext_resource type="AudioStream" uid="uid://bbmbtvjwea62w" path="res://Assets/Sfx/NPC/npc-pickup-item-noises.tres" id="5_v6hup"]
 [ext_resource type="AudioStream" uid="uid://ohdg6e0n5xji" path="res://Assets/Sfx/NPC/npc-put-down-item-noises.tres" id="6_cceiv"]
 [ext_resource type="PackedScene" uid="uid://lkw7ko7kkqpk" path="res://Assets/Prefabs/NPC.tscn" id="6_cyjk6"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bos5qjgi60df2"]
 
-[ext_resource type="PackedScene" path="res://crash screen.tscn" id="1_tamh0"]
-[ext_resource type="PackedScene" path="res://corruptionSprite.tscn" id="2_4h1dh"]
+[ext_resource type="PackedScene" uid="uid://d1be3wvwreyiw" path="res://crash screen.tscn" id="1_tamh0"]
+[ext_resource type="PackedScene" uid="uid://cfbfnmy0ip0cd" path="res://corruptionSprite.tscn" id="2_4h1dh"]
 [ext_resource type="Texture2D" uid="uid://cpcymbmktafh7" path="res://Assets/logo/logo.png" id="2_mg3jv"]
 [ext_resource type="Texture2D" uid="uid://c8l2km336u4ma" path="res://Assets/logo/office.png" id="4_ccsyv"]
 
@@ -74,6 +74,11 @@ offset_bottom = 721.0
 layout_mode = 2
 color = Color(0, 0, 0, 1)
 
+[node name="Sprite2D2" type="Sprite2D" parent="MarginContainer/ColorRect"]
+position = Vector2(640, 359)
+scale = Vector2(0.501431, 0.501431)
+texture = ExtResource("4_ccsyv")
+
 [node name="Sprite2D" type="Sprite2D" parent="MarginContainer/ColorRect"]
 position = Vector2(648, 321)
 scale = Vector2(0.501852, 0.501852)
@@ -83,11 +88,6 @@ texture = ExtResource("2_mg3jv")
 position = Vector2(958, 488)
 rotation = -0.123088
 scale = Vector2(0.6625, 0.6625)
-
-[node name="Sprite2D2" type="Sprite2D" parent="MarginContainer/ColorRect"]
-position = Vector2(640, 359)
-scale = Vector2(0.501431, 0.501431)
-texture = ExtResource("4_ccsyv")
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]
 layout_mode = 1

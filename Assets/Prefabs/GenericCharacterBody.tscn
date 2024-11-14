@@ -4,10 +4,10 @@
 [ext_resource type="Script" path="res://Player/StepHelper.cs" id="2_7fi1s"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mglpe"]
-size = Vector3(0.25, 0.425, 0.35)
+size = Vector3(1, 0.475, 0.35)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t7rgh"]
-size = Vector3(0.25, 2, 0.35)
+size = Vector3(1, 2.25, 0.35)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_s1uhv"]
 
