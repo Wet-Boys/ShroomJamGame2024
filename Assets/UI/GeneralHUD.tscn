@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bos5qjgi60df2"]
 
-[ext_resource type="PackedScene" uid="uid://d1be3wvwreyiw" path="res://crash screen.tscn" id="1_tamh0"]
-[ext_resource type="PackedScene" uid="uid://cfbfnmy0ip0cd" path="res://corruptionSprite.tscn" id="2_4h1dh"]
+[ext_resource type="PackedScene" path="res://crash screen.tscn" id="1_tamh0"]
+[ext_resource type="PackedScene" path="res://corruptionSprite.tscn" id="2_4h1dh"]
 [ext_resource type="Texture2D" uid="uid://cpcymbmktafh7" path="res://Assets/logo/logo.png" id="2_mg3jv"]
 
 [node name="GeneralHud" type="Control"]

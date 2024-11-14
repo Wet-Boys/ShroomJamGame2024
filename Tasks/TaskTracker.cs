@@ -73,7 +73,7 @@ namespace ShroomJamGame.Tasks
             await ToSignal(rootNode.GetTree().CreateTimer(1.0), SceneTreeTimer.SignalName.Timeout);
             personalAudio.Stream = (AudioStreamOggVorbis)GD.Load("res://Assets/Sfx/Vinny/SoChatThisGame.ogg");
             personalAudio.Play();
-            CreateTask(new FixChairTask());//RESET THIS TO WHATEVER STARTING POINT YOU WANT
+            CreateTask(new MakeFoodTask());//RESET THIS TO WHATEVER STARTING POINT YOU WANT
         }
 
         private void BroadCastHandler_CreateFixQuest()
