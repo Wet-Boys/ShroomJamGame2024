@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dd0uid4dhunk5"]
+[gd_scene load_steps=16 format=3 uid="uid://dd0uid4dhunk5"]
 
 [ext_resource type="PackedScene" uid="uid://bv7hgobt87i0x" path="res://Assets/Prefabs/Player.tscn" id="1_5e5w6"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_xwnke"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://bbmbtvjwea62w" path="res://Assets/Sfx/NPC/npc-pickup-item-noises.tres" id="5_v6hup"]
 [ext_resource type="AudioStream" uid="uid://ohdg6e0n5xji" path="res://Assets/Sfx/NPC/npc-put-down-item-noises.tres" id="6_cceiv"]
 [ext_resource type="PackedScene" uid="uid://lkw7ko7kkqpk" path="res://Assets/Prefabs/NPC.tscn" id="6_cyjk6"]
+[ext_resource type="PackedScene" path="res://Assets/Prefabs/WorldObjects/skybox.tscn" id="8_747uy"]
 
 [sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_tph6i"]
 
@@ -153,6 +154,9 @@ texture = SubResource("ViewportTexture_aq5py")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3543, 6.27325, -12.7226)
 
 [node name="door city" parent="." instance=ExtResource("5_hegjq")]
+
+[node name="skybox" parent="." instance=ExtResource("8_747uy")]
+transform = Transform3D(2.7255, 0, -2.03724, 0, 3.40275, 0, 2.03724, 0, 2.7255, -247.706, -153.721, 36.3155)
 
 [editable path="NavigationRegion3D/World/DeOffice2"]
 [editable path="NavigationRegion3D/World/DeOffice2/Asset Complete Office2/CABINET_001"]
