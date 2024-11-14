@@ -17,7 +17,25 @@ namespace ShroomJamGame.NPC
         AnimationTree animationTree;
         [Export]
         public Skeleton3D skeleton;
-
+        Godot.Collections.Array<string> oneShots = new Godot.Collections.Array<string>() { "1", "2", "3", "4" };
+        bool sinking = false;
+        float sinkingAmount = 0;
+        public override void _Process(double delta)
+        {
+            if (sinking)
+            {
+                sinkingAmount += (float)delta;
+                animationTree.Set("parameters/InGround/blend_amount", $"{sinkingAmount}");
+            }
+        }
+        public void PlayRandomOneShot()
+        {
+            animationTree.Set($"parameters/{oneShots.PickRandom()}/request", (int)AnimationNodeOneShot.OneShotRequest.Fire);
+        }
+        public void Sink()
+        {
+            sinking = true;
+        }
         public void Interact()
         {
             animationTree.Set("parameters/OneShot/request", (int)AnimationNodeOneShot.OneShotRequest.Fire);
