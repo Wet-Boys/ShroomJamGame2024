@@ -109,13 +109,18 @@ namespace ShroomJamGame.NPC
             speechBubbleText.Text = content;
             speechBubbleNode.Visible = content != "";
         }
+
+        RandomNumberGenerator random = new RandomNumberGenerator();
         public void _SetTargetPosition(Vector3 position)
         {
             targetPosition = position;
             reachedTarget = false;
             _navigationAgent.TargetPosition = position;
             waiting = false;
-            _visualController.PlayRandomOneShot();
+            if (random.Randf() < .1f)
+            {
+                _visualController.PlayRandomOneShot();
+            }
         }
         private Vector3 oldTargetPos = Vector3.Zero;
         public override void _Ready()
