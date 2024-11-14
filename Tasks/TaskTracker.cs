@@ -37,7 +37,8 @@ namespace ShroomJamGame.Tasks
             rootNode = GetTree().Root.GetChild(0);
             TaskList = HUD.GetNode<Control>("Task Container");
             HUD.GetNode<Button>("MarginContainer2/HBoxContainer/Button").ButtonUp += TaskTracker_ButtonUp;
-
+            personalAudio.VolumeDb = 1;
+            personalAudio.Stream = (AudioStream)GD.Load("res://Assets/Sfx/Vinny/manualBlast.ogg");
             Input.MouseMode = Input.MouseModeEnum.Visible;
         }
         bool startedPlaying = false;
@@ -156,6 +157,7 @@ namespace ShroomJamGame.Tasks
             AudioCrash.Instance.StartAudioCrash();
             FrameCaptureEffect.CaptureNextFrame = true;
             DataMoshEffect.Instance.Enabled = true;
+            SetNpcTimeScale(0f);
             lowerBlend = false;
             DataMoshEffect.Instance.Blend = 1;
             await ToSignal(this.GetTree().CreateTimer(5f), SceneTreeTimer.SignalName.Timeout);
@@ -171,6 +173,7 @@ namespace ShroomJamGame.Tasks
             DataMoshEffect.Instance.EnableMoshingWithVelocity = true;
             await ToSignal(this.GetTree().CreateTimer(2f), SceneTreeTimer.SignalName.Timeout);
             AudioCrash.Instance.StopAudioCrash();
+            SetNpcTimeScale(1f);
             lowerBlend = true;
             await ToSignal(this.GetTree().CreateTimer(5f), SceneTreeTimer.SignalName.Timeout);
             foreach (var npc in NpcMovementController.npcs)
@@ -205,6 +208,12 @@ namespace ShroomJamGame.Tasks
                 default:
                     break;
             }
+        }
+
+        private void SetNpcTimeScale(float timeScale)
+        {
+            foreach (var npc in NpcMovementController.npcs)
+                npc.SetTimeScale(timeScale);
         }
     }
 }

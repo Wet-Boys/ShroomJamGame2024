@@ -17,7 +17,7 @@ namespace ShroomJamGame.NPC
         AnimationTree animationTree;
         [Export]
         public Skeleton3D skeleton;
-        Godot.Collections.Array<string> oneShots = new Godot.Collections.Array<string>() { "1", "2", "3", "4" };
+        Godot.Collections.Array<string> oneShots = new Godot.Collections.Array<string>() { "1", "2", "3" };
         bool sinking = false;
         float sinkingAmount = 0;
         public override void _Process(double delta)

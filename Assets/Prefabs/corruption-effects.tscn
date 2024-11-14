@@ -14,6 +14,8 @@ size = Vector2(0.25, 0.25)
 [node name="CorruptionEffects" type="GPUParticles3D"]
 cast_shadow = 0
 amount = 32
+lifetime = 0.25
 randomness = 1.0
+local_coords = true
 process_material = SubResource("ParticleProcessMaterial_v3dha")
 draw_pass_1 = SubResource("QuadMesh_251im")

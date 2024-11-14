@@ -102,10 +102,11 @@ position = Vector2(889, 484)
 [node name="MarginContainer2" parent="GeneralHud" index="6"]
 visible = true
 
-[node name="TaskTracker" type="Node" parent="." index="8" node_paths=PackedStringArray("player", "HUD")]
+[node name="TaskTracker" type="Node" parent="." index="8" node_paths=PackedStringArray("player", "HUD", "_successPlayer")]
 script = ExtResource("10_sul16")
 player = NodePath("..")
 HUD = NodePath("../GeneralHud")
+_successPlayer = NodePath("../AudioStreamPlayer2")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="9"]
 
