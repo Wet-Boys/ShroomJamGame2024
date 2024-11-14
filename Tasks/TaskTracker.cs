@@ -37,7 +37,8 @@ namespace ShroomJamGame.Tasks
             rootNode = GetTree().Root.GetChild(0);
             TaskList = HUD.GetNode<Control>("Task Container");
             HUD.GetNode<Button>("MarginContainer2/HBoxContainer/Button").ButtonUp += TaskTracker_ButtonUp;
-
+            personalAudio.VolumeDb = 1;
+            personalAudio.Stream = (AudioStream)GD.Load("res://Assets/Sfx/Vinny/manualBlast.ogg");
             Input.MouseMode = Input.MouseModeEnum.Visible;
         }
         bool startedPlaying = false;

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bos5qjgi60df2"]
+[gd_scene load_steps=5 format=3 uid="uid://bos5qjgi60df2"]
 
 [ext_resource type="PackedScene" uid="uid://d1be3wvwreyiw" path="res://crash screen.tscn" id="1_tamh0"]
 [ext_resource type="PackedScene" uid="uid://cfbfnmy0ip0cd" path="res://corruptionSprite.tscn" id="2_4h1dh"]
 [ext_resource type="Texture2D" uid="uid://cpcymbmktafh7" path="res://Assets/logo/logo.png" id="2_mg3jv"]
+[ext_resource type="Texture2D" uid="uid://c8l2km336u4ma" path="res://Assets/logo/office.png" id="4_ccsyv"]
 
 [node name="GeneralHud" type="Control"]
 layout_mode = 3
@@ -65,7 +66,6 @@ offset_right = -2.0
 offset_bottom = -1.0
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-visible = false
 layout_mode = 1
 offset_right = 1280.0
 offset_bottom = 721.0
@@ -84,8 +84,12 @@ position = Vector2(958, 488)
 rotation = -0.123088
 scale = Vector2(0.6625, 0.6625)
 
+[node name="Sprite2D2" type="Sprite2D" parent="MarginContainer/ColorRect"]
+position = Vector2(640, 359)
+scale = Vector2(0.501431, 0.501431)
+texture = ExtResource("4_ccsyv")
+
 [node name="MarginContainer2" type="MarginContainer" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
